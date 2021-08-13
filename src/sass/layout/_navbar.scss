@@ -1,0 +1,124 @@
+/*
+    esta clase hace referencia a contenedor del sidebar...
+    hacemos uso de la propiedad HIDDEN para ocultar el 
+    esceso visual de contenido debido a su poco WIDTH... 
+    la transicion la usamos para suavizar el :HOVER
+*/
+.component_navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 79;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    overflow-x: hidden;
+    transition: width .5s ease;
+
+    /*
+        propiedades para diseño resposive en
+        dispositivos moviles 999px <= <= <=
+    */
+    @media (max-width:999px) {
+        width: 0%;
+
+        /*
+            clase añadida con javascript... 
+            se encarga de mostrar el menu de navegacion
+        */
+        &.open_navbar { width: 75px; };
+
+        &:hover { width: 225px; }; // hover encargado de redefinir el ancho
+    };
+    
+    /*
+        propiedades para diseño resposive en 
+        tablets y destoks 1000px => => =>
+    */
+    @media (min-width:1000px) {
+        width: 75px;
+
+        /*
+            clase añadida con javascript... 
+            se encarga de ocultar el menu de navegacion
+        */
+        &.close_navbar { width: 0%; }
+
+        &:hover { width: 240px; }; // hover encargado de redefinir el ancho
+    };
+
+    .box_nav_navbar {
+        background-color: $background_three;
+        border-radius: 0 10px 10px 0;
+        width: inherit;
+        box-shadow: $shadow_one;
+
+        ul {
+            padding: 40px 0 40px 9px;
+            
+            li {
+                list-style: none;
+
+                /*
+                    clase añadida con javascript... 
+                    define propiedades cuando el enlace de 
+                    navegacion es seleccionado por el usuario
+                */
+                &.active_link {
+                    background-color: $background_one;
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                
+                    a {
+                        color: $color_four;
+                    }
+                }; 
+
+                /*
+                    TAG referente al redireccionamiento en el sitio web
+                    usamos FLEXBOX  y HEIGHT para alinear los iconos y los titulos
+                    verticalmente
+                */
+                a {
+                    text-decoration: none;
+                    display: flex;
+                    height: 60px;
+                    font-family: 'Poppins', sans-serif;
+                    align-items: center;
+                    color: $color_one;
+
+                    .icon_ion {
+                        margin: 4px 28px 0 14px;
+                        
+                        ion-icon {
+                            font-size: 1.5em;
+                        }
+                    }
+                };
+            };
+        };
+    };
+
+    .box_navbar_colors {
+        
+        button {
+            outline: none;
+            border: none;
+            background-color: $background_three;
+            color: $color_one;
+            font-size: 18px;
+            font-family: 'PT Sans', sans-serif;
+            letter-spacing: 1px;
+            border-radius: 0 0 10px 0;
+            width: 100%;
+            padding: 0 4px 40px 0;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+   
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: $shadow_three;
+            };
+        }
+    }
+}

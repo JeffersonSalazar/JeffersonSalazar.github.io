@@ -1,0 +1,47 @@
+.component_banner {
+    background-color: $background_one;
+    border: $border_one;
+    // box-shadow: $shadow_four;
+    padding: 40px;
+    
+    @media (min-width: 1000px) { // dispositivos 1000px => => =>
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+    };
+
+    .box_img_banner {
+        text-align: center;
+
+        img {
+            border: 5px solid $background_three;
+            border-radius: 50%;
+            padding: 18px;
+            box-shadow: $shadow_four;
+        };
+        
+        .box_hdv_banner {
+            margin-top: 8px;
+
+            a {
+                color: $color_three;
+            };
+        };
+    };
+
+
+    .box_biografy_banner {
+        
+        p {
+            text-align: justify;
+
+            @media (min-width: 1000px) { // dispositivos 1000px => => =>
+               padding-left: 40px;
+            };
+        };
+
+        .box_btn {
+            margin-top: 30px
+        };
+    };
+};

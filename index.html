@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portafolio Js</title>
+		<link rel="stylesheet" href="./src/sass/main.css">
+    </head>
+
+    <body>
+		<!-- 
+			COMPONENT_HEADER: le definimos un ID (header) requerido 
+			en 'src/js/header.js' and 'src/js/navbar.js',
+			su hoja de estilos src/sass/layout/_header.scss  
+		-->
+		<header class="component_header" id="header">
+			<!--  
+				1 DIV (box_mode_header) adentro 1 TAGS I, para crear el boton modo nocturno
+				que tiene un ID (dark_mode) para trabajarlo con 'src/js/header.js'
+			-->
+			<div class="box_mode_header">
+				<i class="icon_mode_header" id="dark_mode"></i>
+			</div>
+
+			<!--  
+				1 DIV (box_menuIcon_header), definimos un ID (menuIcon) para trabajarlo 
+				con 'src/js/header.js', adentro 3 TAGS SPAN, para crear el menu burger.
+			-->
+			<div class="box_menuIcon_header" id="menuIcon">
+				<span class="line_icon bg_js"></span>
+				<span class="line_icon bg_js"></span>
+				<span class="line_icon bg_js"></span>
+			</div>
+		</header>
+		
+
+		<!-- 
+			CONTAINER_BODY
+		-->
+		<main class="container_body">
+			<!-- 
+				COMPONENT_NAVBAR: le definimos un ID (navbar) para 
+				trabarlo con 'src/js/navbar.js'
+				su hoja de estilos => src/sass/layout/_navbar.scss 
+			-->
+			<section class="component_navbar" id="navbar">
+				<!--  
+					NAV: dentro definimos una UL con 4 LI, estas contienen una TAG A 
+					para redireccionamiento, y dentro de las TAG A definimos 2 SPAN 
+					para el icono y el titulo...
+				-->
+				<nav class="box_nav_navbar bg_js" id="sidebar">
+					<ul>
+						<li class="active_link">
+							<a href="#banner" class="sections">
+								<span class="icon_ion"><ion-icon name="person-outline"></ion-icon></span>
+								<span>Conoceme</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="#skills" class="sections">
+								<span class="icon_ion"><ion-icon name="bookmarks-outline"></ion-icon></span>
+								<span>Habilidades</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="#certify" class="sections">
+								<span class="icon_ion"><ion-icon name="trophy-outline"></ion-icon></span>
+								<span>Certificados</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="#proyects" class="sections">
+								<span class="icon_ion"><ion-icon name="layers-outline"></ion-icon></span>
+								<span>Proyectos</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="#contacts" class="sections">
+								<span class="icon_ion"><ion-icon name="mail-outline"></ion-icon></span>
+								<span>Conatctos</span>
+							</a>
+						</li>
+					</ul>
+
+					<!--  
+						DIV (box_navbar_color): contiene una TAG BUTTON 
+					-->
+					<div class="box_navbar_colors">
+						<button type="button" class="btn_animated bg_js" id="btn_navbar">Skins</button>
+					</div>
+				</nav>
+			</section>
+
+
+			<!--  
+				COMPONENT_FIXED: se encarga de solucionar el problema generado
+				por la propiedad FIXED que aplicamos en COMPONENT_NAVBAR
+				su hoja de estilos 'src/sass/main.scss'
+			-->
+			<section class="component_fixed"></section>
+
+
+			<!--  
+				CONTAINER_RIGHT: contenedor padre de 6 TAG SECTION 1 TAG FOOTER,
+				que conforman el lado derecho del sitio web
+				su hoja de estilos 'src/sass/main.scss'
+			-->
+			<div class="container_right">				
+				<!-- 
+					COMPONENT_BANNER: le definimos un ID (banner) 
+					para trabarlo con 'src/js/navbar.js'
+					su hoja de estilos src/sass/layout/_banner.scss
+				-->
+				<section class="component_banner" id="banner">
+					<!-- 
+						ASIDE (box_img_banner): adentro 1 TAG IMG 1 DIV	
+					-->
+					<aside class="box_img_banner">
+						<img src="./assets/images/avatar.png" alt="avatar" id="img_banner">
+
+						<!--  
+							1 DIV (box_hdv_banner) adentro 1 TAG A con la hoja de vida descargable
+						-->
+						<div class="box_hdv_banner">
+							<a href="./assets/docs/Hoja Vida Jefferson Salazar.docx" download="HDV Jefferson Salazar" class="color_js">Donwload HDV</a>
+						</div>
+					</aside>
+					
+					<!-- 
+						ASIDE (box_biografy_banner): adentro 1 TAG H3, P y 1 DIV
+					-->
+					<aside class="box_biografy_banner">
+						<h3 class="color_js">Conoceme</h3>
+
+						<p>
+							Soy Jefferson Salazar Goyes, nací el 10 de Febrero de 1989 
+							en Palmira Valle Colombia. Me considero una persona sencilla,
+							respetuosa, sociable y apasionado de la vida el emprendimiento 
+							y la tecnología. Me dedico al desarrollo Frontend 
+							hace 4 años en los cuales he participado en el diseño y 
+							desarrollo de sitios web y pequeñas aplicaciones propias y para terceros... 
+						</p>
+
+						<!--  
+							1 DIV (box_btn): adentro la TAG BUTTON a este le definimos un ID 
+							(btnOpen_modal) para trabajarlo con 'src/js/banner_modal.js'
+						-->
+						<div class="box_btn">
+							<button type="button" class="btn_animated bg_js" id="btnOpen_modal">Leer Mas</button>
+						</div>
+					</aside>
+				</section>
+
+
+				<!-- 
+					COMPONENT_MODAL: le definimos un ID (window_modal) 
+					para trabarlo con 'src/js/banner_modal.js'
+					su hoja de estilos src/sass/layout/_modal.scss
+				-->
+				<section class="component_modal" id="window_modal">
+					<!--  
+						DIV (container_card_modal): dentro 2 TAGS ASIDE, definimos un 
+						ID (card_modal) para trabajarlo con 'src/js/banner_modal.js'
+					-->
+					<div class="container_card_modal" id="card_modal">
+
+						<!--  
+							1 ASIDE (box_img_modal): dentro 1 TAG IMG
+						-->
+						<aside class="box_img_modal">
+							<img src="./assets/images/person.jpg" alt="person">
+						</aside>
+
+						<!--  
+							1 ASIDE (box_content_modal): dentro 1 DIV, 2 TAGS P y 1 TAG OL
+						-->
+						<aside class="box_content_modal">
+							<!--  
+								1 DIV (box_icon_modal): dentro el icono de cierre del modal, 
+							-->
+							<div class="box_icon_modal">
+								<ion-icon name="close-circle-outline" class="icon_modal color_js"></ion-icon>
+							</div>
+
+							<p>
+								Tambien tengo conocimientos basicos en Backend sobre todo en la 
+								creacion y consumo de API REST,
+								entre mis virtudes estan:
+							</p>
+
+							<!--  
+								1 OL: con TAGS ION-ICON
+							-->
+							<ol>
+								<li><ion-icon name="checkmark-outline" class="icon_modal color_js"></ion-icon>El trabajo en equipo.</li>
+								<li><ion-icon name="checkmark-outline" class="icon_modal color_js"></ion-icon>La capacidad de encontrar soluciones a problemas emergentes.</li>
+								<li><ion-icon name="checkmark-outline" class="icon_modal color_js"></ion-icon>EL aprendizaje empírico y autodidacta.</li>
+								<li><ion-icon name="checkmark-outline" class="icon_modal color_js"></ion-icon>La perseverancia y constancia que empleo en alcanzar mis metas.</li>
+							</ol>
+
+							<p>
+								Me encanta la formula 1, ir a cine y compartir 
+								en familia. Anhelo a mediano plazo iniciar una 
+								carrerra afin al desarrollo web ya que mis conocimientos han sido
+								adquiridos a travez de cursos y plataformas digitales, tambien 
+								deseo adquirir un segundo idioma.
+							</p>
+						</aside>
+					</div>
+				</section>
+				
+
+				<!-- 
+					COMPONENT_SKILLS: le definimos un ID (skills) 
+					para trabarlo con 'src/js/navbar.js'
+					su hoja de estilos src/sass/layout/_habilidades.scss
+				-->
+				<section class="component_skills" id="skills">	
+					<h3 class="color_js">Habilidades</h3>
+
+					<!--  
+						DIV (container_skills): contenedor padre de 11 TAGS ARTICLES
+					-->
+					<div class="container_skills">
+
+						<!--  
+							ARTICLES: tiene una clase para estilos individuales y dentro 2 DIVS
+						-->
+						<article class="html">
+							<!--  
+								1 DIV (box_img_skills): sdentro 1 TAG IMG 
+							-->
+							<div class="box_img_skills">
+								<img src="./assets/images/html5.png" alt="html">
+							</div>
+
+							<!--  
+								1 DIV (box_progress_skills) tiene una clase para estilos 
+								individual
+							-->
+							<div class="box_level_skills html_level">80%</div>
+						</article>
+
+						<article class="css">
+							<div class="box_img_skills">
+								<img src="./assets/images/css.png" alt="css">
+							</div>
+
+							<div class="box_level_skills css_level">80%</div>
+						</article>
+
+						<article class="sass">
+							<div class="box_img_skills">
+								<img src="./assets/images/sass.png" alt="sass">
+							</div>
+
+							<div class="box_level_skills sass_level">90%</div>
+						</article>
+
+						<article class="bootstrap">
+							<div class="box_img_skills">
+								<img src="./assets/images/bootstrap.png" alt="bootstrap">
+							</div>
+
+							<div class="box_level_skills bootstrap_level">70%</div>
+						</article>
+
+						<article class="javascript">
+							<div class="box_img_skills">
+								<img src="./assets/images/javascript.png" alt="javascript">
+							</div>
+
+							<div class="box_level_skills javascript_level">70%</div>
+						</article>
+
+						<article class="angular">
+							<div class="box_img_skills">
+								<img src="./assets/images/angular.png" alt="angular">
+							</div>
+
+							<div class="box_level_skills angular_level">70%</div>
+						</article>
+
+						<article class="nodejs">
+							<div class="box_img_skills">
+								<img src="./assets/images/node.png" alt="nodejs">
+							</div>
+
+							<div class="box_level_skills nodejs_level">50%</div>
+						</article>
+
+						<article class="mysql">
+							<div class="box_img_skills">
+								<img src="./assets/images/mysql.png" alt="mysql">
+							</div>
+
+							<div class="box_level_skills mysql_level">50%</div>
+						</article>
+
+						<article class="mongodb">
+							<div class="box_img_skills">
+								<img src="./assets/images/mongo.png" alt="mongo">
+							</div>
+
+							<div class="box_level_skills mongodb_level">50%</div>
+						</article>
+
+						<article class="git">
+							<div class="box_img_skills">
+								<img src="./assets/images/git.png" alt="git">
+							</div>
+
+							<div class="box_level_skills git_level">50%</div>
+						</article>
+
+						<article class="illustrator">
+							<div class="box_img_skills">
+								<img src="./assets/images/ilustrator.png" alt="ilustrator">
+							</div>
+
+							<div class="box_level_skills illustrator_level">20%</div>
+						</article>
+
+						<article class="ui_ux">
+							<div class="box_img_skills">
+								<img src="./assets/images/ui-ux.png" alt="ui-ux">
+							</div>
+
+							<div class="box_level_skills ui_ux_level">90%</div>
+						</article>
+					</div>
+				</section>
+
+
+				<!-- 
+					COMPONENT_CERTIFICATES: le definimos un ID (certify) 
+					para trabajarlo con 'src/js/navbar.js' 
+					su hoja de estilos 'src/sass/layout/_certificados.scss'
+				-->
+				<section class="component_certificates" id="certify">
+					<h3 class="color_js">Certificados</h3>
+
+					<!--  
+						4 DIVS (container_certify) dentro de cada uno 2 SECTIONS
+					-->
+					<div class="container_certify">
+						<!--  
+							1 SECTION (box_title) dentro 1 TAG H2 1  TAG ION-ICON
+							con clase (icon_certify) para trabajarlo con 'src/js/certificates.js'
+						-->
+						<section class="box_title">
+							<h2>Diseño Web</h2>
+							<ion-icon name="chevron-down-outline" class="icon_certify color_js"></ion-icon>
+						</section>
+
+						<!--  
+							1 SECTION (container_body_certify) dentro 2 DIVS y 1 TAG P
+						-->
+						<section class="content_certify">
+							<!--  
+								1 DIV (box_academy) dentro 2 TAG H4
+							-->
+							<div class="box_academy">
+								<h4>Instituto:<strong> Udemy </strong></h4>
+								<h4>Intensidad:<strong> 77 Horas </strong></h4>
+							</div>
+
+							<p>
+								Creacion de sitios web responsive con<strong> html y css</strong>,
+								maquetacion avanzada con<strong> flexbox y grid loyout </strong> 
+								implementacion de compiladores para css<strong> sass y less </strong>
+								y su framework mas popular<strong> bootstrap </strong> interaccion con el 
+								<strong>DOM</strong> a travez de<strong> javascript</strong>, manejo 
+								de eventos, uso de condicionales, bucles, arrays, objetos y mas... uso de
+								<strong> jquery </strong>para amimaciones que mejoran la experiencia de usuario.
+							</p>
+
+							<!--  
+								1 DIV (box_certify) adentro TAGS A de descarga para los certificados 
+								definimos una clase (links_donwload) para trabajarlas con 'src/js/navbar.js'
+							-->
+							<div class="box_certify">
+								<a href="./assets/docs/html1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload color_js">1. Donwload Certificate</a>
+								<a href="./assets/docs/html2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload color_js">2. Donwload Certificate</a>
+								<a href="./assets/docs/js1.pdf"  download="certificado tres" title="descargar certificado" class="links_donwload color_js">3. Donwload Certificate</a>
+							</div>
+						</section>
+					</div>
+
+					<div class="container_certify">
+						<section class="box_title">
+							<h2>FrontEnd</h2>
+							<ion-icon name="chevron-down-outline" class="icon_certify color_js"></ion-icon>
+						</section>
+
+						<section class="content_certify">
+							<div class="box_academy">
+								<h4>Instituto:<strong> Udemy </strong></h4>
+								<h4>Intensidad:<strong> 54 Horas </strong></h4>
+							</div>
+
+							<p>
+								Creacion de proyectos<strong> spa </strong>( single page application ) 
+								con<strong> angular </strong>implementando<strong> typescript </strong>
+								y las ultimas actualizaciones de <strong>ecmascript 6</strong>, todo sobre
+								la creacion de componentes, modulos, directivas, inyeccion de dependencias,
+								formularios reactivos, enrutamiento lazy loading, creacion de servicios, 
+								definicion de clases e interfaces, uso de los guards, conexion y consumo de
+								<strong> apis </strong>entre otros temas.
+							</p>
+
+							<div class="box_certify">
+								<a href="./assets/docs/angular1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload color_js">1. Donwload Certificate</a>
+								<a href="./assets/docs/angular2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload color_js">2. Donwload Certificate</a>
+							</div>
+						</section>
+					</div>
+
+					<div class="container_certify">
+						<section class="box_title">
+							<h2>BackEnd</h2>
+							<ion-icon name="chevron-down-outline" class="icon_certify color_js"></ion-icon>
+						</section>
+
+						<section class="content_certify">
+							<div class="box_academy">
+								<h4>Instituto:<strong> Udemy </strong></h4>
+								<h4>Intensidad:<strong> 24 Horas </strong></h4>
+							</div>
+
+							<p>
+								Creacion de un servidor local con<strong> nodejs </strong> y su framework mas
+								popular <strong>express</strong> uso de modulos morgan, cors, mysql, mongoose, 
+								creacion de variables de entorno, generacion de tokens, encriptamiento de contraseñas,
+								validacion del lado del servidor, paginacion de los datos, estructura para proyectos 
+								escalables, conexion a bases de datos<strong> mysql y mongodb </strong>creacion de
+								<strong> apis </strong>, interacion de datos con los metodos get, post, update, delete, 
+								comprobacion de apis con<strong> postman </strong>y mas.
+							</p>
+
+							<div class="box_certify">
+								<a href="./assets/docs/node1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload color_js">1. Donwload Certificate</a>
+								<a href="./assets/docs/sql2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload color_js">2. Donwload Certificate</a>
+								<a href="./assets/docs/mongo1.pdf" download="certificado tres" title="descargar certificado" class="links_donwload color_js">3. Donwload Certificate</a>
+							</div>
+						</section>
+					</div>
+
+					<div class="container_certify">
+						<section class="box_title">
+							<h2>Mas</h2>
+							<ion-icon name="chevron-down-outline" class="icon_certify color_js"></ion-icon>
+						</section>
+
+						<section class="content_certify">
+							<p>
+								Tengo cientos de horas consumidas en<strong> youtube </strong>sobre todo lo referente al 
+								<strong>desarrollo web y la tecnologia</strong>, esta plataforma me ha ayudado a complementar 
+								y afianzar los conocimientos adquiridos en estos <strong>3 años</strong>. Quiero compartirles 
+								que al dia de hoy continua mi aprendizaje a travez de <strong>cursos y videos</strong> con el 
+								objetivo de mantenerme a la vanguardia en cuanto a las <strong>nuevas tecnologias</strong>.
+							</p>
+						</section>
+					</div>
+				</section>
+
+
+				<!--  
+					COMPONENT_PROYECTS: le definimos un ID (proyects) 
+					para trabarlo con 'src/js/navbar.js' 
+					su hoja de estilos 'src/sass/layout/_proyectos.scss'
+				-->
+				<section class="component_proyects" id="proyects">
+					<h3 class="color_js">Proyectos</h3>
+
+					<p>
+						esta seccion se encuentra en desarrollo debido a que 
+						se me ha hecho algo dificil encontrar host gratuitos para subir
+						mis proyectos, mientras resuelvo este percanse dejo el link 
+						de GitHub donde encontraran los repositorios de los mismos.
+					</p>
+
+					<a href="https://github.com/JeffersonSalazar?tab=repositories" target="_blank">GitHub</a>
+				</section>
+
+
+				<!-- 
+					COMPONENT_CONTACTS: definimos un ID (contacts) para 
+					trabajarlo con 'src/js/navbar.js'
+					su hoja de estilos src/sass/layout/_contactos.scss
+				-->
+				<section class="component_contacts" id="contacts">
+					<!--  
+						DIV (box_target): dentro 1 TAG H3 y 1 TAG P
+					-->
+					<div class="box_target">
+						<h3 class="color_js">Contactos</h3>
+
+						<p>
+							Si deseas contactarme enviame un email, tratare
+							de responderte lo antes posible GRACIAS
+						</p>
+					</div>
+
+					<!--  
+						FORM: dentro 5 DIVS, definimos un ID (formulario) 
+						para trabajarlo con 'src/js/contactos.js'
+					-->
+					<form autocomplete="off" id="formulario">
+						<!--  
+							3 DIVS (box_inputs): dentro de cada uno, 1 INPUT, 1 TAG SPAN 
+							para crear un borde animado y 1 DIV
+						-->
+						<div class="box_inputs">
+							<input type="text" name="name" placeholder="Nombre"/>
+							<span class="border_animated"></span>
+
+							<!--  
+								1 DIV (box_errors): les definimos IDS (error_???) para mostrar 
+								alertas de error al usuario, trabajadas con 'src/js/contactos.js'
+							-->
+							<div class="box_errors bg_js" id="error_name">
+								De 4 a 16 digitos no simbolos no numeros	
+							</div>
+						</div>
+
+						<div class="box_inputs">
+							<input type="text" name="email" placeholder="Email"/>
+							<span class="border_animated"></span>
+
+							<div class="box_errors bg_js" id="error_email">
+								El email no es valido
+							</div>
+						</div>
+
+						<div class="box_inputs">
+							<input type="text" name="post" placeholder="Cometario"/>
+							<span class="border_animated"></span>
+							
+							<div class="box_errors bg_js" id="error_post">
+								De 10 a 100 digitos no simbolos
+							</div>
+						</div>
+
+						<!--  
+							1 DIV (box_btn): adentro 1 TAG BUTTON tipo SUBMIT
+						-->
+						<div class="box_btn">
+							<button type="submit" class="btn_animated bg_js">Enviar</button>
+						</div>
+
+						<!--  
+							1 DIV (box_socials_contacts): dentro 1 TAG LABEL, 1 INPUT 
+							tipo checkbox y 3 TAGS A con sus TAGS ION-ICON
+						-->
+						<div class="box_socials_contacts">
+							<label for="check"><ion-icon class="icon_contacts bg_js" name="add-sharp"></ion-icon></label>
+							<input type="checkbox" name="check" id="check">
+		
+							<a href="https://github.com/JeffersonSalazar?tab=repositories" target="_blank">
+								<ion-icon class="icon_contacts bg_js" name="logo-github"></ion-icon>
+							</a>
+							<a href="https://www.linkedin.com/in/jefferson-salazar-032870174/" target="_blank">
+								<ion-icon class="icon_contacts bg_js" name="logo-linkedin"></ion-icon>
+							</a>
+							<a href="https://wa.me/+0573215142379">
+								<ion-icon class="icon_contacts bg_js" name="logo-whatsapp"></ion-icon>
+							</a>		
+						</div>
+					</form>
+				</section>
+
+
+				<!-- 
+					COMPONENT_FOOTER: su hoja de estilos src/sass/layout/_footer.scss
+				-->
+				<footer class="component_footer">
+					<!--  
+						ICON-ICON: le definimos un ID (icon_gotop) 
+						para trabajarlo con 'src/js/footer.js'
+					-->
+					<ion-icon name="arrow-up-outline" class="bg_js" id="icon_gotop"></ion-icon>
+				</footer>
+			</div>
+		</main>
+
+
+		<!-- 
+			scripts icons ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
+		-->
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> 
+
+		<!-- 
+			scripts sweet alert ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
+		-->
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+		<!-- 
+			scripts javascript ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
+		-->
+		<script src="./src/js/navbar.js"></script>
+		<script src="./src/js/header.js"></script>
+		<script src="./src/js/banner_modal.js"></script>
+		<script src="./src/js/certificates.js"></script>
+		<script src="./src/js/contactos.js"></script>
+		<script src="./src/js/footer.js"></script>
+    </body>
+</html>

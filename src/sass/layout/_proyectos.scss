@@ -1,0 +1,18 @@
+.component_proyects {
+    background-color: $background_one;
+    margin: 80px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 1000px) { // dispositivos 1000px => => =>
+        border-radius: 10px;
+    };
+
+    p {
+        text-align: center;
+        margin: 40px 0;
+    }
+}

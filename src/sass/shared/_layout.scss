@@ -1,0 +1,15 @@
+/*
+    esta hoja de estilos contiene las hojas de estilos
+    de cada una de las secciones de este proyecto y sera consumida
+    por la hoja de estilos raiz en la RUTA 'assets/sass/main.scss' 
+*/
+@import '../layout/containers';
+@import '../layout/navbar';
+@import '../layout/header';
+@import '../layout/banner';
+@import '../layout/modal';
+@import '../layout/habilidades';
+@import '../layout/certificados';
+@import '../layout/proyectos';
+@import '../layout/contactos';
+@import '../layout/footer';

@@ -1,0 +1,110 @@
+/*
+    definimos POSITION y sus medidas para que (component_modal) ocupe el 
+    ancho total de la pantalla y este siempre al frente, con FLEXBOX alineamos 
+    y centramos los elementos y los ocultamos con VISIBILITY
+*/
+.component_modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: $background_five;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    cursor: pointer;
+    
+    /*
+        clase añadida con 'src/js/banner_modal.js' a COMPONENT_MODAL
+        redefinimos VISIBILITY
+    */
+    &.visible_modal { 
+        visibility: visible;
+    };
+    
+    /*
+        clase añadida con 'src/js/banner_modal.js' a COMPONENT_MODAL
+        redefinimos VISIBILITY
+    */
+    &.hidden_modal { 
+        visibility: hidden;
+    };
+
+    /*
+        definimos TRANSFORM para transladar 100px hacia arriba la tarjeta
+    */
+    .container_card_modal {   
+        background-color: $background_one;
+        border-radius: 10px;
+        width: 84%;
+        transform: translateY(-100px);
+        
+        @media (min-width: 1100px) { // dispositivos 1100px => => =>
+            display: flex;
+        };
+        
+        /*
+            clase añadida con 'src/js/banner_modal.js' a CONTAINER_CARD_MODAL
+            redefinimos TRANSFORM y añadimos una TRANSITION
+        */
+        
+        &.translate_down {
+            transform: translateY(0px);
+            transition: transform .5s ease-in-out;
+        };
+
+       
+        .box_img_modal { 
+
+            @media (max-width: 1099px) { // dispositivos 1099px <= <= <=
+                display: none;
+            };
+
+            @media (min-width: 1100px) { // dispositivos 1100px => => =>
+                width: 50%;
+            };
+
+            img {
+                width: 100%;
+                height: 100%;
+            };
+        };
+
+        
+        .box_content_modal {
+            padding: 40px;
+            color: $color_two;
+            font-family: 'PT Sans', sans-serif;
+            
+            @media (min-width: 1100px) { // dispositivos 1100px => => =>
+                width: 50%;
+            };
+
+            .box_icon_modal {
+                text-align: center;
+                margin-bottom: 18px;
+
+                ion-icon {
+                    color: $color_three;
+                    font-size: 48px;
+                };
+            };
+
+            ol {
+                
+                li {
+                    list-style: none;
+                    margin: 18px 0 18px 14px;
+                    
+                    ion-icon {
+                        color: $color_three;
+                        font-size: 24px;
+                    };
+                };
+            };
+        };
+    };
+};

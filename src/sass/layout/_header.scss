@@ -1,0 +1,159 @@
+/*
+    definimos POSITION y sus medidas para que (COMPONENT_HEADER) se fije
+    en la parte superior de la pantalla y este siempre al frente, con FLEXBOX 
+    alineamos y centramos los elementos
+*/
+.component_header {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    align-items: center;
+    transition: height .5s ease-in-out;
+
+    // @media (max-width: 900px) { // dispositivos 999px <= <= <=
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 89;
+    // };
+    
+    /*
+        clase añadida con 'src/js/header.js' al (COMPONENT_HEADER) 
+        para agregarle BACKGROUND, HEIGHT y SHADOW
+    */
+    &.scorll_header {
+        background-color: $background_four;
+        height: 60px;
+        box-shadow: $shadow_one;
+    };
+
+    /*
+        hacemos uso de POSITION, WIDTH, HEIGHT y SHADOW
+        para crear la caja donde va posicionado el icono dark mode
+    */
+    .box_mode_header {
+        position: relative;
+        width: 74px;
+        height: 34px;
+        border-radius: 100px;
+        background-color: $background_four;
+        box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, .1),
+                    inset 0 -4px 4px 0 rgba(199, 195, 195, .1);
+
+        /*
+            hacemos uso de POSITION, las propiedades de medida BACKGROUND 
+            y SHADOW para crear el BOTON (light)
+        */
+        .icon_mode_header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+            border-radius: 50%;
+            transform: scale(.9);
+            box-shadow: inset 0 4px 4px 0  rgba(255, 255, 255, 1),
+                        inset 0 -4px 4px 0 rgba(255, 255, 255, 1);
+            cursor: pointer;
+            transition: all .3s ease;
+
+            /*
+                clase añadida con 'src/js/header.js', a (ICON_MODE_HEADER), 
+                redefinimos LEFT para cambiarlo de posicion y BACKGROUND y 
+                SHADOW para crear el BOTON (dark)
+            */
+            &.active_dark {
+                left: 40px;
+                background: linear-gradient(to bottom, #444, #2b2b2bd2);
+                box-shadow: inset 0 4px 4px 0  rgba(194, 194, 194, .76),
+                            inset 0 -4px 4px 0 rgba(194, 194, 194, .76);
+            };
+        };
+    };
+
+
+    .box_menuIcon_header {
+        background-color: $background_four;
+        padding: 14px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+
+        /*
+            clase añadida desde 'src/js/header.js', al (BOX_MENUICON_HEADER)
+            la cual translada y rota la primera y tercera linea y desvanece la 
+            segunda para convertir el menu burger en X
+        */
+        @media (max-width: 999px) { // dispositivos 999px <= <= <=
+            &.transform_iconMenu .line_icon:nth-child(1) {
+                transform: translateY(8px) rotate(-45deg);
+            }; 
+            &.transform_iconMenu .line_icon:nth-child(2) {
+                opacity: 0;
+            };   
+            &.transform_iconMenu .line_icon:nth-child(3) {
+                transform: translateY(-8px) rotate(45deg);
+            };
+        };
+
+        /*
+            clase añadida desde 'src/js/navbar.js', al (BOX_MENUICON_HEADER)
+            la cual transalada y rota la primera y tercera linea, retira la opacidad 
+            de la segunda linea y genera un margen en para convertir el menu de X a burger 
+        */
+        @media (min-width: 1000px) { // dispositivos 1000px => => =>
+            &.transform_iconMenu .line_icon:nth-child(1) {
+                transform: translateY(0) rotate(0deg);
+            };
+            &.transform_iconMenu .line_icon:nth-child(2) {
+                opacity: 1;
+                margin: 4px 0;
+            };
+            &.transform_iconMenu .line_icon:nth-child(3) {
+                transform: translateY(0) rotate(0);
+            };
+        };
+
+        /*
+            definimos las propiedades DISPLAY, BACKGROUND, WIDTH Y HEIGHT 
+            para crear el menu burger
+        */
+        .line_icon {
+            display: block;
+            background-color: $color_three;
+            border-radius: 10px;
+            width: 28px;
+            height: 4px;
+            transition: all .3s linear;
+
+            /*
+                definimos margen en la segunda linea del menu burger
+            */
+            @media (max-width: 999px) { // dispositivos 999px <= <= <=
+
+                &:nth-child(2) {
+                    margin: 4px 0;
+                }; 
+            };
+
+            /*
+                transladamos y rotamos la primera y tercera linea y 
+                desvanecemos la segunda para convertir el menu en X
+            */
+            @media (min-width: 1000px) { // dispositivos 1000px => => =>
+                
+                &:nth-child(1) {
+                    transform: translateY(4px) rotate(-45deg);
+                };           
+                &:nth-child(2) {
+                    opacity: 0;
+                };         
+                &:nth-child(3) {
+                    transform: translateY(-4px) rotate(45deg);
+                };
+            };
+        };
+    };
+};
+

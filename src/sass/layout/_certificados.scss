@@ -1,0 +1,82 @@
+.component_certificates {
+    padding: 50px;
+
+    .container_certify {
+        background-color: $background_one;
+        border-radius: 10px;
+        border: $border_one;
+        margin: 20px 0;
+        padding: 20px 40px;
+        // box-shadow: 2px 2px 10px 0 #c9c9c9;
+
+        /*
+            definimos FLEXBOX para alinear y centrar los elementos
+        */
+        .box_title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            h2 {
+                color: $color_two;
+                font-family: 'Open Sans', sans-serif;
+            };
+
+            .icon_certify {
+                font-size: 24px;
+                margin-top: 5px;
+                transition: transform .3s ease-in-out;
+            
+                /*
+                    clase añadida a icon_certify con 'src/js/certificates/js'
+                */
+                &.rotate_icon {
+                    transform: rotate(180deg);
+                };
+            };
+        };
+
+        .content_certify {
+            height: 0;
+            overflow: hidden;
+
+            /*
+                clase añadida a container_body_certify con 'src/js/certificates/js'
+            */
+            &.show_certify {
+                height: inherit;
+                overflow: visible;
+            };
+
+            .box_academy {
+
+                h4 {
+                    margin: 10px 0;
+                };
+            };
+
+            p {
+                margin: 20px 0;
+                text-align: justify;
+                line-height: 1.5;
+            };
+
+            .box_certify {
+
+                a {
+                    display: block;
+                    margin-top: 14px;
+                };
+            };
+        };
+    };
+};
+
+/*
+    TAGS de este componente que comparten propiedades 
+*/
+.icon_certify, strong, a {
+    color: $color_three;
+};
+
