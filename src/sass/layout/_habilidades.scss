@@ -10,7 +10,7 @@
   */
   .container_skills {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     gap: 20px;
       
     /*
@@ -24,7 +24,6 @@
       background-color: $background_one;
       border: $border_one;
       border-radius: 10px;
-      // box-shadow: $shadow_one;
       cursor: pointer;
 
       /*

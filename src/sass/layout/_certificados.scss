@@ -1,5 +1,8 @@
 .component_certificates {
-    padding: 0 20px;
+
+    @media (max-width: 900px) { // dispositivos 1000px <= <= <=
+        padding: 0 20px;
+    };
 
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
         padding: 0 50px;
@@ -9,8 +12,8 @@
         background-color: $background_one;
         border-radius: 10px;
         border: $border_one;
-        margin: 20px 0;
-        padding: 20px 40px;
+        margin: 40px 0;
+        padding: 24px 40px 20px;
 
         /*
             definimos FLEXBOX para alinear y centrar los elementos
@@ -24,10 +27,11 @@
             h2 {
                 color: $color_two;
                 font-family: 'Open Sans', sans-serif;
+                font-size: 32px;
             };
 
             .icon_certify {
-                font-size: 24px;
+                font-size: 32px;
                 margin-top: 5px;
                 transition: transform .3s ease-in-out;
             
@@ -61,7 +65,7 @@
             };
 
             p {
-                margin: 20px 0;
+                margin: 40px 0;
                 text-align: justify;
                 line-height: 1.5;
             };
@@ -70,7 +74,7 @@
 
                 a {
                     display: block;
-                    margin: 14px;
+                    margin: 14px 0;
                 };
             };
         };

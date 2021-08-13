@@ -21,7 +21,6 @@
     cada una de las secciones de este proyecto y sera consumida
     por la hoja de estilos raiz en la RUTA 'assets/sass/main.scss' 
 */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap");
@@ -136,7 +135,7 @@
   display: -ms-flexbox;
   display: flex;
   height: 60px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -312,7 +311,7 @@
   display: block;
   background-color: #0e89fc;
   border-radius: 10px;
-  width: 28px;
+  width: 32px;
   height: 4px;
   -webkit-transition: all .3s linear;
   transition: all .3s linear;
@@ -348,7 +347,12 @@
 .component_banner {
   background-color: #fff;
   border: 1px solid #cccccc86;
-  padding: 40px;
+}
+
+@media (max-width: 900px) {
+  .component_banner {
+    padding: 40px 40px 20px;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -359,6 +363,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding: 40px;
     border-radius: 10px;
   }
 }
@@ -370,9 +375,11 @@
 .component_banner .box_img_banner img {
   border: 5px solid #0e89fc;
   border-radius: 50%;
+  width: 160px;
+  height: 160px;
   padding: 18px;
-  -webkit-box-shadow: 0 0 6px 0 #e2dede;
-          box-shadow: 0 0 6px 0 #e2dede;
+  -webkit-box-shadow: 0 2px 6px 0 #a8a4a4;
+          box-shadow: 0 2px 6px 0 #a8a4a4;
 }
 
 .component_banner .box_img_banner .box_hdv_banner {
@@ -385,6 +392,7 @@
 
 .component_banner .box_biografy_banner p {
   text-align: justify;
+  margin: 20px;
 }
 
 @media (min-width: 1000px) {
@@ -394,7 +402,7 @@
 }
 
 .component_banner .box_biografy_banner .box_btn {
-  margin: 30px;
+  margin: 50px 0 30px;
 }
 
 /*
@@ -489,7 +497,7 @@
 }
 
 .component_modal .container_card_modal .box_content_modal {
-  padding: 40px;
+  padding: 30px 40px 40px;
   color: #7e7b7c;
   font-family: 'PT Sans', sans-serif;
 }
@@ -502,7 +510,7 @@
 
 .component_modal .container_card_modal .box_content_modal .box_icon_modal {
   text-align: center;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .component_modal .container_card_modal .box_content_modal .box_icon_modal ion-icon {
@@ -512,7 +520,7 @@
 
 .component_modal .container_card_modal .box_content_modal ol li {
   list-style: none;
-  margin: 18px 0 18px 14px;
+  margin: 14px 0 14px 14px;
 }
 
 .component_modal .container_card_modal .box_content_modal ol li ion-icon {
@@ -534,8 +542,8 @@
 .component_skills .container_skills {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(14rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 20px;
   /*
       importante definir POSITION y Z-INDEX para posicionar
@@ -715,8 +723,10 @@
   background-color: #83D8F4;
 }
 
-.component_certificates {
-  padding: 0 20px;
+@media (max-width: 900px) {
+  .component_certificates {
+    padding: 0 20px;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -729,8 +739,8 @@
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid #cccccc86;
-  margin: 20px 0;
-  padding: 20px 40px;
+  margin: 40px 0;
+  padding: 24px 40px 20px;
   /*
             definimos FLEXBOX para alinear y centrar los elementos
         */
@@ -752,10 +762,11 @@
 .component_certificates .container_certify .box_title h2 {
   color: #7e7b7c;
   font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
 }
 
 .component_certificates .container_certify .box_title .icon_certify {
-  font-size: 24px;
+  font-size: 32px;
   margin-top: 5px;
   -webkit-transition: -webkit-transform .3s ease-in-out;
   transition: -webkit-transform .3s ease-in-out;
@@ -790,14 +801,14 @@
 }
 
 .component_certificates .container_certify .content_certify p {
-  margin: 20px 0;
+  margin: 40px 0;
   text-align: justify;
   line-height: 1.5;
 }
 
 .component_certificates .container_certify .content_certify .box_certify a {
   display: block;
-  margin: 14px;
+  margin: 14px 0;
 }
 
 /*
@@ -843,6 +854,7 @@
   .component_contacts {
     background-color: #fff;
     padding: 40px 0;
+    border: 1px solid #cccccc86;
   }
 }
 
@@ -862,14 +874,14 @@
 
 @media (max-width: 999px) {
   .component_contacts .box_target {
-    height: 200px;
+    height: 220px;
   }
 }
 
 @media (min-width: 1000px) {
   .component_contacts .box_target {
-    height: 270px;
     border-radius: 10px 0 0 10px;
+    padding: 20px 30px 50px;
   }
 }
 
@@ -887,6 +899,7 @@
 @media (min-width: 1000px) {
   .component_contacts form {
     border-radius: 0 10px 10px 0;
+    padding: 50px;
   }
 }
 
@@ -909,7 +922,8 @@
   border: none;
   color: #7e7b7c;
   border-bottom: 1px solid #ccc;
-  font-size: 18px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 24px;
   letter-spacing: 1px;
   width: 100%;
   padding: 8px 2px;
@@ -944,7 +958,6 @@
 .component_contacts form .box_inputs .box_errors {
   color: #fff;
   background-color: #0e89fc;
-  font-weight: 600;
   letter-spacing: 1;
   padding: 8px;
   display: none;
@@ -959,7 +972,7 @@
 }
 
 .component_contacts form .box_btn {
-  margin: 40px;
+  margin: 60px;
 }
 
 .component_contacts form .box_socials_contacts {
@@ -1001,7 +1014,7 @@
 */
 @media (max-width: 999px) {
   .box_target, form {
-    width: 340px;
+    width: 380px;
     margin: 0 auto;
   }
 }
@@ -1010,8 +1023,7 @@
   .box_target, form {
     background-color: #fff;
     border: 1px solid #cccccc86;
-    width: 380px;
-    padding: 40px;
+    width: 440px;
     margin: 0 10px;
   }
 }
@@ -1019,11 +1031,10 @@
 .icon_contacts {
   background-color: #0e89fc;
   color: #fff;
-  font-size: 20px;
   border-radius: 50%;
   padding: 12px;
-  -webkit-box-shadow: 0 0 6px 0 #e2dede;
-          box-shadow: 0 0 6px 0 #e2dede;
+  -webkit-box-shadow: 0 2px 6px 0 #a8a4a4;
+          box-shadow: 0 2px 6px 0 #a8a4a4;
   cursor: pointer;
 }
 
@@ -1101,6 +1112,7 @@ footer ion-icon.show_gotop {
 * {
   margin: 0;
   padding: 0;
+  font-size: 18px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1148,11 +1160,11 @@ body.body_darkmode {
   border: none;
   background-color: #0e89fc;
   color: #fff;
-  font-size: 18px;
+  font-size: 22px;
   font-family: 'PT Sans', sans-serif;
   letter-spacing: 1px;
   border-radius: 5px;
-  padding: 12px 36px;
+  padding: 16px 60px;
   cursor: pointer;
 }
 
@@ -1184,6 +1196,25 @@ h3 {
 p {
   color: #7e7b7c;
   font-family: 'PT Sans', sans-serif;
+  line-height: 1.5;
+  letter-spacing: .8px;
+}
+
+a, h4, strong {
+  font-family: 'Baloo', sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  font-size: 16px;
+}
+
+span {
+  letter-spacing: 1.5;
+}
+
+ion-icon {
+  font-size: 25px;
 }
 
 /*
