@@ -1,7 +1,6 @@
 .component_banner {
     background-color: $background_one;
     border: $border_one;
-    // box-shadow: $shadow_four;
     padding: 40px;
     
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
@@ -41,7 +40,7 @@
         };
 
         .box_btn {
-            margin-top: 30px
+            margin: 30px
         };
     };
 };

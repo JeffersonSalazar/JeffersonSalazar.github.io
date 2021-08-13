@@ -95,7 +95,7 @@
 }
 
 .component_navbar .box_nav_navbar {
-  background-color: #4D5BF9;
+  background-color: #0e89fc;
   border-radius: 0 10px 10px 0;
   width: inherit;
   -webkit-box-shadow: 0 0 10px 0 #0000001f;
@@ -154,7 +154,7 @@
 .component_navbar .box_navbar_colors button {
   outline: none;
   border: none;
-  background-color: #4D5BF9;
+  background-color: #0e89fc;
   color: #fff;
   font-size: 18px;
   font-family: 'PT Sans', sans-serif;
@@ -172,8 +172,6 @@
 .component_navbar .box_navbar_colors button:hover {
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
-  -webkit-box-shadow: #4d5bf9b7;
-          box-shadow: #4d5bf9b7;
 }
 
 /*
@@ -312,7 +310,7 @@
 
 .component_header .box_menuIcon_header .line_icon {
   display: block;
-  background-color: #4D5BF9;
+  background-color: #0e89fc;
   border-radius: 10px;
   width: 28px;
   height: 4px;
@@ -370,7 +368,7 @@
 }
 
 .component_banner .box_img_banner img {
-  border: 5px solid #4D5BF9;
+  border: 5px solid #0e89fc;
   border-radius: 50%;
   padding: 18px;
   -webkit-box-shadow: 0 0 6px 0 #e2dede;
@@ -382,7 +380,7 @@
 }
 
 .component_banner .box_img_banner .box_hdv_banner a {
-  color: #4D5BF9;
+  color: #0e89fc;
 }
 
 .component_banner .box_biografy_banner p {
@@ -396,7 +394,7 @@
 }
 
 .component_banner .box_biografy_banner .box_btn {
-  margin-top: 30px;
+  margin: 30px;
 }
 
 /*
@@ -508,7 +506,7 @@
 }
 
 .component_modal .container_card_modal .box_content_modal .box_icon_modal ion-icon {
-  color: #4D5BF9;
+  color: #0e89fc;
   font-size: 48px;
 }
 
@@ -518,7 +516,7 @@
 }
 
 .component_modal .container_card_modal .box_content_modal ol li ion-icon {
-  color: #4D5BF9;
+  color: #0e89fc;
   font-size: 24px;
 }
 
@@ -718,7 +716,13 @@
 }
 
 .component_certificates {
-  padding: 50px;
+  padding: 0 20px;
+}
+
+@media (min-width: 1000px) {
+  .component_certificates {
+    padding: 0 50px;
+  }
 }
 
 .component_certificates .container_certify {
@@ -781,6 +785,7 @@
 }
 
 .component_certificates .container_certify .content_certify .box_academy h4 {
+  color: #7e7b7c;
   margin: 10px 0;
 }
 
@@ -792,14 +797,14 @@
 
 .component_certificates .container_certify .content_certify .box_certify a {
   display: block;
-  margin-top: 14px;
+  margin: 14px;
 }
 
 /*
     TAGS de este componente que comparten propiedades 
 */
 .icon_certify, strong, a {
-  color: #4D5BF9;
+  color: #0e89fc;
 }
 
 .component_proyects {
@@ -819,6 +824,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 1px solid #cccccc86;
 }
 
 @media (min-width: 1000px) {
@@ -828,16 +834,15 @@
 }
 
 .component_proyects p {
-  text-align: center;
-  margin: 40px 0;
+  text-align: justify;
+  max-width: 400px;
+  margin: 20px auto;
 }
 
 @media (max-width: 999px) {
   .component_contacts {
     background-color: #fff;
     padding: 40px 0;
-    -webkit-box-shadow: 0 0 6px 0 #e2dede;
-            box-shadow: 0 0 6px 0 #e2dede;
   }
 }
 
@@ -877,12 +882,6 @@
   /*
             definimos FLEXBOX para alinear y centrar todos los elementos
         */
-}
-
-@media (max-width: 999px) {
-  .component_contacts form {
-    height: 380px;
-  }
 }
 
 @media (min-width: 1000px) {
@@ -944,7 +943,7 @@
 
 .component_contacts form .box_inputs .box_errors {
   color: #fff;
-  background-color: #4D5BF9;
+  background-color: #0e89fc;
   font-weight: 600;
   letter-spacing: 1;
   padding: 8px;
@@ -1018,7 +1017,7 @@
 }
 
 .icon_contacts {
-  background-color: #4D5BF9;
+  background-color: #0e89fc;
   color: #fff;
   font-size: 20px;
   border-radius: 50%;
@@ -1043,7 +1042,7 @@ footer {
 }
 
 footer ion-icon {
-  background-color: #4D5BF9;
+  background-color: #0e89fc;
   color: #fff;
   font-size: 25px;
   border-radius: 50%;
@@ -1147,7 +1146,7 @@ body.body_darkmode {
 .box_btn button {
   outline: none;
   border: none;
-  background-color: #4D5BF9;
+  background-color: #0e89fc;
   color: #fff;
   font-size: 18px;
   font-family: 'PT Sans', sans-serif;
@@ -1167,8 +1166,6 @@ body.body_darkmode {
 .box_btn button.btn_animated:hover {
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
-  -webkit-box-shadow: #4d5bf9b7;
-          box-shadow: #4d5bf9b7;
 }
 
 /*
@@ -1176,7 +1173,7 @@ body.body_darkmode {
 */
 h3 {
   text-align: center;
-  color: #4D5BF9;
+  color: #0e89fc;
   font-size: 5em;
   font-family: 'Caveat', sans-serif;
 }

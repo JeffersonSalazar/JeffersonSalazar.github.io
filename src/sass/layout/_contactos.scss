@@ -3,7 +3,6 @@
     @media (max-width: 999px) { // dispositivos 999px <= <= <=
         background-color: $background_one;
         padding: 40px 0;
-        box-shadow: $shadow_four;
     };
 
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
@@ -32,12 +31,8 @@
      
 
     form {
-        
-        @media (max-width: 999px) { // dispositivos 999px <= <= <=
-            height: 380px;
-        };
 
-        @media (min-width: 1000px) { // dispositivos 999px <= <= <=
+        @media (min-width: 1000px) { // dispositivos 1000px => => =>
             border-radius: 0 10px 10px 0;
         };
 
