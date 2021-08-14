@@ -345,9 +345,9 @@
   border: 1px solid #cccccc86;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 999px) {
   .component_banner {
-    padding: 40px 40px 20px;
+    padding: 40px 20px 20px;
   }
 }
 
@@ -359,7 +359,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 40px;
+    padding: 20px 40px;
     border-radius: 10px;
   }
 }
@@ -379,7 +379,7 @@
 }
 
 .component_banner .box_img_banner .box_hdv_banner {
-  margin-top: 8px;
+  margin: 10px 0;
 }
 
 .component_banner .box_img_banner .box_hdv_banner a {
@@ -388,17 +388,22 @@
 
 .component_banner .box_biografy_banner p {
   text-align: justify;
-  margin: 20px;
+}
+
+@media (max-width: 999px) {
+  .component_banner .box_biografy_banner p {
+    margin: 20px 0;
+  }
 }
 
 @media (min-width: 1000px) {
   .component_banner .box_biografy_banner p {
-    padding-left: 40px;
+    margin: 0 10px 0 30px;
   }
 }
 
 .component_banner .box_biografy_banner .box_btn {
-  margin: 50px 0 30px;
+  margin: 40px 0 20px;
 }
 
 /*
@@ -1181,7 +1186,7 @@ body.body_darkmode {
 h3 {
   text-align: center;
   color: #0e89fc;
-  font-size: 90px;
+  font-size: 80px;
   font-family: 'Caveat', sans-serif;
 }
 
@@ -1192,8 +1197,7 @@ p {
   color: #7e7b7c;
   font-family: 'PT Sans', sans-serif;
   font-size: 22px;
-  line-height: 1.6;
-  letter-spacing: .8px;
+  line-height: 1.5;
 }
 
 li {
