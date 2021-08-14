@@ -152,15 +152,11 @@ body {
     //     background: rgba(72, 189, 235, 0.493);
     // }
 
-    @media (min-width: 309px) {
-        background: rgba(71, 174, 243, 0.349);
-    }
-
     @media (min-width: 310px) {
         background: rgba(148, 243, 71, 0.349);
     }
 
-    @media (min-width: 610px) {
+    @media (min-width: 510px) {
         background: rgba(243, 71, 71, 0.349);
     }
 }
