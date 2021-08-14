@@ -37,8 +37,9 @@
     la transicion la usamos para suavizar el :HOVER
 */
 .component_navbar {
-  background: red;
-  height: 100px;
+  background: rgba(255, 0, 0, 0.452);
+  -webkit-transition: min-width .5s ease;
+  transition: min-width .5s ease;
   /*
         propiedades para diseño resposive en
         dispositivos moviles 999px <= <= <=
@@ -51,23 +52,53 @@
 
 @media (max-width: 999px) {
   .component_navbar {
+    min-width: 0%;
     /*
             clase añadida con javascript... 
             se encarga de mostrar el menu de navegacion
         */
   }
+  .component_navbar.open_navbar {
+    min-width: 75px;
+  }
+  .component_navbar:hover {
+    min-width: 240px;
+  }
 }
 
 @media (min-width: 1000px) {
   .component_navbar {
+    min-width: 75px;
     /*
             clase añadida con javascript... 
             se encarga de ocultar el menu de navegacion
         */
   }
+  .component_navbar.close_navbar {
+    min-width: 0%;
+  }
+  .component_navbar:hover {
+    min-width: 240px;
+  }
+}
+
+.component_navbar .box_nav_navbar {
+  background-color: #0e89fc;
+  border-radius: 0 10px 10px 0;
+  width: 75px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 79;
+  overflow-x: hidden;
+}
+
+.component_navbar .box_nav_navbar ul {
+  padding: 40px 0 40px 9px;
 }
 
 .component_navbar .box_nav_navbar ul li {
+  list-style: none;
   /*
                     clase añadida con javascript... 
                     define propiedades cuando el enlace de 
@@ -78,6 +109,56 @@
                     usamos FLEXBOX  y HEIGHT para alinear los iconos y los titulos
                     verticalmente
                 */
+}
+
+.component_navbar .box_nav_navbar ul li.active_link {
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.component_navbar .box_nav_navbar ul li.active_link a {
+  color: #333;
+}
+
+.component_navbar .box_nav_navbar ul li a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  font-family: 'PT Sans', sans-serif;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.component_navbar .box_nav_navbar ul li a .icon_ion {
+  margin: 9px 28px 0 13px;
+}
+
+.component_navbar .box_navbar_colors button {
+  outline: none;
+  border: none;
+  background-color: #0e89fc;
+  color: #fff;
+  font-size: 22px;
+  font-family: 'PT Sans', sans-serif;
+  letter-spacing: 1px;
+  border-radius: 0 0 10px 0;
+  width: 100%;
+  padding-bottom: 40px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.component_navbar .box_navbar_colors button:hover {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
 }
 
 /*
@@ -106,6 +187,23 @@
         hacemos uso de POSITION, WIDTH, HEIGHT y SHADOW
         para crear la caja donde va posicionado el icono dark mode
     */
+}
+
+@media (max-width: 900px) {
+  .component_header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 89;
+  }
+}
+
+.component_header.scorll_header {
+  background-color: #fcfafa;
+  height: 60px;
+  -webkit-box-shadow: 0 0 10px 0 #0000001f;
+          box-shadow: 0 0 10px 0 #0000001f;
 }
 
 .component_header .box_dark {
@@ -252,6 +350,10 @@
             align-items: center;
     border-radius: 10px;
   }
+}
+
+.component_banner .box_img_banner {
+  text-align: center;
 }
 
 .component_banner .box_img_banner img {
@@ -1004,21 +1106,29 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: darkcyan;
+  background-color: rgba(139, 0, 97, 0.397);
   height: 100vh;
+}
+
+@media (max-width: 999px) {
+  .container_body {
+    margin: 60px 0;
+  }
 }
 
 .container_body .container_right {
   width: 100%;
-  height: 200px;
-  background: white;
+  background: rgba(76, 0, 130, 0.411);
+}
+
+@media (min-width: 1000px) {
+  .container_body .container_right {
+    margin: 0px 80px;
+  }
 }
 
 /*
     definimos WIDTH en las medidas definidas en las media QUERYS
-*/
-/*
-    componentes que comparten clases
 */
 /* 
     propiedades compartidas por la TAG BUTTON
@@ -1070,6 +1180,10 @@ p {
   font-family: 'PT Sans', sans-serif;
   font-size: 22px;
   line-height: 1.5;
+}
+
+li {
+  font-size: 22px;
 }
 
 a, h4, strong {
