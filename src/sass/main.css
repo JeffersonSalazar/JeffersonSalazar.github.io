@@ -37,20 +37,6 @@
     la transicion la usamos para suavizar el :HOVER
 */
 .component_navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 79;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow-x: hidden;
-  -webkit-transition: width .5s ease;
-  transition: width .5s ease;
   /*
         propiedades para diseño resposive en
         dispositivos moviles 999px <= <= <=
@@ -99,6 +85,14 @@
   width: inherit;
   -webkit-box-shadow: 0 0 10px 0 #0000001f;
           box-shadow: 0 0 10px 0 #0000001f;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  z-index: 79;
+  height: 100vh;
+  overflow-x: hidden;
+  -webkit-transition: width .5s ease;
+  transition: width .5s ease;
 }
 
 .component_navbar .box_nav_navbar ul {
@@ -371,8 +365,8 @@
 .component_banner .box_img_banner img {
   border: 5px solid #0e89fc;
   border-radius: 50%;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   padding: 18px;
   -webkit-box-shadow: 0 2px 6px 0 #a8a4a4;
           box-shadow: 0 2px 6px 0 #a8a4a4;
@@ -1239,5 +1233,9 @@ ion-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.container_right {
+  background: rgba(243, 71, 71, 0.349);
 }
 /*# sourceMappingURL=main.css.map */
