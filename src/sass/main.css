@@ -49,33 +49,19 @@
 
 @media (max-width: 999px) {
   .component_navbar {
-    width: 0%;
     /*
             clase añadida con javascript... 
             se encarga de mostrar el menu de navegacion
         */
   }
-  .component_navbar.open_navbar {
-    width: 75px;
-  }
-  .component_navbar:hover {
-    width: 225px;
-  }
 }
 
 @media (min-width: 1000px) {
   .component_navbar {
-    width: 75px;
     /*
             clase añadida con javascript... 
             se encarga de ocultar el menu de navegacion
         */
-  }
-  .component_navbar.close_navbar {
-    width: 0%;
-  }
-  .component_navbar:hover {
-    width: 240px;
   }
 }
 
@@ -86,7 +72,7 @@
   -webkit-box-shadow: 0 0 10px 0 #0000001f;
           box-shadow: 0 0 10px 0 #0000001f;
   position: fixed;
-  top: 100px;
+  top: 60px;
   left: 0;
   z-index: 79;
   height: 100vh;
@@ -174,17 +160,12 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 100px;
+  height: 60px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-transition: height .5s ease-in-out;
   transition: height .5s ease-in-out;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 89;
   /*
         clase añadida con 'src/js/header.js' al (COMPONENT_HEADER) 
         para agregarle BACKGROUND, HEIGHT y SHADOW
@@ -195,6 +176,16 @@
     */
 }
 
+@media (max-width: 900px) {
+  .component_header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 89;
+  }
+}
+
 .component_header.scorll_header {
   background-color: #fcfafa;
   height: 60px;
@@ -202,7 +193,7 @@
           box-shadow: 0 0 10px 0 #0000001f;
 }
 
-.component_header .box_mode_header {
+.component_header .box_dark {
   position: relative;
   width: 74px;
   height: 34px;
@@ -216,7 +207,7 @@
         */
 }
 
-.component_header .box_mode_header .icon_mode_header {
+.component_header .box_dark .icon_dark {
   position: absolute;
   top: 0;
   left: 0;
@@ -239,7 +230,7 @@
             */
 }
 
-.component_header .box_mode_header .icon_mode_header.active_dark {
+.component_header .box_dark .icon_dark.active_dark {
   left: 40px;
   background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#2b2b2bd2));
   background: linear-gradient(to bottom, #444, #2b2b2bd2);
@@ -248,8 +239,6 @@
 }
 
 .component_header .box_menuIcon_header {
-  background-color: #fcfafa;
-  padding: 14px 12px;
   border-radius: 10px;
   cursor: pointer;
   /*
@@ -301,7 +290,7 @@
   display: block;
   background-color: #0e89fc;
   border-radius: 10px;
-  width: 32px;
+  width: 30px;
   height: 4px;
   -webkit-transition: all .3s linear;
   transition: all .3s linear;
@@ -336,7 +325,6 @@
 
 .component_banner {
   background-color: #fff;
-  border: 1px solid #cccccc86;
 }
 
 @media (max-width: 999px) {
@@ -365,8 +353,6 @@
 .component_banner .box_img_banner img {
   border: 5px solid #0e89fc;
   border-radius: 50%;
-  width: 140px;
-  height: 140px;
   padding: 18px;
   -webkit-box-shadow: 0 2px 6px 0 #a8a4a4;
           box-shadow: 0 2px 6px 0 #a8a4a4;
@@ -392,12 +378,12 @@
 
 @media (min-width: 1000px) {
   .component_banner .box_biografy_banner p {
-    margin: 0 10px 0 30px;
+    margin: 16px 0 0 30px;
   }
 }
 
 .component_banner .box_biografy_banner .box_btn {
-  margin: 40px 0 20px;
+  margin: 40px 0 25px;
 }
 
 /*
@@ -1180,8 +1166,8 @@ body.body_darkmode {
 h3 {
   text-align: center;
   color: #0e89fc;
-  font-size: 80px;
-  font-family: 'Caveat', sans-serif;
+  font-size: 70px;
+  font-family: 'Baloo', sans-serif;
 }
 
 /*
@@ -1214,16 +1200,8 @@ ion-icon {
 /*
     definimos WIDTH en las medidas definidas en las media QUERYS
 */
-@media (max-width: 999px) {
-  .component_fixed {
-    width: 0;
-  }
-}
-
-@media (min-width: 1000px) {
-  .component_fixed {
-    min-width: 75px;
-  }
+.component_fixed {
+  background-color: palevioletred;
 }
 
 /*
@@ -1233,17 +1211,5 @@ ion-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-@media (min-width: 310px) {
-  body {
-    background: rgba(148, 243, 71, 0.349);
-  }
-}
-
-@media (min-width: 400px) {
-  body {
-    background: rgba(243, 71, 71, 0.349);
-  }
 }
 /*# sourceMappingURL=main.css.map */

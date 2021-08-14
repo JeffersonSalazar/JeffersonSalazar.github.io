@@ -85,8 +85,8 @@ body {
 h3 {
     text-align: center;
     color: $color_three;
-    font-size: 80px;
-    font-family: 'Caveat', sans-serif;
+    font-size: 70px;
+    font-family: 'Baloo', sans-serif;
 };
 
 
@@ -122,14 +122,15 @@ ion-icon {
     definimos WIDTH en las medidas definidas en las media QUERYS
 */
 .component_fixed {
+    background-color: palevioletred
     
-    @media (max-width: 999px) { // dispositivos 999px <= <= <=
-        width: 0;
-    };
+    // @media (max-width: 999px) { // dispositivos 999px <= <= <=
+    //     width: 0;
+    // };
 
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        min-width: 75px;
-    };
+    // @media (min-width: 1000px) { // dispositivos 1000px => => =>
+    //     min-width: 75px;
+    // };
 };
 
 
@@ -139,24 +140,3 @@ ion-icon {
 .container_body {
     display: flex;
 };
-
-
-
-body {
-
-    // @media (min-height: 100px) {
-    //     background: rgba(235, 72, 72, 0.493);
-    // }
-
-    // @media (min-height: 500px) {
-    //     background: rgba(72, 189, 235, 0.493);
-    // }
-
-    @media (min-width: 310px) {
-        background: rgba(148, 243, 71, 0.349);
-    }
-
-    @media (min-width: 400px) {
-        background: rgba(243, 71, 71, 0.349);
-    }
-}

@@ -1,6 +1,6 @@
 .component_banner {
     background-color: $background_one;
-    border: $border_one;
+    // border: $border_one;
 
     @media (max-width: 999px) { // dispositivos 1000px <= <= <=
         padding: 40px 20px 20px;
@@ -19,8 +19,6 @@
         img {
             border: 5px solid $background_three;
             border-radius: 50%;
-            width: 140px;
-            height: 140px;
             padding: 18px;
             box-shadow: $shadow_four;
         };
@@ -45,12 +43,12 @@
             };
 
             @media (min-width: 1000px) { // dispositivos 1000px => => =>
-               margin: 0 10px 0 30px;
+               margin: 16px 0 0 30px;
             };
         };
 
         .box_btn {
-            margin: 40px 0 20px
+            margin: 40px 0 25px
         };
     };
 };
