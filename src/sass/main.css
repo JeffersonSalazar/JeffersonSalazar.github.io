@@ -1235,7 +1235,33 @@ ion-icon {
   display: flex;
 }
 
-.container_right {
-  background: rgba(243, 71, 71, 0.349);
+@media (min-width: 300px) {
+  body {
+    background: rgba(148, 243, 71, 0.349);
+  }
+}
+
+@media (min-width: 500px) {
+  body {
+    background: rgba(243, 71, 71, 0.349);
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background: rgba(226, 243, 71, 0.349);
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    background: rgba(71, 194, 243, 0.349);
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background: rgba(180, 71, 243, 0.349);
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -142,6 +142,25 @@ ion-icon {
 
 
 
-.container_right {
-    background: rgba(243, 71, 71, 0.349);
+body {
+
+    @media (min-width: 300px) {
+        background: rgba(148, 243, 71, 0.349);
+    }
+
+    @media (min-width: 500px) {
+        background: rgba(243, 71, 71, 0.349);
+    }
+
+    @media (min-width: 800px) {
+        background: rgba(226, 243, 71, 0.349);
+    }
+
+    @media (min-width: 1000px) {
+        background: rgba(71, 194, 243, 0.349);
+    }
+
+    @media (min-width: 1200px) {
+        background: rgba(180, 71, 243, 0.349);
+    }
 }
