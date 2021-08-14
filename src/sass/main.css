@@ -1241,7 +1241,7 @@ ion-icon {
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 400px) {
   body {
     background: rgba(243, 71, 71, 0.349);
   }
