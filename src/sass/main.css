@@ -1235,45 +1235,15 @@ ion-icon {
   display: flex;
 }
 
-@media (min-width: 100px) {
-  body {
-    background: rgba(243, 217, 71, 0.349);
-  }
-}
-
-@media (min-width: 300px) {
+@media (min-width: 310px) {
   body {
     background: rgba(148, 243, 71, 0.349);
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 670px) {
   body {
     background: rgba(243, 71, 71, 0.349);
-  }
-}
-
-@media (min-width: 700px) {
-  body {
-    background: rgba(226, 243, 71, 0.349);
-  }
-}
-
-@media (min-width: 900px) {
-  body {
-    background: rgba(71, 194, 243, 0.349);
-  }
-}
-
-@media (min-width: 1100px) {
-  body {
-    background: rgba(180, 71, 243, 0.349);
-  }
-}
-
-@media (min-width: 1300px) {
-  body {
-    background: rgba(226, 243, 71, 0.349);
   }
 }
 /*# sourceMappingURL=main.css.map */
