@@ -1159,7 +1159,7 @@ body.body_darkmode {
   font-family: 'PT Sans', sans-serif;
   letter-spacing: 1px;
   border-radius: 5px;
-  padding: 16px 60px;
+  padding: 18px 60px;
   cursor: pointer;
 }
 
@@ -1181,6 +1181,7 @@ body.body_darkmode {
 h3 {
   text-align: center;
   color: #0e89fc;
+  font-size: 90px;
   font-family: 'Caveat', sans-serif;
 }
 
@@ -1190,8 +1191,13 @@ h3 {
 p {
   color: #7e7b7c;
   font-family: 'PT Sans', sans-serif;
-  line-height: 1.8;
+  font-size: 22px;
+  line-height: 1.6;
   letter-spacing: .8px;
+}
+
+li {
+  font-size: 22px;
 }
 
 a, h4, strong {
@@ -1200,11 +1206,7 @@ a, h4, strong {
 }
 
 a {
-  font-size: 18px;
-}
-
-span {
-  letter-spacing: 1.8;
+  font-size: 20px;
 }
 
 ion-icon {
