@@ -9,13 +9,14 @@
     height: 60px;
     align-items: center;
     transition: height .5s ease-in-out;
+    background: rgba(100, 14, 14, 0.246);
 
     @media (max-width: 900px) { // dispositivos 999px <= <= <=
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 89;
+        // position: fixed;
+        // top: 0;
+        // right: 0;
+        // left: 0;
+        // z-index: 89;
     };
     
     /*
@@ -23,9 +24,9 @@
         para agregarle BACKGROUND, HEIGHT y SHADOW
     */
     &.scorll_header {
-        background-color: $background_four;
-        height: 60px;
-        box-shadow: $shadow_one;
+        // background-color: $background_four;
+        // height: 60px;
+        // box-shadow: $shadow_one;
     };
 
     /*

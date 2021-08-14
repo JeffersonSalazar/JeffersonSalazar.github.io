@@ -1,26 +1,27 @@
 .component_banner {
     background-color: $background_one;
-    // border: $border_one;
 
     @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-        padding: 40px 20px 20px;
+        // padding: 40px 20px 20px;
     };
     
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
         display: flex;
         align-items: center;
-        padding: 20px 40px;
         border-radius: 10px;
+        // padding: 20px 40px;
     };
 
     .box_img_banner {
-        text-align: center;
+        // text-align: center;
 
         img {
             border: 5px solid $background_three;
             border-radius: 50%;
-            padding: 18px;
-            box-shadow: $shadow_four;
+            width: 130px;
+            height: 130px;
+            // padding: 18px;
+            // box-shadow: $shadow_four;
         };
         
         .box_hdv_banner {
@@ -34,16 +35,16 @@
 
 
     .box_biografy_banner {
-        
+
         p {
             text-align: justify;
             
             @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-                margin: 20px 0;
+                // margin: 20px 0;
             };
 
             @media (min-width: 1000px) { // dispositivos 1000px => => =>
-               margin: 16px 0 0 30px;
+            //    margin: 16px 0 0 30px;
             };
         };
 

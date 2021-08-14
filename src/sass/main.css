@@ -37,6 +37,8 @@
     la transicion la usamos para suavizar el :HOVER
 */
 .component_navbar {
+  background: red;
+  height: 100px;
   /*
         propiedades para diseño resposive en
         dispositivos moviles 999px <= <= <=
@@ -65,28 +67,7 @@
   }
 }
 
-.component_navbar .box_nav_navbar {
-  background-color: #0e89fc;
-  border-radius: 0 10px 10px 0;
-  width: inherit;
-  -webkit-box-shadow: 0 0 10px 0 #0000001f;
-          box-shadow: 0 0 10px 0 #0000001f;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  z-index: 79;
-  height: 100vh;
-  overflow-x: hidden;
-  -webkit-transition: width .5s ease;
-  transition: width .5s ease;
-}
-
-.component_navbar .box_nav_navbar ul {
-  padding: 40px 0 40px 9px;
-}
-
 .component_navbar .box_nav_navbar ul li {
-  list-style: none;
   /*
                     clase añadida con javascript... 
                     define propiedades cuando el enlace de 
@@ -97,56 +78,6 @@
                     usamos FLEXBOX  y HEIGHT para alinear los iconos y los titulos
                     verticalmente
                 */
-}
-
-.component_navbar .box_nav_navbar ul li.active_link {
-  background-color: #fff;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.component_navbar .box_nav_navbar ul li.active_link a {
-  color: #333;
-}
-
-.component_navbar .box_nav_navbar ul li a {
-  text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 60px;
-  font-family: 'PT Sans', sans-serif;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #fff;
-}
-
-.component_navbar .box_nav_navbar ul li a .icon_ion {
-  margin: 9px 28px 0 13px;
-}
-
-.component_navbar .box_navbar_colors button {
-  outline: none;
-  border: none;
-  background-color: #0e89fc;
-  color: #fff;
-  font-size: 22px;
-  font-family: 'PT Sans', sans-serif;
-  letter-spacing: 1px;
-  border-radius: 0 0 10px 0;
-  width: 100%;
-  padding-bottom: 40px;
-  cursor: pointer;
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-}
-
-.component_navbar .box_navbar_colors button:hover {
-  -webkit-transform: translateY(-8px);
-          transform: translateY(-8px);
 }
 
 /*
@@ -166,6 +97,7 @@
           align-items: center;
   -webkit-transition: height .5s ease-in-out;
   transition: height .5s ease-in-out;
+  background: rgba(100, 14, 14, 0.246);
   /*
         clase añadida con 'src/js/header.js' al (COMPONENT_HEADER) 
         para agregarle BACKGROUND, HEIGHT y SHADOW
@@ -174,23 +106,6 @@
         hacemos uso de POSITION, WIDTH, HEIGHT y SHADOW
         para crear la caja donde va posicionado el icono dark mode
     */
-}
-
-@media (max-width: 900px) {
-  .component_header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 89;
-  }
-}
-
-.component_header.scorll_header {
-  background-color: #fcfafa;
-  height: 60px;
-  -webkit-box-shadow: 0 0 10px 0 #0000001f;
-          box-shadow: 0 0 10px 0 #0000001f;
 }
 
 .component_header .box_dark {
@@ -327,12 +242,6 @@
   background-color: #fff;
 }
 
-@media (max-width: 999px) {
-  .component_banner {
-    padding: 40px 20px 20px;
-  }
-}
-
 @media (min-width: 1000px) {
   .component_banner {
     display: -webkit-box;
@@ -341,21 +250,15 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 20px 40px;
     border-radius: 10px;
   }
-}
-
-.component_banner .box_img_banner {
-  text-align: center;
 }
 
 .component_banner .box_img_banner img {
   border: 5px solid #0e89fc;
   border-radius: 50%;
-  padding: 18px;
-  -webkit-box-shadow: 0 2px 6px 0 #a8a4a4;
-          box-shadow: 0 2px 6px 0 #a8a4a4;
+  width: 130px;
+  height: 130px;
 }
 
 .component_banner .box_img_banner .box_hdv_banner {
@@ -368,18 +271,6 @@
 
 .component_banner .box_biografy_banner p {
   text-align: justify;
-}
-
-@media (max-width: 999px) {
-  .component_banner .box_biografy_banner p {
-    margin: 20px 0;
-  }
-}
-
-@media (min-width: 1000px) {
-  .component_banner .box_biografy_banner p {
-    margin: 16px 0 0 30px;
-  }
 }
 
 .component_banner .box_biografy_banner .box_btn {
@@ -1101,33 +992,34 @@ footer ion-icon.show_gotop {
     definimos en el body un color de fondo
 */
 body {
-  background-color: #fcfafa;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
   /*
         clase añadida con 'src/js/header.js'
     */
 }
 
-body.body_darkmode {
-  background-color: #2b2b2bd2;
+/*
+    definimos FLEXBOX en el body de la pagina para crear el DASHBOARD
+*/
+.container_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: darkcyan;
+  height: 100vh;
+}
+
+.container_body .container_right {
+  width: 100%;
+  height: 200px;
+  background: white;
 }
 
 /*
+    definimos WIDTH en las medidas definidas en las media QUERYS
+*/
+/*
     componentes que comparten clases
 */
-@media (max-width: 999px) {
-  .component_banner, .component_certificates, .component_proyects, .component_contacts {
-    margin: 100px 0;
-  }
-}
-
-@media (min-width: 1000px) {
-  .component_banner, .component_certificates, .component_proyects, .component_contacts {
-    margin: 100px 80px;
-  }
-}
-
 /* 
     propiedades compartidas por la TAG BUTTON
 */
@@ -1180,36 +1072,16 @@ p {
   line-height: 1.5;
 }
 
-li {
-  font-size: 22px;
-}
-
 a, h4, strong {
   font-family: 'Baloo', sans-serif;
   line-height: 1.8;
 }
 
 a {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 ion-icon {
   font-size: 25px;
-}
-
-/*
-    definimos WIDTH en las medidas definidas en las media QUERYS
-*/
-.component_fixed {
-  background-color: palevioletred;
-}
-
-/*
-    definimos FLEXBOX en el body de la pagina para crear el DASHBOARD
-*/
-.container_body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 /*# sourceMappingURL=main.css.map */
