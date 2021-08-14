@@ -14,7 +14,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 22px;
+    // font-size: 22px;
     box-sizing: border-box;
 };
 
@@ -85,7 +85,7 @@ body {
 h3 {
     text-align: center;
     color: $color_three;
-    font-size: 4rem;
+    // font-size: 70px;
     font-family: 'Caveat', sans-serif;
 };
 
@@ -96,13 +96,13 @@ h3 {
 p {
     color: $color_two;
     font-family: 'PT Sans', sans-serif;
-    line-height: 1.5;
+    line-height: 1.8;
     letter-spacing: .8px;
 };
 
 a, h4, strong {
     font-family: 'Baloo', sans-serif;
-    line-height: 1.5;
+    line-height: 1.8;
 }
 
 a {
@@ -110,7 +110,7 @@ a {
 }
 
 span {
-    letter-spacing: 1.5;
+    letter-spacing: 1.8;
 }
 
 ion-icon {

@@ -143,11 +143,7 @@
 }
 
 .component_navbar .box_nav_navbar ul li a .icon_ion {
-  margin: 4px 28px 0 14px;
-}
-
-.component_navbar .box_nav_navbar ul li a .icon_ion ion-icon {
-  font-size: 1.5em;
+  margin: 9px 28px 0 13px;
 }
 
 .component_navbar .box_navbar_colors button {
@@ -155,11 +151,12 @@
   border: none;
   background-color: #0e89fc;
   color: #fff;
+  font-size: 22px;
   font-family: 'PT Sans', sans-serif;
   letter-spacing: 1px;
   border-radius: 0 0 10px 0;
   width: 100%;
-  padding: 0 4px 40px 0;
+  padding-bottom: 40px;
   cursor: pointer;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
@@ -1111,7 +1108,6 @@ footer ion-icon.show_gotop {
 * {
   margin: 0;
   padding: 0;
-  font-size: 22px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1185,7 +1181,6 @@ body.body_darkmode {
 h3 {
   text-align: center;
   color: #0e89fc;
-  font-size: 4rem;
   font-family: 'Caveat', sans-serif;
 }
 
@@ -1195,13 +1190,13 @@ h3 {
 p {
   color: #7e7b7c;
   font-family: 'PT Sans', sans-serif;
-  line-height: 1.5;
+  line-height: 1.8;
   letter-spacing: .8px;
 }
 
 a, h4, strong {
   font-family: 'Baloo', sans-serif;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 a {
@@ -1209,7 +1204,7 @@ a {
 }
 
 span {
-  letter-spacing: 1.5;
+  letter-spacing: 1.8;
 }
 
 ion-icon {

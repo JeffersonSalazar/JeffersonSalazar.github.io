@@ -88,11 +88,7 @@
                     color: $color_one;
 
                     .icon_ion {
-                        margin: 4px 28px 0 14px;
-                        
-                        ion-icon {
-                            font-size: 1.5em;
-                        }
+                        margin: 9px 28px 0 13px;
                     }
                 };
             };
@@ -106,12 +102,12 @@
             border: none;
             background-color: $background_three;
             color: $color_one;
-            // font-size: 18px;
+            font-size: 22px;
             font-family: 'PT Sans', sans-serif;
             letter-spacing: 1px;
             border-radius: 0 0 10px 0;
             width: 100%;
-            padding: 0 4px 40px 0;
+            padding-bottom: 40px;
             cursor: pointer;
             transition: transform 0.5s ease;
    
