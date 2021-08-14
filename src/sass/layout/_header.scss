@@ -87,13 +87,13 @@
         */
         @media (max-width: 999px) { // dispositivos 999px <= <= <=
             &.transform_iconMenu .line_icon:nth-child(1) {
-                transform: translateY(8px) rotate(-45deg);
+                transform: translateY(9px) rotate(-45deg);
             }; 
             &.transform_iconMenu .line_icon:nth-child(2) {
                 opacity: 0;
             };   
             &.transform_iconMenu .line_icon:nth-child(3) {
-                transform: translateY(-8px) rotate(45deg);
+                transform: translateY(-9px) rotate(45deg);
             };
         };
 
@@ -108,7 +108,7 @@
             };
             &.transform_iconMenu .line_icon:nth-child(2) {
                 opacity: 1;
-                margin: 4px 0;
+                margin: 5px 0;
             };
             &.transform_iconMenu .line_icon:nth-child(3) {
                 transform: translateY(0) rotate(0);
@@ -133,7 +133,7 @@
             @media (max-width: 999px) { // dispositivos 999px <= <= <=
 
                 &:nth-child(2) {
-                    margin: 4px 0;
+                    margin: 5px 0;
                 }; 
             };
 

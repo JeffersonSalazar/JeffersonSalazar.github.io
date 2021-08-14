@@ -16,7 +16,7 @@
     .box_target {
         
         @media (max-width:999px) { // dispositivos 999px <= <= <=
-            height: 220px;
+            height: 320px;
         };
         
         @media (min-width: 1000px) { // dispositivos 1000px => => =>
@@ -52,7 +52,7 @@
                 color: $color_two;
                 border-bottom: 1px solid #ccc;
                 font-family: 'PT Sans', sans-serif;
-                font-size: 24px;
+                font-size: 28px;
                 letter-spacing: 1px;
                 width: 100%;
                 padding: 8px 2px;
@@ -149,7 +149,7 @@
 .box_target, form {
     
     @media (max-width: 999px) { // dispositivos 999px <= <= <=
-        width: 380px;
+        width: 360px;
         margin: 0 auto;
     };
     
