@@ -338,6 +338,7 @@
 .component_banner {
   background-color: #fff;
   min-width: 300px;
+  border: 1px solid #cccccc86;
 }
 
 @media (min-width: 1000px) {
@@ -373,15 +374,19 @@
 }
 
 @media (max-width: 999px) {
-  .component_banner .box_btn {
-    padding-top: 20px;
+  .component_banner p {
+    padding: 25px 0;
   }
 }
 
 @media (min-width: 1000px) {
-  .component_banner .box_btn {
-    padding-top: 15px;
+  .component_banner p {
+    padding: 15px 40px;
   }
+}
+
+.component_banner .box_btn {
+  padding-top: 30px;
 }
 
 /*
@@ -1126,7 +1131,7 @@ body.body_darkmode {
 }
 
 /*
-    definimos FLEXBOX en el body de la pagina para crear el DASHBOARD
+    definimos FLEXBOX en el dashboard
 */
 .container_body {
   display: -webkit-box;
@@ -1146,7 +1151,19 @@ body.body_darkmode {
 
 @media (min-width: 1000px) {
   .container_body .container_right {
-    margin: 0px 80px;
+    margin: 0 80px;
+  }
+}
+
+@media (max-width: 999px) {
+  .component_banner, .component_skills {
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .component_banner, .component_skills {
+    padding: 40px 0;
   }
 }
 

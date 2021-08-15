@@ -1,6 +1,7 @@
 .component_banner {
     background-color: $background_one;
     min-width: 300px;
+    border: $border_one;
 
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
        border-radius: 10px;
@@ -33,24 +34,17 @@
         text-align: justify;
         
         @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-            // padding: 25px 0;
+            padding: 25px 0;
         };
 
         @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        //    padding: 15px 20px;
+           padding: 15px 40px;
         };
     };
 
 
     .box_btn {
-
-        @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-            padding-top: 20px;
-        };
-
-        @media (min-width: 1000px) { // dispositivos 1000px => => =>
-           padding-top: 15px;
-        };
+        padding-top: 30px;
     };
 };
 
