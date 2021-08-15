@@ -22,15 +22,15 @@
     definimos en el body un color de fondo
 */
 body {
-    // background-color: $background_four;
-    // transition: all .5s ease;
+    background-color: $background_four;
+    transition: all .5s ease;
     
     /*
         clase añadida con 'src/js/header.js'
     */
     &.body_darkmode {
-        // background-color: #2b2b2bd2;
-    }
+        background-color: #2b2b2bd2;
+    };
 };
 
 
@@ -39,8 +39,6 @@ body {
 */
 .container_body {
     display: flex;
-    background-color: rgba(139, 0, 97, 0.397);
-    height: 100vh;
 
     @media (max-width: 999px) {
         margin: 60px 0;
@@ -52,9 +50,16 @@ body {
         @media (min-width: 1000px) {
             margin: 0px 80px;
         };
-    }
+    };
 };
 
+.component_banner, .component_skills {
+    padding: 40px 30px;
+}
+
+.component_skills {
+    margin: 60px 0;
+}
 
 
 /*
@@ -108,8 +113,15 @@ body {
 h3 {
     text-align: center;
     color: $color_three;
-    font-size: 70px;
     font-family: 'Baloo', sans-serif;
+
+    @media (max-width: 999px) { // dispositivos 999px <= <= <=
+        font-size: 50px;
+    };
+
+    @media (min-width: 1000px) { // dispositivos 1000px => => =>
+        font-size: 70px;
+    };
 };
 
 

@@ -1,11 +1,11 @@
 .component_banner {
     background-color: $background_one;
-    padding: 40px 30px;
 
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
        border-radius: 10px;
     };
 
+    
     .box_img_banner {
         text-align: center;
 
@@ -26,13 +26,7 @@
             };
         };
     };
-
-    h3 {
-        
-        @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-            font-size: 50px;
-        };
-    };
+    
 
     p {
         text-align: justify;
@@ -46,6 +40,7 @@
         };
     };
 
+
     .box_btn {
 
         @media (max-width: 999px) { // dispositivos 1000px <= <= <=
@@ -55,7 +50,6 @@
         @media (min-width: 1000px) { // dispositivos 1000px => => =>
            padding-top: 15px;
         };
-
-    }
+    };
 };
 
