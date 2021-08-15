@@ -1,5 +1,6 @@
 .component_banner {
     background-color: $background_one;
+    min-width: 300px;
 
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
        border-radius: 10px;
@@ -32,11 +33,11 @@
         text-align: justify;
         
         @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-            padding: 25px 0;
+            // padding: 25px 0;
         };
 
         @media (min-width: 1000px) { // dispositivos 1000px => => =>
-           padding: 15px 20px;
+        //    padding: 15px 20px;
         };
     };
 

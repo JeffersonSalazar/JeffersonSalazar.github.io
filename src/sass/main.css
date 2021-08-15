@@ -337,6 +337,7 @@
 
 .component_banner {
   background-color: #fff;
+  min-width: 300px;
 }
 
 @media (min-width: 1000px) {
@@ -369,18 +370,6 @@
 
 .component_banner p {
   text-align: justify;
-}
-
-@media (max-width: 999px) {
-  .component_banner p {
-    padding: 25px 0;
-  }
-}
-
-@media (min-width: 1000px) {
-  .component_banner p {
-    padding: 15px 20px;
-  }
 }
 
 @media (max-width: 999px) {
@@ -1159,10 +1148,6 @@ body.body_darkmode {
   .container_body .container_right {
     margin: 0px 80px;
   }
-}
-
-.component_banner, .component_skills {
-  padding: 40px 30px;
 }
 
 .component_skills {
