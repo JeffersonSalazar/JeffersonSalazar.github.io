@@ -337,7 +337,7 @@
 
 .component_banner {
   background-color: #fff;
-  padding: 40px;
+  padding: 40px 30px;
 }
 
 @media (min-width: 1000px) {
@@ -380,7 +380,7 @@
 
 @media (max-width: 999px) {
   .component_banner p {
-    padding: 25px 20px;
+    padding: 25px 0;
   }
 }
 
@@ -1141,7 +1141,6 @@ body {
 
 .container_body .container_right {
   width: 100%;
-  background: rgba(76, 0, 130, 0.411);
 }
 
 @media (min-width: 1000px) {
