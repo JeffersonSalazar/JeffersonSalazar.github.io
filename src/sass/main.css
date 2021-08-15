@@ -178,7 +178,6 @@
           align-items: center;
   -webkit-transition: height .5s ease-in-out;
   transition: height .5s ease-in-out;
-  background: rgba(100, 14, 14, 0.246);
   /*
         clase añadida con 'src/js/header.js' al (COMPONENT_HEADER) 
         para agregarle BACKGROUND, HEIGHT y SHADOW
@@ -362,11 +361,17 @@
 }
 
 .component_banner .box_img_banner .box_hdv_banner {
-  padding-top: 10px;
+  padding: 10px 0 20px;
 }
 
 .component_banner .box_img_banner .box_hdv_banner a {
   color: #0e89fc;
+}
+
+@media (max-width: 999px) {
+  .component_banner h3 {
+    font-size: 50px;
+  }
 }
 
 .component_banner p {
@@ -375,7 +380,7 @@
 
 @media (max-width: 999px) {
   .component_banner p {
-    padding: 15px 20px;
+    padding: 25px 20px;
   }
 }
 
