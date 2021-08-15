@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Portafolio Js</title>
 		<link rel="stylesheet" href="./src/sass/main.css">
     </head>
@@ -44,14 +45,14 @@
 				trabarlo con 'src/js/navbar.js'
 				su hoja de estilos => src/sass/layout/_navbar.scss 
 			-->
-			<section class="component_navbar" id="navbar">
+			<!-- <section class="component_navbar" id="navbar"> -->
 				<!--  
 					NAV: dentro definimos una UL con 4 LI, estas contienen una TAG A 
 					para redireccionamiento, y dentro de las TAG A definimos 2 SPAN 
 					para el icono y el titulo...
 				-->
-				<nav class="box_nav_navbar bg_js" id="sidebar">
-					<ul>
+				<!-- <nav class="box_nav_navbar bg_js" id="sidebar"> -->
+					<!-- <ul>
 						<li class="active_link">
 							<a href="#banner" class="sections">
 								<span class="icon_ion"><ion-icon name="person-outline"></ion-icon></span>
@@ -86,16 +87,16 @@
 								<span>Contactos</span>
 							</a>
 						</li>
-					</ul>
+					</ul> -->
 
 					<!--  
 						DIV (box_navbar_color): contiene una TAG BUTTON 
 					-->
-					<div class="box_navbar_colors">
+					<!-- <div class="box_navbar_colors">
 						<button type="button" class="btn_animated bg_js" id="btn_navbar">Skins</button>
 					</div>
 				</nav>
-			</section>
+			</section> -->
 
 
 			<!--  
@@ -113,47 +114,42 @@
 			-->
 			<div class="container_right">				
 				<!-- 
-					COMPONENT_BANNER: le definimos un ID (banner) 
-					para trabarlo con 'src/js/navbar.js'
-					su hoja de estilos src/sass/layout/_banner.scss
+					COMPONENT_BANNER: hoja de estilos 'src/sass/layout/_banner.scss',
+					le definimos un ID (banner) para trabarlo con 'src/js/navbar.js', 
 				-->
 				<section class="component_banner" id="banner">
 					<!-- 
-						ASIDE (box_img_banner): adentro 1 TAG IMG 1 DIV	
+						ASIDE (box_img_banner): contiene 1 TAG IMG y 1 DIV	
 					-->
-					<aside class="box_img_banner">
+					<div class="box_img_banner">
 						<img src="./assets/images/avatar.png" alt="avatar" id="img_banner">
 
 						<!--  
-							1 DIV (box_hdv_banner) adentro 1 TAG A con la hoja de vida descargable
+							1 DIV (box_hdv_banner) contiene 1 TAG A con la hoja de vida descargable
 						-->
 						<div class="box_hdv_banner">
-							<a href="./assets/docs/Hoja Vida Jefferson Salazar.docx" download="HDV Jefferson Salazar" class="color_js">Descargar HDV</a>
+							<a href="./assets/docs/HojadeVida.pdf" download="HDV Jefferson Salazar" class="color_js">Descargar HDV</a>
 						</div>
-					</aside>
-				
-					<!-- 
-						ASIDE (box_biografy_banner): adentro 1 TAG H3, P y 1 DIV
-					-->
-					<aside class="box_biografy_banner">
-						<h3 class="color_js">Conoceme</h3>
-						<p>
-							Soy Jefferson Salazar Goyes, nací el 10 de Febrero de 1989 
-							en Palmira Valle Colombia. Me considero una persona sencilla,
-							respetuosa, sociable y apasionado de la vida el emprendimiento 
-							y la tecnología. Me dedico al desarrollo Frontend 
-							hace 4 años en los cuales he participado en el diseño y 
-							desarrollo de sitios web y pequeñas aplicaciones propias y para terceros... 
-						</p>
+					</div>
 
-						<!--  
-							1 DIV (box_btn): adentro la TAG BUTTON a este le definimos un ID 
-							(btnOpen_modal) para trabajarlo con 'src/js/banner_modal.js'
-						-->
-						<div class="box_btn">
-							<button type="button" class="btn_animated bg_js" id="btnOpen_modal">Leer Mas</button>
-						</div>
-					</aside>
+					<h3 class="color_js">Conoceme</h3>
+				
+					<p>
+						Soy Jefferson Salazar nací el 10 de Febrero de 1989 en
+						Palmira Valle. Me considero una persona sencilla,
+						respetuosa, sociable, apasionado de la vida el emprendimiento 
+						y la tecnología. Me dedico al desarrollo Frontend hace 4 años 
+						en los cuales he participado en el diseño y desarrollo de sitios
+						web y pequeñas aplicaciones propias y para terceros... 
+					</p>
+
+					<!--  
+						DIV (box_btn): contiene 1 TAG BUTTON que le definimos un ID 
+						(btnOpen_modal) para trabajarlo con 'src/js/banner_modal.js'
+					-->
+					<div class="box_btn">
+						<button type="button" class="btn_animated bg_js" id="btnOpen_modal">Leer Mas</button>
+					</div>
 				</section>
 
 

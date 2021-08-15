@@ -338,16 +338,11 @@
 
 .component_banner {
   background-color: #fff;
+  padding: 40px;
 }
 
 @media (min-width: 1000px) {
   .component_banner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     border-radius: 10px;
   }
 }
@@ -359,24 +354,47 @@
 .component_banner .box_img_banner img {
   border: 5px solid #0e89fc;
   border-radius: 50%;
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
+  padding: 20px;
+  -webkit-box-shadow: 0 2px 6px 0 #a8a4a4;
+          box-shadow: 0 2px 6px 0 #a8a4a4;
 }
 
 .component_banner .box_img_banner .box_hdv_banner {
-  margin: 10px 0;
+  padding-top: 10px;
 }
 
 .component_banner .box_img_banner .box_hdv_banner a {
   color: #0e89fc;
 }
 
-.component_banner .box_biografy_banner p {
+.component_banner p {
   text-align: justify;
 }
 
-.component_banner .box_biografy_banner .box_btn {
-  margin: 40px 0 25px;
+@media (max-width: 999px) {
+  .component_banner p {
+    padding: 15px 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .component_banner p {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 999px) {
+  .component_banner .box_btn {
+    padding-top: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .component_banner .box_btn {
+    padding-top: 15px;
+  }
 }
 
 /*

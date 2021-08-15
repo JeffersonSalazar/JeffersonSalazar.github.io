@@ -1,15 +1,9 @@
 .component_banner {
     background-color: $background_one;
+    padding: 40px;
 
-    @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-        // padding: 40px 20px 20px;
-    };
-    
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        display: flex;
-        align-items: center;
-        border-radius: 10px;
-        // padding: 20px 40px;
+       border-radius: 10px;
     };
 
     .box_img_banner {
@@ -18,14 +12,14 @@
         img {
             border: 5px solid $background_three;
             border-radius: 50%;
-            width: 130px;
-            height: 130px;
-            // padding: 18px;
-            // box-shadow: $shadow_four;
+            width: 140px;
+            height: 140px;
+            padding: 20px;
+            box-shadow: $shadow_four;
         };
         
         .box_hdv_banner {
-            margin: 10px 0;
+            padding-top: 10px;
 
             a {
                 color: $color_three;
@@ -33,23 +27,29 @@
         };
     };
 
-
-    .box_biografy_banner {
-
-        p {
-            text-align: justify;
-            
-            @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-                // margin: 20px 0;
-            };
-
-            @media (min-width: 1000px) { // dispositivos 1000px => => =>
-            //    margin: 16px 0 0 30px;
-            };
+    p {
+        text-align: justify;
+        // width: 800px;
+        
+        @media (max-width: 999px) { // dispositivos 1000px <= <= <=
+            padding: 15px 20px;
         };
 
-        .box_btn {
-            margin: 40px 0 25px
+        @media (min-width: 1000px) { // dispositivos 1000px => => =>
+           padding: 15px 20px;
         };
     };
+
+    .box_btn {
+
+        @media (max-width: 999px) { // dispositivos 1000px <= <= <=
+            padding-top: 20px;
+        };
+
+        @media (min-width: 1000px) { // dispositivos 1000px => => =>
+           padding-top: 15px;
+        };
+
+    }
 };
+
