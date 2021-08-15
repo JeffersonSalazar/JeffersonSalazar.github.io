@@ -531,13 +531,32 @@
 .component_skills .container_skills {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 20px;
   /*
       importante definir POSITION y Z-INDEX para posicionar
       esta TAG sobre la barra de progreso
     */
+}
+
+@media (max-width: 599px) {
+  .component_skills .container_skills {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 600px) {
+  .component_skills .container_skills {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .component_skills .container_skills {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .component_skills .container_skills article {
