@@ -9,6 +9,7 @@
     height: 60px;
     align-items: center;
     transition: height .5s ease-in-out;
+    background: orange;
 
     @media (max-width: 900px) { // dispositivos 999px <= <= <=
         position: fixed;

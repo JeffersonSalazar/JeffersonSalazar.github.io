@@ -178,6 +178,7 @@
           align-items: center;
   -webkit-transition: height .5s ease-in-out;
   transition: height .5s ease-in-out;
+  background: orange;
   /*
         clase añadida con 'src/js/header.js' al (COMPONENT_HEADER) 
         para agregarle BACKGROUND, HEIGHT y SHADOW
