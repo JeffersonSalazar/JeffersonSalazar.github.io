@@ -335,18 +335,6 @@
   }
 }
 
-.component_banner {
-  background-color: #fff;
-  min-width: 300px;
-  border: 1px solid #cccccc86;
-}
-
-@media (min-width: 1000px) {
-  .component_banner {
-    border-radius: 10px;
-  }
-}
-
 .component_banner .box_img_banner {
   text-align: center;
 }
@@ -848,74 +836,64 @@
   margin: 20px auto;
 }
 
-@media (max-width: 999px) {
-  .component_contacts {
-    background-color: #fff;
-    padding: 40px 0;
-    border: 1px solid #cccccc86;
+@media (min-width: 1000px) {
+  .component_contacts h3 {
+    padding-bottom: 40px;
   }
 }
 
 @media (min-width: 1000px) {
-  .component_contacts {
+  .component_contacts .box_data_form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
 }
 
-@media (max-width: 999px) {
-  .component_contacts .box_target {
-    height: 320px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .component_contacts .box_target {
-    border-radius: 10px 0 0 10px;
-    padding: 20px 30px 50px;
-  }
-}
-
-.component_contacts .box_target p {
+.component_contacts .box_data_form p {
   text-align: center;
-  color: #7e7b7c;
-}
-
-.component_contacts form {
-  /*
-            definimos FLEXBOX para alinear y centrar todos los elementos
-        */
+  padding: 50px 0;
 }
 
 @media (min-width: 1000px) {
-  .component_contacts form {
-    border-radius: 0 10px 10px 0;
-    padding: 50px;
+  .component_contacts .box_data_form p {
+    width: 40%;
   }
 }
 
-.component_contacts form .box_inputs {
+.component_contacts .box_data_form form {
   /*
-                generamos espaciado en el segundo (BOX-INPUTS)
-            */
-  /*
-                hacemos uso de las propiedades DISPLAY, POSITION y del pseudo
-                elemento :BEFORE para crear un borde animado en los inputs
+                definimos FLEXBOX para alinear y centrar todos los elementos
             */
 }
 
-.component_contacts form .box_inputs:nth-child(2) {
+@media (min-width: 1000px) {
+  .component_contacts .box_data_form form {
+    width: 40%;
+  }
+}
+
+.component_contacts .box_data_form form .box_inputs {
+  /*
+                    generamos espaciado en el segundo (BOX-INPUTS)
+                */
+  /*
+                    hacemos uso de las propiedades DISPLAY, POSITION y del pseudo
+                    elemento :BEFORE para crear un borde animado en los inputs
+                */
+}
+
+.component_contacts .box_data_form form .box_inputs:nth-child(2) {
   margin: 30px 0;
 }
 
-.component_contacts form .box_inputs input {
+.component_contacts .box_data_form form .box_inputs input {
   outline: none;
   border: none;
   color: #7e7b7c;
@@ -926,21 +904,21 @@
   width: 100%;
   padding: 8px 2px;
   /*
-                    cuando el INPUT tiene el :FOCUS haciendo uso del selector (~)
-                    el SPAN:BEFORE redefine el ancho mostrando el borde animado
-                */
+                        cuando el INPUT tiene el :FOCUS haciendo uso del selector (~)
+                        el SPAN:BEFORE redefine el ancho mostrando el borde animado
+                    */
 }
 
-.component_contacts form .box_inputs input:focus ~ span:before {
+.component_contacts .box_data_form form .box_inputs input:focus ~ span:before {
   width: 100%;
 }
 
-.component_contacts form .box_inputs span {
+.component_contacts .box_data_form form .box_inputs span {
   display: block;
   position: relative;
 }
 
-.component_contacts form .box_inputs span:before {
+.component_contacts .box_data_form form .box_inputs span:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -953,27 +931,27 @@
   transition: width .5s ease-in;
 }
 
-.component_contacts form .box_inputs .box_errors {
+.component_contacts .box_data_form form .box_inputs .box_errors {
   color: #fff;
   background-color: #0e89fc;
   letter-spacing: 1;
   padding: 8px;
   display: none;
   /*
-                    SHOW_ERROR: clase añadida desde 'src/js/conatctos.js', muestra 
-                    los errores si los datos ingresador en los INPUTS son incorrectos
-                */
+                        SHOW_ERROR: clase añadida desde 'src/js/conatctos.js', muestra 
+                        los errores si los datos ingresador en los INPUTS son incorrectos
+                    */
 }
 
-.component_contacts form .box_inputs .box_errors.show_error {
+.component_contacts .box_data_form form .box_inputs .box_errors.show_error {
   display: block;
 }
 
-.component_contacts form .box_btn {
+.component_contacts .box_data_form form .box_btn {
   margin: 60px;
 }
 
-.component_contacts form .box_socials_contacts {
+.component_contacts .box_data_form form .box_socials_contacts {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -981,26 +959,26 @@
       -ms-flex-pack: center;
           justify-content: center;
   /*
-                definimos que las TAGS A se oculten con OPACITY, y con 
-                MARGIN los agrupamos generando un efecto RESORTE.
-            */
-}
-
-.component_contacts form .box_socials_contacts input {
-  display: none;
-  /*
-                    haciendo uso de la pseudo clase :CHECKED y el selector (~) 
-                    definimos que las TAGS A sean visibles con OPACITY y con 
-                    MARGIN los desagrupamos generando un efecto RESORTE.
+                    definimos que las TAGS A se oculten con OPACITY, y con 
+                    MARGIN los agrupamos generando un efecto RESORTE.
                 */
 }
 
-.component_contacts form .box_socials_contacts input:checked ~ a {
+.component_contacts .box_data_form form .box_socials_contacts input {
+  display: none;
+  /*
+                        haciendo uso de la pseudo clase :CHECKED y el selector (~) 
+                        definimos que las TAGS A sean visibles con OPACITY y con 
+                        MARGIN los desagrupamos generando un efecto RESORTE.
+                    */
+}
+
+.component_contacts .box_data_form form .box_socials_contacts input:checked ~ a {
   opacity: 1;
   margin: 0 0 0 8px;
 }
 
-.component_contacts form .box_socials_contacts a {
+.component_contacts .box_data_form form .box_socials_contacts a {
   opacity: 0;
   margin-right: -45px;
   -webkit-transition: all .3s ease;
@@ -1010,22 +988,6 @@
 /*
     TAGS de este componente que comparten propiedades
 */
-@media (max-width: 999px) {
-  .box_target, form {
-    width: 360px;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 1000px) {
-  .box_target, form {
-    background-color: #fff;
-    border: 1px solid #cccccc86;
-    width: 440px;
-    margin: 0 10px;
-  }
-}
-
 .icon_contacts {
   background-color: #0e89fc;
   color: #fff;
@@ -1139,12 +1101,6 @@ body.body_darkmode {
   display: flex;
 }
 
-@media (max-width: 999px) {
-  .container_body {
-    margin: 60px 0;
-  }
-}
-
 .container_body .container_right {
   width: 100%;
 }
@@ -1155,14 +1111,22 @@ body.body_darkmode {
   }
 }
 
+.component_banner, .component_contacts {
+  background-color: #fff;
+  min-width: 300px;
+  border: 1px solid #cccccc86;
+  margin: 60px 0;
+}
+
 @media (max-width: 999px) {
-  .component_banner, .component_skills {
+  .component_banner, .component_contacts {
     padding: 40px 20px;
   }
 }
 
 @media (min-width: 1000px) {
-  .component_banner, .component_skills {
+  .component_banner, .component_contacts {
+    border-radius: 10px;
     padding: 40px 0;
   }
 }

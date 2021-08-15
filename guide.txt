@@ -24,13 +24,16 @@
         <section></section> ( COMPONENT_FIXED )
         
 
+        (CONTAINER_RIGHT)
         <div>
             ( COMPONENT_BANNER )
             <section>
+                <div></div>
+
                 <h3></h3>
 
-                <div></div>
-                
+                <p></p> 
+
                 <div></div>
             </section>
 

@@ -1,142 +1,138 @@
 .component_contacts {
-    
-    @media (max-width: 999px) { // dispositivos 999px <= <= <=
-        background-color: $background_one;
-        padding: 40px 0;
-        border: $border_one;
-    };
 
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
-       display: flex;
-       justify-content: center;
-       align-items: center;
-    };
+    h3 {
 
-
-    .box_target {
-        
-        @media (max-width:999px) { // dispositivos 999px <= <= <=
-            height: 320px;
-        };
-        
         @media (min-width: 1000px) { // dispositivos 1000px => => =>
-            border-radius: 10px 0 0 10px;
-            padding: 20px 30px 50px;
+            padding-bottom: 40px;
+        };
+    }
+    
+    .box_data_form {
+
+        @media (min-width: 1000px) { // dispositivos 1000px => => =>
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
         };
             
         p {
             text-align: center;
-            color: $color_two;
-        };
-    };
-     
-
-    form {
-
-        @media (min-width: 1000px) { // dispositivos 1000px => => =>
-            border-radius: 0 10px 10px 0;
-            padding: 50px;
-        };
-
-        .box_inputs {
-            /*
-                generamos espaciado en el segundo (BOX-INPUTS)
-            */
-            &:nth-child(2) {
-                margin: 30px 0;
-            };
+            padding: 50px 0;
             
-            input {
-                outline: none;
-                border: none;
-                color: $color_two;
-                border-bottom: 1px solid #ccc;
-                font-family: 'PT Sans', sans-serif;
-                font-size: 28px;
-                letter-spacing: 1px;
-                width: 100%;
-                padding: 8px 2px;
+            @media (min-width: 1000px) { // dispositivos 1000px => => =>
+                width: 40%;
+                // border: $border_one;
+            };
+        };
+   
+        form {
+            
+            @media (min-width: 1000px) { // dispositivos 1000px => => =>
+                // padding: 50px;
+                width: 40%;
+                // border: $border_one;
+            };
 
+            .box_inputs {
                 /*
-                    cuando el INPUT tiene el :FOCUS haciendo uso del selector (~)
-                    el SPAN:BEFORE redefine el ancho mostrando el borde animado
+                    generamos espaciado en el segundo (BOX-INPUTS)
                 */
-                &:focus ~ span:before {
+                &:nth-child(2) {
+                    margin: 30px 0;
+                };
+                
+                input {
+                    outline: none;
+                    border: none;
+                    color: $color_two;
+                    border-bottom: 1px solid #ccc;
+                    font-family: 'PT Sans', sans-serif;
+                    font-size: 28px;
+                    letter-spacing: 1px;
                     width: 100%;
-                };
-            };
+                    padding: 8px 2px;
 
-            /*
-                hacemos uso de las propiedades DISPLAY, POSITION y del pseudo
-                elemento :BEFORE para crear un borde animado en los inputs
-            */
-            span {
-                display: block;
-                position: relative;
-                
-                &:before {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 0%;
-                    height: 2px;
-                    box-shadow: 0 -10px 10px transparent,
-                                0 3px 5px $shadow_five;
-                    transition: width .5s ease-in;
+                    /*
+                        cuando el INPUT tiene el :FOCUS haciendo uso del selector (~)
+                        el SPAN:BEFORE redefine el ancho mostrando el borde animado
+                    */
+                    &:focus ~ span:before {
+                        width: 100%;
+                    };
                 };
-            };
 
-            .box_errors {
-                color: $color_one;
-                background-color: $background_three;
-                letter-spacing: 1;
-                padding: 8px;
-                display: none;
-                
                 /*
-                    SHOW_ERROR: clase añadida desde 'src/js/conatctos.js', muestra 
-                    los errores si los datos ingresador en los INPUTS son incorrectos
+                    hacemos uso de las propiedades DISPLAY, POSITION y del pseudo
+                    elemento :BEFORE para crear un borde animado en los inputs
                 */
-                &.show_error {
+                span {
                     display: block;
-                }
-            }
-        };
-    
-        .box_btn {
-            margin: 60px;
-        };
-
-        /*
-            definimos FLEXBOX para alinear y centrar todos los elementos
-        */
-        .box_socials_contacts {
-            display: flex;
-            justify-content: center;
-
-            input {
-                display: none;
-
-                /*
-                    haciendo uso de la pseudo clase :CHECKED y el selector (~) 
-                    definimos que las TAGS A sean visibles con OPACITY y con 
-                    MARGIN los desagrupamos generando un efecto RESORTE.
-                */
-                &:checked ~ a {
-                    opacity: 1;
-                    margin: 0 0 0 8px;
+                    position: relative;
+                    
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 2px;
+                        box-shadow: 0 -10px 10px transparent,
+                                    0 3px 5px $shadow_five;
+                        transition: width .5s ease-in;
+                    };
                 };
+
+                .box_errors {
+                    color: $color_one;
+                    background-color: $background_three;
+                    letter-spacing: 1;
+                    padding: 8px;
+                    display: none;
+                    
+                    /*
+                        SHOW_ERROR: clase añadida desde 'src/js/conatctos.js', muestra 
+                        los errores si los datos ingresador en los INPUTS son incorrectos
+                    */
+                    &.show_error {
+                        display: block;
+                    }
+                }
+            };
+        
+            .box_btn {
+                margin: 60px;
             };
 
             /*
-                definimos que las TAGS A se oculten con OPACITY, y con 
-                MARGIN los agrupamos generando un efecto RESORTE.
+                definimos FLEXBOX para alinear y centrar todos los elementos
             */
-            a {
-                opacity: 0;
-                margin-right: -45px;
-                transition: all .3s ease;
+            .box_socials_contacts {
+                display: flex;
+                justify-content: center;
+
+                input {
+                    display: none;
+
+                    /*
+                        haciendo uso de la pseudo clase :CHECKED y el selector (~) 
+                        definimos que las TAGS A sean visibles con OPACITY y con 
+                        MARGIN los desagrupamos generando un efecto RESORTE.
+                    */
+                    &:checked ~ a {
+                        opacity: 1;
+                        margin: 0 0 0 8px;
+                    };
+                };
+
+                /*
+                    definimos que las TAGS A se oculten con OPACITY, y con 
+                    MARGIN los agrupamos generando un efecto RESORTE.
+                */
+                a {
+                    opacity: 0;
+                    margin-right: -45px;
+                    transition: all .3s ease;
+                };
             };
         };
     };
@@ -146,21 +142,6 @@
 /*
     TAGS de este componente que comparten propiedades
 */
-.box_target, form {
-    
-    @media (max-width: 999px) { // dispositivos 999px <= <= <=
-        width: 360px;
-        margin: 0 auto;
-    };
-    
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        background-color: $background_one;
-        border: $border_one;
-        width: 440px;
-        margin: 0 10px;
-    };
-};
-
 .icon_contacts {
     background-color: $background_three;
     color: $color_one;

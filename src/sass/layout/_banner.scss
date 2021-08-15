@@ -1,12 +1,4 @@
 .component_banner {
-    background-color: $background_one;
-    min-width: 300px;
-    border: $border_one;
-
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
-       border-radius: 10px;
-    };
-
     
     .box_img_banner {
         text-align: center;

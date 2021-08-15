@@ -474,90 +474,90 @@
 
 
 				<!-- 
-					COMPONENT_CONTACTS: definimos un ID (contacts) para 
-					trabajarlo con 'src/js/navbar.js'
-					su hoja de estilos src/sass/layout/_contactos.scss
+					COMPONENT_CONTACTS: su hoja de estilos src/sass/layout/_contactos.scss
+					le definimos un ID (contacts) para trabajarlo con 'src/js/navbar.js'	
 				-->
-				<!-- <section class="component_contacts" id="contacts"> -->
-					<!--  
-						DIV (box_target): dentro 1 TAG H3 y 1 TAG P
-					-->
-					<!-- <div class="box_target">
-						<h3 class="color_js">Contactos</h3>
+				<section class="component_contacts" id="contacts">
+					<h3 class="color_js">Contactos</h3>
 
+					<!--  
+						DIV (box_target): contiene a 1 TAG H3 y 1 TAG P
+					-->
+					<div class="box_data_form">
 						<p>
-							Si deseas contactarme enviame un email, tratare
+							Si deseas contactarme enviame un email tratare
 							de responderte lo antes posible GRACIAS
 						</p>
-					</div> -->
+					
 
-					<!--  
-						FORM: dentro 5 DIVS, definimos un ID (formulario) 
-						para trabajarlo con 'src/js/contactos.js'
-					-->
-					<!-- <form autocomplete="off" id="formulario"> -->
 						<!--  
-							3 DIVS (box_inputs): dentro de cada uno, 1 INPUT, 1 TAG SPAN 
-							para crear un borde animado y 1 DIV
+							FORM: contiene a 5 DIVS, le definimos un ID (formulario) 
+							para trabajarlo con 'src/js/contactos.js'
 						-->
-						<!-- <div class="box_inputs">
-							<input type="text" name="name" placeholder="Nombre"/>
-							<span class="border_animated"></span> -->
+						<form autocomplete="off" id="formulario">
+							<!--  
+								3 DIVS (box_inputs): contiene, 1 TAG INPUT, 1 TAG SPAN 
+								para crear un borde animado y 1 DIV
+							-->
+							<div class="box_inputs">
+								<input type="text" name="name" placeholder="Nombre"/>
+								<span class="border_animated"></span>
+
+								<!--  
+									DIV (box_errors): les definimos IDS (error_???) para mostrar 
+									alertas de error al usuario, trabajadas con 'src/js/contactos.js'
+								-->
+								<p class="box_errors bg_js" id="error_name">
+									De 4 a 16 digitos no simbolos no numeros	
+								</p>
+							</div>
+
+							<div class="box_inputs">
+								<input type="text" name="email" placeholder="Email"/>
+								<span class="border_animated"></span>
+
+								<p class="box_errors bg_js" id="error_email">
+									El email no es valido
+								</p>
+							</div>
+
+							<div class="box_inputs">
+								<input type="text" name="post" placeholder="Cometario"/>
+								<span class="border_animated"></span>
+								
+								<p class="box_errors bg_js" id="error_post">
+									De 10 a 100 digitos no simbolos
+								</p>
+							</div>
 
 							<!--  
-								1 DIV (box_errors): les definimos IDS (error_???) para mostrar 
-								alertas de error al usuario, trabajadas con 'src/js/contactos.js'
+								1 DIV (box_btn): adentro 1 TAG BUTTON tipo SUBMIT
 							-->
-							<!-- <p class="box_errors bg_js" id="error_name">
-								De 4 a 16 digitos no simbolos no numeros	
-							</p>
-						</div>
+							<div class="box_btn">
+								<button type="submit" class="btn_animated bg_js">Enviar</button>
+							</div>
 
-						<div class="box_inputs">
-							<input type="text" name="email" placeholder="Email"/>
-							<span class="border_animated"></span>
-
-							<p class="box_errors bg_js" id="error_email">
-								El email no es valido
-							</p>
-						</div>
-
-						<div class="box_inputs">
-							<input type="text" name="post" placeholder="Cometario"/>
-							<span class="border_animated"></span>
-							
-							<p class="box_errors bg_js" id="error_post">
-								De 10 a 100 digitos no simbolos
-							</p>
-						</div> -->
-
-						<!--  
-							1 DIV (box_btn): adentro 1 TAG BUTTON tipo SUBMIT
-						-->
-						<!-- <div class="box_btn">
-							<button type="submit" class="btn_animated bg_js">Enviar</button>
-						</div> -->
-
-						<!--  
-							1 DIV (box_socials_contacts): dentro 1 TAG LABEL, 1 INPUT 
-							tipo checkbox y 3 TAGS A con sus TAGS ION-ICON
-						-->
-						<!-- <div class="box_socials_contacts">
-							<label for="check"><ion-icon class="icon_contacts bg_js" name="add-sharp"></ion-icon></label>
-							<input type="checkbox" name="check" id="check">
-		
-							<a href="https://github.com/JeffersonSalazar?tab=repositories" target="_blank">
-								<ion-icon class="icon_contacts bg_js" name="logo-github"></ion-icon>
-							</a>
-							<a href="https://www.linkedin.com/in/jefferson-salazar-032870174/" target="_blank">
-								<ion-icon class="icon_contacts bg_js" name="logo-linkedin"></ion-icon>
-							</a>
-							<a href="https://wa.me/+0573215142379">
-								<ion-icon class="icon_contacts bg_js" name="logo-whatsapp"></ion-icon>
-							</a>		
-						</div>
-					</form>
-				</section> -->
+							<!--  
+								1 DIV (box_socials_contacts): dentro 1 TAG LABEL, 1 INPUT 
+								tipo checkbox y 3 TAGS A con sus TAGS ION-ICON
+							-->
+							<div class="box_socials_contacts">
+								<label for="check"><ion-icon class="icon_contacts bg_js" name="add-sharp"></ion-icon></label>
+								<input type="checkbox" name="check" id="check">
+			
+								<a href="https://github.com/JeffersonSalazar?tab=repositories" target="_blank">
+									<ion-icon class="icon_contacts bg_js" name="logo-github"></ion-icon>
+								</a>
+								<a href="https://www.linkedin.com/in/jefferson-salazar-032870174/" target="_blank">
+									<ion-icon class="icon_contacts bg_js" name="logo-linkedin"></ion-icon>
+								</a>
+								<a href="https://wa.me/+0573215142379">
+									<ion-icon class="icon_contacts bg_js" name="logo-whatsapp"></ion-icon>
+								</a>		
+							</div>
+						</form>
+					</div>
+				</section>
 
 
 				<!-- 
