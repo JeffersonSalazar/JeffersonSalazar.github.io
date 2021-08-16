@@ -11,26 +11,31 @@
 
         @media (min-width: 1000px) { // dispositivos 1000px => => =>
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
         };
             
-        p {
+        .text_card_form {
             text-align: center;
-            padding: 50px 0;
+            padding: 40px 0 50px;
             
             @media (min-width: 1000px) { // dispositivos 1000px => => =>
-                width: 40%;
-                // border: $border_one;
+                border: $border_one;
+                border-radius: 10px;
+                width: 380px;
+                margin: 0 10px;
+                padding: 50px 34px;
             };
         };
    
         form {
             
             @media (min-width: 1000px) { // dispositivos 1000px => => =>
-                // padding: 50px;
-                width: 40%;
-                // border: $border_one;
+                border: $border_one;
+                border-radius: 10px;
+                width: 380px;
+                margin: 0 10px;
+                padding: 50px 34px;
             };
 
             .box_inputs {
@@ -47,7 +52,7 @@
                     color: $color_two;
                     border-bottom: 1px solid #ccc;
                     font-family: 'PT Sans', sans-serif;
-                    font-size: 28px;
+                    font-size: 24px;
                     letter-spacing: 1px;
                     width: 100%;
                     padding: 8px 2px;
@@ -85,7 +90,9 @@
                 .box_errors {
                     color: $color_one;
                     background-color: $background_three;
+                    font-size: 18px;
                     letter-spacing: 1;
+                    width: inherit;
                     padding: 8px;
                     display: none;
                     
@@ -100,7 +107,7 @@
             };
         
             .box_btn {
-                margin: 60px;
+                margin: 60px 0;
             };
 
             /*

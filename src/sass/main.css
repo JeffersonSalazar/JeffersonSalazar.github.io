@@ -847,23 +847,27 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
 }
 
-.component_contacts .box_data_form p {
+.component_contacts .box_data_form .text_card_form {
   text-align: center;
-  padding: 50px 0;
+  padding: 40px 0 50px;
 }
 
 @media (min-width: 1000px) {
-  .component_contacts .box_data_form p {
-    width: 40%;
+  .component_contacts .box_data_form .text_card_form {
+    border: 1px solid #cccccc86;
+    border-radius: 10px;
+    width: 380px;
+    margin: 0 10px;
+    padding: 50px 34px;
   }
 }
 
@@ -875,7 +879,11 @@
 
 @media (min-width: 1000px) {
   .component_contacts .box_data_form form {
-    width: 40%;
+    border: 1px solid #cccccc86;
+    border-radius: 10px;
+    width: 380px;
+    margin: 0 10px;
+    padding: 50px 34px;
   }
 }
 
@@ -899,7 +907,7 @@
   color: #7e7b7c;
   border-bottom: 1px solid #ccc;
   font-family: 'PT Sans', sans-serif;
-  font-size: 28px;
+  font-size: 24px;
   letter-spacing: 1px;
   width: 100%;
   padding: 8px 2px;
@@ -934,7 +942,9 @@
 .component_contacts .box_data_form form .box_inputs .box_errors {
   color: #fff;
   background-color: #0e89fc;
+  font-size: 18px;
   letter-spacing: 1;
+  width: inherit;
   padding: 8px;
   display: none;
   /*
@@ -948,7 +958,7 @@
 }
 
 .component_contacts .box_data_form form .box_btn {
-  margin: 60px;
+  margin: 60px 0;
 }
 
 .component_contacts .box_data_form form .box_socials_contacts {
