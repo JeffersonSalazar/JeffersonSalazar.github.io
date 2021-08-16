@@ -49,7 +49,7 @@ body {
     };
 };
 
-.component_banner, .component_contacts {
+.component_banner, .component_contacts, .component_proyects {
     background-color: $background_one;
     min-width: 300px;
     border: $border_one;
@@ -137,6 +137,7 @@ h3 {
     propiedades compartidas por las TAG P
 */
 p {
+    text-align: justify;
     color: $color_two;
     font-family: 'PT Sans', sans-serif;
     font-size: 22px;

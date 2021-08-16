@@ -455,22 +455,20 @@
 
 
 				<!--  
-					COMPONENT_PROYECTS: le definimos un ID (proyects) 
-					para trabarlo con 'src/js/navbar.js' 
-					su hoja de estilos 'src/sass/layout/_proyectos.scss'
+					COMPONENT_PROYECTS: su hoja de estilos 'src/sass/layout/_proyectos.scss'
+					le definimos un ID (proyects) para trabarlo con 'src/js/navbar.js' 		
 				-->
-				<!-- <section class="component_proyects" id="proyects">
+				<section class="component_proyects" id="proyects">
 					<h3 class="color_js">Proyectos</h3>
 
-					<p>
+					<p class="text_proyects">
 						esta seccion se encuentra en desarrollo debido a que 
 						se me ha hecho algo dificil encontrar host gratuitos para subir
 						mis proyectos, mientras resuelvo este percanse dejo el link 
 						de GitHub donde encontraran los repositorios de los mismos.
+						<a href="https://github.com/JeffersonSalazar?tab=repositories" target="_blank">Ir a GitHub</a>
 					</p>
-
-					<a href="https://github.com/JeffersonSalazar?tab=repositories" target="_blank">Ir a GitHub</a>
-				</section> -->
+				</section>
 
 
 				<!-- 
@@ -481,32 +479,32 @@
 					<h3 class="color_js">Contactos</h3>
 
 					<!--  
-						DIV (box_target): contiene a 1 TAG H3 y 1 TAG P
+						DIV (box_data_form): contiene a 1 TAG P y 1 TAG FORM
 					-->
 					<div class="box_data_form">
 						<p class="text_card_form">
 							Deseas contactarme? enviame un email y tratare
 							de ponerme en contacto lo antes posible, recuerda 
-							que todos los campos son obligatorios... GRACIAS
+							que todos los campos del formulario son requeridos...<br> GRACIAS
 						</p>
 					
 
 						<!--  
-							FORM: contiene a 5 DIVS, le definimos un ID (formulario) 
+							FORM: contiene a 5 TAGS DIV, le definimos un ID (formulario) 
 							para trabajarlo con 'src/js/contactos.js'
 						-->
 						<form autocomplete="off" id="formulario">
 							<!--  
-								3 DIVS (box_inputs): contiene, 1 TAG INPUT, 1 TAG SPAN 
-								para crear un borde animado y 1 DIV
+								3 DIVS (box_inputs): contiene a 1 TAG INPUT, 1 TAG SPAN 
+								para crear un borde animado y TAG P
 							-->
 							<div class="box_inputs">
 								<input type="text" name="name" placeholder="Nombre *"/>
 								<span class="border_animated"></span>
 
 								<!--  
-									DIV (box_errors): les definimos IDS (error_???) para mostrar 
-									alertas de error al usuario, trabajadas con 'src/js/contactos.js'
+									P (box_errors): les definimos un ID (error_???) para mostrar 
+									alertas de error al usuario trabajadas con 'src/js/contactos.js'
 								-->
 								<p class="box_errors bg_js" id="error_name">
 									De 4 a 16 digitos no simbolos no numeros	
@@ -532,15 +530,15 @@
 							</div>
 
 							<!--  
-								1 DIV (box_btn): adentro 1 TAG BUTTON tipo SUBMIT
+								1 DIV (box_btn): contiene a 1 TAG BUTTON tipo SUBMIT
 							-->
 							<div class="box_btn">
 								<button type="submit" class="btn_animated bg_js">Enviar</button>
 							</div>
 
 							<!--  
-								1 DIV (box_socials_contacts): dentro 1 TAG LABEL, 1 INPUT 
-								tipo checkbox y 3 TAGS A con sus TAGS ION-ICON
+								1 DIV (box_socials_contacts): contiene a 1 TAG LABEL, 
+								1 TAG INPUT tipo checkbox y a 3 TAGS A con sus TAGS ION-ICON
 							-->
 							<div class="box_socials_contacts">
 								<label for="check"><ion-icon class="icon_contacts bg_js" name="add-sharp"></ion-icon></label>
@@ -564,13 +562,13 @@
 				<!-- 
 					COMPONENT_FOOTER: su hoja de estilos src/sass/layout/_footer.scss
 				-->
-				<!-- <footer class="component_footer"> -->
+				<footer class="component_footer">
 					<!--  
 						ICON-ICON: le definimos un ID (icon_gotop) 
 						para trabajarlo con 'src/js/footer.js'
 					-->
-					<!-- <ion-icon name="arrow-up-outline" class="bg_js" id="icon_gotop"></ion-icon> -->
-				<!-- </footer> -->
+					<ion-icon name="arrow-up-outline" class="bg_js" id="icon_gotop"></ion-icon>
+				</footer>
 			</div>
 		</main>
 

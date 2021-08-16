@@ -1,20 +1,6 @@
 .component_proyects {
-    background-color: $background_one;
-    margin: 80px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: $border_one;
-    
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        border-radius: 10px;
-    };
 
-    p {
-        text-align: justify;
-        max-width: 400px;
-        margin: 20px auto;
-    }
-}
+    .text_proyects {
+        padding: 15px 40px;
+    };
+};

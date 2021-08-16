@@ -71,16 +71,14 @@
                 <h3></h3>
 
                 <p></p>
-
-                <a></a>
             </section>
 
 
             ( COMPONENT_CONTACTS )
             <section>
+                <h3></h3>
+                
                 <div></div>
-
-                <form></form>
             </section>
 
 

@@ -5,8 +5,9 @@
         @media (min-width: 1000px) { // dispositivos 1000px => => =>
             padding-bottom: 40px;
         };
-    }
+    };
     
+
     .box_data_form {
 
         @media (min-width: 1000px) { // dispositivos 1000px => => =>
@@ -15,28 +16,17 @@
             align-items: center;
         };
             
+
         .text_card_form {
-            text-align: center;
-            padding: 40px 0 50px;
-            
-            @media (min-width: 1000px) { // dispositivos 1000px => => =>
-                border: $border_one;
-                border-radius: 10px;
-                width: 380px;
-                margin: 0 10px;
-                padding: 50px 34px;
+            // text-align: center;
+
+            @media (max-width: 900px) { // dispositivos 999px <= <= <=
+                padding: 40px 0 50px;
             };
         };
    
+
         form {
-            
-            @media (min-width: 1000px) { // dispositivos 1000px => => =>
-                border: $border_one;
-                border-radius: 10px;
-                width: 380px;
-                margin: 0 10px;
-                padding: 50px 34px;
-            };
 
             .box_inputs {
                 /*
@@ -102,13 +92,15 @@
                     */
                     &.show_error {
                         display: block;
-                    }
-                }
+                    };
+                };
             };
         
+
             .box_btn {
                 margin: 60px 0;
             };
+
 
             /*
                 definimos FLEXBOX para alinear y centrar todos los elementos
@@ -149,6 +141,17 @@
 /*
     TAGS de este componente que comparten propiedades
 */
+.text_card_form, form {
+
+    @media (min-width: 1000px) { // dispositivos 1000px => => =>
+        border: $border_one;
+        border-radius: 10px;
+        width: 380px;
+        margin: 0 10px;
+        padding: 50px 34px;
+    };
+};
+
 .icon_contacts {
     background-color: $background_three;
     color: $color_one;

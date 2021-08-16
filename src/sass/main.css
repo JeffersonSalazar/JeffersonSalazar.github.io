@@ -804,36 +804,8 @@
   color: #0e89fc;
 }
 
-.component_proyects {
-  background-color: #fff;
-  margin: 80px;
-  height: 400px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 1px solid #cccccc86;
-}
-
-@media (min-width: 1000px) {
-  .component_proyects {
-    border-radius: 10px;
-  }
-}
-
-.component_proyects p {
-  text-align: justify;
-  max-width: 400px;
-  margin: 20px auto;
+.component_proyects .text_proyects {
+  padding: 15px 40px;
 }
 
 @media (min-width: 1000px) {
@@ -856,18 +828,9 @@
   }
 }
 
-.component_contacts .box_data_form .text_card_form {
-  text-align: center;
-  padding: 40px 0 50px;
-}
-
-@media (min-width: 1000px) {
+@media (max-width: 900px) {
   .component_contacts .box_data_form .text_card_form {
-    border: 1px solid #cccccc86;
-    border-radius: 10px;
-    width: 380px;
-    margin: 0 10px;
-    padding: 50px 34px;
+    padding: 40px 0 50px;
   }
 }
 
@@ -875,16 +838,6 @@
   /*
                 definimos FLEXBOX para alinear y centrar todos los elementos
             */
-}
-
-@media (min-width: 1000px) {
-  .component_contacts .box_data_form form {
-    border: 1px solid #cccccc86;
-    border-radius: 10px;
-    width: 380px;
-    margin: 0 10px;
-    padding: 50px 34px;
-  }
 }
 
 .component_contacts .box_data_form form .box_inputs {
@@ -998,6 +951,16 @@
 /*
     TAGS de este componente que comparten propiedades
 */
+@media (min-width: 1000px) {
+  .text_card_form, form {
+    border: 1px solid #cccccc86;
+    border-radius: 10px;
+    width: 380px;
+    margin: 0 10px;
+    padding: 50px 34px;
+  }
+}
+
 .icon_contacts {
   background-color: #0e89fc;
   color: #fff;
@@ -1121,7 +1084,7 @@ body.body_darkmode {
   }
 }
 
-.component_banner, .component_contacts {
+.component_banner, .component_contacts, .component_proyects {
   background-color: #fff;
   min-width: 300px;
   border: 1px solid #cccccc86;
@@ -1129,13 +1092,13 @@ body.body_darkmode {
 }
 
 @media (max-width: 999px) {
-  .component_banner, .component_contacts {
+  .component_banner, .component_contacts, .component_proyects {
     padding: 40px 20px;
   }
 }
 
 @media (min-width: 1000px) {
-  .component_banner, .component_contacts {
+  .component_banner, .component_contacts, .component_proyects {
     border-radius: 10px;
     padding: 40px 0;
   }
@@ -1205,6 +1168,7 @@ h3 {
     propiedades compartidas por las TAG P
 */
 p {
+  text-align: justify;
   color: #7e7b7c;
   font-family: 'PT Sans', sans-serif;
   font-size: 22px;
