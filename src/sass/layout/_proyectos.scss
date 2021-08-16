@@ -1,6 +1,13 @@
 .component_proyects {
 
     .text_proyects {
-        padding: 15px 40px;
+        
+        @media (max-width: 999px) { // dispositivos 999px <= <= <=
+            padding: 15px 0;
+        };
+        
+        @media (min-width: 1000px) { // dispositivos 1000px => => =>
+            padding: 15px 40px;
+        };
     };
 };
