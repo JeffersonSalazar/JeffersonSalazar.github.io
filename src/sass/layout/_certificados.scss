@@ -1,11 +1,11 @@
 .component_certificates {
 
     @media (max-width: 900px) { // dispositivos 1000px <= <= <=
-        padding: 0 20px;
+        padding: 40px 20px;
     };
 
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        padding: 0 50px;
+        padding: 40px 0;
     };
 
     .container_certify {
@@ -13,7 +13,7 @@
         border-radius: 10px;
         border: $border_one;
         margin: 40px 0;
-        padding: 24px 40px 20px;
+        padding: 24px;
 
         /*
             definimos FLEXBOX para alinear y centrar los elementos
@@ -27,11 +27,11 @@
             h2 {
                 color: $color_two;
                 font-family: 'Open Sans', sans-serif;
-                font-size: 32px;
+                font-size: 28px;
             };
 
             .icon_certify {
-                font-size: 32px;
+                font-size: 28px;
                 margin-top: 5px;
                 transition: transform .3s ease-in-out;
             
@@ -56,18 +56,15 @@
                 overflow: visible;
             };
 
-            .box_academy {
-
-                h4 {
-                    color: $color_two;
-                    margin: 10px 0;
-                };
+           
+            h4 {
+                color: $color_two;
+                margin: 10px 0;
             };
+            
 
-            p {
+            .text_certify {
                 margin: 40px 0;
-                text-align: justify;
-                line-height: 1.5;
             };
 
             .box_certify {

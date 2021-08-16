@@ -711,13 +711,13 @@
 
 @media (max-width: 900px) {
   .component_certificates {
-    padding: 0 20px;
+    padding: 40px 20px;
   }
 }
 
 @media (min-width: 1000px) {
   .component_certificates {
-    padding: 0 50px;
+    padding: 40px 0;
   }
 }
 
@@ -726,7 +726,7 @@
   border-radius: 10px;
   border: 1px solid #cccccc86;
   margin: 40px 0;
-  padding: 24px 40px 20px;
+  padding: 24px;
   /*
             definimos FLEXBOX para alinear y centrar los elementos
         */
@@ -748,11 +748,11 @@
 .component_certificates .container_certify .box_title h2 {
   color: #7e7b7c;
   font-family: 'Open Sans', sans-serif;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .component_certificates .container_certify .box_title .icon_certify {
-  font-size: 32px;
+  font-size: 28px;
   margin-top: 5px;
   -webkit-transition: -webkit-transform .3s ease-in-out;
   transition: -webkit-transform .3s ease-in-out;
@@ -781,15 +781,13 @@
   overflow: visible;
 }
 
-.component_certificates .container_certify .content_certify .box_academy h4 {
+.component_certificates .container_certify .content_certify h4 {
   color: #7e7b7c;
   margin: 10px 0;
 }
 
-.component_certificates .container_certify .content_certify p {
+.component_certificates .container_certify .content_certify .text_certify {
   margin: 40px 0;
-  text-align: justify;
-  line-height: 1.5;
 }
 
 .component_certificates .container_certify .content_certify .box_certify a {
@@ -1154,7 +1152,7 @@ h3 {
 
 @media (max-width: 999px) {
   h3 {
-    font-size: 50px;
+    font-size: 40px;
   }
 }
 
