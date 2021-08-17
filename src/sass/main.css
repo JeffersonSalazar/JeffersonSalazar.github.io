@@ -525,28 +525,36 @@
 .component_skills .container_skills {
   display: -ms-grid;
   display: grid;
-  gap: 20px;
+  gap: 10px;
   /*
       importante definir POSITION y Z-INDEX para posicionar
       esta TAG sobre la barra de progreso
     */
 }
 
-@media (max-width: 599px) {
+@media (max-width: 479px) {
   .component_skills .container_skills {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+    gap: 10px 5px;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 480px) {
+  .component_skills .container_skills {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 780px) {
   .component_skills .container_skills {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .component_skills .container_skills {
     -ms-grid-columns: (1fr)[6];
         grid-template-columns: repeat(6, 1fr);
@@ -601,6 +609,11 @@
   opacity: 1;
 }
 
+.component_skills .container_skills .box_skills:hover .box_img_skills {
+  -webkit-animation: img_Move 1s infinite;
+          animation: img_Move 1s infinite;
+}
+
 @-webkit-keyframes img_Move {
   0% {
     -webkit-transform: translateY(0);
@@ -639,21 +652,21 @@
   padding: 44px 0 10px;
 }
 
-@media (max-width: 999px) {
+@media (max-width: 479px) {
   .component_skills .container_skills .box_skills .box_img_skills img {
     width: 64px;
     height: 64px;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 480px) {
   .component_skills .container_skills .box_skills .box_img_skills img {
-    width: 96px;
-    height: 96px;
+    width: 74px;
+    height: 74px;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .component_skills .container_skills .box_skills .box_img_skills img {
     width: 104px;
     height: 104px;
@@ -661,10 +674,10 @@
 }
 
 .component_skills .container_skills .box_skills .box_level_skills {
-  padding: 10px;
   font-family: 'PT Sans', sans-serif;
   color: #fff;
   border-radius: 0 0 10px 10px;
+  padding: 10px 4px;
   opacity: 0;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
@@ -1111,8 +1124,13 @@ body.body_darkmode {
 }
 
 .component_skills, .component_certificates {
-  min-width: 300px;
   margin: 60px 0;
+}
+
+@media (max-width: 999px) {
+  .component_skills, .component_certificates {
+    padding: 40px 20px;
+  }
 }
 
 @media (min-width: 1000px) {

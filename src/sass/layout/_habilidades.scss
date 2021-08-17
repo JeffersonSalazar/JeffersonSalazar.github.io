@@ -9,17 +9,22 @@
   */
   .container_skills {
     display: grid;
-    gap: 20px;
+    gap: 10px;
 
-    @media (max-width: 599px) {
+    @media (max-width: 479px) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 10px 5px;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 480px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 780px) {
       grid-template-columns: repeat(4, 1fr);
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 1200px) {
       grid-template-columns: repeat(6, 1fr);
     }
       
@@ -67,7 +72,7 @@
         (box_img_skills) que translada la IMG generando un efecto de movimiento
       */
       &:hover .box_img_skills {
-        // animation: img_Move 1s infinite;
+        animation: img_Move 1s infinite;
 
         @keyframes img_Move {
           0% {
@@ -96,17 +101,17 @@
 
         img {
 
-          @media (max-width: 999px) {
+          @media (max-width: 479px) {
             width: 64px;
             height: 64px;
           }
 
-          @media (min-width: 600px) {
-            width: 96px;
-            height: 96px;
+          @media (min-width: 480px) {
+            width: 74px;
+            height: 74px;
           }
 
-          @media (min-width: 900px) {
+          @media (min-width: 1200px) {
             width: 104px;
             height: 104px;
           }
@@ -119,10 +124,10 @@
         hagamos :HOVER en las TAGS ARTICLES
       */
       .box_level_skills {
-        padding: 10px;
         font-family: 'PT Sans', sans-serif;
         color: $color_one;
         border-radius: 0 0 10px 10px;
+        padding: 10px 4px;
         opacity: 0;
         transition: all .5s ease-in-out;
       };
