@@ -12,7 +12,9 @@
     // top: 60px;
     // left: 0;
     // z-index: 79;
-    transition: min-width .5s ease;
+    // display: flex;
+    // align-items: center;
+    // transition: min-width .5s ease;
     // background: rgba(25, 119, 25, 0.445);
 
     /*
@@ -20,15 +22,14 @@
         dispositivos moviles 999px <= <= <=
     */
     @media (max-width:999px) {
-        min-width: 0%;
+        // min-width: 0%;
 
         /*
-            clase añadida con javascript... 
-            se encarga de mostrar el menu de navegacion
+            clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
         */
-        &.open_navbar { min-width: 75px; };
+        // &.open_navbar { min-width: 75px; };
 
-        &:hover { min-width: 240px; }; // hover encargado de redefinir el ancho
+        // &:hover { min-width: 240px; }; // hover encargado de redefinir el ancho
     };
     
     /*
@@ -36,29 +37,34 @@
         tablets y destoks 1000px => => =>
     */
     @media (min-width:1000px) {
-        min-width: 75px;
+        // min-width: 75px;
 
         /*
-            clase añadida con javascript... 
-            se encarga de ocultar el menu de navegacion
+            clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
         */
-        &.close_navbar { min-width: 0%; }
+        // &.close_navbar { min-width: 0%; }
 
-        &:hover { min-width: 240px; }; // hover encargado de redefinir el ancho
+        // &:hover { min-width: 240px; }; // hover encargado de redefinir el ancho
     };
 
     .box_nav_navbar {
         background-color: $background_three;
-        border-radius: 0 10px 10px 0;
+        // border-radius: 0 10px 10px 0;
         width: 75px;
-        // width: inherit;
         position: fixed;
-        top: 60px;
         left: 0;
-        z-index: 79;
-        // height: 100vh;
+        z-index: 89;
+        height: 100vh;
         overflow-x: hidden;
-        // transition: width .5s ease;
+        transition: width .5s ease;
+
+        @media (max-width: 499px) {
+            top: 60px;
+        };
+
+        @media (min-width: 600px) {
+            top: 60px;
+        };
 
         ul {
             padding: 40px 0 40px 9px;
@@ -95,8 +101,9 @@
                     color: $color_one;
 
                     .icon_ion {
-                        margin: 9px 28px 0 13px;
-                    }
+                        margin: 0 28px 0 13px;
+                        line-height: 20px;
+                    };
                 };
             };
         };

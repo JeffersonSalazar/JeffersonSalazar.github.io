@@ -1,7 +1,66 @@
+// ---------- ESTRUCTURA de PROYECTO ---------------- //
+
+<CARPETA API> 
+    contiene los archivos con los cuales creamos la api 
+    a travez de NODEJS utilizada en el portafolio para 
+    almacenar los datos del formulario 
+
+    <CARPETA SRC> 
+        contiene el archivo SERVE.JS en este creamos
+        el servidor local haciendo uso de express
+
+        <CARPETA DATABASE>
+            contiene el archivo CONNECT.JS donde definimos la 
+            conexion a la base de datos MONGODB y el archivo 
+            SCHEMA.JS en el cual definimos la estructura de la 
+            coleccion
+        </CARPETA DATABASE>
+
+        </CARPETA ROUTES>
+            contiene el archivo METHODS.JS donde definimos la ruta 
+            a la API que nos permite almacenar datos haciendo uso del 
+            metodo POST
+        </CARPETA ROUTES>
+    </CARPETA SRC>
+</CARPETA API>
+
+<CARPETA ASSETS>
+    <CARPETA DOCS>
+        contiene los archivos descargables de la hoja de vida
+        y de los certificados realizados
+    </CARPETA DOCS> 
+
+    <CARPETA IMAGES>
+        contiene todas las imagenes utilizadas en el proyecto
+    </CARPETA IMAGES> 
+</CARPETA ASSETS> 
+
+<CARPETA SRC>
+    <CARPETA JS>
+        contiene los archivos JS de las diferentes secciones
+        del proyecto, estos estan nombrados de la misma manera
+    </CARPETA JS> 
+
+    <CARPETA SASS>
+        MAIN.SCSS es el archivo principal donde definimos estilos
+        generales que comparten las secciones entre si 
+
+        <CARPETA LAYOUT>
+            contiene los archivos SCSS de las diferentes secciones
+            del proyecto, estos estan nombrados de la misma manera
+        </CARPETA LAYOUT>
+
+        <CARPETA SHARED>
+            contiene los archivos SCSS que son reutilizados por las
+            diferentes secciones
+        </CARPETA SHARED> 
+    </CARPETA SASS> 
+</CARPETA SRC> 
+
+
 // ---------- ESTRUCTURA HTML ---------------- //
 
-<body>
-    
+<body>  
     // ******* CABEZERA DE LA PAGINA ***** //
     <header>
         <div></div>
@@ -92,13 +151,10 @@
 
     // ******** ARCHIVOS JAVASCRIPT ******* //
     <scripts></scripts>  
-
 </body>
 
 
 // ---------- ESTRUCTURA CSS ---------------- //
-/* ----------------------------------- IMPORTANTE ------------------------------------- */
-
 
 /*
     1 - si la hoja de estilos de cada componente tiene TAGS que comparten propiedades 

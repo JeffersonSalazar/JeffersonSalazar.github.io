@@ -1,20 +1,13 @@
 // -------------- START CODE - SHOW ERRORS ------------- //
-
-/*  
-    almacenamos en una VAR la URL de nuestra API
-*/
-let api = "http://localhost:3000/api/message",
-
 /* 
-    almacenamos en VARS el FORM y los INPUTS definidos dentro 
-    del COMPONENT_CONTACTOS
+    almacenamos en 1 VAR los INPUTS definidos dentro 
+    de COMPONENT_CONTACTS
 */
-    $formulario = document.querySelector('#formulario'),
-    $inputs = document.querySelectorAll('input'),
+    let $inputs = document.querySelectorAll('input');
 
 /* 
     almacenamos en VARS los 3 DIVS que definimos dentro
-    de BOX_INPUTS para los errores
+    de BOX_INPUTS para los errores de formulario
 */
     $err_name = document.querySelector('#error_name'),
     $err_email = document.querySelector('#error_email'),
@@ -32,13 +25,13 @@ let api = "http://localhost:3000/api/message",
 */
 $inputs.forEach(input => {
     /* 
-        generamos un evento KEYUP al parametro definido dentro del FOREACH
-        y declaramos una FUNCION a la que pasamos un EVENT (e) como parametro
+        generamos un evento KEYUP al parametro del FOREACH y declaramos 
+        una FUNCION a la que pasamos un EVENT (e) como parametro
     */
     input.addEventListener('keyup', function(e) {
         /* 
-            almacenamos en una VAR los datos ingresados por el usuario en los INPUTS
-            garcias a E.TARGET.VALUE
+            almacenamos en 1 VAR los datos ingresados por el usuario en los 
+            diferentes INPUTS con la propiedad E.TARGET.VALUE
         */
         let targget = e.target.value;
 
@@ -72,14 +65,20 @@ $inputs.forEach(input => {
 
 
 // ---------- START CODE - SEND DATA DATABASE -------------- //
+/*  
+    almacenamos en VARS la URL de nuestra API y el FORM 
+    definido dentro de COMPONENT_CONTACTS 
+*/
+let api = "http://localhost:3000/api/message",
+    $formulario = document.querySelector('#formulario');
 
 /* 
-    generamos un evento SUBMIT a $FORMULARIO y declaramos una FUNCION
+    generamos un evento SUBMIT en $FORMULARIO y declaramos una FUNCION
     a la que pasamos un EVENT (e) como parametro
 */
 $formulario.addEventListener('submit', function(e){
     /* 
-        primero prevenimos el comportamiento del BUTTON tipo SUBMIT
+        prevenimos el comportamiento del BUTTON tipo SUBMIT
     */
     e.preventDefault();
 

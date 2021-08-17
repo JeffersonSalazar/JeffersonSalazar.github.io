@@ -28,7 +28,7 @@
                 transition: transform .3s ease-in-out;
             
                 /*
-                    clase añadida a icon_certify con 'src/js/certificates/js'
+                    clase añadida con 'src/js/certificates/js' a ICON_CERTIFY 
                 */
                 &.rotate_icon {
                     transform: rotate(180deg);
@@ -41,7 +41,7 @@
             overflow: hidden;
 
             /*
-                clase añadida a container_body_certify con 'src/js/certificates/js'
+                clase añadida con 'src/js/certificates/js' a CONTENT_CERTIFY 
             */
             &.show_certify {
                 height: inherit;

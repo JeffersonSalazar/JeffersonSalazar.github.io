@@ -19,7 +19,6 @@
     
     /*
         clase añadida con 'src/js/banner_modal.js' a COMPONENT_MODAL
-        redefinimos VISIBILITY
     */
     &.visible_modal { 
         visibility: visible;
@@ -27,7 +26,6 @@
     
     /*
         clase añadida con 'src/js/banner_modal.js' a COMPONENT_MODAL
-        redefinimos VISIBILITY
     */
     &.hidden_modal { 
         visibility: hidden;
@@ -52,9 +50,7 @@
         
         /*
             clase añadida con 'src/js/banner_modal.js' a CONTAINER_CARD_MODAL
-            redefinimos TRANSFORM y añadimos una TRANSITION
         */
-        
         &.translate_down {
             transform: translateY(0px);
             transition: transform .5s ease-in-out;

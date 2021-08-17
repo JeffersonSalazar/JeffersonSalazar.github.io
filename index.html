@@ -11,22 +11,21 @@
 
     <body>
 		<!-- 
-			COMPONENT_HEADER: le definimos un ID (header) requerido 
-			en 'src/js/header.js' and 'src/js/navbar.js',
-			su hoja de estilos src/sass/layout/_header.scss  
+			COMPONENT_HEADER: su hoja de estilos src/sass/layout/_header.scss le 
+			definimos un ID (header) utilizado en 'src/js/header.js' y 'src/js/navbar.js',			  
 		-->
 		<header class="component_header" id="header">
 			<!--  
-				1 DIV (box_mode_header) adentro 1 TAGS I, para crear el boton modo nocturno
-				que tiene un ID (dark_mode) para trabajarlo con 'src/js/header.js'
+				DIV (box_dark): contiene 1 TAG I le definimos un ID (dark_mode) 
+				utilizado en 'src/js/header.js'
 			-->
 			<div class="box_dark">
 				<i class="icon_dark" id="dark_mode"></i>
 			</div>
 
 			<!--  
-				1 DIV (box_menuIcon_header), definimos un ID (menuIcon) para trabajarlo 
-				con 'src/js/header.js', adentro 3 TAGS SPAN, para crear el menu burger.
+				DIV (box_menuIcon_header): contiene a 3 TAGS SPAN le definimos un ID 
+				(menuIcon) utilizado en 'src/js/header.js'
 			-->
 			<div class="box_menuIcon_header" id="menuIcon">
 				<span class="line_icon bg_js"></span>
@@ -37,23 +36,31 @@
 		
 
 		<!-- 
-			CONTAINER_BODY
+			CONTAINER_BODY: cuerpo de la pagina
 		-->
 		<main class="container_body">
 			<!-- 
-				COMPONENT_NAVBAR: le definimos un ID (navbar) para 
-				trabarlo con 'src/js/navbar.js'
-				su hoja de estilos => src/sass/layout/_navbar.scss 
+				COMPONENT_NAVBAR: su hoja de estilos => src/sass/layout/_navbar.scss
+				le definimos un ID (navbar) utilizado en 'src/js/navbar.js'	
 			-->
-			<!-- <section class="component_navbar" id="navbar"> -->
+			<section class="component_navbar" id="navbar">
 				<!--  
-					NAV: dentro definimos una UL con 4 LI, estas contienen una TAG A 
-					para redireccionamiento, y dentro de las TAG A definimos 2 SPAN 
-					para el icono y el titulo...
+					NAV: contiene 1 TAG UL
 				-->
-				<!-- <nav class="box_nav_navbar bg_js" id="sidebar"> -->
-					<!-- <ul>
+				<nav class="box_nav_navbar bg_js" id="sidebar">
+					<!--  
+						UL: contiene 5 TAGS LI,  
+					-->
+					<ul>
+						<!--  
+							LI: cada una contienen 1 TAG A le definimos una clase 
+							(active-link) utilizado en 'src/js/navbar.js'
+						-->
 						<li class="active_link">
+							<!--  
+								A: encargadas del redireccionamiento entre secciones, contiene 
+								a 2 TAGS SPAN, le definimos una clase (sections) utiizado en 'src/js/navbar.js' 
+							-->
 							<a href="#banner" class="sections">
 								<span class="icon_ion"><ion-icon name="person-outline"></ion-icon></span>
 								<span>Conoceme</span>
@@ -87,16 +94,16 @@
 								<span>Contactos</span>
 							</a>
 						</li>
-					</ul> -->
+					</ul>
 
 					<!--  
 						DIV (box_navbar_color): contiene una TAG BUTTON 
 					-->
-					<!-- <div class="box_navbar_colors">
+					<div class="box_navbar_colors">
 						<button type="button" class="btn_animated bg_js" id="btn_navbar">Skins</button>
 					</div>
 				</nav>
-			</section> -->
+			</section>
 
 
 			<!--  
@@ -108,24 +115,27 @@
 
 
 			<!--  
-				CONTAINER_RIGHT: contiene a 6 TAGS SECTIONS y 1 TAG FOOTER
-				que conforman el lado derecho del dashboard
+				CONTAINER_RIGHT: contiene a 5 TAGS SECTIONS, 1 TAG DIV y 
+				1 TAG FOOTER que conforman el lado derecho del dashboard
 				su hoja de estilos 'src/sass/main.scss'
 			-->
 			<div class="container_right">				
 				<!-- 
 					COMPONENT_BANNER: hoja de estilos 'src/sass/layout/_banner.scss',
-					le definimos un ID (banner) para trabarlo con 'src/js/navbar.js', 
+					le definimos un ID (banner) utilizado en 'src/js/navbar.js' 
 				-->
 				<section class="component_banner" id="banner">
 					<!-- 
-						1 DIV (box_img_banner): contiene a 1 TAG IMG y 1 DIV	
+						DIV (box_img_banner): contiene a 1 TAG IMG y 1 DIV	
 					-->
 					<div class="box_img_banner">
+						<!--  
+							IMG: le definimos un ID (img_banner) utilizado en 'src/js/navbar.js',
+						-->
 						<img src="./assets/images/avatar.png" alt="avatar" id="img_banner">
 
 						<!--  
-							DIV (box_hdv_banner) contiene 1 TAG A para la hoja de vida descargable
+							DIV (box_hdv_banner): contiene 1 TAG A para la hoja de vida descargable
 						-->
 						<div class="box_hdv_banner">
 							<a href="./assets/docs/HojadeVida.pdf" download="HDV Jefferson Salazar" class="color_js">Descargar HDV</a>
@@ -144,8 +154,8 @@
 					</p>
 
 					<!--  
-						1 DIV (box_btn): contiene a 1 TAG BUTTON que le definimos un ID 
-						(btnOpen_modal) para trabajarlo con 'src/js/banner_modal.js'
+						DIV (box_btn): contiene a 1 TAG BUTTON le definimos un ID 
+						(btnOpen_modal) utilizado en 'src/js/banner_modal.js'
 					-->
 					<div class="box_btn">
 						<button type="button" class="btn_animated bg_js" id="btnOpen_modal">Leer Mas</button>
@@ -154,29 +164,28 @@
 
 
 				<!-- 
-					COMPONENT_MODAL: le definimos un ID (window_modal) 
-					para trabarlo con 'src/js/banner_modal.js'
-					su hoja de estilos src/sass/layout/_modal.scss
+					COMPONENT_MODAL: su hoja de estilos src/sass/layout/_modal.scss le
+					definimos un ID (window_modal) utilizado en 'src/js/banner_modal.js'
 				-->
 				<div class="component_modal" id="window_modal">
 					<!--  
-						DIV (container_card_modal): dentro 2 TAGS ASIDE, definimos un 
-						ID (card_modal) para trabajarlo con 'src/js/banner_modal.js'
+						DIV (container_card_modal): contiene a 2 TAGS ASIDE, le definimos 
+						un ID (card_modal) para trabajarlo con 'src/js/banner_modal.js'
 					-->
 					<div class="container_card_modal" id="card_modal">
 						<!--  
-							1 ASIDE (box_img_modal): dentro 1 TAG IMG
+							ASIDE (box_img_modal): contiene a 1 TAG IMG
 						-->
 						<aside class="box_img_modal">
 							<img src="./assets/images/person.jpg" alt="person">
 						</aside>
 
 						<!--  
-							1 ASIDE (box_content_modal): dentro 1 DIV, 2 TAGS P y 1 TAG OL
+							ASIDE (box_content_modal): contiene a 1 DIV, 2 TAGS P y 1 TAG OL
 						-->
 						<aside class="box_content_modal">
 							<!--  
-								1 DIV (box_icon_modal): dentro el icono de cierre del modal, 
+								DIV (box_icon_modal): contiene al una TAG ION-ICON, 
 							-->
 							<div class="box_icon_modal">
 								<ion-icon name="close-circle-outline" class="icon_modal color_js"></ion-icon>
@@ -188,7 +197,7 @@
 							</p>
 
 							<!--  
-								1 OL: con TAGS ION-ICON
+								OL: contiene 4 TAGS LI y cada una contiene 1 TAG ION-ICON
 							-->
 							<ol>
 								<li><ion-icon name="checkmark-outline" class="icon_modal color_js"></ion-icon>El trabajo en equipo.</li>
@@ -208,20 +217,29 @@
 				
 
 				<!-- 
-					COMPONENT_SKILLS: le definimos un ID (skills) 
-					para trabarlo con 'src/js/navbar.js'
-					su hoja de estilos src/sass/layout/_habilidades.scss
+					COMPONENT_SKILLS: su hoja de estilos src/sass/layout/_habilidades.scss
+					le definimos un ID (skills) utilizado en 'src/js/navbar.js'
 				-->
 				<section class="component_skills" id="skills">
 					<h3 class="color_js">Habilidades</h3>
 
-					<div class="container_skills">				
-						<div class="box_skills html">
-							
+					<!--  
+						DIV (container_skills): contiene a 12 TAGS DIV
+					-->
+					<div class="container_skills">
+						<!--  
+							12 DIVS (box_skills): cada uno contiene a 2 TAGS DIV, tambien
+							definimos una clase segun la habilidad para dar estilos propios
+						-->
+						<div class="box_skills html">			
 							<div class="box_img_skills">
 								<img src="./assets/images/html5.png" alt="html">
 							</div>
 
+							<!--  
+								DIV (box_level_skills): tambien le definimos una clase
+								segun la habilidad para dar estilos propios
+							-->
 							<div class="box_level_skills html_level">
 								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
 								ksdfjskldfjskld
@@ -351,18 +369,18 @@
 
 				<!-- 
 					COMPONENT_CERTIFICATES: su hoja de estilos 'src/sass/layout/_certificados.scss'
-					le definimos un ID (certify) para trabajarlo con 'src/js/navbar.js' 
+					le definimos un ID (certify) utilizado en 'src/js/navbar.js' 
 				-->
 				<section class="component_certificates" id="certify">
 					<h3 class="color_js">Certificados</h3>
 
 					<!--  
-						DIVS (container_certify) contienen a 2 TAGS SECTIONS
+						4 DIVS (container_certify) cada uno contiene a 2 TAGS SECTIONS
 					-->
 					<div class="container_certify">
 						<!--  
-							SECTION (box_title) contiene a 1 TAG H2 1 TAG ION-ICON con 
-							clase (icon_certify) para trabajarlo con 'src/js/certificates.js'
+							SECTION (box_title) contiene a 1 TAG H2, 1 TAG ION-ICON esta 
+							con clase (icon_certify) utilizada en 'src/js/certificates.js'
 						-->
 						<section class="box_title">
 							<h2>Diseño Web</h2>
@@ -373,9 +391,6 @@
 							SECTION (content_certify) contiene 2 TAGS H4, 1 TAG P y 1 TAG DIV
 						-->
 						<section class="content_certify">
-							<!--  
-								1 DIV (box_academy) dentro 2 TAG H4
-							-->
 							<h4>Instituto:<strong> Udemy </strong></h4>
 
 							<h4>Intensidad:<strong> 77 Horas </strong></h4>
@@ -391,8 +406,8 @@
 							</p>
 
 							<!--  
-								1 DIV (box_certify) adentro TAGS A de descarga para los certificados 
-								definimos una clase (links_donwload) para trabajarlas con 'src/js/navbar.js'
+								1 DIV (box_certify) contiene a 3 TAGS A para descargar los certificados 
+								definimos una clase (color_js) utilizada en 'src/js/navbar.js'
 							-->
 							<div class="box_certify">
 								<a href="./assets/docs/html1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload color_js">1. Descargar Certificados</a>
@@ -480,7 +495,7 @@
 
 				<!--  
 					COMPONENT_PROYECTS: su hoja de estilos 'src/sass/layout/_proyectos.scss'
-					le definimos un ID (proyects) para trabarlo con 'src/js/navbar.js' 		
+					le definimos un ID (proyects) utiizado enn 'src/js/navbar.js' 		
 				-->
 				<section class="component_proyects" id="proyects">
 					<h3 class="color_js">Proyectos</h3>
@@ -497,7 +512,7 @@
 
 				<!-- 
 					COMPONENT_CONTACTS: su hoja de estilos src/sass/layout/_contactos.scss
-					le definimos un ID (contacts) para trabajarlo con 'src/js/navbar.js'	
+					le definimos un ID (contacts) utilizado en 'src/js/navbar.js'	
 				-->
 				<section class="component_contacts" id="contacts">
 					<h3 class="color_js">Contactos</h3>
@@ -511,24 +526,24 @@
 							de ponerme en contacto lo antes posible, recuerda 
 							que todos los campos del formulario son requeridos... GRACIAS
 						</p>
-					
 
 						<!--  
 							FORM: contiene a 5 TAGS DIV, le definimos un ID (formulario) 
-							para trabajarlo con 'src/js/contactos.js'
+							utilizado en 'src/js/contactos.js'
 						-->
 						<form autocomplete="off" id="formulario">
 							<!--  
-								3 DIVS (box_inputs): contiene a 1 TAG INPUT, 1 TAG SPAN 
-								para crear un borde animado y TAG P
+								3 DIVS (box_inputs): cada uno contiene a 1 TAG INPUT, 
+								1 TAG SPAN para crear un borde animado y TAG P
 							-->
 							<div class="box_inputs">
 								<input type="text" name="name" placeholder="Nombre *"/>
+
 								<span class="border_animated"></span>
 
 								<!--  
-									P (box_errors): les definimos un ID (error_???) para mostrar 
-									alertas de error al usuario trabajadas con 'src/js/contactos.js'
+									P (box_errors): les definimos un ID (error_???) 
+									utilizado en 'src/js/contactos.js'
 								-->
 								<p class="box_errors bg_js" id="error_name">
 									De 4 a 16 digitos no simbolos no numeros	
@@ -537,6 +552,7 @@
 
 							<div class="box_inputs">
 								<input type="text" name="email" placeholder="Email *"/>
+
 								<span class="border_animated"></span>
 
 								<p class="box_errors bg_js" id="error_email">
@@ -546,6 +562,7 @@
 
 							<div class="box_inputs">
 								<input type="text" name="post" placeholder="Comentarios *"/>
+
 								<span class="border_animated"></span>
 								
 								<p class="box_errors bg_js" id="error_post">
@@ -589,7 +606,7 @@
 				<footer class="component_footer">
 					<!--  
 						ICON-ICON: le definimos un ID (icon_gotop) 
-						para trabajarlo con 'src/js/footer.js'
+						utilizado en 'src/js/footer.js'
 					-->
 					<ion-icon name="arrow-up-outline" class="bg_js" id="icon_gotop"></ion-icon>
 				</footer>

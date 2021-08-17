@@ -1,8 +1,8 @@
 // ------ START CODE - VISIBLE/HIDDEN MODAL FROM COMPONET_BANNER ------- //
 
 /*
-    almacenamos en VARS a COMPONENT_MODAL, CONTAINER_CARD_MODAL y al 
-    boton definido en COMPONENT_BANNER 
+    almacenamos en VARS a COMPONENT_MODAL, CONTAINER_CARD_MODAL definidos en
+    COMPONENT_MODAL y el BUTTON definido en COMPONENT_BANNER 
 */
 let $window_modal = document.querySelector('#window_modal'),
     $card_modal = document.querySelector('#card_modal'),
@@ -27,6 +27,7 @@ $btnOpen_modal.addEventListener('click', function() {
     /* 
         añadimos a $CARD_MODAL la clase (translate_down) definida
         en 'src/sass/layout/modal.scss' que desplaza la tarjeta modal
+        generando un efecto de entrada
     */
     $card_modal.classList.add('translate_down');
 });

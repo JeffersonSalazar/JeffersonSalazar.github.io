@@ -2,6 +2,7 @@
 
 /* 
     almacenamos en VARS a CONTAINER_CERTIFY, ICON_CERTIFY y CONTENT_CERTIFY
+    definidos dentro de COMPONENT_CERTIFICATES
 */
 let $sectionsCertify = document.querySelectorAll('.container_certify');
 let $iconCertify = document.querySelectorAll('.icon_certify');

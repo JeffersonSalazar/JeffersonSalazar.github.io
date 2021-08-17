@@ -10,17 +10,16 @@
     align-items: center;
     transition: height .5s ease-in-out;
 
-    @media (max-width: 900px) { // dispositivos 999px <= <= <=
+    // @media (max-width: 900px) { // dispositivos 999px <= <= <=
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
-        z-index: 89;
-    };
+        z-index: 79;
+    // };
     
     /*
-        clase añadida con 'src/js/header.js' al (COMPONENT_HEADER) 
-        para agregarle BACKGROUND, HEIGHT y SHADOW
+        clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
     */
     &.scorll_header {
         background-color: $background_four;
@@ -60,9 +59,7 @@
             transition: all .3s ease;
 
             /*
-                clase añadida con 'src/js/header.js', a (ICON_MODE_HEADER), 
-                redefinimos LEFT para cambiarlo de posicion y BACKGROUND y 
-                SHADOW para crear el BOTON (dark)
+                clase añadida con 'src/js/header.js', a ICON_MODE_HEADER 
             */
             &.active_dark {
                 left: 40px;
@@ -79,7 +76,7 @@
         cursor: pointer;
 
         /*
-            clase añadida desde 'src/js/header.js', al (BOX_MENUICON_HEADER)
+            clase añadida con 'src/js/header.js', a BOX_MENUICON_HEADER
             la cual translada y rota la primera y tercera linea y desvanece la 
             segunda para convertir el menu burger en X
         */
@@ -96,7 +93,7 @@
         };
 
         /*
-            clase añadida desde 'src/js/navbar.js', al (BOX_MENUICON_HEADER)
+            clase añadida con 'src/js/navbar.js', a BOX_MENUICON_HEADER
             la cual transalada y rota la primera y tercera linea, retira la opacidad 
             de la segunda linea y genera un margen en para convertir el menu de X a burger 
         */

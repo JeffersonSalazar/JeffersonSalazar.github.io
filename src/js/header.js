@@ -1,7 +1,7 @@
 // ------------ START CODE - SCROLL NAVBAR ----------- //
 
 /* 
-    almacenamos en una VAR al COMPONENT_HEADER 
+    almacenamos en 1 VAR al COMPONENT_HEADER 
 */
 let $header = document.querySelector('#header');
 
@@ -12,7 +12,7 @@ window.addEventListener('scroll', function() {
     /*  
         definimos un condicional, si su PAGEYOFFSET es mayor a 20, añade a 
         $HEADER la clase (scorll_header) definida en 'src/sass/layout/header.scss'
-        que genera el efecto SCROLL y cuando sea menor la remueva
+        que genera el efecto SCROLL y cuando sea menor la remueve
     */
     if(this.pageYOffset > 20) {
         $header.classList.add('scorll_header');
@@ -27,7 +27,7 @@ window.addEventListener('scroll', function() {
 // ------------ START CODE - DARK MODE ----------- //
 
 /* 
-    almacenamos en una VAR a ICON_MODE_HEADER definido en COMPONENT_HEADER
+    almacenamos en 1 VAR a DARK_MODE ID, definido en COMPONENT_HEADER
 */
 let $dark_mode = document.querySelector('#dark_mode');
 
@@ -37,7 +37,7 @@ let $dark_mode = document.querySelector('#dark_mode');
 $dark_mode.addEventListener('click', function() {
     /* 
         añadimos o removemos de $DARK_MODE la clase (active_dark) definida en 
-        'src/sass/layout/header.scss'que tranforma el boton de light a dark 
+        'src/sass/layout/header.scss' que tranforma el boton de light a dark 
     */
     this.classList.toggle('active_dark');
 
@@ -79,14 +79,14 @@ if (localStorage.getItem('key_darkMode') === "true") {
 // --------------- END CODE ------------------- //
 
 
-// ------- START CODE - ICON TRANSFORM AND SHOW MENU --------- //
+// ------- START CODE - TRANSFORM  ICON X AND SHOW MENU --------- //
 
 /* 
-    almacenamos en VARS al COMPONENT_NAVBAR y al icono de menu
-    definido en COMPONENT_HEADER
+    almacenamos en VARS al NAVBAR ID y al MENUICON ID
+    definidos en COMPONENT_HEADER
 */
-let $nav_bar = document.querySelector('#navbar');
-let $menu_icon = document.querySelector('#menuIcon');
+let $nav_bar = document.querySelector('#navbar'),
+    $menu_icon = document.querySelector('#menuIcon');
 
 /* 
     generamos un evento CLICK en $MENU_ICON y definimos una FUNCION
