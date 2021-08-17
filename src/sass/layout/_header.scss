@@ -4,19 +4,16 @@
     alineamos y centramos los elementos
 */
 .component_header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 79;
     display: flex;
     justify-content: space-around;
     height: 60px;
     align-items: center;
     transition: height .5s ease-in-out;
-
-    // @media (max-width: 900px) { // dispositivos 999px <= <= <=
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 79;
-    // };
     
     /*
         clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
@@ -152,3 +149,7 @@
     };
 };
 
+
+.fixed_header {
+    height: 60px;
+};

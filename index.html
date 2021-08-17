@@ -36,6 +36,13 @@
 		
 
 		<!-- 
+			FIXED_HEADER: se encarga de solucionar el problema generado
+			por la propiedad FIXED que aplicamos en COMPONENT_HEADER
+			su hoja de estilos 'src/sass/layout/_header.scss'
+		-->
+		<div class="fixed_header"></div>
+
+		<!-- 
 			CONTAINER_BODY: cuerpo de la pagina
 		-->
 		<main class="container_body">
@@ -43,7 +50,7 @@
 				COMPONENT_NAVBAR: su hoja de estilos => src/sass/layout/_navbar.scss
 				le definimos un ID (navbar) utilizado en 'src/js/navbar.js'	
 			-->
-			<section class="component_navbar" id="navbar">
+			<div class="component_navbar" id="navbar">
 				<!--  
 					NAV: contiene 1 TAG UL
 				-->
@@ -103,15 +110,15 @@
 						<button type="button" class="btn_animated bg_js" id="btn_navbar">Skins</button>
 					</div>
 				</nav>
-			</section>
+			</div>
 
 
 			<!--  
-				COMPONENT_FIXED: se encarga de solucionar el problema generado
+				FIXED_NAV: se encarga de solucionar el problema generado
 				por la propiedad FIXED que aplicamos en COMPONENT_NAVBAR
-				su hoja de estilos 'src/sass/main.scss'
+				su hoja de estilos 'src/sass/layout/_navbar.scss'
 			-->
-			<!-- <section class="component_fixed"></section> -->
+			<div class="fixed_navbar"></div>
 
 
 			<!--  

@@ -37,7 +37,8 @@
     la transicion la usamos para suavizar el :HOVER
 */
 .component_navbar {
-  background: rgba(255, 0, 0, 0.452);
+  -webkit-transition: width .5s ease;
+  transition: width .5s ease;
   /*
         propiedades para diseño resposive en
         dispositivos moviles 999px <= <= <=
@@ -50,39 +51,51 @@
 
 @media (max-width: 999px) {
   .component_navbar {
+    min-width: 0%;
     /*
             clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
         */
+  }
+  .component_navbar.open_navbar {
+    min-width: 75px;
+  }
+  .component_navbar:hover {
+    min-width: 240px;
   }
 }
 
 @media (min-width: 1000px) {
   .component_navbar {
+    width: 75px;
     /*
             clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
         */
+  }
+  .component_navbar.close_navbar {
+    width: 0%;
+  }
+  .component_navbar:hover {
+    width: 240px;
   }
 }
 
 .component_navbar .box_nav_navbar {
   background-color: #0e89fc;
-  width: 75px;
   position: fixed;
   left: 0;
   z-index: 89;
-  height: 100vh;
+  width: inherit;
+  height: 100%;
   overflow-x: hidden;
-  -webkit-transition: width .5s ease;
-  transition: width .5s ease;
 }
 
-@media (max-width: 499px) {
+@media (max-width: 599px) {
   .component_navbar .box_nav_navbar {
     top: 60px;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .component_navbar .box_nav_navbar {
     top: 60px;
   }
@@ -158,11 +171,19 @@
 }
 
 /*
+    definimos WIDTH en las medidas definidas en las media QUERYS
+*/
+/*
     definimos POSITION y sus medidas para que (COMPONENT_HEADER) se fije
     en la parte superior de la pantalla y este siempre al frente, con FLEXBOX 
     alineamos y centramos los elementos
 */
 .component_header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 79;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,11 +195,6 @@
           align-items: center;
   -webkit-transition: height .5s ease-in-out;
   transition: height .5s ease-in-out;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 79;
   /*
         clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
     */
@@ -321,6 +337,10 @@
     -webkit-transform: translateY(-4px) rotate(45deg);
             transform: translateY(-4px) rotate(45deg);
   }
+}
+
+.fixed_header {
+  height: 60px;
 }
 
 .component_banner .box_img_banner {
@@ -1125,9 +1145,6 @@ body.body_darkmode {
   }
 }
 
-/*
-    definimos WIDTH en las medidas definidas en las media QUERYS
-*/
 /* 
     propiedades compartidas por la TAG BUTTON
 */
