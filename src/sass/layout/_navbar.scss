@@ -5,26 +5,35 @@
     la transicion la usamos para suavizar el :HOVER
 */
 .component_navbar {
-    // background: red;
-    // position: fixed;
-    // left: 0;
-    // z-index: 89;
-    // height: 100vh;
+    // background: rgba(255, 0, 0, 0.322);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 89;
+    height: 100vh;
     transition: width .5s ease;
+
+    @media (max-width: 599px) {
+        top: 60px;
+    };
+
+    @media (min-width: 700px) {
+        top: 60px;
+    };
 
     /*
         propiedades para diseño resposive en
         dispositivos moviles 999px <= <= <=
     */
     @media (max-width:999px) {
-        min-width: 0%;
+        width: 0%;
 
         /*
             clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
         */
-        &.open_navbar { min-width: 75px; };
+        &.open_navbar { width: 75px; };
 
-        &:hover { min-width: 240px; }; // hover encargado de redefinir el ancho
+        &:hover { width: 240px; }; // hover encargado de redefinir el ancho
     };
     
     /*
@@ -44,21 +53,12 @@
 
     .box_nav_navbar {
         background-color: $background_three;
-        // background-color: transparent;
-        position: fixed;
-        left: 0;
-        z-index: 89;
-        width: inherit;
+        // position: fixed;
+        // left: 0;
+        // z-index: 89;
+        // width: inherit;
         height: 100%;
         overflow-x: hidden;
-
-        @media (max-width: 599px) {
-            top: 60px;
-        };
-
-        @media (min-width: 700px) {
-            top: 60px;
-        };
 
         ul {
             padding: 40px 0 40px 9px;
@@ -130,15 +130,13 @@
 /*
     definimos WIDTH en las medidas definidas en las media QUERYS
 */
-// .fixed_navbar {
-//     background: blue;
-//     // width: inherit;
+.fixed_navbar {
 
-//     @media (max-width: 999px) { // dispositivos 999px <= <= <=
-//         width: 0;
-//     };
+    @media (max-width: 999px) { // dispositivos 999px <= <= <=
+        width: 0;
+    };
 
-//     @media (min-width: 1000px) { // dispositivos 1000px => => =>
-//         width: 75px;
-//     };
-// };
+    @media (min-width: 1000px) { // dispositivos 1000px => => =>
+        min-width: 75px;
+    };
+};
