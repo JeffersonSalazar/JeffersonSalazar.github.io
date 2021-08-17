@@ -158,13 +158,12 @@
 					para trabarlo con 'src/js/banner_modal.js'
 					su hoja de estilos src/sass/layout/_modal.scss
 				-->
-				<section class="component_modal" id="window_modal">
+				<div class="component_modal" id="window_modal">
 					<!--  
 						DIV (container_card_modal): dentro 2 TAGS ASIDE, definimos un 
 						ID (card_modal) para trabajarlo con 'src/js/banner_modal.js'
 					-->
 					<div class="container_card_modal" id="card_modal">
-
 						<!--  
 							1 ASIDE (box_img_modal): dentro 1 TAG IMG
 						-->
@@ -205,7 +204,7 @@
 							</p>
 						</aside>
 					</div>
-				</section>
+				</div>
 				
 
 				<!-- 
@@ -213,112 +212,141 @@
 					para trabarlo con 'src/js/navbar.js'
 					su hoja de estilos src/sass/layout/_habilidades.scss
 				-->
-				<!--<section class="component_skills" id="skills">
+				<section class="component_skills" id="skills">
 					<h3 class="color_js">Habilidades</h3>
 
-				
-					<div class="container_skills">
-
-						
-						<article class="html">
+					<div class="container_skills">				
+						<div class="box_skills html">
 							
 							<div class="box_img_skills">
 								<img src="./assets/images/html5.png" alt="html">
 							</div>
 
-						
-							<div class="box_level_skills html_level">80%</div>
-						</article>
+							<!-- <div class="box_level_skills html_level">
+								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
+								ksdfjskldfjskld
+							</div> -->
+						</div>
 
-						<article class="css">
+						<div class="box_skills css">
 							<div class="box_img_skills">
 								<img src="./assets/images/css.png" alt="css">
 							</div>
 
-							<div class="box_level_skills css_level">80%</div>
-						</article>
+							<div class="box_level_skills css_level">
+								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
+								ksdfjskldfjskld
+							</div>
+						</div>
 
-						<article class="sass">
+						<div class="box_skills sass">
 							<div class="box_img_skills">
 								<img src="./assets/images/sass.png" alt="sass">
 							</div>
 
-							<div class="box_level_skills sass_level">90%</div>
-						</article>
+							<div class="box_level_skills sass_level">
+								Anidacion Variables Mixin Condicionales
+							</div>
+						</div>
 
-						<article class="bootstrap">
+						<div class="box_skills bootstrap">
 							<div class="box_img_skills">
 								<img src="./assets/images/bootstrap.png" alt="bootstrap">
 							</div>
 
-							<div class="box_level_skills bootstrap_level">70%</div>
-						</article>
+							<div class="box_level_skills bootstrap_level">
+								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
+								ksdfjskldfjskld
+							</div>
+						</div>
 
-						<article class="javascript">
+						<div class="box_skills javascript">
 							<div class="box_img_skills">
 								<img src="./assets/images/javascript.png" alt="javascript">
 							</div>
 
-							<div class="box_level_skills javascript_level">70%</div>
-						</article>
+							<div class="box_level_skills javascript_level">
+								Eventos Bucles Condicionales Arrays Funciones Objetos 
+							</div>
+						</div>
 
-						<article class="angular">
+						<div class="box_skills angular">
 							<div class="box_img_skills">
 								<img src="./assets/images/angular.png" alt="angular">
 							</div>
 
-							<div class="box_level_skills angular_level">70%</div>
-						</article>
+							<div class="box_level_skills angular_level">
+								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
+								ksdfjskldfjskld
+							</div>
+						</div>
 
-						<article class="nodejs">
+						<div class="box_skills nodejs">
 							<div class="box_img_skills">
 								<img src="./assets/images/node.png" alt="nodejs">
 							</div>
 
-							<div class="box_level_skills nodejs_level">50%</div>
-						</article>
+							<div class="box_level_skills nodejs_level">
+								Crear un servidor local con express, creacion de APIS,
+								conexion a bases de datos MYSQL y MONGODB
+							</div>
+						</div>
 
-						<article class="mysql">
+						<div class="box_skills mysql">
 							<div class="box_img_skills">
 								<img src="./assets/images/mysql.png" alt="mysql">
 							</div>
 
-							<div class="box_level_skills mysql_level">50%</div>
-						</article>
+							<div class="box_level_skills mysql_level">
+								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
+								ksdfjskldfjskld
+							</div>
+						</div>
 
-						<article class="mongodb">
+						<div class="box_skills mongodb">
 							<div class="box_img_skills">
 								<img src="./assets/images/mongo.png" alt="mongo">
 							</div>
 
-							<div class="box_level_skills mongodb_level">50%</div>
-						</article>
+							<div class="box_level_skills mongodb_level">
+								crear base de datos por medio de schemas, interaccion 
+								con los meotodos POST, GET, DELETE y UPDATE, paginacion
+							</div>
+						</div>
 
-						<article class="git">
+						<div class="box_skills git">
 							<div class="box_img_skills">
 								<img src="./assets/images/git.png" alt="git">
 							</div>
 
-							<div class="box_level_skills git_level">50%</div>
-						</article>
+							<div class="box_level_skills git_level">
+								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
+								ksdfjskldfjskld
+							</div>
+						</div>
 
-						<article class="illustrator">
+						<div class="box_skills illustrator">
 							<div class="box_img_skills">
 								<img src="./assets/images/ilustrator.png" alt="ilustrator">
 							</div>
 
-							<div class="box_level_skills illustrator_level">20%</div>
-						</article>
+							<div class="box_level_skills illustrator_level">
+								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
+								ksdfjskldfjskld
+							</div>
+						</div>
 
-						<article class="ui_ux">
+						<div class="box_skills ui_ux">
 							<div class="box_img_skills">
 								<img src="./assets/images/ui-ux.png" alt="ui-ux">
 							</div>
 
-							<div class="box_level_skills ui_ux_level">90%</div>
-						</article>
+							<div class="box_level_skills ui_ux_level">
+								Diseños para dispositivos moviles y accesibles y funcionales
+							</div>
+						</div>
 					</div>
-				</section> -->
+				</section>
 
 
 				<!-- 

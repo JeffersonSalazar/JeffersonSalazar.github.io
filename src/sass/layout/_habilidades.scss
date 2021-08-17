@@ -9,37 +9,25 @@
   */
   .container_skills {
     display: grid;
-    // grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    
     gap: 20px;
-
-    // @media (max-width: 399px) {
-    //   grid-template-columns: repeat(2, 1fr);
-    //   background: red;
-    // }
-
-    // @media (max-width: 400px) {
-    //   grid-template-columns: repeat(3, 1fr);
-    //   background: blue;
-    // }
 
     @media (max-width: 599px) {
       grid-template-columns: repeat(2, 1fr);
     }
 
     @media (min-width: 600px) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     @media (min-width: 900px) {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(6, 1fr);
     }
       
     /*
       importante definir POSITION y Z-INDEX para posicionar
       esta TAG sobre la barra de progreso
     */
-    article { 
+    .box_skills { 
       text-align: center;
       position: relative;
       z-index: 0;
@@ -52,15 +40,16 @@
         creamos la barra de progreso usando :BEFORE, definimos POSITION y las 
         porpiedades de medida para ubicar la barra de progreso y definimos un WIDTH 0
       */
-      &:before{
+      &:before {
         content: '';
         position: absolute;
         z-index: -2;
         left: 0;
         top: 0;
-        width: 0%;
-        height: 20px;
-        border-radius: 10px 10px 10px 0;
+        width: 100%;
+        height: 30px;
+        border-radius: 10px 10px 0px 0;
+        opacity: 0;
         transition: all .5s ease;
       };
 
@@ -68,25 +57,10 @@
         haciendo :HOVER a las clases de la TAG ARTICLE redefinimos el WIDTH 
         definido en :BEFORE logrando el fecto de barra de progreso 
       */
-      &.html:hover:before, &.css:hover:before {
-        width: 80%;
+      &:hover:before {
+        opacity: 1;
       };
 
-      &.sass:hover:before, &.ui_ux:hover:before {
-        width: 90%;
-      };
-
-      &.bootstrap:hover:before, &.javascript:hover:before, &.angular:hover:before {
-        width: 70%;
-      };
-
-      &.nodejs:hover:before, &.mysql:hover:before, &.mongodb:hover:before, &.git:hover:before {
-        width: 50%;
-      };
-
-      &.illustrator:hover:before {
-        width: 20%;
-      };
 
       /*
         cuando hacemos :HOVER en las TAGS ARTICLE añadimos una animacion en 
@@ -118,11 +92,24 @@
 
 
       .box_img_skills {
-        padding: 48px 0 10px;
+        padding: 44px 0 10px;
 
         img {
-          width: 144px;
-          height: 144px
+
+          @media (max-width: 999px) {
+            width: 64px;
+            height: 64px;
+          }
+
+          @media (min-width: 600px) {
+            width: 96px;
+            height: 96px;
+          }
+
+          @media (min-width: 900px) {
+            width: 104px;
+            height: 104px;
+          }
         };
       };
 
@@ -132,8 +119,7 @@
         hagamos :HOVER en las TAGS ARTICLES
       */
       .box_level_skills {
-        padding: 20px 0;
-        font-size: 80px;
+        padding: 10px;
         font-family: 'PT Sans', sans-serif;
         color: $color_one;
         border-radius: 0 0 10px 10px;

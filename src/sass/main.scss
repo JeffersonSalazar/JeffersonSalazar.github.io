@@ -65,9 +65,18 @@ body {
     };
 };
 
-.component_skills {
+.component_skills, .component_certificates {
+    min-width: 300px;
     margin: 60px 0;
-}
+
+    @media (max-width: 999px) { // dispositivos 999px <= <= <=
+        // padding: 40px 20px;
+    };
+    
+    @media (min-width: 1000px) { // dispositivos 1000px => => =>
+        padding: 40px 0;
+    };
+};
 
 
 /*

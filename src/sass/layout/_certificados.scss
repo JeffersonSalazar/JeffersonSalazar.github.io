@@ -1,13 +1,5 @@
 .component_certificates {
 
-    @media (max-width: 900px) { // dispositivos 1000px <= <= <=
-        padding: 40px 20px;
-    };
-
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        padding: 40px 0;
-    };
-
     .container_certify {
         background-color: $background_one;
         border-radius: 10px;
@@ -64,7 +56,7 @@
             
 
             .text_certify {
-                margin: 40px 0;
+                margin: 20px 0;
             };
 
             .box_certify {
