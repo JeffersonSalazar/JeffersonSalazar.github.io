@@ -82,17 +82,24 @@ if (localStorage.getItem('key_darkMode') === "true") {
 // ------- START CODE - TRANSFORM  ICON X AND SHOW MENU --------- //
 
 /* 
-    almacenamos en VARS al NAVBAR ID y al MENUICON ID
-    definidos en COMPONENT_HEADER
+    almacenamos en VARS a NAVBAR ID, a MENUICON ID definidos en 
+    COMPONENT_HEADER y a COMPONENT_FIXED ID
 */
 let $nav_bar = document.querySelector('#navbar'),
+    $fixed_header = document.querySelector('#fixed_header');
     $menu_icon = document.querySelector('#menuIcon');
 
 /* 
     generamos un evento CLICK en $MENU_ICON y definimos una FUNCION
 */
 $menu_icon.addEventListener('click', function() {
+    /* 
+        añadimos o removemos de $MENU_ICON la clase (transform_iconMenu) 
+        definida en 'src/sass/header.scss' que transforma el icon menu
+    */
+    this.classList.toggle('transform_iconMenu');
 
+        
     /*
         añadimos o removemos de $NAV_BAR la clase (open_navbar)
         definida en 'src/sass/navbar.scss' que muestra el menu de navegacion  
@@ -105,11 +112,12 @@ $menu_icon.addEventListener('click', function() {
     */
     $nav_bar.classList.toggle('close_navbar');
 
-    /* 
-        añadimos o removemos de $MENU_ICON la clase (transform_iconMenu) 
-        definida en 'src/sass/header.scss' que transforma el icon menu
+
+    /*
+        añadimos o removemos de $FIXED la clase (close_fixed) definida 
+        en 'src/sass/navbar.scss' que oculta el COMPONENT_FIXED  
     */
-    this.classList.toggle('transform_iconMenu');
+    $fixed_header.classList.toggle('close_fixed');
 });
 
 // --------------- END CODE ------------------- //
