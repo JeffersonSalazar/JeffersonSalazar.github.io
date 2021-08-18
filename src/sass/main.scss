@@ -23,13 +23,34 @@
 */
 body {
     background-color: $background_four;
-    transition: all .5s ease;
-    
+    transition: all .5s ease; 
+};
+
+body {
     /*
         clase añadida con 'src/js/header.js'
     */
     &.body_darkmode {
         background-color: #2b2b2bd2;
+    };
+};
+
+.component_dark {
+    /*
+        clase añadida con 'src/js/header.js'
+    */
+    &.component_darkmode {
+        background-color: #525050 !important;
+        border: $border_one !important;
+    };
+};
+
+.text_dark {
+    /*
+    clase añadida con 'src/js/header.js'
+    */
+    &.text_light {
+        color: $color_one !important;
     };
 };
 
@@ -53,7 +74,7 @@ body {
     background-color: $background_one;
     min-width: 300px;
     border: $border_one;
-    margin: 60px 0;
+    margin: 80px 0;
     
     @media (max-width: 999px) { // dispositivos 999px <= <= <=
         padding: 40px 20px;

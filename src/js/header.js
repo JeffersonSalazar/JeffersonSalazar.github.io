@@ -29,7 +29,9 @@ window.addEventListener('scroll', function() {
 /* 
     almacenamos en 1 VAR a DARK_MODE ID, definido en COMPONENT_HEADER
 */
-let $dark_mode = document.querySelector('#dark_mode');
+let $dark_mode = document.querySelector('#dark_mode'),
+    $component_dark = document.querySelectorAll('.component_dark'),
+    $text_dark = document.querySelectorAll('.text_dark');
 
 /* 
     generamos un evento CLICK en $DARK_MODE y declaramos una FUNCTION
@@ -46,6 +48,22 @@ $dark_mode.addEventListener('click', function() {
         'src/sass/main.scss' que añade color de fondo a todo el BODY  
     */
     document.body.classList.toggle('body_darkmode');
+    
+    /* 
+        añadimos o removemos de los COMPONENTES la clase (body_darkmode) definida en 
+        'src/sass/main.scss' que añade color de fondo a todos los componentes  
+    */
+    $component_dark.forEach(component => {
+       component.classList.toggle('component_darkmode');
+    });
+
+    /* 
+        añadimos o removemos de los TEXTOS la clase (text_light) definida en 
+        'src/sass/main.scss' que añade color a todos los textos  
+    */
+    $text_dark.forEach(dark => {
+       dark.classList.toggle('text_light');
+    });
 
     /*  
         definimos un condicional, si el BODY tiene la clase (body_darkmode) 
@@ -70,10 +88,28 @@ $dark_mode.addEventListener('click', function() {
 */
 if (localStorage.getItem('key_darkMode') === "true") {
     $dark_mode.classList.add('active_dark');
+
     document.body.classList.add('body_darkmode');
+
+    $component_dark.forEach(component => {
+        component.classList.add('component_darkmode');
+     });
+
+    $text_dark.forEach(dark => {
+        dark.classList.add('text_light');
+     });
 } else {
     $dark_mode.classList.remove('active_dark');
+
     document.body.classList.remove('body_darkmode');
+
+    $component_dark.forEach(component => {
+        component.classList.remove('component_darkmode');
+     });
+     
+    $text_dark.forEach(dark => {
+        dark.classList.remove('text_light');
+     });
 }; 
 
 // --------------- END CODE ------------------- //
