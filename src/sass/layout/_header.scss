@@ -9,11 +9,12 @@
     right: 0;
     left: 0;
     z-index: 79;
+    border-bottom: $border_one;
     display: flex;
     justify-content: space-around;
     height: 60px;
     align-items: center;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
     
     /*
     clase añadida con 'src/js/header.js' a COMPONENT_HEADER 

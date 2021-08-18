@@ -204,6 +204,7 @@
   right: 0;
   left: 0;
   z-index: 79;
+  border-bottom: 1px solid #cccccc86;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,8 +214,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
   /*
     clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
     */
@@ -373,7 +374,7 @@
 }
 
 .component_banner .box_img_banner .box_hdv_banner {
-  padding: 10px 0;
+  padding: 10px 0 20px;
 }
 
 .component_banner .box_img_banner .box_hdv_banner a {
@@ -386,13 +387,13 @@
 
 @media (max-width: 999px) {
   .component_banner p {
-    padding: 25px 0;
+    padding: 10px 0;
   }
 }
 
 @media (min-width: 1000px) {
   .component_banner p {
-    padding: 15px 40px;
+    padding: 10px 40px;
   }
 }
 
@@ -874,7 +875,7 @@
 
 @media (max-width: 900px) {
   .component_contacts .box_data_form .text_card_form {
-    padding: 40px 0 50px;
+    padding: 15px 0 50px;
   }
 }
 
@@ -1120,7 +1121,6 @@ body.body_darkmode {
 
 .component_dark.component_darkmode {
   background-color: #525050 !important;
-  border: 1px solid #cccccc86 !important;
 }
 
 .text_dark {
@@ -1155,7 +1155,6 @@ body.body_darkmode {
 .component_banner, .component_contacts, .component_proyects {
   background-color: #fff;
   min-width: 300px;
-  border: 1px solid #cccccc86;
   margin: 80px 0;
 }
 

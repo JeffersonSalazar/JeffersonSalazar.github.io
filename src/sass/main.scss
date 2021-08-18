@@ -41,7 +41,6 @@ body {
     */
     &.component_darkmode {
         background-color: #525050 !important;
-        border: $border_one !important;
     };
 };
 
@@ -73,7 +72,6 @@ body {
 .component_banner, .component_contacts, .component_proyects {
     background-color: $background_one;
     min-width: 300px;
-    border: $border_one;
     margin: 80px 0;
     
     @media (max-width: 999px) { // dispositivos 999px <= <= <=
