@@ -2,46 +2,55 @@
     definimos POSITION y las propiedades de medidas para posicionar el footer
 */
 footer { 
-    position: fixed;
-    right: 0;
-    bottom: 16px;
-    z-index: 69;
-    margin: 0 15px;
+    
+    h4 {
+        text-align: center;
+        padding: 16px 0;
+        color: $color_two;
+    }
 
-    /*
-        definimos OPACITY para desvanecer el icono 
-    */
-    ion-icon {
-        background-color: $background_three;
-        color: $color_one;
-        font-size: 25px;
-        border-radius: 50%;
-        padding: 12px;
-        opacity: 0;
-        cursor: pointer;
-        transition: opacity .3s ease-in-out;
-        
+    .component_footer {
+        position: fixed;
+        right: 0;
+        bottom: 56px;
+        z-index: 69;
+        margin: 0 15px;
+
         /*
-            clase añadida con 'src/js/footer.js' a ION-ICON
+            definimos OPACITY para desvanecer el icono 
         */
-        &.show_gotop {
-            opacity: 1;
-            animation: animateGotop 1s ease 1s 3;
-
+        ion-icon {
+            background-color: $background_three;
+            color: $color_one;
+            font-size: 25px;
+            border-radius: 50%;
+            padding: 12px;
+            opacity: 0;
+            cursor: pointer;
+            transition: opacity .3s ease-in-out;
+            
             /*
-                esta ANIMACION genera un movimiento al boton
+                clase añadida con 'src/js/footer.js' a ION-ICON
             */
-            @keyframes animateGotop {
-                0% {
-                    transform: translateY(0);
-                };
-                50% {
-                    transform: translateY(-30px);
-                };
-                100% {
-                    transform: translateY(0);
+            &.show_gotop {
+                opacity: 1;
+                animation: animateGotop 1s ease 1s 3;
+
+                /*
+                    esta ANIMACION genera un movimiento al boton
+                */
+                @keyframes animateGotop {
+                    0% {
+                        transform: translateY(0);
+                    };
+                    50% {
+                        transform: translateY(-30px);
+                    };
+                    100% {
+                        transform: translateY(0);
+                    };
                 };
             };
         };
-    };
+    }
 };

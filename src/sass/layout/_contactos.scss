@@ -120,29 +120,13 @@
                 display: flex;
                 justify-content: center;
 
-                input {
-                    display: none;
-
-                    /*
-                        haciendo uso de la pseudo clase :CHECKED y el selector (~) 
-                        definimos que las TAGS A sean visibles con OPACITY y con 
-                        MARGIN los desagrupamos generando un efecto RESORTE.
-                    */
-                    &:checked ~ a {
-                        opacity: 1;
-                        margin: 0 0 0 8px;
-                    };
-                };
-
-                /*
-                    definimos que las TAGS A se oculten con OPACITY, y con 
-                    MARGIN los agrupamos generando un efecto RESORTE.
-                */
                 a {
-                    opacity: 0;
-                    margin-right: -45px;
-                    transition: all .3s ease;
-                };
+                    margin: 0 5px;
+
+                    ion-icon {
+                        font-size: 20px;
+                    }
+                }
             };
         };
     };

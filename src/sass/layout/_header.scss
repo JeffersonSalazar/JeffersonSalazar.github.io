@@ -9,7 +9,6 @@
     right: 0;
     left: 0;
     z-index: 79;
-    // border-bottom: $border_one;
     display: flex;
     justify-content: space-around;
     height: 60px;
@@ -17,7 +16,7 @@
     transition: background-color .3s ease-in-out;
     
     /*
-    clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
+        clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
     */
     &.scorll_header {
         background-color: #46484A;
@@ -70,7 +69,7 @@
 
 
     .box_menuIcon_header {
-        margin-top: 3px;
+        margin-top: 1px;
         cursor: pointer;
 
         /*

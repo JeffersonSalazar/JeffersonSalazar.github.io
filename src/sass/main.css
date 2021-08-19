@@ -211,7 +211,7 @@
   -webkit-transition: background-color .3s ease-in-out;
   transition: background-color .3s ease-in-out;
   /*
-    clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
+        clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
     */
   /*
         hacemos uso de POSITION, WIDTH, HEIGHT y SHADOW
@@ -270,7 +270,7 @@
 }
 
 .component_header .box_menuIcon_header {
-  margin-top: 3px;
+  margin-top: 1px;
   cursor: pointer;
   /*
             clase añadida con 'src/js/header.js', a BOX_MENUICON_HEADER
@@ -361,8 +361,8 @@
 .component_banner .box_img_banner img {
   border: 5px solid #0e89fc;
   border-radius: 50%;
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   padding: 20px;
 }
 
@@ -974,31 +974,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  /*
-                    definimos que las TAGS A se oculten con OPACITY, y con 
-                    MARGIN los agrupamos generando un efecto RESORTE.
-                */
-}
-
-.component_contacts .box_data_form form .box_socials_contacts input {
-  display: none;
-  /*
-                        haciendo uso de la pseudo clase :CHECKED y el selector (~) 
-                        definimos que las TAGS A sean visibles con OPACITY y con 
-                        MARGIN los desagrupamos generando un efecto RESORTE.
-                    */
-}
-
-.component_contacts .box_data_form form .box_socials_contacts input:checked ~ a {
-  opacity: 1;
-  margin: 0 0 0 8px;
 }
 
 .component_contacts .box_data_form form .box_socials_contacts a {
-  opacity: 0;
-  margin-right: -45px;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  margin: 0 5px;
+}
+
+.component_contacts .box_data_form form .box_socials_contacts a ion-icon {
+  font-size: 20px;
 }
 
 /*
@@ -1024,18 +1007,24 @@
 /*
     definimos POSITION y las propiedades de medidas para posicionar el footer
 */
-footer {
+footer h4 {
+  text-align: center;
+  padding: 16px 0;
+  color: #7e7b7c;
+}
+
+footer .component_footer {
   position: fixed;
   right: 0;
-  bottom: 16px;
+  bottom: 56px;
   z-index: 69;
   margin: 0 15px;
   /*
-        definimos OPACITY para desvanecer el icono 
-    */
+            definimos OPACITY para desvanecer el icono 
+        */
 }
 
-footer ion-icon {
+footer .component_footer ion-icon {
   background-color: #0e89fc;
   color: #fff;
   font-size: 25px;
@@ -1046,17 +1035,17 @@ footer ion-icon {
   -webkit-transition: opacity .3s ease-in-out;
   transition: opacity .3s ease-in-out;
   /*
-            clase añadida con 'src/js/footer.js' a ION-ICON
-        */
+                clase añadida con 'src/js/footer.js' a ION-ICON
+            */
 }
 
-footer ion-icon.show_gotop {
+footer .component_footer ion-icon.show_gotop {
   opacity: 1;
   -webkit-animation: animateGotop 1s ease 1s 3;
           animation: animateGotop 1s ease 1s 3;
   /*
-                esta ANIMACION genera un movimiento al boton
-            */
+                    esta ANIMACION genera un movimiento al boton
+                */
 }
 
 @-webkit-keyframes animateGotop {
@@ -1119,7 +1108,7 @@ body.body_darkmode {
 }
 
 .component_dark.component_darkmode {
-  background-color: #2b2b2b2d !important;
+  background-color: #46484A !important;
 }
 
 .text_dark {
@@ -1147,7 +1136,7 @@ body.body_darkmode {
 .component_banner, .component_contacts, .component_proyects {
   background-color: #fff;
   min-width: 300px;
-  margin: 80px 0;
+  margin: 60px 0;
 }
 
 @media (max-width: 999px) {
@@ -1196,7 +1185,7 @@ body.body_darkmode {
   font-family: 'PT Sans', sans-serif;
   letter-spacing: 1px;
   border-radius: 5px;
-  padding: 18px 60px;
+  padding: 14px 50px;
   cursor: pointer;
 }
 

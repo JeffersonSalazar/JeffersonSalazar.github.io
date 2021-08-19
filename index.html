@@ -586,13 +586,10 @@
 							</div>
 
 							<!--  
-								1 DIV (box_socials_contacts): contiene a 1 TAG LABEL, 
-								1 TAG INPUT tipo checkbox y a 3 TAGS A con sus TAGS ION-ICON
+								1 DIV (box_socials_contacts): contiene a 3 TAGS A cada una
+								con 3 TAGS ION-ICON
 							-->
 							<div class="box_socials_contacts">
-								<label for="check"><ion-icon class="icon_contacts bg_js" name="add-sharp"></ion-icon></label>
-								<input type="checkbox" name="check" id="check">
-			
 								<a href="https://github.com/JeffersonSalazar?tab=repositories" target="_blank">
 									<ion-icon class="icon_contacts bg_js" name="logo-github"></ion-icon>
 								</a>
@@ -606,21 +603,24 @@
 						</form>
 					</div>
 				</section>
-
-
-				<!-- 
-					COMPONENT_FOOTER: su hoja de estilos src/sass/layout/_footer.scss
-				-->
-				<footer class="component_footer">
-					<!--  
-						ICON-ICON: le definimos un ID (icon_gotop) 
-						utilizado en 'src/js/footer.js'
-					-->
-					<ion-icon name="arrow-up-outline" class="bg_js" id="icon_gotop"></ion-icon>
-				</footer>
 			</div>
 		</main>
 
+
+		<!-- 
+			COMPONENT_FOOTER: su hoja de estilos src/sass/layout/_footer.scss
+		-->
+		<footer>
+			<h4 id="data_year"></h4>
+
+			<div class="component_footer">
+				<!--  
+					ICON-ICON: le definimos un ID (icon_gotop) 
+					utilizado en 'src/js/footer.js'
+				-->
+				<ion-icon name="arrow-up-outline" class="bg_js" id="icon_gotop"></ion-icon>
+			</div>
+		</footer>
 
 		<!-- 
 			scripts icons ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓

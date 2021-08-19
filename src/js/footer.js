@@ -58,3 +58,8 @@ function scrollToTop() {
 $icon_gotop.addEventListener('click', scrollToTop);
 
 // ----------------- END CODE ---------------------- //
+
+let year = document.querySelector('#data_year'),
+    fecha = new Date().getFullYear();
+
+year.textContent = `© Diseñado por Jefferson Salazar ${fecha}`;
