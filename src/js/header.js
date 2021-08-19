@@ -30,8 +30,9 @@ window.addEventListener('scroll', function() {
     almacenamos en 1 VAR a DARK_MODE ID, definido en COMPONENT_HEADER
 */
 let $dark_mode = document.querySelector('#dark_mode'),
-    $component_dark = document.querySelectorAll('.component_dark'),
-    $text_dark = document.querySelectorAll('.text_dark');
+    $components_dark = document.querySelectorAll('.component_dark'),
+    $texts_dark = document.querySelectorAll('.text_dark');
+    $inputs_dark = document.querySelectorAll('input');
 
 /* 
     generamos un evento CLICK en $DARK_MODE y declaramos una FUNCTION
@@ -53,7 +54,7 @@ $dark_mode.addEventListener('click', function() {
         añadimos o removemos de los COMPONENTES la clase (body_darkmode) definida en 
         'src/sass/main.scss' que añade color de fondo a todos los componentes  
     */
-    $component_dark.forEach(component => {
+    $components_dark.forEach(component => {
        component.classList.toggle('component_darkmode');
     });
 
@@ -61,8 +62,16 @@ $dark_mode.addEventListener('click', function() {
         añadimos o removemos de los TEXTOS la clase (text_light) definida en 
         'src/sass/main.scss' que añade color a todos los textos  
     */
-    $text_dark.forEach(dark => {
-       dark.classList.toggle('text_light');
+    $texts_dark.forEach(text => {
+       text.classList.toggle('text_light');
+    });
+
+    /* 
+        añadimos o removemos de los TEXTOS la clase (text_light) definida en 
+        'src/sass/main.scss' que añade color a todos los textos  
+    */
+    $inputs_dark.forEach(input => {
+       input.classList.toggle('form_dark');
     });
 
     /*  
@@ -91,25 +100,33 @@ if (localStorage.getItem('key_darkMode') === "true") {
 
     document.body.classList.add('body_darkmode');
 
-    $component_dark.forEach(component => {
+    $components_dark.forEach(component => {
         component.classList.add('component_darkmode');
      });
 
-    $text_dark.forEach(dark => {
-        dark.classList.add('text_light');
-     });
+    $texts_dark.forEach(text => {
+        text.classList.add('text_light');
+    });
+
+    $inputs_dark.forEach(input => {
+        input.classList.add('form_dark');
+    });
 } else {
     $dark_mode.classList.remove('active_dark');
 
     document.body.classList.remove('body_darkmode');
 
-    $component_dark.forEach(component => {
+    $components_dark.forEach(component => {
         component.classList.remove('component_darkmode');
      });
      
-    $text_dark.forEach(dark => {
-        dark.classList.remove('text_light');
-     });
+    $texts_dark.forEach(text => {
+        text.classList.remove('text_light');
+    });
+
+    $inputs_dark.forEach(input => {
+        input.classList.remove('form_dark');
+    });
 }; 
 
 // --------------- END CODE ------------------- //

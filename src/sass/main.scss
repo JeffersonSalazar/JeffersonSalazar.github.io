@@ -1,16 +1,16 @@
-/*
-    importacion de las hojas de estilo en las que se definieron
-    las variables, layouts y fuentes utilizadas por cada una de
-    las secciones de este proyecto su RUTA: 'src/sass/shared'
-*/
+// /*
+//     importacion de las hojas de estilo en las que se definieron
+//     las variables, layouts y fuentes utilizadas por cada una de
+//     las secciones de este proyecto su RUTA: 'src/sass/shared'
+// */
 @import './shared/variables';
 @import './shared/fonts';
 @import './shared/layout';
 
 
-/*
-    reseteo de las propiedades que traen por defecto los navegadores
-*/
+// /*
+//     reseteo de las propiedades que traen por defecto los navegadores
+// */
 * {
     margin: 0;
     padding: 0;
@@ -18,9 +18,9 @@
 };
 
 
-/*
-    definimos en el body un color de fondo
-*/
+// /*
+//     definimos en el body un color de fondo
+// */
 body {
     background-color: $background_four;
     transition: all .5s ease; 
@@ -31,7 +31,7 @@ body {
         clase añadida con 'src/js/header.js'
     */
     &.body_darkmode {
-        background-color: #2b2b2bd2;
+        background-color: #3c4042ea;
     };
 };
 
@@ -40,13 +40,13 @@ body {
         clase añadida con 'src/js/header.js'
     */
     &.component_darkmode {
-        background-color: #525050 !important;
+        background-color: #2b2b2b2d !important;
     };
 };
 
 .text_dark {
     /*
-    clase añadida con 'src/js/header.js'
+        clase añadida con 'src/js/header.js'
     */
     &.text_light {
         color: $color_one !important;
@@ -54,14 +54,14 @@ body {
 };
 
 
-/*
-    definimos FLEXBOX en el dashboard
-*/
+// /*
+//     definimos FLEXBOX en el dashboard
+// */
 .container_body {
     display: flex;
 
     .container_right {
-        width: 100%;
+        // width: 100%;
         
         @media (min-width: 1100px) { // dispositivos 1000px => => =>
             margin: 0 80px;
@@ -71,6 +71,7 @@ body {
 
 .component_banner, .component_contacts, .component_proyects {
     background-color: $background_one;
+    // border: 1px solid rgba(0, 0, 0, 0.150);
     min-width: 300px;
     margin: 80px 0;
     
@@ -115,12 +116,13 @@ body {
         border-radius: 5px;
         padding: 18px 60px;
         cursor: pointer;
-
+        
         &.btn_animated {
             transition: transform 0.5s ease;
             
             &:hover {
                 transform: translateY(-8px);
+                box-shadow: $shadow_four;
             };
         };
     };

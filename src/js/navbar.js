@@ -56,7 +56,6 @@ function smoothScroll(target, duration){
         definimos una FUNCION y pasamos un 1 parametro
     */
 	function animation(currentTime) {
-        console.log(currentTime);
         /* 
             definimos un condicional si el valor de STARTTIME es igual  
             NULL va a almacenar el valor de CURRENTTIME que nos muestra 

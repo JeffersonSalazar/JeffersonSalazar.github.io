@@ -3,7 +3,7 @@
     .container_certify {
         background-color: $background_one;
         border-radius: 10px;
-        border: $border_one;
+        border: 1px solid rgba(0, 0, 0, 0.150);
         margin: 25px 0;
         padding: 12px 24px;
 
@@ -39,6 +39,7 @@
         .content_certify {
             height: 0;
             overflow: hidden;
+            transition: all .5s ease;
 
             /*
                 clase añadida con 'src/js/certificates/js' a CONTENT_CERTIFY 

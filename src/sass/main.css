@@ -1,10 +1,5 @@
 @charset "UTF-8";
 /*
-    importacion de las hojas de estilo en las que se definieron
-    las variables, layouts y fuentes utilizadas por cada una de
-    las secciones de este proyecto su RUTA: 'src/sass/shared'
-*/
-/*
     colores
 */
 /*
@@ -103,7 +98,7 @@
 }
 
 .component_navbar .box_nav_navbar ul {
-  padding: 40px 0 40px 9px;
+  padding: 20px 0 20px 9px;
 }
 
 .component_navbar .box_nav_navbar ul li {
@@ -144,7 +139,7 @@
 }
 
 .component_navbar .box_nav_navbar ul li a .icon_ion {
-  margin: 0 35px 0 15px;
+  margin: 3px 35px 0 15px;
   line-height: 20px;
 }
 
@@ -204,7 +199,6 @@
   right: 0;
   left: 0;
   z-index: 79;
-  border-bottom: 1px solid #cccccc86;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,8 +208,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
   /*
     clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
     */
@@ -226,19 +220,20 @@
 }
 
 .component_header.scorll_header {
-  background-color: #fcfafa;
+  background-color: #46484A;
   -webkit-box-shadow: 0 0 10px 0 #0000001f;
           box-shadow: 0 0 10px 0 #0000001f;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .component_header .box_dark {
   position: relative;
-  width: 74px;
-  height: 34px;
+  width: 60px;
+  height: 30px;
   border-radius: 100px;
-  background-color: #fcfafa;
-  -webkit-box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.1), inset 0 -4px 4px 0 rgba(199, 195, 195, 0.1);
-          box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.1), inset 0 -4px 4px 0 rgba(199, 195, 195, 0.1);
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.157), inset 0 -4px 4px 0 rgba(199, 195, 195, 0.246);
+          box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.157), inset 0 -4px 4px 0 rgba(199, 195, 195, 0.246);
   /*
             hacemos uso de POSITION, las propiedades de medida BACKGROUND 
             y SHADOW para crear el BOTON (light)
@@ -249,15 +244,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   background: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#f9f9f9));
   background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
   border-radius: 50%;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
-  -webkit-box-shadow: inset 0 4px 4px 0 white, inset 0 -4px 4px 0 white;
-          box-shadow: inset 0 4px 4px 0 white, inset 0 -4px 4px 0 white;
+  -webkit-box-shadow: inset 0 4px 4px 0  #ffffff, inset 0 -4px 4px 0 #ffffff;
+          box-shadow: inset 0 4px 4px 0  #ffffff, inset 0 -4px 4px 0 #ffffff;
   cursor: pointer;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
@@ -267,15 +262,15 @@
 }
 
 .component_header .box_dark .icon_dark.active_dark {
-  left: 40px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#2b2b2bd2));
-  background: linear-gradient(to bottom, #444, #2b2b2bd2);
-  -webkit-box-shadow: inset 0 4px 4px 0 rgba(194, 194, 194, 0.76), inset 0 -4px 4px 0 rgba(194, 194, 194, 0.76);
-          box-shadow: inset 0 4px 4px 0 rgba(194, 194, 194, 0.76), inset 0 -4px 4px 0 rgba(194, 194, 194, 0.76);
+  left: 30px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#575555));
+  background: linear-gradient(to bottom, #454545, #575555);
+  -webkit-box-shadow: inset 0 4px 4px 0  #46484A, inset 0 -4px 4px 0 #46484A;
+          box-shadow: inset 0 4px 4px 0  #46484A, inset 0 -4px 4px 0 #46484A;
 }
 
 .component_header .box_menuIcon_header {
-  border-radius: 10px;
+  margin-top: 3px;
   cursor: pointer;
   /*
             clase añadida con 'src/js/header.js', a BOX_MENUICON_HEADER
@@ -369,8 +364,6 @@
   width: 140px;
   height: 140px;
   padding: 20px;
-  -webkit-box-shadow: 0 2px 6px 0 #a8a4a4;
-          box-shadow: 0 2px 6px 0 #a8a4a4;
 }
 
 .component_banner .box_img_banner .box_hdv_banner {
@@ -588,7 +581,7 @@
   position: relative;
   z-index: 0;
   background-color: #fff;
-  border: 1px solid #cccccc86;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   cursor: pointer;
   /*
@@ -763,7 +756,7 @@
 .component_certificates .container_certify {
   background-color: #fff;
   border-radius: 10px;
-  border: 1px solid #cccccc86;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   margin: 25px 0;
   padding: 12px 24px;
   /*
@@ -810,6 +803,8 @@
 .component_certificates .container_certify .content_certify {
   height: 0;
   overflow: hidden;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
   /*
                 clase añadida con 'src/js/certificates/js' a CONTENT_CERTIFY 
             */
@@ -885,6 +880,12 @@
             */
 }
 
+@media (min-width: 1000px) {
+  .component_contacts .box_data_form form {
+    border: 1px solid #cccccc86;
+  }
+}
+
 .component_contacts .box_data_form form .box_inputs {
   /*
                     generamos espaciado en el segundo (BOX-INPUTS)
@@ -902,8 +903,9 @@
 .component_contacts .box_data_form form .box_inputs input {
   outline: none;
   border: none;
+  background-color: transparent;
   color: #7e7b7c;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc86;
   font-family: 'PT Sans', sans-serif;
   font-size: 22px;
   letter-spacing: 1px;
@@ -913,6 +915,12 @@
                         cuando el INPUT tiene el :FOCUS haciendo uso del selector (~)
                         el SPAN:BEFORE redefine el ancho mostrando el borde animado
                     */
+}
+
+.component_contacts .box_data_form form .box_inputs input.form_dark {
+  background-color: #4C4F51;
+  color: #fff;
+  border-bottom: none;
 }
 
 .component_contacts .box_data_form form .box_inputs input:focus ~ span:before {
@@ -998,7 +1006,6 @@
 */
 @media (min-width: 1000px) {
   .text_card_form, form {
-    border: 1px solid #cccccc86;
     border-radius: 10px;
     width: 380px;
     margin: 0 10px;
@@ -1011,8 +1018,6 @@
   color: #fff;
   border-radius: 50%;
   padding: 12px;
-  -webkit-box-shadow: 0 2px 6px 0 #a8a4a4;
-          box-shadow: 0 2px 6px 0 #a8a4a4;
   cursor: pointer;
 }
 
@@ -1084,9 +1089,6 @@ footer ion-icon.show_gotop {
   }
 }
 
-/*
-    reseteo de las propiedades que traen por defecto los navegadores
-*/
 * {
   margin: 0;
   padding: 0;
@@ -1094,11 +1096,8 @@ footer ion-icon.show_gotop {
           box-sizing: border-box;
 }
 
-/*
-    definimos en el body un color de fondo
-*/
 body {
-  background-color: #fcfafa;
+  background-color: #f1f1f1;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
 }
@@ -1110,7 +1109,7 @@ body {
 }
 
 body.body_darkmode {
-  background-color: #2b2b2bd2;
+  background-color: #3c4042ea;
 }
 
 .component_dark {
@@ -1120,12 +1119,12 @@ body.body_darkmode {
 }
 
 .component_dark.component_darkmode {
-  background-color: #525050 !important;
+  background-color: #2b2b2b2d !important;
 }
 
 .text_dark {
   /*
-    clase añadida con 'src/js/header.js'
+        clase añadida con 'src/js/header.js'
     */
 }
 
@@ -1133,17 +1132,10 @@ body.body_darkmode {
   color: #fff !important;
 }
 
-/*
-    definimos FLEXBOX en el dashboard
-*/
 .container_body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.container_body .container_right {
-  width: 100%;
 }
 
 @media (min-width: 1100px) {
@@ -1218,6 +1210,8 @@ body.body_darkmode {
 .box_btn button.btn_animated:hover {
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
+  -webkit-box-shadow: 0 5px 15px -5px #686767d8;
+          box-shadow: 0 5px 15px -5px #686767d8;
 }
 
 /*
