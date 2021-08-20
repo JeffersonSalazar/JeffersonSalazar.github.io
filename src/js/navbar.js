@@ -190,3 +190,15 @@ $btn_navbar.addEventListener("click", function() {
 });
 
 // ------------------ END CODE -------------------- //
+
+let $navbar = document.querySelector("#navbar");
+
+window.addEventListener('scroll', function () {
+    if(this.pageYOffset > 20) {
+        // $navbar.classList.add('navbar_down');
+        $navbar.style.top = "60px";
+    } else {
+        // $navbar.classList.remove('navbar_down');
+        $navbar.style.top = "0";
+    }
+})

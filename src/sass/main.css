@@ -33,12 +33,11 @@
 */
 .component_navbar {
   position: fixed;
-  top: 0;
   left: 0;
   z-index: 89;
   height: 100vh;
-  -webkit-transition: width .5s ease;
-  transition: width .5s ease;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
   /*
         propiedades para diseño resposive en
         dispositivos moviles 999px <= <= <=
@@ -47,18 +46,6 @@
         propiedades para diseño resposive en 
         tablets y destoks 1000px => => =>
     */
-}
-
-@media (max-width: 599px) {
-  .component_navbar {
-    top: 60px;
-  }
-}
-
-@media (min-width: 700px) {
-  .component_navbar {
-    top: 60px;
-  }
 }
 
 @media (max-width: 1099px) {
@@ -801,18 +788,10 @@
 }
 
 .component_certificates .container_certify .content_certify {
-  height: 0;
+  max-height: 0;
   overflow: hidden;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  /*
-                clase añadida con 'src/js/certificates/js' a CONTENT_CERTIFY 
-            */
-}
-
-.component_certificates .container_certify .content_certify.show_certify {
-  height: inherit;
-  overflow: visible;
+  -webkit-transition: max-height .7s ease-out;
+  transition: max-height .7s ease-out;
 }
 
 .component_certificates .container_certify .content_certify h4 {
@@ -981,7 +960,7 @@
 }
 
 .component_contacts .box_data_form form .box_socials_contacts a ion-icon {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 /*

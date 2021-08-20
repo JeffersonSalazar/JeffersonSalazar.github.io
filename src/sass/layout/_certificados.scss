@@ -37,17 +37,9 @@
         };
 
         .content_certify {
-            height: 0;
+            max-height: 0;
             overflow: hidden;
-            transition: all .5s ease;
-
-            /*
-                clase añadida con 'src/js/certificates/js' a CONTENT_CERTIFY 
-            */
-            &.show_certify {
-                height: inherit;
-                overflow: visible;
-            };
+            transition: max-height .7s ease-out;
 
            
             h4 {

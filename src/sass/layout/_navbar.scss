@@ -6,19 +6,20 @@
 */
 .component_navbar {
     position: fixed;
-    top: 0;
+    // top: 0;
     left: 0;
     z-index: 89;
     height: 100vh;
-    transition: width .5s ease;
+    transition: all .5s ease;
 
-    @media (max-width: 599px) {
-        top: 60px;
-    };
+    // @media (max-width: 599px) {
+    //     top: 60px;
+    // };
 
-    @media (min-width: 700px) {
-        top: 60px;
-    };
+    // @media (min-width: 700px) {
+    //     top: 60px;
+    // };
+
 
     /*
         propiedades para diseño resposive en
