@@ -24,6 +24,12 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.150);
     };
 
+    &.scorller {
+        background-color: #f1f1f1;
+        box-shadow: $shadow_one;
+        border-bottom: 1px solid #d6d6d6;
+    };
+
     /*
         hacemos uso de POSITION, WIDTH, HEIGHT y SHADOW
         para crear la caja donde va posicionado el icono dark mode

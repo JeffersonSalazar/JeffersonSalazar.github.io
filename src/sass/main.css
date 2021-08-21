@@ -213,6 +213,13 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+.component_header.scorller {
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0 0 10px 0 #0000001f;
+          box-shadow: 0 0 10px 0 #0000001f;
+  border-bottom: 1px solid #d6d6d6;
+}
+
 .component_header .box_dark {
   position: relative;
   width: 60px;

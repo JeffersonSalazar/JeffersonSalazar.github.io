@@ -9,16 +9,37 @@ let $header = document.querySelector('#header');
     generamos un evento SCROLL al OBJETO WINDOW y declaramos una FUNCTION
 */
 window.addEventListener('scroll', function() {
+   
+    // if(this.pageYOffset > 20) {
+    //     $header.classList.add('scorller');
+    // } else {
+    //     $header.classList.remove('scorller');
+    // }
+
+    if(this.pageYOffset < 20 && localStorage.getItem('key_darkMode') !== "true") {
+        $header.classList.remove('scorller');
+    } 
+
+    if(this.pageYOffset > 20 && localStorage.getItem('key_darkMode') !== "true") {
+        $header.classList.add('scorller');
+        $header.classList.remove('scorll_header');
+    } 
+
+
+    if(this.pageYOffset < 20 && localStorage.getItem('key_darkMode') === "true") {
+        $header.classList.remove('scorll_header');
+    } 
+
+    if(this.pageYOffset > 20 && localStorage.getItem('key_darkMode') === "true") {
+        $header.classList.add('scorll_header');
+        $header.classList.remove('scorller');
+    } 
+
     /*  
         definimos un condicional, si su PAGEYOFFSET es mayor a 20, añade a 
         $HEADER la clase (scorll_header) definida en 'src/sass/layout/header.scss'
         que genera el efecto SCROLL y cuando sea menor la remueve
     */
-    if(this.pageYOffset > 20) {
-        $header.classList.add('scorll_header');
-    } else {
-        $header.classList.remove('scorll_header');
-    };
 }); 
     
 // --------------- END CODE ------------------- //
@@ -32,7 +53,7 @@ window.addEventListener('scroll', function() {
 let $dark_mode = document.querySelector('#dark_mode'),
     $components_dark = document.querySelectorAll('.component_dark'),
     $texts_dark = document.querySelectorAll('.text_dark');
-    $inputs_dark = document.querySelectorAll('input');
+    $inputs_dark = document.querySelectorAll('input'); 
 
 /* 
     generamos un evento CLICK en $DARK_MODE y declaramos una FUNCTION
@@ -49,6 +70,23 @@ $dark_mode.addEventListener('click', function() {
         'src/sass/main.scss' que añade color de fondo a todo el BODY  
     */
     document.body.classList.toggle('body_darkmode');
+
+    /* 
+        añadimos o removemos del BODY la clase (body_darkmode) definida en 
+        'src/sass/main.scss' que añade color de fondo a todo el BODY  
+    */
+    // if(localStorage.getItem('key_darkMode') === "true") {
+    //     $header.classList.remove('scorller');
+    //     $header.classList.remove('scorll_header');
+    // } 
+    
+
+    // if(localStorage.getItem('key_darkMode') === "false") {
+    //     $header.classList.remove('scorll_header');
+    //     $header.classList.add('scorller');
+    // } 
+    
+
     
     /* 
         añadimos o removemos de los COMPONENTES la clase (body_darkmode) definida en 
