@@ -23,13 +23,7 @@
     &.visible_modal { 
         visibility: visible;
     };
-    
-    /*
-        clase añadida con 'src/js/banner_modal.js' a COMPONENT_MODAL
-    */
-    &.hidden_modal { 
-        visibility: hidden;
-    };
+
 
     /*
         definimos TRANSFORM para transladar 100px hacia arriba la tarjeta
@@ -48,7 +42,7 @@
         @media (min-width: 1300px) { // dispositivos 1100px => => =>
             display: flex;
         };
-        
+
         /*
             clase añadida con 'src/js/banner_modal.js' a CONTAINER_CARD_MODAL
         */
@@ -102,6 +96,7 @@
                 
                 li {
                     list-style: none;
+                    font-size: 20px;
                     margin: 14px 0 14px 14px;
                     
                     ion-icon {

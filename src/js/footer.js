@@ -59,7 +59,19 @@ $icon_gotop.addEventListener('click', scrollToTop);
 
 // ----------------- END CODE ---------------------- //
 
-let year = document.querySelector('#data_year'),
-    fecha = new Date().getFullYear();
 
-year.textContent = `© Diseñado por Jefferson Salazar ${fecha}`;
+// ---------- START CODE - GET YEAR -------------- //
+/*  
+    almacenamos en 1 VAR a DATA YEAR definido en COMPONENT FOOTER
+    y en 1 VAR el año actual dado por el metodo (getFullYear())
+*/
+let $textFooter = document.querySelector('#data_year'),
+    year = new Date().getFullYear();
+
+/*
+    luego a travez de la propiedad (textContent) añadimos a
+    $TEXTFOOTER el texto mas el año actual
+*/ 
+$textFooter.textContent = `© Copyright Jefferson Salazar ${year}`;
+
+// ----------------- END CODE ---------------------- //

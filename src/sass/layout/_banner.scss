@@ -23,19 +23,15 @@
 
     p {
         text-align: justify;
-        
-        @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-            padding: 10px 0;
-        };
 
         @media (min-width: 1000px) { // dispositivos 1000px => => =>
-           padding: 10px 40px;
+           padding: 0 40px;
         };
     };
 
 
     .box_btn {
-        padding-top: 30px;
+        padding-top: 60px;
     };
 };
 

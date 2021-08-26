@@ -1,16 +1,15 @@
 // /*
-//     importacion de las hojas de estilo en las que se definieron
-//     las variables, layouts y fuentes utilizadas por cada una de
-//     las secciones de este proyecto su RUTA: 'src/sass/shared'
+//     @imports: contienen variables y fuentes utilizadas en este proyecto
+//     ademas del layout de las secciones. Su ruta 'src/sass/shared'
 // */
 @import './shared/variables';
 @import './shared/fonts';
 @import './shared/layout';
 
 
-// /*
-//     reseteo de las propiedades que traen por defecto los navegadores
-// */
+/*
+    reseteo de las propiedades que traen por defecto los navegadores
+*/
 * {
     margin: 0;
     padding: 0;
@@ -18,48 +17,54 @@
 };
 
 
-// /*
-//     definimos en el body un color de fondo
-// */
+/*
+    definimos en el body un color de fondo
+*/
 body {
     background-color: $background_four;
     transition: all .5s ease; 
-};
 
-body {
     /*
         clase añadida con 'src/js/header.js'
     */
-    &.body_darkmode {
-        background-color: #3c4042ea;
-    };
+    &.body_darkmode { background-color: #3c4042ea; };
 };
 
+
+/*
+    clase para todos los componentes que facilitan la aplicaion
+    del modo oscuro
+*/
 .component_dark {
     /*
         clase añadida con 'src/js/header.js'
     */
     &.component_darkmode {
-        background-color: #46484A !important;
+        background-color: #46484A;
     };
 };
 
+
+/*
+    clase para todos los textos que facilitan la aplicaion
+    del modo oscuro
+*/
 .text_dark {
     /*
         clase añadida con 'src/js/header.js'
     */
     &.text_light {
-        color: $color_one !important;
+        color: $color_one; // esto tiene un !important
     };
 };
 
 
-// /*
-//     definimos FLEXBOX en el dashboard
-// */
+/*
+    definimos FLEXBOX en el dashboard
+*/
 .container_body {
-    display: flex;
-
+    // display: flex;
+    
     .container_right {
         // width: 100%;
         
@@ -69,34 +74,47 @@ body {
     };
 };
 
-.component_banner, .component_contacts, .component_proyects {
-    background-color: $background_one;
-    // border: 1px solid rgba(0, 0, 0, 0.150);
-    min-width: 300px;
+
+/*
+    propiedades compartidas entre los COMPONENTES BANNER, 
+    SKILLS, CERTIFICATES, PROYECTS y CONTACTS
+*/
+.component_banner, .component_skills, .component_certificates,
+.component_proyects, .component_contacts {
+    // min-width: 300px;
     margin: 60px 0;
     
     @media (max-width: 999px) { // dispositivos 999px <= <= <=
         padding: 40px 20px;
     };
     
+    @media (min-width: 1000px) { // dispositivos 1000px => => =>
+        padding: 40px 0;
+    };
+};
+
+
+/*
+    propiedades compartidas entre los COMPONENTES BANNER,
+    PROYECTS y CONTACTS
+*/
+.component_banner, .component_proyects, .component_contacts {
+    background-color: $background_one;
+
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
         border-radius: 10px;
-        padding: 40px 0;
     };
 };
 
-.component_skills, .component_certificates {
-    min-width: 300px;
-    margin: 60px 0;
 
-    @media (max-width: 999px) { // dispositivos 999px <= <= <=
-        padding: 40px 20px;
-    };
-    
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        padding: 40px 0;
-    };
-};
+/*
+
+*/
+.box_skills, .container_certify {
+    background-color: $background_one;
+    border: 1px solid rgba(0, 0, 0, 0.150);
+    border-radius: 10px;
+}
 
 
 /* 
@@ -136,6 +154,7 @@ h3 {
     text-align: center;
     color: $color_three;
     font-family: 'Baloo', sans-serif;
+    padding-bottom: 40px;
 
     @media (max-width: 999px) { // dispositivos 999px <= <= <=
         font-size: 40px;
@@ -151,27 +170,24 @@ h3 {
     propiedades compartidas por las TAG P
 */
 p {
-    text-align: justify;
-    color: $color_two;
+    // text-align: justify;
     font-family: 'PT Sans', sans-serif;
     font-size: 20px;
     line-height: 1.5;
 };
 
-li {
-    font-size: 20px;
-}
+h2, h4, p {
+    color: $color_two;
+};
 
-a, h4, strong {
-    font-family: 'Baloo', sans-serif;
-    line-height: 1.8;
-}
-
-a {
-    font-size: 18px;
-}
-
+/*
+    propiedades compartidas por las TAG ION-ICON
+*/
 ion-icon {
     font-size: 25px;
-}
+};
 
+
+hr {
+    visibility: hidden;
+}

@@ -19,12 +19,6 @@ $btnOpen_modal.addEventListener('click', function() {
     $window_modal.classList.add('visible_modal');
 
     /* 
-        removemos de $WINDOW_MODAL la clase (hidden_modal) definida en 
-        'src/sass/layout/modal.scss' que oculta el modal
-    */
-    $window_modal.classList.remove('hidden_modal');
-
-    /* 
         añadimos a $CARD_MODAL la clase (translate_down) definida
         en 'src/sass/layout/modal.scss' que desplaza la tarjeta modal
         generando un efecto de entrada
@@ -41,12 +35,6 @@ $btnOpen_modal.addEventListener('click', function() {
     generamos un evento CLICK en $WINDOW_MODAL y declaramos una FUNCION
 */
 $window_modal.addEventListener('click', function() {
-    /* 
-        añadimos $WINDOW_MODAL la clase (hidden_modal) definida 
-        en 'src/sass/layout/modal.scss' que oculta el modal  
-    */
-    this.classList.add('hidden_modal');
-
     /* 
         removemos de $WINDOW_MODAL la clase (visible_modal) definida 
         en 'src/sass/layout/modal.scss' que muestra el modal  

@@ -1,18 +1,21 @@
-/*
-    definimos POSITION y las propiedades de medidas para posicionar el footer
-*/
-footer { 
-    
+.component_footer { 
+    /*
+        definimos POSITION para posicionar el H4
+    */
     h4 {
         text-align: center;
+        position: relative;
         padding: 16px 0;
-        color: $color_two;
-    }
+    };
 
-    .component_footer {
+    /*
+        definimos POSITION y sus medidas para posicionar contenedor
+        del icono
+    */
+    .box_icon_footer {
         position: fixed;
         right: 0;
-        bottom: 56px;
+        bottom: 46px;
         z-index: 69;
         margin: 0 15px;
 
@@ -52,5 +55,5 @@ footer {
                 };
             };
         };
-    }
+    };
 };

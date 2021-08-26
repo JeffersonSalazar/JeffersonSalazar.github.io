@@ -21,160 +21,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=PT+Sans&display=swap");
 /*
-    esta hoja de estilos contiene las hojas de estilos
-    de cada una de las secciones de este proyecto y sera consumida
-    por la hoja de estilos raiz en la RUTA 'assets/sass/main.scss' 
+    @imports: de las hojas de estilo de cada una de las secciones 
+    de este proyecto, esta hoja layout sera importada a la
+    hoja de estilos principal en la ruta 'assets/sass/main.scss'
 */
-/*
-    esta clase hace referencia a contenedor del sidebar...
-    hacemos uso de la propiedad HIDDEN para ocultar el 
-    esceso visual de contenido debido a su poco WIDTH... 
-    la transicion la usamos para suavizar el :HOVER
-*/
-.component_navbar {
-  position: fixed;
-  left: 0;
-  z-index: 89;
-  height: 100vh;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  /*
-        propiedades para diseño resposive en
-        dispositivos moviles 999px <= <= <=
-    */
-  /*
-        propiedades para diseño resposive en 
-        tablets y destoks 1000px => => =>
-    */
-}
-
-@media (max-width: 1099px) {
-  .component_navbar {
-    width: 0%;
-    /*
-            clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
-        */
-  }
-  .component_navbar.open_navbar {
-    width: 75px;
-  }
-  .component_navbar:hover {
-    width: 240px;
-  }
-}
-
-@media (min-width: 1100px) {
-  .component_navbar {
-    width: 75px;
-    /*
-            clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
-        */
-  }
-  .component_navbar.close_navbar {
-    width: 0%;
-  }
-  .component_navbar:hover {
-    width: 240px;
-  }
-}
-
-.component_navbar .box_nav_navbar {
-  background-color: #0e89fc;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-.component_navbar .box_nav_navbar ul {
-  padding: 20px 0 20px 9px;
-}
-
-.component_navbar .box_nav_navbar ul li {
-  list-style: none;
-  /*
-                    clase añadida con javascript... 
-                    define propiedades cuando el enlace de 
-                    navegacion es seleccionado por el usuario
-                */
-  /*
-                    TAG referente al redireccionamiento en el sitio web
-                    usamos FLEXBOX  y HEIGHT para alinear los iconos y los titulos
-                    verticalmente
-                */
-}
-
-.component_navbar .box_nav_navbar ul li.active_link {
-  background-color: #fff;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.component_navbar .box_nav_navbar ul li.active_link a {
-  color: #333;
-}
-
-.component_navbar .box_nav_navbar ul li a {
-  text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 60px;
-  font-family: 'PT Sans', sans-serif;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #fff;
-}
-
-.component_navbar .box_nav_navbar ul li a .icon_ion {
-  margin: 3px 35px 0 15px;
-  line-height: 20px;
-}
-
-.component_navbar .box_navbar_colors button {
-  outline: none;
-  border: none;
-  background-color: #0e89fc;
-  color: #fff;
-  font-size: 22px;
-  font-family: 'PT Sans', sans-serif;
-  letter-spacing: 1px;
-  width: 100%;
-  padding: 20px 0;
-  cursor: pointer;
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-}
-
-.component_navbar .box_navbar_colors button:hover {
-  -webkit-transform: translateY(-8px);
-          transform: translateY(-8px);
-}
-
-/*
-    definimos WIDTH en las medidas definidas en las media QUERYS
-*/
-.fixed_navbar {
-  -webkit-transition: min-width 0.5s ease;
-  transition: min-width 0.5s ease;
-}
-
-@media (max-width: 1099px) {
-  .fixed_navbar {
-    min-width: 0;
-  }
-}
-
-@media (min-width: 1100px) {
-  .fixed_navbar {
-    min-width: 75px;
-  }
-  .fixed_navbar.close_fixed {
-    min-width: 0%;
-  }
-}
-
 /*
     definimos POSITION y sus medidas para que (COMPONENT_HEADER) se fije
     en la parte superior de la pantalla y este siempre al frente, con FLEXBOX 
@@ -201,23 +51,26 @@
         clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
     */
   /*
+        clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
+    */
+  /*
         hacemos uso de POSITION, WIDTH, HEIGHT y SHADOW
         para crear la caja donde va posicionado el icono dark mode
     */
 }
 
-.component_header.scorll_header {
-  background-color: #46484A;
-  -webkit-box-shadow: 0 0 10px 0 #0000001f;
-          box-shadow: 0 0 10px 0 #0000001f;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-.component_header.scorller {
+.component_header.scroll_light {
   background-color: #f1f1f1;
   -webkit-box-shadow: 0 0 10px 0 #0000001f;
           box-shadow: 0 0 10px 0 #0000001f;
   border-bottom: 1px solid #d6d6d6;
+}
+
+.component_header.scroll_dark {
+  background-color: #46484A;
+  -webkit-box-shadow: 0 0 10px 0 #0000001f;
+          box-shadow: 0 0 10px 0 #0000001f;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .component_header .box_dark {
@@ -348,6 +201,153 @@
   }
 }
 
+/*
+    esta clase hace referencia a contenedor del sidebar...
+    hacemos uso de la propiedad HIDDEN para ocultar el 
+    esceso visual de contenido debido a su poco WIDTH... 
+    la transicion la usamos para suavizar el :HOVER
+*/
+.component_navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 89;
+  height: 100vh;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  /*
+        propiedades para diseño resposive en
+        
+    */
+}
+
+@media (max-width: 599px) {
+  .component_navbar {
+    top: 60px;
+  }
+}
+
+@media (min-width: 700px) {
+  .component_navbar {
+    top: 60px;
+  }
+}
+
+@media (max-width: 1099px) {
+  .component_navbar {
+    width: 0%;
+    /*
+            clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
+        */
+  }
+  .component_navbar.open_navbar {
+    width: 75px;
+  }
+  .component_navbar:hover {
+    width: 240px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .component_navbar {
+    width: 75px;
+    /*
+            clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
+        */
+  }
+  .component_navbar.close_navbar {
+    width: 0%;
+  }
+  .component_navbar:hover {
+    width: 240px;
+  }
+}
+
+.component_navbar .box_nav_navbar {
+  background-color: #0e89fc;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.component_navbar .box_nav_navbar ul {
+  padding: 20px 0 20px 9px;
+}
+
+.component_navbar .box_nav_navbar ul li {
+  list-style: none;
+  /*
+                    clase añadida con javascript... 
+                    define propiedades cuando el enlace de 
+                    navegacion es seleccionado por el usuario
+                */
+  /*
+                    TAG referente al redireccionamiento en el sitio web
+                    usamos FLEXBOX  y HEIGHT para alinear los iconos y los titulos
+                    verticalmente
+                */
+}
+
+.component_navbar .box_nav_navbar ul li.active_link {
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.component_navbar .box_nav_navbar ul li.active_link a {
+  color: #333;
+}
+
+.component_navbar .box_nav_navbar ul li a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.component_navbar .box_nav_navbar ul li a .icon_ion {
+  margin: 3px 35px 0 15px;
+  line-height: 20px;
+}
+
+.component_navbar .box_navbar_colors button {
+  font-size: 22px;
+  width: 100%;
+  padding: 20px 0;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+/*
+    definimos WIDTH en las medidas definidas en las media QUERYS
+*/
+.fixed_navbar {
+  margin-top: 60px;
+  -webkit-transition: min-width 0.5s ease;
+  transition: min-width 0.5s ease;
+}
+
+@media (max-width: 1099px) {
+  .fixed_navbar {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1100px) {
+  .fixed_navbar {
+    min-width: 75px;
+  }
+  .fixed_navbar.close_fixed {
+    min-width: 0%;
+  }
+}
+
 .component_banner .box_img_banner {
   text-align: center;
 }
@@ -372,20 +372,14 @@
   text-align: justify;
 }
 
-@media (max-width: 999px) {
-  .component_banner p {
-    padding: 10px 0;
-  }
-}
-
 @media (min-width: 1000px) {
   .component_banner p {
-    padding: 10px 40px;
+    padding: 0 40px;
   }
 }
 
 .component_banner .box_btn {
-  padding-top: 30px;
+  padding-top: 60px;
 }
 
 /*
@@ -416,19 +410,12 @@
         clase añadida con 'src/js/banner_modal.js' a COMPONENT_MODAL
     */
   /*
-        clase añadida con 'src/js/banner_modal.js' a COMPONENT_MODAL
-    */
-  /*
         definimos TRANSFORM para transladar 100px hacia arriba la tarjeta
     */
 }
 
 .component_modal.visible_modal {
   visibility: visible;
-}
-
-.component_modal.hidden_modal {
-  visibility: hidden;
 }
 
 .component_modal .container_card_modal {
@@ -513,6 +500,7 @@
 
 .component_modal .container_card_modal .box_content_modal ol li {
   list-style: none;
+  font-size: 20px;
   margin: 14px 0 14px 14px;
 }
 
@@ -521,10 +509,11 @@
   font-size: 24px;
 }
 
-.component_skills {
-  /*
-    usamos DISPLAY para crear una rejilla
-  */
+/*
+  clases de este componente que comparten propiedades
+*/
+.html:hover:before, .html_level {
+  color: #FF6D00;
 }
 
 .component_skills h3 {
@@ -532,93 +521,29 @@
 }
 
 .component_skills .container_skills {
-  display: -ms-grid;
-  display: grid;
-  gap: 10px;
-  /*
-      importante definir POSITION y Z-INDEX para posicionar
-      esta TAG sobre la barra de progreso
-    */
-}
-
-@media (max-width: 479px) {
-  .component_skills .container_skills {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    gap: 10px 5px;
-  }
-}
-
-@media (min-width: 480px) {
-  .component_skills .container_skills {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 780px) {
-  .component_skills .container_skills {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .component_skills .container_skills {
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr);
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .component_skills .container_skills .box_skills {
-  text-align: center;
   position: relative;
-  z-index: 0;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  width: 240px;
+  margin: 10px;
   cursor: pointer;
-  /*
-        creamos la barra de progreso usando :BEFORE, definimos POSITION y las 
-        porpiedades de medida para ubicar la barra de progreso y definimos un WIDTH 0
-      */
-  /*
-        haciendo :HOVER a las clases de la TAG ARTICLE redefinimos el WIDTH 
-        definido en :BEFORE logrando el fecto de barra de progreso 
-      */
-  /*
-        cuando hacemos :HOVER en las TAGS ARTICLE añadimos una animacion en 
-        (box_img_skills) que translada la IMG generando un efecto de movimiento
-      */
-  /*
-        cuando hacemos :HOVER en las TAGS ARTICLE redefinimos OPACITY propeidad 
-        definida en (box_level_skills)
-      */
-  /*
-        definimos OPACITY 0 para luego redefinirlo cuando
-        hagamos :HOVER en las TAGS ARTICLES
-      */
-}
-
-.component_skills .container_skills .box_skills:before {
-  content: '';
-  position: absolute;
-  z-index: -2;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 30px;
-  border-radius: 10px 10px 0px 0;
-  opacity: 0;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-}
-
-.component_skills .container_skills .box_skills:hover:before {
-  opacity: 1;
 }
 
 .component_skills .container_skills .box_skills:hover .box_img_skills {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
+
+.component_skills .container_skills .box_skills:hover img {
   -webkit-animation: img_Move 1s infinite;
           animation: img_Move 1s infinite;
 }
@@ -629,8 +554,8 @@
             transform: translateY(0);
   }
   50% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -644,8 +569,8 @@
             transform: translateY(0);
   }
   50% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -655,107 +580,57 @@
 
 .component_skills .container_skills .box_skills:hover .box_level_skills {
   opacity: 1;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
 }
 
 .component_skills .container_skills .box_skills .box_img_skills {
-  padding: 44px 0 10px;
-}
-
-.component_skills .container_skills .box_skills .box_img_skills img {
-  margin-top: 10px;
-}
-
-@media (max-width: 479px) {
-  .component_skills .container_skills .box_skills .box_img_skills img {
-    width: 64px;
-    height: 64px;
-  }
-}
-
-@media (min-width: 480px) {
-  .component_skills .container_skills .box_skills .box_img_skills img {
-    width: 74px;
-    height: 74px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .component_skills .container_skills .box_skills .box_img_skills img {
-    width: 114px;
-    height: 114px;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 400px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
 }
 
 .component_skills .container_skills .box_skills .box_level_skills {
-  font-family: 'PT Sans', sans-serif;
-  color: #fff;
-  border-radius: 0 0 10px 10px;
-  padding: 10px 4px;
+  position: absolute;
+  bottom: 0;
   opacity: 0;
+  overflow: hidden;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
-}
-
-/*
-  clases de este componente que comparten propiedades
-*/
-.html:hover:before, .html_level {
-  background-color: #FF6D00;
-}
-
-.css:hover:before, .css_level {
-  background-color: #039BE5;
-}
-
-.sass:hover:before, .sass_level {
-  background-color: #F06292;
-}
-
-.bootstrap:hover:before, .bootstrap_level {
-  background-color: #673AB7;
-}
-
-.javascript:hover:before, .javascript_level {
-  background-color: #FFD600;
-}
-
-.angular:hover:before, .angular_level {
-  background-color: #DD2C00;
-}
-
-.nodejs:hover:before, .nodejs_level {
-  background-color: #388E3C;
-}
-
-.mysql:hover:before, .mysql_level {
-  background-color: #F57F17;
-}
-
-.mongodb:hover:before, .mongodb_level {
-  background-color: #4CAF50;
-}
-
-.git:hover:before, .git_level {
-  background-color: #F4511E;
-}
-
-.illustrator:hover:before, .illustrator_level {
-  background-color: #1C0802;
-}
-
-.ui_ux:hover:before, .ui_ux_level {
-  background-color: #83D8F4;
+  font-family: 'PT Sans', sans-serif;
+  text-align: justify;
+  padding: 0 10px;
 }
 
 .component_certificates .container_certify {
-  background-color: #fff;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  margin: 25px 0;
-  padding: 12px 24px;
+  margin-bottom: 25px;
   /*
             definimos FLEXBOX para alinear y centrar los elementos
         */
+}
+
+@media (max-width: 999px) {
+  .component_certificates .container_certify {
+    padding: 12px 24px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .component_certificates .container_certify {
+    padding: 20px 40px;
+  }
 }
 
 .component_certificates .container_certify .box_title {
@@ -772,7 +647,6 @@
 }
 
 .component_certificates .container_certify .box_title h2 {
-  color: #7e7b7c;
   font-family: 'Open Sans', sans-serif;
   font-size: 28px;
 }
@@ -802,7 +676,7 @@
 }
 
 .component_certificates .container_certify .content_certify h4 {
-  color: #7e7b7c;
+  font-family: 'Baloo', sans-serif;
   margin: 10px 0;
 }
 
@@ -822,22 +696,23 @@
   color: #0e89fc;
 }
 
-@media (max-width: 999px) {
-  .component_proyects .text_proyects {
-    padding: 15px 0;
-  }
+h4, strong, a {
+  font-family: 'Baloo', sans-serif;
 }
 
-@media (min-width: 1000px) {
-  .component_proyects .text_proyects {
-    padding: 15px 40px;
-  }
+.swiper {
+  width: 100%;
+  height: 100%;
+  background-color: blueviolet;
 }
 
-@media (min-width: 1000px) {
-  .component_contacts h3 {
-    padding-bottom: 40px;
-  }
+.swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+}
+
+.component_contacts .box_data_form {
+  cursor: pointer;
 }
 
 @media (min-width: 1000px) {
@@ -845,18 +720,44 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /*
+                cuando hacemos :HOVER en el contenedor redefinimos
+                las propiedades definidas en 'text_card_form'
+            */
+    /*
+                cuando hacemos :HOVER en el contenedor redefinimos
+                las propiedades definidas en 'form'
+            */
+  }
+  .component_contacts .box_data_form:hover .text_card_form {
+    left: 24%;
+    opacity: 1;
+  }
+  .component_contacts .box_data_form:hover form {
+    left: 18%;
   }
 }
 
 @media (max-width: 900px) {
   .component_contacts .box_data_form .text_card_form {
-    padding: 15px 0 50px;
+    padding: 15px 10px 40px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .component_contacts .box_data_form .text_card_form {
+    width: 380px;
+    position: absolute;
+    left: 35%;
+    opacity: 0;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
   }
 }
 
@@ -868,7 +769,15 @@
 
 @media (min-width: 1000px) {
   .component_contacts .box_data_form form {
+    width: 380px;
+    position: relative;
+    top: 0%;
+    left: 0%;
     border: 1px solid #cccccc86;
+    border-radius: 10px;
+    padding: 50px 34px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
   }
 }
 
@@ -897,6 +806,9 @@
   letter-spacing: 1px;
   width: 100%;
   padding: 8px;
+  /*
+                        FORM_DARK: clase añadida desde 'src/js/header.js'
+                    */
   /*
                         cuando el INPUT tiene el :FOCUS haciendo uso del selector (~)
                         el SPAN:BEFORE redefine el ancho mostrando el borde animado
@@ -947,6 +859,8 @@
 
 .component_contacts .box_data_form form .box_inputs .box_errors.show_error {
   display: block;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .component_contacts .box_data_form form .box_btn {
@@ -967,42 +881,43 @@
 }
 
 .component_contacts .box_data_form form .box_socials_contacts a ion-icon {
-  font-size: 22px;
-}
-
-/*
-    TAGS de este componente que comparten propiedades
-*/
-@media (min-width: 1000px) {
-  .text_card_form, form {
-    border-radius: 10px;
-    width: 380px;
-    margin: 0 10px;
-    padding: 50px 34px;
-  }
-}
-
-.icon_contacts {
   background-color: #0e89fc;
   color: #fff;
+  font-size: 22px;
   border-radius: 50%;
   padding: 12px;
   cursor: pointer;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
-/*
-    definimos POSITION y las propiedades de medidas para posicionar el footer
-*/
-footer h4 {
+.component_contacts .box_data_form form .box_socials_contacts a ion-icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.component_footer {
+  /*
+        definimos POSITION para posicionar el H4
+    */
+  /*
+        definimos POSITION y sus medidas para posicionar contenedor
+        del icono
+    */
+}
+
+.component_footer h4 {
   text-align: center;
+  position: relative;
   padding: 16px 0;
-  color: #7e7b7c;
 }
 
-footer .component_footer {
+.component_footer .box_icon_footer {
   position: fixed;
   right: 0;
-  bottom: 56px;
+  bottom: 46px;
   z-index: 69;
   margin: 0 15px;
   /*
@@ -1010,7 +925,7 @@ footer .component_footer {
         */
 }
 
-footer .component_footer ion-icon {
+.component_footer .box_icon_footer ion-icon {
   background-color: #0e89fc;
   color: #fff;
   font-size: 25px;
@@ -1025,7 +940,7 @@ footer .component_footer ion-icon {
             */
 }
 
-footer .component_footer ion-icon.show_gotop {
+.component_footer .box_icon_footer ion-icon.show_gotop {
   opacity: 1;
   -webkit-animation: animateGotop 1s ease 1s 3;
           animation: animateGotop 1s ease 1s 3;
@@ -1064,6 +979,9 @@ footer .component_footer ion-icon.show_gotop {
   }
 }
 
+/*
+    reseteo de las propiedades que traen por defecto los navegadores
+*/
 * {
   margin: 0;
   padding: 0;
@@ -1071,13 +989,13 @@ footer .component_footer ion-icon.show_gotop {
           box-sizing: border-box;
 }
 
+/*
+    definimos en el body un color de fondo
+*/
 body {
-  background-color: #f1f1f1;
+  background-color: #eee;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-}
-
-body {
   /*
         clase añadida con 'src/js/header.js'
     */
@@ -1087,6 +1005,10 @@ body.body_darkmode {
   background-color: #3c4042ea;
 }
 
+/*
+    clase para todos los componentes que facilitan la aplicaion
+    del modo oscuro
+*/
 .component_dark {
   /*
         clase añadida con 'src/js/header.js'
@@ -1094,9 +1016,13 @@ body.body_darkmode {
 }
 
 .component_dark.component_darkmode {
-  background-color: #46484A !important;
+  background-color: #46484A;
 }
 
+/*
+    clase para todos los textos que facilitan la aplicaion
+    del modo oscuro
+*/
 .text_dark {
   /*
         clase añadida con 'src/js/header.js'
@@ -1104,55 +1030,62 @@ body.body_darkmode {
 }
 
 .text_dark.text_light {
-  color: #fff !important;
+  color: #fff;
 }
 
-.container_body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
+/*
+    definimos FLEXBOX en el dashboard
+*/
 @media (min-width: 1100px) {
   .container_body .container_right {
     margin: 0 80px;
   }
 }
 
-.component_banner, .component_contacts, .component_proyects {
+/*
+    propiedades compartidas entre los COMPONENTES BANNER, 
+    SKILLS, CERTIFICATES, PROYECTS y CONTACTS
+*/
+.component_banner, .component_skills, .component_certificates,
+.component_proyects, .component_contacts {
+  margin: 60px 0;
+}
+
+@media (max-width: 999px) {
+  .component_banner, .component_skills, .component_certificates,
+  .component_proyects, .component_contacts {
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .component_banner, .component_skills, .component_certificates,
+  .component_proyects, .component_contacts {
+    padding: 40px 0;
+  }
+}
+
+/*
+    propiedades compartidas entre los COMPONENTES BANNER,
+    PROYECTS y CONTACTS
+*/
+.component_banner, .component_proyects, .component_contacts {
   background-color: #fff;
-  min-width: 300px;
-  margin: 60px 0;
-}
-
-@media (max-width: 999px) {
-  .component_banner, .component_contacts, .component_proyects {
-    padding: 40px 20px;
-  }
 }
 
 @media (min-width: 1000px) {
-  .component_banner, .component_contacts, .component_proyects {
+  .component_banner, .component_proyects, .component_contacts {
     border-radius: 10px;
-    padding: 40px 0;
   }
 }
 
-.component_skills, .component_certificates {
-  min-width: 300px;
-  margin: 60px 0;
-}
+/*
 
-@media (max-width: 999px) {
-  .component_skills, .component_certificates {
-    padding: 40px 20px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .component_skills, .component_certificates {
-    padding: 40px 0;
-  }
+*/
+.box_skills, .container_certify {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
 
 /* 
@@ -1196,6 +1129,7 @@ h3 {
   text-align: center;
   color: #0e89fc;
   font-family: 'Baloo', sans-serif;
+  padding-bottom: 40px;
 }
 
 @media (max-width: 999px) {
@@ -1214,27 +1148,23 @@ h3 {
     propiedades compartidas por las TAG P
 */
 p {
-  text-align: justify;
-  color: #7e7b7c;
   font-family: 'PT Sans', sans-serif;
   font-size: 20px;
   line-height: 1.5;
 }
 
-li {
-  font-size: 20px;
+h2, h4, p {
+  color: #7e7b7c;
 }
 
-a, h4, strong {
-  font-family: 'Baloo', sans-serif;
-  line-height: 1.8;
-}
-
-a {
-  font-size: 18px;
-}
-
+/*
+    propiedades compartidas por las TAG ION-ICON
+*/
 ion-icon {
   font-size: 25px;
+}
+
+hr {
+  visibility: hidden;
 }
 /*# sourceMappingURL=main.css.map */

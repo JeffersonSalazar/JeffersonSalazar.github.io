@@ -6,26 +6,26 @@
 */
 .component_navbar {
     position: fixed;
-    // top: 0;
+    top: 0;
     left: 0;
     z-index: 89;
     height: 100vh;
     transition: all .5s ease;
 
-    // @media (max-width: 599px) {
-    //     top: 60px;
-    // };
+    @media (max-width: 599px) { // dispositivos 599px <= <= <=
+        top: 60px;
+    };
 
-    // @media (min-width: 700px) {
-    //     top: 60px;
-    // };
+    @media (min-width: 700px) { // dispositivos 700px => => =>
+        top: 60px;
+    };
 
 
     /*
         propiedades para diseño resposive en
-        dispositivos moviles 999px <= <= <=
+        
     */
-    @media (max-width:1099px) {
+    @media (max-width:1099px) { // dispositivos 1099px <= <= <=
         width: 0%;
 
         /*
@@ -36,11 +36,7 @@
         &:hover { width: 240px; }; // hover encargado de redefinir el ancho
     };
     
-    /*
-        propiedades para diseño resposive en 
-        tablets y destoks 1000px => => =>
-    */
-    @media (min-width:1100px) {
+    @media (min-width:1100px) { // dispositivos 1100px => => =>
         width: 75px;
 
         /*
@@ -50,6 +46,7 @@
 
         &:hover { width: 240px; }; // hover encargado de redefinir el ancho
     };
+
 
     .box_nav_navbar {
         background-color: $background_three;
@@ -87,6 +84,7 @@
                     display: flex;
                     height: 60px;
                     font-family: 'PT Sans', sans-serif;
+                    font-size: 20px;
                     align-items: center;
                     color: $color_one;
 
@@ -102,30 +100,20 @@
     .box_navbar_colors {
         
         button {
-            outline: none;
-            border: none;
-            background-color: $background_three;
-            color: $color_one;
             font-size: 22px;
-            font-family: 'PT Sans', sans-serif;
-            letter-spacing: 1px;
             width: 100%;    
             padding: 20px 0;
-            cursor: pointer;
-            transition: transform 0.5s ease;
-   
-            &:hover {
-                transform: translateY(-8px);
-            };
-        }
-    }
-}
+            box-shadow: none !important;
+        };
+    };
+};
 
 
 /*
     definimos WIDTH en las medidas definidas en las media QUERYS
 */
 .fixed_navbar {
+    margin-top: 60px;
     transition: min-width 0.5s ease;
 
     @media (max-width: 1099px) { // dispositivos 999px <= <= <=

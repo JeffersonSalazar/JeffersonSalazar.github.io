@@ -95,23 +95,23 @@ $sections[0].addEventListener('click', function() {
         pasamos la funcion y como valor de los parametros
         pasamos los ID y la velocidad de paginacion
     */
-    smoothScroll('#banner', 2000);
+    smoothScroll('#redirect_banner', 2000);
 })
 
 $sections[1].addEventListener('click', function() {
-    smoothScroll('#skills', 2000);
+    smoothScroll('#redirect_skills', 2000);
 })
 
 $sections[2].addEventListener('click', function() {
-    smoothScroll('#certify', 2000);
+    smoothScroll('#redirect_certify', 2000);
 })
 
 $sections[3].addEventListener('click', function() {
-    smoothScroll('#proyects', 2000);
+    smoothScroll('#redirect_proyects', 2000);
 })
 
 $sections[4].addEventListener('click', function() {
-    smoothScroll('#contacts', 2000);
+    smoothScroll('#redirect_contacts', 2000);
 });
 
 // ------------------ END CODE -------------------- //
@@ -190,15 +190,3 @@ $btn_navbar.addEventListener("click", function() {
 });
 
 // ------------------ END CODE -------------------- //
-
-let $navbar = document.querySelector("#navbar");
-
-window.addEventListener('scroll', function () {
-    if(this.pageYOffset > 20) {
-        // $navbar.classList.add('navbar_down');
-        $navbar.style.top = "60px";
-    } else {
-        // $navbar.classList.remove('navbar_down');
-        $navbar.style.top = "0";
-    }
-})

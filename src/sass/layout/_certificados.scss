@@ -1,12 +1,17 @@
 .component_certificates {
 
     .container_certify {
-        background-color: $background_one;
-        border-radius: 10px;
-        border: 1px solid rgba(0, 0, 0, 0.150);
-        margin: 25px 0;
-        padding: 12px 24px;
+        margin-bottom: 25px;
+        
+        @media (max-width: 999px) {
+            padding: 12px 24px;
+        }
+        
+        @media (min-width: 1000px) {
+            padding: 20px 40px;
+        }
 
+        
         /*
             definimos FLEXBOX para alinear y centrar los elementos
         */
@@ -17,7 +22,6 @@
             cursor: pointer;
 
             h2 {
-                color: $color_two;
                 font-family: 'Open Sans', sans-serif;
                 font-size: 28px;
             };
@@ -36,6 +40,7 @@
             };
         };
 
+
         .content_certify {
             max-height: 0;
             overflow: hidden;
@@ -43,7 +48,7 @@
 
            
             h4 {
-                color: $color_two;
+                font-family: 'Baloo', sans-serif;
                 margin: 10px 0;
             };
             
@@ -68,5 +73,9 @@
 */
 .icon_certify, strong, a {
     color: $color_three;
+};
+
+h4, strong, a {
+    font-family: 'Baloo', sans-serif;
 };
 

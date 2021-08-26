@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
         <title>Portafolio Js</title>
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 		<link rel="stylesheet" href="./src/sass/main.css">
     </head>
 
@@ -60,35 +61,35 @@
 								A: encargadas del redireccionamiento entre secciones, contiene 
 								a 2 TAGS SPAN, le definimos una clase (sections) utiizado en 'src/js/navbar.js' 
 							-->
-							<a href="#banner" class="sections">
+							<a href="#redirect_banner" class="sections">
 								<span class="icon_ion"><ion-icon name="person-outline"></ion-icon></span>
 								<span>Conoceme</span>
 							</a>
 						</li>
 
 						<li>
-							<a href="#skills" class="sections">
+							<a href="#redirect_skills" class="sections">
 								<span class="icon_ion"><ion-icon name="bookmarks-outline"></ion-icon></span>
 								<span>Habilidades</span>
 							</a>
 						</li>
 
 						<li>
-							<a href="#certify" class="sections">
+							<a href="#redirect_certify" class="sections">
 								<span class="icon_ion"><ion-icon name="trophy-outline"></ion-icon></span>
 								<span>Certificados</span>
 							</a>
 						</li>
 
 						<li>
-							<a href="#proyects" class="sections">
+							<a href="#redirect_proyects" class="sections">
 								<span class="icon_ion"><ion-icon name="layers-outline"></ion-icon></span>
 								<span>Proyectos</span>
 							</a>
 						</li>
 
 						<li>
-							<a href="#contacts" class="sections">
+							<a href="#redirect_contacts" class="sections">
 								<span class="icon_ion"><ion-icon name="mail-outline"></ion-icon></span>
 								<span>Contactos</span>
 							</a>
@@ -98,7 +99,7 @@
 					<!--  
 						DIV (box_navbar_color): contiene una TAG BUTTON 
 					-->
-					<div class="box_navbar_colors">
+					<div class="box_btn box_navbar_colors">
 						<button type="button" class="btn_animated bg_js" id="btn_navbar">Skins</button>
 					</div>
 				</nav>
@@ -110,7 +111,7 @@
 				por la propiedad FIXED que aplicamos en COMPONENT_NAVBAR
 				su hoja de estilos 'src/sass/layout/_navbar.scss'
 			-->
-			<div class="fixed_navbar" id="fixed_header"></div>
+			<!-- <div class="fixed_navbar" id="fixed_header"></div> -->
 
 
 			<!--  
@@ -118,7 +119,8 @@
 				1 TAG FOOTER que conforman el lado derecho del dashboard
 				su hoja de estilos 'src/sass/main.scss'
 			-->
-			<div class="container_right">				
+			<div class="container_right">		
+				<hr id="redirect_banner">
 				<!-- 
 					COMPONENT_BANNER: hoja de estilos 'src/sass/layout/_banner.scss',
 					le definimos un ID (banner) utilizado en 'src/js/navbar.js' 
@@ -176,7 +178,7 @@
 							ASIDE (box_img_modal): contiene a 1 TAG IMG
 						-->
 						<aside class="box_img_modal">
-							<img src="./assets/images/person.jpg" alt="person">
+							<!-- <img src="./assets/images/person.jpg" alt="person"> -->
 						</aside>
 
 						<!--  
@@ -214,7 +216,7 @@
 					</div>
 				</div>
 				
-
+				<hr id="redirect_skills">
 				<!-- 
 					COMPONENT_SKILLS: su hoja de estilos src/sass/layout/_habilidades.scss
 					le definimos un ID (skills) utilizado en 'src/js/navbar.js'
@@ -242,10 +244,9 @@
 								segun la habilidad para dar estilos propios 
 							-->
 							<div class="box_level_skills html_level">
-							
-								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
-								ksdfjskldfjskld 
-							
+								creacion de sitios web accesibles y responsive,
+								diseño de tablas, menus de navegacion, modales, trajetas,
+								acordeones, formularios. Uso de buenas practicas
 							</div>
 						</div>
 
@@ -254,11 +255,10 @@
 								<img src="./assets/images/css.png" alt="css">
 							</div>
 
-							<div class="box_level_skills css_level">
-							
-								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
-								ksdfjskldfjskld 
-							
+							<div class="box_level_skills css_level">			
+								implementacion de keyframes, media querys sistema de regillas
+								con css grid y flexbox, uso de pseudo clases, pseudo elementos
+								y manejo de posiciones relativas
 							</div>
 						</div>
 
@@ -268,7 +268,9 @@
 							</div>
 
 							<div class="box_level_skills sass_level">
-								Anidacion Variables Mixin Condicionales
+								manejo de anidaciones, implementacion de variables mixins
+								ciclos y condicionales. Modulacion para la organizacion y 
+								mantenimiento del codigo y uso de importaciones
 							</div>
 						</div>
 
@@ -278,8 +280,9 @@
 							</div>
 
 							<div class="box_level_skills bootstrap_level">
-								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
-								ksdfjskldfjskld
+								implementacion completa de bootstrap para estilos de botones, 
+								tablas, menus de navegacion, tarjetas, modales, sliders,
+								layouts, formularios etc.
 							</div>
 						</div>
 
@@ -289,7 +292,8 @@
 							</div>
 
 							<div class="box_level_skills javascript_level">
-								Eventos Bucles Condicionales Arrays Funciones Objetos 
+								Uso de eventos, bucles, condicionales, arrays, 
+								funciones y objetos. Interaccion con el DOM
 							</div>
 						</div>
 
@@ -299,8 +303,11 @@
 							</div>
 
 							<div class="box_level_skills angular_level">
-								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
-								ksdfjskldfjskld
+								Creacion de componentes, modulos, servicios, clases,
+								interfaces, implementacion de lazy loading, guards,
+								interseptores. Uso del protocolo htpp conexion y 
+								consumo de apis, formularios reactivos, directivas
+								etc...
 							</div>
 						</div>
 
@@ -310,8 +317,10 @@
 							</div>
 
 							<div class="box_level_skills nodejs_level">
-								Crear un servidor local con express, creacion de APIS,
-								conexion a bases de datos MYSQL y MONGODB
+								Creacion de un servidor local con express, creacion de APIS
+								conexion a bases de datos mysql y mongo db, implementacion
+								de modulos como morgan, cors, dotenv, mysql, mongoose, bcrypt
+								jwebtoken y express-validator
 							</div>
 						</div>
 
@@ -321,8 +330,7 @@
 							</div>
 
 							<div class="box_level_skills mysql_level">
-								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
-								ksdfjskldfjskld
+								creacion de 
 							</div>
 						</div>
 
@@ -334,6 +342,7 @@
 							<div class="box_level_skills mongodb_level">
 								crear base de datos por medio de schemas, interaccion 
 								con los meotodos POST, GET, DELETE y UPDATE, paginacion
+								de datos
 							</div>
 						</div>
 
@@ -343,8 +352,7 @@
 							</div>
 
 							<div class="box_level_skills git_level">
-								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
-								ksdfjskldfjskld
+								iniciar realizacion de commits
 							</div>
 						</div>
 
@@ -365,13 +373,14 @@
 							</div>
 
 							<div class="box_level_skills ui_ux_level">
-								Diseños para dispositivos moviles y accesibles y funcionales
+								Diseños para dispositivos moviles accesibles y funcionales
 							</div>
 						</div>
 					</div>
 				</section>
 
 
+				<hr id="redirect_certify">
 				<!-- 
 					COMPONENT_CERTIFICATES: su hoja de estilos 'src/sass/layout/_certificados.scss'
 					le definimos un ID (certify) utilizado en 'src/js/navbar.js' 
@@ -503,6 +512,7 @@
 				</section>
 
 
+				<hr id="redirect_proyects">
 				<!--  
 					COMPONENT_PROYECTS: su hoja de estilos 'src/sass/layout/_proyectos.scss'
 					le definimos un ID (proyects) utiizado enn 'src/js/navbar.js' 		
@@ -510,18 +520,19 @@
 				<section class="component_proyects component_dark" id="proyects">
 					<h3 class="color_js">Proyectos</h3>
 
-					<p class="text_proyects text_dark">
-						esta seccion se encuentra sin desarrollo debido a que 
-						no he encontrado la manera de subir a un servidor las APIS
-						utilizadas por los diferentes proyectos, si conoces de uno 
-						te agradeceria me los hagas saber dejandome un mensaje por
-						medio del formulario de contactos. mientras resuelvo este percanse dejo 
-						el link de GitHub donde encontraran los repositorios de los mismos. 
-						<a href="https://github.com/JeffersonSalazar?tab=repositories" class="color_js" target="_blank">Ir a GitHub</a>
-					</p>
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+						  <div class="swiper-slide">Slide 1</div>
+						  <div class="swiper-slide">Slide 2</div>
+						  <div class="swiper-slide">Slide 3</div>
+						  <div class="swiper-slide">Slide 4</div>
+						  <div class="swiper-slide">Slide 5</div>
+						</div>
+					</div>
 				</section>
 
 
+				<hr id="redirect_contacts">
 				<!-- 
 					COMPONENT_CONTACTS: su hoja de estilos src/sass/layout/_contactos.scss
 					le definimos un ID (contacts) utilizado en 'src/js/navbar.js'	
@@ -608,24 +619,24 @@
 						</form>
 					</div>
 				</section>
+
+
+				<!-- 
+					COMPONENT_FOOTER: su hoja de estilos src/sass/layout/_footer.scss
+				-->
+				<footer class="component_footer">
+					<h4 id="data_year"></h4>
+
+					<div class="box_icon_footer">
+						<!--  
+							ICON-ICON: le definimos un ID (icon_gotop) 
+							utilizado en 'src/js/footer.js'
+						-->
+						<ion-icon name="arrow-up-outline" class="bg_js" id="icon_gotop"></ion-icon>
+					</div>
+				</footer>
 			</div>
 		</main>
-
-
-		<!-- 
-			COMPONENT_FOOTER: su hoja de estilos src/sass/layout/_footer.scss
-		-->
-		<footer>
-			<h4 id="data_year"></h4>
-
-			<div class="component_footer">
-				<!--  
-					ICON-ICON: le definimos un ID (icon_gotop) 
-					utilizado en 'src/js/footer.js'
-				-->
-				<ion-icon name="arrow-up-outline" class="bg_js" id="icon_gotop"></ion-icon>
-			</div>
-		</footer>
 
 		<!-- 
 			scripts icons ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
@@ -633,17 +644,27 @@
 		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> 
 
 		<!-- 
-			scripts sweet alert ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
+			scripts sweet alert
 		-->
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 		<!-- 
+			scripts slider
+		-->
+		<!-- Swiper JS -->
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+		<!-- Initialize Swiper -->
+		<script>
+			let swiper = new Swiper(".mySwiper", {});
+		</script>
+
+		<!-- 
 			scripts javascript ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
 		-->
-		<script src="./src/js/navbar.js"></script>
 		<script src="./src/js/header.js"></script>
+		<script src="./src/js/navbar.js"></script>
 		<script src="./src/js/banner_modal.js"></script>
-		<script src="./src/js/habilidades.js"></script>
 		<script src="./src/js/certificates.js"></script>
 		<script src="./src/js/contactos.js"></script>
 		<script src="./src/js/footer.js"></script>
