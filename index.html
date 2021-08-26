@@ -107,14 +107,6 @@
 
 
 			<!--  
-				FIXED_NAV: se encarga de solucionar el problema generado
-				por la propiedad FIXED que aplicamos en COMPONENT_NAVBAR
-				su hoja de estilos 'src/sass/layout/_navbar.scss'
-			-->
-			<!-- <div class="fixed_navbar" id="fixed_header"></div> -->
-
-
-			<!--  
 				CONTAINER_RIGHT: contiene a 5 TAGS SECTIONS, 1 TAG DIV y 
 				1 TAG FOOTER que conforman el lado derecho del dashboard
 				su hoja de estilos 'src/sass/main.scss'
@@ -125,7 +117,7 @@
 					COMPONENT_BANNER: hoja de estilos 'src/sass/layout/_banner.scss',
 					le definimos un ID (banner) utilizado en 'src/js/navbar.js' 
 				-->
-				<section class="component_banner component_dark" id="banner">
+				<div class="component_banner component_dark" id="banner">
 					<!-- 
 						DIV (box_img_banner): contiene a 1 TAG IMG y 1 DIV	
 					-->
@@ -143,25 +135,28 @@
 						</div>
 					</div>
 
-					<h3 class="color_js">Conoceme</h3>
-				
-					<p class="text_dark">
-						Soy Jefferson Salazar nací el 10 de Febrero de 1989 en
-						Palmira Valle. Me considero una persona sencilla,
-						respetuosa, sociable, apasionado de la vida el emprendimiento 
-						y la tecnología. Me dedico al desarrollo Frontend hace 3 años 
-						en los cuales he participado en el diseño y desarrollo de sitios
-						web y pequeñas aplicaciones propias y para terceros... 
-					</p>
+					
+					<section class="box_biografy">
+						<h3 class="color_js">Conoceme</h3>
 
-					<!--  
-						DIV (box_btn): contiene a 1 TAG BUTTON le definimos un ID 
-						(btnOpen_modal) utilizado en 'src/js/banner_modal.js'
-					-->
-					<div class="box_btn">
-						<button type="button" class="btn_animated bg_js" id="btnOpen_modal">Leer Mas</button>
-					</div>
-				</section>
+						<p class="parraf_biografy text_dark">
+							Soy Jefferson Salazar nací el 10 de Febrero de 1989 en
+							Palmira Valle. Me considero una persona sencilla,
+							respetuosa, sociable, apasionado de la vida el emprendimiento 
+							y la tecnología. Me dedico al desarrollo Frontend hace 3 años 
+							en los cuales he participado en el diseño y desarrollo de sitios
+							web y pequeñas aplicaciones propias y para terceros... 
+						</p>
+
+						<!--  
+							DIV (box_btn): contiene a 1 TAG BUTTON le definimos un ID 
+							(btnOpen_modal) utilizado en 'src/js/banner_modal.js'
+						-->
+						<div class="box_btn">
+							<button type="button" class="btn_animated bg_js" id="btnOpen_modal">Leer Mas</button>
+						</div>
+					</section>
+				</div>
 
 
 				<!-- 
@@ -178,7 +173,7 @@
 							ASIDE (box_img_modal): contiene a 1 TAG IMG
 						-->
 						<aside class="box_img_modal">
-							<!-- <img src="./assets/images/person.jpg" alt="person"> -->
+							<img src="./assets/images/person.jpg" alt="person">
 						</aside>
 
 						<!--  
@@ -224,7 +219,6 @@
 				<section class="component_skills" id="skills">
 					<h3 class="color_js">Habilidades</h3>
 
-					 
 					<!-- 
 						DIV (container_skills): contiene a 12 TAGS DIV 
 					-->
@@ -233,20 +227,15 @@
 							12 DIVS (box_skills): cada uno contiene a 2 TAGS DIV, tambien
 							definimos una clase segun la habilidad para dar estilos propios
 						-->
-						<div class="box_skills component_dark html">			
+						<div class="box_skills component_dark html">
 							<div class="box_img_skills">
 								<img src="./assets/images/html5.png" alt="html">
 							</div>
 
-							 
-							<!-- 
-								DIV (box_level_skills): tambien le definimos una clase
-								segun la habilidad para dar estilos propios 
-							-->
 							<div class="box_level_skills html_level">
 								creacion de sitios web accesibles y responsive,
 								diseño de tablas, menus de navegacion, modales, trajetas,
-								acordeones, formularios. Uso de buenas practicas
+								acordeones, formularios. Uso de buenas practicas 
 							</div>
 						</div>
 
@@ -290,7 +279,7 @@
 							<div class="box_img_skills">
 								<img src="./assets/images/javascript.png" alt="javascript">
 							</div>
-
+ 
 							<div class="box_level_skills javascript_level">
 								Uso de eventos, bucles, condicionales, arrays, 
 								funciones y objetos. Interaccion con el DOM
@@ -304,10 +293,7 @@
 
 							<div class="box_level_skills angular_level">
 								Creacion de componentes, modulos, servicios, clases,
-								interfaces, implementacion de lazy loading, guards,
-								interseptores. Uso del protocolo htpp conexion y 
-								consumo de apis, formularios reactivos, directivas
-								etc...
+								
 							</div>
 						</div>
 

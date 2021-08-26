@@ -20,18 +20,19 @@
         };
     };
     
+    .box_biofgrafy {
 
-    p {
-        text-align: justify;
-
-        @media (min-width: 1000px) { // dispositivos 1000px => => =>
-           padding: 0 40px;
+        p {
+            
+            @media (min-width: 1000px) { // dispositivos 1000px => => =>
+                padding: 0 40px;
+            };
         };
-    };
-
-
-    .box_btn {
-        padding-top: 60px;
+        
+        
+        .box_btn {
+            padding-top: 60px;
+        }
     };
 };
 

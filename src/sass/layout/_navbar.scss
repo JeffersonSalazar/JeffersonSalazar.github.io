@@ -9,43 +9,25 @@
     top: 0;
     left: 0;
     z-index: 89;
+    width: 0%;
     height: 100vh;
     transition: all .5s ease;
-
+    
     @media (max-width: 599px) { // dispositivos 599px <= <= <=
         top: 60px;
     };
-
+    
     @media (min-width: 700px) { // dispositivos 700px => => =>
         top: 60px;
     };
-
-
-    /*
-        propiedades para diseño resposive en
-        
-    */
-    @media (max-width:1099px) { // dispositivos 1099px <= <= <=
-        width: 0%;
-
-        /*
-            clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
-        */
-        &.open_navbar { width: 75px; };
-
-        &:hover { width: 240px; }; // hover encargado de redefinir el ancho
-    };
     
-    @media (min-width:1100px) { // dispositivos 1100px => => =>
-        width: 75px;
+    /*
+        clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
+    */
+    &.open_navbar { width: 75px; };
+    
 
-        /*
-            clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
-        */
-        &.close_navbar { width: 0%; }
-
-        &:hover { width: 240px; }; // hover encargado de redefinir el ancho
-    };
+    &:hover { width: 240px; };
 
 
     .box_nav_navbar {
@@ -105,24 +87,5 @@
             padding: 20px 0;
             box-shadow: none !important;
         };
-    };
-};
-
-
-/*
-    definimos WIDTH en las medidas definidas en las media QUERYS
-*/
-.fixed_navbar {
-    margin-top: 60px;
-    transition: min-width 0.5s ease;
-
-    @media (max-width: 1099px) { // dispositivos 999px <= <= <=
-        min-width: 0;
-    };
-
-    @media (min-width: 1100px) { // dispositivos 1000px => => =>
-        min-width: 75px;
-
-        &.close_fixed { min-width: 0%; }
     };
 };

@@ -154,7 +154,6 @@ if (localStorage.getItem('key_darkMode') === "true") {
     COMPONENT_HEADER y a COMPONENT_FIXED ID
 */
 let $nav_bar = document.querySelector('#navbar'),
-    $fixed_header = document.querySelector('#fixed_header');
     $menu_icon = document.querySelector('#menuIcon');
 
 /* 
@@ -172,18 +171,6 @@ $menu_icon.addEventListener('click', function() {
         definida en 'src/sass/navbar.scss' que muestra el menu de navegacion  
     */
     $nav_bar.classList.toggle('open_navbar');
-
-    /*
-        añadimos o removemos de $NAV_BAR la clase (close_navbar)
-        definida en 'src/sass/navbar.scss' que oculta el menu de navegacion 
-    */
-    $nav_bar.classList.toggle('close_navbar');
-
-    /*
-        añadimos o removemos de $FIXED la clase (close_fixed) definida 
-        en 'src/sass/navbar.scss' que oculta el COMPONENT_FIXED  
-    */
-    $fixed_header.classList.toggle('close_fixed');
 });
 
 // --------------- END CODE ------------------- //

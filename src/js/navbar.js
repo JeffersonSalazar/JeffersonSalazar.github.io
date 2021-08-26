@@ -1,5 +1,4 @@
 // ------------ START CODE - ACTIVE LINKS ----------- //
-
 /* 
     almacenamos en una VAR las TAGS LI definidas en COMPONENT_NAVBAR
 */

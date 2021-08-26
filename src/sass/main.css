@@ -125,43 +125,23 @@
             segunda para convertir el menu burger en X
         */
   /*
-            clase añadida con 'src/js/navbar.js', a BOX_MENUICON_HEADER
-            la cual transalada y rota la primera y tercera linea, retira la opacidad 
-            de la segunda linea y genera un margen en para convertir el menu de X a burger 
-        */
-  /*
             definimos las propiedades DISPLAY, BACKGROUND, WIDTH Y HEIGHT 
             para crear el menu burger
         */
 }
 
-@media (max-width: 1099px) {
-  .component_header .box_menuIcon_header.transform_iconMenu .line_icon:nth-child(1) {
-    -webkit-transform: translateY(9px) rotate(-45deg);
-            transform: translateY(9px) rotate(-45deg);
-  }
-  .component_header .box_menuIcon_header.transform_iconMenu .line_icon:nth-child(2) {
-    opacity: 0;
-  }
-  .component_header .box_menuIcon_header.transform_iconMenu .line_icon:nth-child(3) {
-    -webkit-transform: translateY(-9px) rotate(45deg);
-            transform: translateY(-9px) rotate(45deg);
-  }
+.component_header .box_menuIcon_header.transform_iconMenu .line_icon:nth-child(1) {
+  -webkit-transform: translateY(9px) rotate(-45deg);
+          transform: translateY(9px) rotate(-45deg);
 }
 
-@media (min-width: 1100px) {
-  .component_header .box_menuIcon_header.transform_iconMenu .line_icon:nth-child(1) {
-    -webkit-transform: translateY(0) rotate(0deg);
-            transform: translateY(0) rotate(0deg);
-  }
-  .component_header .box_menuIcon_header.transform_iconMenu .line_icon:nth-child(2) {
-    opacity: 1;
-    margin: 5px 0;
-  }
-  .component_header .box_menuIcon_header.transform_iconMenu .line_icon:nth-child(3) {
-    -webkit-transform: translateY(0) rotate(0);
-            transform: translateY(0) rotate(0);
-  }
+.component_header .box_menuIcon_header.transform_iconMenu .line_icon:nth-child(2) {
+  opacity: 0;
+}
+
+.component_header .box_menuIcon_header.transform_iconMenu .line_icon:nth-child(3) {
+  -webkit-transform: translateY(-9px) rotate(45deg);
+          transform: translateY(-9px) rotate(45deg);
 }
 
 .component_header .box_menuIcon_header .line_icon {
@@ -172,33 +152,10 @@
   height: 4px;
   -webkit-transition: all .3s linear;
   transition: all .3s linear;
-  /*
-                definimos margen en la segunda linea del menu burger
-            */
-  /*
-                transladamos y rotamos la primera y tercera linea y 
-                desvanecemos la segunda para convertir el menu en X
-            */
 }
 
-@media (max-width: 1099px) {
-  .component_header .box_menuIcon_header .line_icon:nth-child(2) {
-    margin: 5px 0;
-  }
-}
-
-@media (min-width: 1100px) {
-  .component_header .box_menuIcon_header .line_icon:nth-child(1) {
-    -webkit-transform: translateY(4px) rotate(-45deg);
-            transform: translateY(4px) rotate(-45deg);
-  }
-  .component_header .box_menuIcon_header .line_icon:nth-child(2) {
-    opacity: 0;
-  }
-  .component_header .box_menuIcon_header .line_icon:nth-child(3) {
-    -webkit-transform: translateY(-4px) rotate(45deg);
-            transform: translateY(-4px) rotate(45deg);
-  }
+.component_header .box_menuIcon_header .line_icon:nth-child(2) {
+  margin: 5px 0;
 }
 
 /*
@@ -212,12 +169,12 @@
   top: 0;
   left: 0;
   z-index: 89;
+  width: 0%;
   height: 100vh;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
   /*
-        propiedades para diseño resposive en
-        
+        clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
     */
 }
 
@@ -233,34 +190,12 @@
   }
 }
 
-@media (max-width: 1099px) {
-  .component_navbar {
-    width: 0%;
-    /*
-            clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
-        */
-  }
-  .component_navbar.open_navbar {
-    width: 75px;
-  }
-  .component_navbar:hover {
-    width: 240px;
-  }
+.component_navbar.open_navbar {
+  width: 75px;
 }
 
-@media (min-width: 1100px) {
-  .component_navbar {
-    width: 75px;
-    /*
-            clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
-        */
-  }
-  .component_navbar.close_navbar {
-    width: 0%;
-  }
-  .component_navbar:hover {
-    width: 240px;
-  }
+.component_navbar:hover {
+  width: 240px;
 }
 
 .component_navbar .box_nav_navbar {
@@ -324,30 +259,6 @@
           box-shadow: none !important;
 }
 
-/*
-    definimos WIDTH en las medidas definidas en las media QUERYS
-*/
-.fixed_navbar {
-  margin-top: 60px;
-  -webkit-transition: min-width 0.5s ease;
-  transition: min-width 0.5s ease;
-}
-
-@media (max-width: 1099px) {
-  .fixed_navbar {
-    min-width: 0;
-  }
-}
-
-@media (min-width: 1100px) {
-  .fixed_navbar {
-    min-width: 75px;
-  }
-  .fixed_navbar.close_fixed {
-    min-width: 0%;
-  }
-}
-
 .component_banner .box_img_banner {
   text-align: center;
 }
@@ -368,17 +279,13 @@
   color: #0e89fc;
 }
 
-.component_banner p {
-  text-align: justify;
-}
-
 @media (min-width: 1000px) {
-  .component_banner p {
+  .component_banner .box_biofgrafy p {
     padding: 0 40px;
   }
 }
 
-.component_banner .box_btn {
+.component_banner .box_biofgrafy .box_btn {
   padding-top: 60px;
 }
 
@@ -509,41 +416,60 @@
   font-size: 24px;
 }
 
-/*
-  clases de este componente que comparten propiedades
-*/
-.html:hover:before, .html_level {
-  color: #FF6D00;
-}
-
-.component_skills h3 {
-  padding-bottom: 30px;
+.component_skills {
+  /*
+    usamos DISPLAY para crear una rejilla
+  */
 }
 
 .component_skills .container_skills {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px 5px;
+  /*
+      importante definir POSITION y Z-INDEX para posicionar
+      esta TAG sobre la barra de progreso
+    */
+}
+
+@media (max-width: 799px) {
+  .component_skills .container_skills {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .component_skills .container_skills {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .component_skills .container_skills {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .component_skills .container_skills .box_skills {
-  position: relative;
-  width: 240px;
-  margin: 10px;
   cursor: pointer;
+  /*
+        cuando hacemos :HOVER en las TAGS ARTICLE añadimos una animacion en 
+        (box_img_skills) que translada la IMG generando un efecto de movimiento
+      */
+  /*
+        cuando hacemos :HOVER en las TAGS ARTICLE redefinimos OPACITY propeidad 
+        definida en (box_level_skills)
+      */
+  /*
+        definimos OPACITY 0 para luego redefinirlo cuando
+        hagamos :HOVER en las TAGS ARTICLES
+      */
 }
 
 .component_skills .container_skills .box_skills:hover .box_img_skills {
-  -webkit-transform: translateY(-100px);
-          transform: translateY(-100px);
-}
-
-.component_skills .container_skills .box_skills:hover img {
   -webkit-animation: img_Move 1s infinite;
           animation: img_Move 1s infinite;
 }
@@ -554,8 +480,8 @@
             transform: translateY(0);
   }
   50% {
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -569,8 +495,8 @@
             transform: translateY(0);
   }
   50% {
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -580,8 +506,6 @@
 
 .component_skills .container_skills .box_skills:hover .box_level_skills {
   opacity: 1;
-  -webkit-transform: translateY(-100px);
-          transform: translateY(-100px);
 }
 
 .component_skills .container_skills .box_skills .box_img_skills {
@@ -591,27 +515,95 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 400px;
+  height: 200px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  -webkit-transition: -webkit-transform .5s ease-in-out;
-  transition: -webkit-transform .5s ease-in-out;
-  transition: transform .5s ease-in-out;
-  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+}
+
+.component_skills .container_skills .box_skills .box_img_skills img {
+  margin-top: 7px;
+}
+
+@media (max-width: 479px) {
+  .component_skills .container_skills .box_skills .box_img_skills img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (min-width: 480px) {
+  .component_skills .container_skills .box_skills .box_img_skills img {
+    width: 114px;
+    height: 114px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .component_skills .container_skills .box_skills .box_img_skills img {
+    width: 124px;
+    height: 124px;
+  }
 }
 
 .component_skills .container_skills .box_skills .box_level_skills {
-  position: absolute;
-  bottom: 0;
+  font-family: 'PT Sans', sans-serif;
+  color: #fff;
+  border-radius: 0 0 10px 10px;
   opacity: 0;
-  overflow: hidden;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
-  font-family: 'PT Sans', sans-serif;
-  text-align: justify;
-  padding: 0 10px;
+}
+
+/*
+  clases de este componente que comparten propiedades
+*/
+.html:hover:before, .html_level {
+  background-color: #FF6D00;
+}
+
+.css:hover:before, .css_level {
+  background-color: #039BE5;
+}
+
+.sass:hover:before, .sass_level {
+  background-color: #F06292;
+}
+
+.bootstrap:hover:before, .bootstrap_level {
+  background-color: #673AB7;
+}
+
+.javascript:hover:before, .javascript_level {
+  background-color: #FFD600;
+}
+
+.angular:hover:before, .angular_level {
+  background-color: #DD2C00;
+}
+
+.nodejs:hover:before, .nodejs_level {
+  background-color: #388E3C;
+}
+
+.mysql:hover:before, .mysql_level {
+  background-color: #F57F17;
+}
+
+.mongodb:hover:before, .mongodb_level {
+  background-color: #4CAF50;
+}
+
+.git:hover:before, .git_level {
+  background-color: #F4511E;
+}
+
+.illustrator:hover:before, .illustrator_level {
+  background-color: #1C0802;
+}
+
+.ui_ux:hover:before, .ui_ux_level {
+  background-color: #83D8F4;
 }
 
 .component_certificates .container_certify {
