@@ -1,79 +1,58 @@
-/*
-    esta clase hace referencia a contenedor del sidebar...
-    hacemos uso de la propiedad HIDDEN para ocultar el 
-    esceso visual de contenido debido a su poco WIDTH... 
-    la transicion la usamos para suavizar el :HOVER
-*/
 .component_navbar {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 89;
-    width: 0%;
+    background-color: $background_three;
     height: 100vh;
-    transition: all .5s ease;
-    
+
     @media (max-width: 599px) { // dispositivos 599px <= <= <=
-        top: 60px;
+        margin-top: 60px;
     };
     
     @media (min-width: 700px) { // dispositivos 700px => => =>
-        top: 60px;
+        margin-top: 60px;
     };
+
     
-    /*
-        clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
-    */
-    &.open_navbar { width: 75px; };
-    
+    ul {
+        padding: 20px 0 20px 9px;
+        
+        li {
+            list-style: none;
 
-    &:hover { width: 240px; };
-
-
-    .box_nav_navbar {
-        background-color: $background_three;
-        height: 100%;
-        overflow-x: hidden;
-
-        ul {
-            padding: 20px 0 20px 9px;
+            /*
+                clase añadida con javascript... 
+                define propiedades cuando el enlace de 
+                navegacion es seleccionado por el usuario
+            */
+            &.active_link {
+                background-color: $background_one;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
             
-            li {
-                list-style: none;
-
-                /*
-                    clase añadida con javascript... 
-                    define propiedades cuando el enlace de 
-                    navegacion es seleccionado por el usuario
-                */
-                &.active_link {
-                    background-color: $background_one;
-                    border-top-left-radius: 20px;
-                    border-bottom-left-radius: 20px;
-                
-                    a {
-                        color: $color_four;
-                    }
-                }; 
-
-                /*
-                    TAG referente al redireccionamiento en el sitio web
-                    usamos FLEXBOX  y HEIGHT para alinear los iconos y los titulos
-                    verticalmente
-                */
                 a {
-                    text-decoration: none;
-                    display: flex;
-                    height: 60px;
-                    font-family: 'PT Sans', sans-serif;
-                    font-size: 20px;
-                    align-items: center;
-                    color: $color_one;
+                    color: $color_four;
+                }
+            }; 
 
-                    .icon_ion {
-                        margin: 3px 35px 0 15px;
-                        line-height: 20px;
-                    };
+            /*
+                TAG referente al redireccionamiento en el sitio web
+                usamos FLEXBOX  y HEIGHT para alinear los iconos y los titulos
+                verticalmente
+            */
+            a {
+                text-decoration: none;
+                display: flex;
+                height: 60px;
+                font-family: 'PT Sans', sans-serif;
+                font-size: 20px;
+                align-items: center;
+                color: $color_one;
+
+                .icon_ion {
+                    margin: 3px 35px 0 15px;
+                    line-height: 20px;
                 };
             };
         };
@@ -84,7 +63,7 @@
         button {
             font-size: 22px;
             width: 100%;    
-            padding: 20px 0;
+            padding: 20px 0 !important;
             box-shadow: none !important;
         };
     };

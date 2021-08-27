@@ -167,7 +167,7 @@ $btn_navbar.addEventListener("click", function() {
         que seran igual a los valores que nos trae la funcion 
         almacenada en NEWCOLOR
     */
-    $img_banner.style.borderColor = NEW_COLOR;
+    // $img_banner.style.borderColor = NEW_COLOR;
     
     /* 
         hacemos un FOREACH en las VARS $BG_GROUP, $COLOR_GROUP

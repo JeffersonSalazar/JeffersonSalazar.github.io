@@ -1,204 +1,11 @@
-// .component_contacts {
-
-//     h3 {
-
-//         @media (min-width: 1000px) { // dispositivos 1000px => => =>
-//             padding-bottom: 40px;
-//         };
-//     };
-    
-
-//     .box_data_form {
-
-//         @media (min-width: 1000px) { // dispositivos 1000px => => =>
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//         };
-            
-
-//         .text_card_form {
-
-//             @media (max-width: 900px) { // dispositivos 999px <= <= <=
-//                 padding: 15px 0 50px;
-//             };
-//         };
-   
-
-//         form {
-
-//             @media (min-width: 1000px) { // dispositivos 1000px => => =>
-//                 border: $border_one;
-//             };
-            
-            
-//             .box_inputs {
-//                 /*
-//                     generamos espaciado en el segundo (BOX-INPUTS)
-//                 */
-//                 &:nth-child(2) {
-//                     margin: 30px 0;
-//                 };
-                
-//                 input {
-//                     outline: none;
-//                     border: none;
-//                     background-color: transparent;
-//                     color: $color_two;
-//                     border-bottom: $border_one;
-//                     font-family: 'PT Sans', sans-serif;
-//                     font-size: 22px;
-//                     letter-spacing: 1px;
-//                     width: 100%;
-//                     padding: 8px;
-
-//                     &.form_dark {
-//                         background-color: #4C4F51;
-//                         color: $color_one;
-//                         border-bottom: none;
-//                     }
-
-//                     /*
-//                         cuando el INPUT tiene el :FOCUS haciendo uso del selector (~)
-//                         el SPAN:BEFORE redefine el ancho mostrando el borde animado
-//                     */
-//                     &:focus ~ span:before {
-//                         width: 100%;
-//                     };
-//                 };
-
-//                 /*
-//                     hacemos uso de las propiedades DISPLAY, POSITION y del pseudo
-//                     elemento :BEFORE para crear un borde animado en los inputs
-//                 */
-//                 span {
-//                     display: block;
-//                     position: relative;
-                    
-//                     &:before {
-//                         content: '';
-//                         position: absolute;
-//                         bottom: 0;
-//                         left: 0;
-//                         width: 0%;
-//                         height: 2px;
-//                         box-shadow: 0 -10px 10px transparent,
-//                                     0 3px 5px $shadow_five;
-//                         transition: width .5s ease-in;
-//                     };
-//                 };
-
-//                 .box_errors {
-//                     color: $color_one;
-//                     background-color: $background_three;
-//                     font-size: 18px;
-//                     letter-spacing: 1;
-//                     width: inherit;
-//                     padding: 8px;
-//                     display: none;
-                    
-//                     /*
-//                         SHOW_ERROR: clase añadida desde 'src/js/conatctos.js', muestra 
-//                         los errores si los datos ingresador en los INPUTS son incorrectos
-//                     */
-//                     &.show_error {
-//                         display: block;
-//                     };
-//                 };
-//             };
-        
-
-//             .box_btn {
-//                 margin: 60px 0;
-//             };
-
-
-//             /*
-//                 definimos FLEXBOX para alinear y centrar todos los elementos
-//             */
-//             .box_socials_contacts {
-//                 display: flex;
-//                 justify-content: center;
-
-//                 a {
-//                     margin: 0 5px;
-
-//                     ion-icon {
-//                         font-size: 22px;
-//                     }
-//                 }
-//             };
-//         };
-//     };
-// };
-
-
-// /*
-//     TAGS de este componente que comparten propiedades
-// */
-// .text_card_form, form {
-
-//     @media (min-width: 1000px) { // dispositivos 1000px => => =>
-//         // border: $border_one;
-//         border-radius: 10px;
-//         width: 380px;
-//         margin: 0 10px;
-//         padding: 50px 34px;
-//     };
-// };
-
-// .icon_contacts {
-//     background-color: $background_three;
-//     color: $color_one;
-//     border-radius: 50%;
-//     padding: 12px;
-//     cursor: pointer;
-// };
-
-
-
 .component_contacts {
     
     .box_data_form {
-        cursor: pointer;
 
         @media (min-width: 1000px) { // dispositivos 1000px => => =>
             display: flex;
             align-items: center;
-            justify-content: center;
-        
-            /*
-                cuando hacemos :HOVER en el contenedor redefinimos
-                las propiedades definidas en 'text_card_form'
-            */
-            &:hover .text_card_form {
-                left: 24%;
-                opacity: 1;
-            };
-    
-            /*
-                cuando hacemos :HOVER en el contenedor redefinimos
-                las propiedades definidas en 'form'
-            */
-            &:hover form {
-                left: 18%;
-            };
-        };
-    
-
-        .text_card_form {
-
-            @media (max-width: 900px) { // dispositivos 999px <= <= <=
-                padding: 15px 10px 40px;
-            };
-
-            @media (min-width: 1000px) { // dispositivos 1000px => => =>
-                width: 380px;
-                position: absolute;
-                left: 35%;
-                opacity: 0;
-                transition: all .5s ease-in-out;
-            };
+            justify-content: space-evenly;
         };
 
 
@@ -206,13 +13,10 @@
 
             @media (min-width: 1000px) { // dispositivos 1000px => => =>
                 width: 380px;
-                position: relative;
-                top: 0%;
-                left: 0%;
                 border: $border_one;
                 border-radius: 10px;
-                padding: 50px 34px;
-                transition: all .5s ease-in-out;
+                padding: 30px;
+                order: 1;
             };
             
             
@@ -224,6 +28,7 @@
                     margin: 30px 0;
                 };
                 
+
                 input {
                     outline: none;
                     border: none;
@@ -254,6 +59,7 @@
                     };
                 };
 
+
                 /*
                     hacemos uso de las propiedades DISPLAY, POSITION y del pseudo
                     elemento :BEFORE para crear un borde animado en los inputs
@@ -274,6 +80,7 @@
                         transition: width .5s ease-in;
                     };
                 };
+
 
                 .box_errors {
                     color: $color_one;
@@ -325,6 +132,20 @@
                         };
                     };
                 };
+            };
+        };
+
+
+        .text_card_form {
+
+            @media (max-width: 999px) { // dispositivos 999px <= <= <=
+                margin-bottom: 40px;
+                order: 1;
+            };
+
+            @media (min-width: 1000px) { // dispositivos 1000px => => =>
+                width: 380px;
+                order: 2;
             };
         };
     };

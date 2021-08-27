@@ -158,81 +158,56 @@
   margin: 5px 0;
 }
 
-/*
-    esta clase hace referencia a contenedor del sidebar...
-    hacemos uso de la propiedad HIDDEN para ocultar el 
-    esceso visual de contenido debido a su poco WIDTH... 
-    la transicion la usamos para suavizar el :HOVER
-*/
 .component_navbar {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 89;
-  width: 0%;
+  background-color: #0e89fc;
   height: 100vh;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  /*
-        clase añadida con 'src/js/header.js' a COMPONENT_NAVBAR
-    */
 }
 
 @media (max-width: 599px) {
   .component_navbar {
-    top: 60px;
+    margin-top: 60px;
   }
 }
 
 @media (min-width: 700px) {
   .component_navbar {
-    top: 60px;
+    margin-top: 60px;
   }
 }
 
-.component_navbar.open_navbar {
-  width: 75px;
-}
-
-.component_navbar:hover {
-  width: 240px;
-}
-
-.component_navbar .box_nav_navbar {
-  background-color: #0e89fc;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-.component_navbar .box_nav_navbar ul {
+.component_navbar ul {
   padding: 20px 0 20px 9px;
 }
 
-.component_navbar .box_nav_navbar ul li {
+.component_navbar ul li {
   list-style: none;
   /*
-                    clase añadida con javascript... 
-                    define propiedades cuando el enlace de 
-                    navegacion es seleccionado por el usuario
-                */
+                clase añadida con javascript... 
+                define propiedades cuando el enlace de 
+                navegacion es seleccionado por el usuario
+            */
   /*
-                    TAG referente al redireccionamiento en el sitio web
-                    usamos FLEXBOX  y HEIGHT para alinear los iconos y los titulos
-                    verticalmente
-                */
+                TAG referente al redireccionamiento en el sitio web
+                usamos FLEXBOX  y HEIGHT para alinear los iconos y los titulos
+                verticalmente
+            */
 }
 
-.component_navbar .box_nav_navbar ul li.active_link {
+.component_navbar ul li.active_link {
   background-color: #fff;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
 
-.component_navbar .box_nav_navbar ul li.active_link a {
+.component_navbar ul li.active_link a {
   color: #333;
 }
 
-.component_navbar .box_nav_navbar ul li a {
+.component_navbar ul li a {
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -246,7 +221,7 @@
   color: #fff;
 }
 
-.component_navbar .box_nav_navbar ul li a .icon_ion {
+.component_navbar ul li a .icon_ion {
   margin: 3px 35px 0 15px;
   line-height: 20px;
 }
@@ -254,25 +229,54 @@
 .component_navbar .box_navbar_colors button {
   font-size: 22px;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 0 !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+}
+
+@media (min-width: 1000px) {
+  .component_banner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .component_banner .box_img_banner {
   text-align: center;
 }
 
-.component_banner .box_img_banner img {
-  border: 5px solid #0e89fc;
-  border-radius: 50%;
-  width: 130px;
-  height: 130px;
-  padding: 20px;
+@media (min-width: 1000px) {
+  .component_banner .box_img_banner {
+    width: 40%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+@media (max-width: 999px) {
+  .component_banner .box_img_banner img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .component_banner .box_img_banner img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .component_banner .box_img_banner .box_hdv_banner {
-  padding: 10px 0 20px;
+  padding-top: 10px;
 }
 
 .component_banner .box_img_banner .box_hdv_banner a {
@@ -280,13 +284,16 @@
 }
 
 @media (min-width: 1000px) {
-  .component_banner .box_biofgrafy p {
-    padding: 0 40px;
+  .component_banner .box_biografy {
+    width: 40%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 }
 
-.component_banner .box_biofgrafy .box_btn {
-  padding-top: 60px;
+.component_banner .box_biografy p {
+  padding-bottom: 40px;
 }
 
 /*
@@ -425,7 +432,7 @@
 .component_skills .container_skills {
   display: -ms-grid;
   display: grid;
-  gap: 10px 5px;
+  gap: 10px;
   /*
       importante definir POSITION y Z-INDEX para posicionar
       esta TAG sobre la barra de progreso
@@ -454,156 +461,74 @@
 }
 
 .component_skills .container_skills .box_skills {
-  cursor: pointer;
-  /*
-        cuando hacemos :HOVER en las TAGS ARTICLE añadimos una animacion en 
-        (box_img_skills) que translada la IMG generando un efecto de movimiento
-      */
-  /*
-        cuando hacemos :HOVER en las TAGS ARTICLE redefinimos OPACITY propeidad 
-        definida en (box_level_skills)
-      */
-  /*
-        definimos OPACITY 0 para luego redefinirlo cuando
-        hagamos :HOVER en las TAGS ARTICLES
-      */
-}
-
-.component_skills .container_skills .box_skills:hover .box_img_skills {
-  -webkit-animation: img_Move 1s infinite;
-          animation: img_Move 1s infinite;
-}
-
-@-webkit-keyframes img_Move {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes img_Move {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.component_skills .container_skills .box_skills:hover .box_level_skills {
-  opacity: 1;
-}
-
-.component_skills .container_skills .box_skills .box_img_skills {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 200px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 350px;
+  cursor: pointer;
 }
 
-.component_skills .container_skills .box_skills .box_img_skills img {
-  margin-top: 7px;
+.component_skills .container_skills .box_skills:hover {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+.component_skills .container_skills .box_skills .box_content_skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*
+          definimos OPACITY 0 para luego redefinirlo cuando
+          hagamos :HOVER en las TAGS ARTICLES
+        */
 }
 
 @media (max-width: 479px) {
-  .component_skills .container_skills .box_skills .box_img_skills img {
+  .component_skills .container_skills .box_skills .box_content_skills img {
     width: 64px;
     height: 64px;
   }
 }
 
 @media (min-width: 480px) {
-  .component_skills .container_skills .box_skills .box_img_skills img {
+  .component_skills .container_skills .box_skills .box_content_skills img {
     width: 114px;
     height: 114px;
   }
 }
 
 @media (min-width: 1000px) {
-  .component_skills .container_skills .box_skills .box_img_skills img {
+  .component_skills .container_skills .box_skills .box_content_skills img {
     width: 124px;
     height: 124px;
   }
 }
 
-.component_skills .container_skills .box_skills .box_level_skills {
-  font-family: 'PT Sans', sans-serif;
-  color: #fff;
-  border-radius: 0 0 10px 10px;
-  opacity: 0;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-}
-
-/*
-  clases de este componente que comparten propiedades
-*/
-.html:hover:before, .html_level {
-  background-color: #FF6D00;
-}
-
-.css:hover:before, .css_level {
-  background-color: #039BE5;
-}
-
-.sass:hover:before, .sass_level {
-  background-color: #F06292;
-}
-
-.bootstrap:hover:before, .bootstrap_level {
-  background-color: #673AB7;
-}
-
-.javascript:hover:before, .javascript_level {
-  background-color: #FFD600;
-}
-
-.angular:hover:before, .angular_level {
-  background-color: #DD2C00;
-}
-
-.nodejs:hover:before, .nodejs_level {
-  background-color: #388E3C;
-}
-
-.mysql:hover:before, .mysql_level {
-  background-color: #F57F17;
-}
-
-.mongodb:hover:before, .mongodb_level {
-  background-color: #4CAF50;
-}
-
-.git:hover:before, .git_level {
-  background-color: #F4511E;
-}
-
-.illustrator:hover:before, .illustrator_level {
-  background-color: #1C0802;
-}
-
-.ui_ux:hover:before, .ui_ux_level {
-  background-color: #83D8F4;
+.component_skills .container_skills .box_skills .box_content_skills p {
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .component_certificates .container_certify {
@@ -703,10 +628,6 @@ h4, strong, a {
   /* Center slide text vertically */
 }
 
-.component_contacts .box_data_form {
-  cursor: pointer;
-}
-
 @media (min-width: 1000px) {
   .component_contacts .box_data_form {
     display: -webkit-box;
@@ -715,41 +636,9 @@ h4, strong, a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    /*
-                cuando hacemos :HOVER en el contenedor redefinimos
-                las propiedades definidas en 'text_card_form'
-            */
-    /*
-                cuando hacemos :HOVER en el contenedor redefinimos
-                las propiedades definidas en 'form'
-            */
-  }
-  .component_contacts .box_data_form:hover .text_card_form {
-    left: 24%;
-    opacity: 1;
-  }
-  .component_contacts .box_data_form:hover form {
-    left: 18%;
-  }
-}
-
-@media (max-width: 900px) {
-  .component_contacts .box_data_form .text_card_form {
-    padding: 15px 10px 40px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .component_contacts .box_data_form .text_card_form {
-    width: 380px;
-    position: absolute;
-    left: 35%;
-    opacity: 0;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
 }
 
@@ -762,14 +651,12 @@ h4, strong, a {
 @media (min-width: 1000px) {
   .component_contacts .box_data_form form {
     width: 380px;
-    position: relative;
-    top: 0%;
-    left: 0%;
     border: 1px solid #cccccc86;
     border-radius: 10px;
-    padding: 50px 34px;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+    padding: 30px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 }
 
@@ -888,6 +775,24 @@ h4, strong, a {
 .component_contacts .box_data_form form .box_socials_contacts a ion-icon:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+@media (max-width: 999px) {
+  .component_contacts .box_data_form .text_card_form {
+    margin-bottom: 40px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+@media (min-width: 1000px) {
+  .component_contacts .box_data_form .text_card_form {
+    width: 380px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 .component_footer {
@@ -1025,28 +930,52 @@ body.body_darkmode {
   color: #fff;
 }
 
-/*
-    definimos FLEXBOX en el dashboard
-*/
-@media (min-width: 1100px) {
-  .container_body .container_right {
-    margin: 0 80px;
+.container_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.container_body .component_navbar {
+  overflow: hidden;
+}
+
+@media (max-width: 999px) {
+  .container_body .component_navbar {
+    width: 0;
+    -webkit-transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
   }
+  .container_body .component_navbar.open_navbar {
+    width: 240px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container_body .component_navbar {
+    width: 75px;
+    -webkit-transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+  }
+  .container_body .component_navbar:hover {
+    width: 240px;
+  }
+}
+
+.container_body .container_right {
+  width: 100%;
 }
 
 /*
     propiedades compartidas entre los COMPONENTES BANNER, 
     SKILLS, CERTIFICATES, PROYECTS y CONTACTS
 */
-.component_banner, .component_skills, .component_certificates,
-.component_proyects, .component_contacts {
-  margin: 60px 0;
-}
-
 @media (max-width: 999px) {
   .component_banner, .component_skills, .component_certificates,
   .component_proyects, .component_contacts {
     padding: 40px 20px;
+    margin: 60px 0;
   }
 }
 
@@ -1054,6 +983,7 @@ body.body_darkmode {
   .component_banner, .component_skills, .component_certificates,
   .component_proyects, .component_contacts {
     padding: 40px 0;
+    margin: 60px 0 60px 75px;
   }
 }
 
@@ -1063,12 +993,6 @@ body.body_darkmode {
 */
 .component_banner, .component_proyects, .component_contacts {
   background-color: #fff;
-}
-
-@media (min-width: 1000px) {
-  .component_banner, .component_proyects, .component_contacts {
-    border-radius: 10px;
-  }
 }
 
 /*
@@ -1120,19 +1044,20 @@ body.body_darkmode {
 h3 {
   text-align: center;
   color: #0e89fc;
-  font-family: 'Baloo', sans-serif;
-  padding-bottom: 40px;
+  font-family: 'Open sans', sans-serif;
 }
 
 @media (max-width: 999px) {
   h3 {
     font-size: 40px;
+    margin-bottom: 15px;
   }
 }
 
 @media (min-width: 1000px) {
   h3 {
     font-size: 60px;
+    margin-bottom: 30px;
   }
 }
 
@@ -1158,5 +1083,9 @@ ion-icon {
 
 hr {
   visibility: hidden;
+}
+
+a {
+  font-size: 17px;
 }
 /*# sourceMappingURL=main.css.map */

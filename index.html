@@ -41,70 +41,64 @@
 		<main class="container_body">
 			<!-- 
 				COMPONENT_NAVBAR: su hoja de estilos => src/sass/layout/_navbar.scss
-				le definimos un ID (navbar) utilizado en 'src/js/navbar.js'	
+				le definimos un ID (navbar) utilizado en 'src/js/header.js'	
 			-->
-			<div class="component_navbar" id="navbar">
+			<nav class="component_navbar bg_js" id="navbar">
 				<!--  
-					NAV: contiene 1 TAG UL
+					UL: contiene 5 TAGS LI,  
 				-->
-				<nav class="box_nav_navbar bg_js" id="sidebar">
+				<ul>
 					<!--  
-						UL: contiene 5 TAGS LI,  
+						LI: cada una contienen 1 TAG A le definimos una clase 
+						(active-link) utilizado en 'src/js/navbar.js'
 					-->
-					<ul>
+					<li class="active_link">
 						<!--  
-							LI: cada una contienen 1 TAG A le definimos una clase 
-							(active-link) utilizado en 'src/js/navbar.js'
+							A: encargadas del redireccionamiento entre secciones, contiene 
+							a 2 TAGS SPAN, le definimos una clase (sections) utiizado en 'src/js/navbar.js' 
 						-->
-						<li class="active_link">
-							<!--  
-								A: encargadas del redireccionamiento entre secciones, contiene 
-								a 2 TAGS SPAN, le definimos una clase (sections) utiizado en 'src/js/navbar.js' 
-							-->
-							<a href="#redirect_banner" class="sections">
-								<span class="icon_ion"><ion-icon name="person-outline"></ion-icon></span>
-								<span>Conoceme</span>
-							</a>
-						</li>
+						<a href="#redirect_banner" class="sections">
+							<span class="icon_ion"><ion-icon name="person-outline"></ion-icon></span>
+							<span>Conoceme</span>
+						</a>
+					</li>
 
-						<li>
-							<a href="#redirect_skills" class="sections">
-								<span class="icon_ion"><ion-icon name="bookmarks-outline"></ion-icon></span>
-								<span>Habilidades</span>
-							</a>
-						</li>
+					<li>
+						<a href="#redirect_skills" class="sections">
+							<span class="icon_ion"><ion-icon name="bookmarks-outline"></ion-icon></span>
+							<span>Habilidades</span>
+						</a>
+					</li>
 
-						<li>
-							<a href="#redirect_certify" class="sections">
-								<span class="icon_ion"><ion-icon name="trophy-outline"></ion-icon></span>
-								<span>Certificados</span>
-							</a>
-						</li>
+					<li>
+						<a href="#redirect_certify" class="sections">
+							<span class="icon_ion"><ion-icon name="trophy-outline"></ion-icon></span>
+							<span>Certificados</span>
+						</a>
+					</li>
 
-						<li>
-							<a href="#redirect_proyects" class="sections">
-								<span class="icon_ion"><ion-icon name="layers-outline"></ion-icon></span>
-								<span>Proyectos</span>
-							</a>
-						</li>
+					<li>
+						<a href="#redirect_proyects" class="sections">
+							<span class="icon_ion"><ion-icon name="layers-outline"></ion-icon></span>
+							<span>Proyectos</span>
+						</a>
+					</li>
 
-						<li>
-							<a href="#redirect_contacts" class="sections">
-								<span class="icon_ion"><ion-icon name="mail-outline"></ion-icon></span>
-								<span>Contactos</span>
-							</a>
-						</li>
-					</ul>
+					<li>
+						<a href="#redirect_contacts" class="sections">
+							<span class="icon_ion"><ion-icon name="mail-outline"></ion-icon></span>
+							<span>Contactos</span>
+						</a>
+					</li>
+				</ul>
 
-					<!--  
-						DIV (box_navbar_color): contiene una TAG BUTTON 
-					-->
-					<div class="box_btn box_navbar_colors">
-						<button type="button" class="btn_animated bg_js" id="btn_navbar">Skins</button>
-					</div>
-				</nav>
-			</div>
-
+				<!--  
+					DIV (box_navbar_color): contiene una TAG BUTTON 
+				-->
+				<div class="box_btn box_navbar_colors">
+					<button type="button" class="btn_animated bg_js" id="btn_navbar">Skins</button>
+				</div>
+			</nav>
 
 			<!--  
 				CONTAINER_RIGHT: contiene a 5 TAGS SECTIONS, 1 TAG DIV y 
@@ -125,7 +119,7 @@
 						<!--  
 							IMG: le definimos un ID (img_banner) utilizado en 'src/js/navbar.js',
 						-->
-						<img src="./assets/images/avatar.png" alt="avatar" id="img_banner">
+						<img src="./assets/images/banner2.png" alt="model" id="img_banner">
 
 						<!--  
 							DIV (box_hdv_banner): contiene 1 TAG A para la hoja de vida descargable
@@ -135,10 +129,9 @@
 						</div>
 					</div>
 
-					
 					<section class="box_biografy">
 						<h3 class="color_js">Conoceme</h3>
-
+						
 						<p class="parraf_biografy text_dark">
 							Soy Jefferson Salazar nací el 10 de Febrero de 1989 en
 							Palmira Valle. Me considero una persona sencilla,
@@ -173,10 +166,10 @@
 							ASIDE (box_img_modal): contiene a 1 TAG IMG
 						-->
 						<aside class="box_img_modal">
-							<img src="./assets/images/person.jpg" alt="person">
+							<img src="./assets/images/modal2.png" alt="person">
 						</aside>
 
-						<!--  
+							<!--  
 							ASIDE (box_content_modal): contiene a 1 DIV, 2 TAGS P y 1 TAG OL
 						-->
 						<aside class="box_content_modal">
@@ -228,138 +221,138 @@
 							definimos una clase segun la habilidad para dar estilos propios
 						-->
 						<div class="box_skills component_dark html">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/html5.png" alt="html">
-							</div>
-
-							<div class="box_level_skills html_level">
-								creacion de sitios web accesibles y responsive,
-								diseño de tablas, menus de navegacion, modales, trajetas,
-								acordeones, formularios. Uso de buenas practicas 
+								
+								<p class="html_level">
+									creacion de sitios web accesibles y responsive,
+									diseño de tablas, menus de navegacion, modales, trajetas,
+									acordeones, formularios. Uso de buenas practicas 
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark css">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/css.png" alt="css">
-							</div>
-
-							<div class="box_level_skills css_level">			
-								implementacion de keyframes, media querys sistema de regillas
-								con css grid y flexbox, uso de pseudo clases, pseudo elementos
-								y manejo de posiciones relativas
+								
+								<p class="css_level">			
+									implementacion de keyframes, media querys sistema de regillas
+									con css grid y flexbox, uso de pseudo clases, pseudo elementos
+									y manejo de posiciones relativas
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark sass">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/sass.png" alt="sass">
-							</div>
-
-							<div class="box_level_skills sass_level">
-								manejo de anidaciones, implementacion de variables mixins
-								ciclos y condicionales. Modulacion para la organizacion y 
-								mantenimiento del codigo y uso de importaciones
+								
+								<p class="sass_level">
+									manejo de anidaciones, implementacion de variables mixins
+									ciclos y condicionales. Modulacion para la organizacion y 
+									mantenimiento del codigo y uso de importaciones
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark bootstrap">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/bootstrap.png" alt="bootstrap">
-							</div>
-
-							<div class="box_level_skills bootstrap_level">
-								implementacion completa de bootstrap para estilos de botones, 
-								tablas, menus de navegacion, tarjetas, modales, sliders,
-								layouts, formularios etc.
+							
+								<p class="bootstrap_level">
+									implementacion completa de bootstrap para estilos de botones, 
+									tablas, menus de navegacion, tarjetas, modales, sliders,
+									layouts, formularios etc.
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark javascript">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/javascript.png" alt="javascript">
-							</div>
- 
-							<div class="box_level_skills javascript_level">
-								Uso de eventos, bucles, condicionales, arrays, 
-								funciones y objetos. Interaccion con el DOM
+								
+								<p class="javascript_level">
+									Uso de eventos, bucles, condicionales, arrays, 
+									funciones y objetos. Interaccion con el DOM
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark angular">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/angular.png" alt="angular">
-							</div>
-
-							<div class="box_level_skills angular_level">
-								Creacion de componentes, modulos, servicios, clases,
 								
+								<p class="angular_level">
+									Creacion de componentes, modulos, servicios, clases,
+									
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark nodejs">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/node.png" alt="nodejs">
-							</div>
-
-							<div class="box_level_skills nodejs_level">
-								Creacion de un servidor local con express, creacion de APIS
-								conexion a bases de datos mysql y mongo db, implementacion
-								de modulos como morgan, cors, dotenv, mysql, mongoose, bcrypt
-								jwebtoken y express-validator
+								
+								<p class="nodejs_level">
+									Creacion de un servidor local con express, creacion de APIS
+									conexion a bases de datos mysql y mongo db, implementacion
+									de modulos como morgan, cors, dotenv, mysql, mongoose, bcrypt
+									jwebtoken y express-validator
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark mysql">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/mysql.png" alt="mysql">
-							</div>
-
-							<div class="box_level_skills mysql_level">
-								creacion de 
+								
+								<p class="mysql_level">
+									creacion de 
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark mongodb">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/mongo.png" alt="mongo">
-							</div>
-
-							<div class="box_level_skills mongodb_level">
-								crear base de datos por medio de schemas, interaccion 
-								con los meotodos POST, GET, DELETE y UPDATE, paginacion
-								de datos
+								
+								<p class="mongodb_level">
+									crear base de datos por medio de schemas, interaccion 
+									con los meotodos POST, GET, DELETE y UPDATE, paginacion
+									de datos
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark git">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/git.png" alt="git">
-							</div>
-
-							<div class="box_level_skills git_level">
-								iniciar realizacion de commits
+								
+								<p class="git_level">
+									iniciar realizacion de commits
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark illustrator">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/ilustrator.png" alt="ilustrator">
-							</div>
-
-							<div class="box_level_skills illustrator_level">
-								fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
-								ksdfjskldfjskld
+								
+								<p class="illustrator_level">
+									fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
+									ksdfjskldfjskld
+								</p>
 							</div>
 						</div>
 
 						<div class="box_skills component_dark ui_ux">
-							<div class="box_img_skills">
+							<div class="box_content_skills">
 								<img src="./assets/images/ui-ux.png" alt="ui-ux">
-							</div>
-
-							<div class="box_level_skills ui_ux_level">
-								Diseños para dispositivos moviles accesibles y funcionales
+								
+								<p class="ui_ux_level">
+									Diseños para dispositivos moviles accesibles y funcionales
+								</p>
 							</div>
 						</div>
 					</div>
@@ -527,14 +520,14 @@
 					<h3 class="color_js">Contactos</h3>
 
 					<!--  
-						DIV (box_data_form): contiene a 1 TAG P y 1 TAG FORM
+						DIV (box_data_form): contiene a 1 TAG FORM y 1 TAG P
 					-->
 					<div class="box_data_form">
+
 						<p class="text_card_form text_dark">
 							Deseas contactarme? enviame un email y tratare
 							de ponerme en contacto contigo lo antes posible, recuerda 
 							que todos los campos del formulario son requeridos...
-							<strong>GRACIAS</strong>
 						</p>
 
 						<!--  

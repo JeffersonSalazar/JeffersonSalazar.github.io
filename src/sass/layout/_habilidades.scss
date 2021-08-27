@@ -5,7 +5,7 @@
   */
   .container_skills {
     display: grid;
-    gap: 10px 5px;
+    gap: 10px;
 
     @media (max-width: 799px) {
       grid-template-columns: repeat(2, 1fr);
@@ -24,45 +24,25 @@
       esta TAG sobre la barra de progreso
     */
     .box_skills { 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 350px;
       cursor: pointer;
 
-      /*
-        cuando hacemos :HOVER en las TAGS ARTICLE añadimos una animacion en 
-        (box_img_skills) que translada la IMG generando un efecto de movimiento
-      */
-      &:hover .box_img_skills {
-        animation: img_Move 1s infinite;
+      &:hover{
+        transform: translateY(-50px);
+        transition: all ease 0.2s;
+      }
 
-        @keyframes img_Move {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          } 
-          100% {
-            transform: translateY(0);
-          } 
-        }
-      };
-
-      /*
-        cuando hacemos :HOVER en las TAGS ARTICLE redefinimos OPACITY propeidad 
-        definida en (box_level_skills)
-      */
-      &:hover .box_level_skills {
-        opacity: 1;
-      };
-
-
-      .box_img_skills {
+      .box_content_skills {
         display: flex;
         justify-content: center;
-        height: 200px;
         align-items: center;
+        flex-direction: column;
 
         img {
-          margin-top: 7px;
 
           @media (max-width: 479px) {
             width: 64px;
@@ -79,72 +59,16 @@
             height: 124px;
           };
         };
-      };
-
       
-      /*
-        definimos OPACITY 0 para luego redefinirlo cuando
-        hagamos :HOVER en las TAGS ARTICLES
-      */
-      .box_level_skills {
-        font-family: 'PT Sans', sans-serif;
-        color: $color_one;
-        border-radius: 0 0 10px 10px;
-        opacity: 0;
-        transition: all .5s ease-in-out;
+        /*
+          definimos OPACITY 0 para luego redefinirlo cuando
+          hagamos :HOVER en las TAGS ARTICLES
+        */
+        p {
+          font-size: 0.9rem;
+          text-align: center
+        };
       };
     };
   };
-};
-
-
-/*
-  clases de este componente que comparten propiedades
-*/
-.html:hover:before, .html_level {
-  background-color: #FF6D00;
-};
-
-.css:hover:before, .css_level {
-  background-color: #039BE5;
-};
-
-.sass:hover:before, .sass_level {
-  background-color: #F06292;
-};
-
-.bootstrap:hover:before, .bootstrap_level {
-  background-color: #673AB7;
-};
-
-.javascript:hover:before, .javascript_level {
-  background-color: #FFD600;
-};
-
-.angular:hover:before, .angular_level {
-  background-color: #DD2C00;
-};
-
-.nodejs:hover:before, .nodejs_level {
-  background-color: #388E3C;
-};
-
-.mysql:hover:before, .mysql_level {
-  background-color: #F57F17;
-};
-
-.mongodb:hover:before, .mongodb_level {
-  background-color: #4CAF50;
-};
-
-.git:hover:before, .git_level {
-  background-color: #F4511E;
-};
-
-.illustrator:hover:before, .illustrator_level {
-  background-color: #1C0802;
-};
-
-.ui_ux:hover:before, .ui_ux_level {
-  background-color: #83D8F4;
 };
