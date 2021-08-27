@@ -21,7 +21,7 @@
     definimos en el body un color de fondo
 */
 body {
-    background-color: $background_four;
+    background-color: $background_one;
     transition: all .5s ease; 
 
     /*
@@ -59,33 +59,15 @@ body {
 };
 
 .container_body {
-    display: flex;
-    width: 100%;
 
     .component_navbar {
+        width: 0;
         overflow: hidden;
-        
-        @media (max-width: 999px) { // dispositivos 999px <= <= <=
-            width: 0;
-            transition: width .3s ease-in-out;
+        transition: width .3s ease-in-out;
 
-            &.open_navbar { width: 240px; };
-        };
-        
-        @media (min-width: 1000px) { // dispositivos 1000px => => =>
-            width: 75px;
-            transition: width .3s ease-in-out;
-
-            &:hover {
-                width: 240px
-            }
-        };
-    }
-
-    .container_right {
-        width: 100%;
+        &.open_navbar { width: 240px; };
     };
-}
+};
 
 /*
     propiedades compartidas entre los COMPONENTES BANNER, 
@@ -93,17 +75,8 @@ body {
 */
 .component_banner, .component_skills, .component_certificates,
 .component_proyects, .component_contacts {
-    // min-width: 300px;
-    
-    @media (max-width: 999px) { // dispositivos 999px <= <= <=
-        padding: 40px 20px;
-        margin: 60px 0;
-    };
-    
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        padding: 40px 0;
-        margin: 60px 0 60px 75px;
-    };
+    margin: 80px 0 50px;
+    padding: 40px 20px;
 };
 
 
@@ -113,10 +86,6 @@ body {
 */
 .component_banner, .component_proyects, .component_contacts {
     background-color: $background_one;
-
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        // border-radius: 10px;
-    };
 };
 
 
@@ -145,7 +114,7 @@ body {
         font-family: 'PT Sans', sans-serif;
         letter-spacing: 1px;
         border-radius: 5px;
-        padding: 14px 50px;
+        padding: 16px 50px;
         cursor: pointer;
         
         &.btn_animated {
@@ -164,15 +133,17 @@ body {
     propiedades compartidas por las TAG H3
 */
 h3 {
-    text-align: center;
     color: $color_three;
-    font-family: 'Open sans', sans-serif;
     
     @media (max-width: 999px) { // dispositivos 999px <= <= <=
         font-size: 40px;
         margin-bottom: 15px;
     };
     
+    @media (min-width: 400px) { // dispositivos 400px => => =>
+        text-align: center;
+    };
+
     @media (min-width: 1000px) { // dispositivos 1000px => => =>
         font-size: 60px;
         margin-bottom: 30px;
@@ -207,5 +178,12 @@ hr {
 }
 
 a {
-    font-size: 17px;
+    font-family: 'Baloo', sans-serif;
+    font-size: 1.1rem;
+    color: $color_three;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    // font-family: 'Open sans', sans-serif;
 }

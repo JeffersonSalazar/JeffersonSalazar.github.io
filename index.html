@@ -112,33 +112,19 @@
 					le definimos un ID (banner) utilizado en 'src/js/navbar.js' 
 				-->
 				<div class="component_banner component_dark" id="banner">
-					<!-- 
-						DIV (box_img_banner): contiene a 1 TAG IMG y 1 DIV	
-					-->
-					<div class="box_img_banner">
-						<!--  
-							IMG: le definimos un ID (img_banner) utilizado en 'src/js/navbar.js',
-						-->
-						<img src="./assets/images/banner2.png" alt="model" id="img_banner">
-
-						<!--  
-							DIV (box_hdv_banner): contiene 1 TAG A para la hoja de vida descargable
-						-->
-						<div class="box_hdv_banner">
-							<a href="./assets/docs/HojadeVida.pdf" download="HDV Jefferson Salazar" class="color_js">Descargar HDV</a>
-						</div>
-					</div>
-
 					<section class="box_biografy">
-						<h3 class="color_js">Conoceme</h3>
-						
+						<h1 class="color_js">Soy Jefferson Salazar</h1>
+
+						<h4>Desarrollador Web</h4>
+
+						<a href="./assets/docs/HojadeVida.pdf" download="HDV Jefferson Salazar" class="color_js">Descargar HDV</a>
+
 						<p class="parraf_biografy text_dark">
-							Soy Jefferson Salazar nací el 10 de Febrero de 1989 en
-							Palmira Valle. Me considero una persona sencilla,
-							respetuosa, sociable, apasionado de la vida el emprendimiento 
-							y la tecnología. Me dedico al desarrollo Frontend hace 3 años 
-							en los cuales he participado en el diseño y desarrollo de sitios
-							web y pequeñas aplicaciones propias y para terceros... 
+							Naci el 10 de Febrero de 1989 en Palmira Valle. Me considero una 
+							persona sencilla, respetuosa, sociable, apasionado de la vida el 
+							emprendimiento y la tecnología. Me dedico al desarrollo Frontend 
+							hace 3 años en los cuales he participado en el desarrollo de sitios
+							web y pequeñas aplicaciones... 
 						</p>
 
 						<!--  
@@ -149,6 +135,16 @@
 							<button type="button" class="btn_animated bg_js" id="btnOpen_modal">Leer Mas</button>
 						</div>
 					</section>
+
+					<!-- 
+						DIV (box_img_banner): contiene a 1 TAG IMG y 1 DIV	
+					-->
+					<div class="box_img_banner">
+						<!--  
+							IMG: le definimos un ID (img_banner) utilizado en 'src/js/navbar.js',
+						-->
+						<img src="./assets/images/banner2.png" alt="model" id="img_banner">
+					</div>
 				</div>
 
 
@@ -181,8 +177,8 @@
 							</div>
 
 							<p class="text_dark">
-								Tengo conocimientos basicos en Backend, creando y consumiendo
-								APIS. Entre mis virtudes esta:
+								Tengo conocimientos basicos en Backend creando APIS y haciendo
+								uso de ellas. Entre mis virtudes esta:
 							</p>
 
 							<!--  
@@ -523,12 +519,14 @@
 						DIV (box_data_form): contiene a 1 TAG FORM y 1 TAG P
 					-->
 					<div class="box_data_form">
-
-						<p class="text_card_form text_dark">
-							Deseas contactarme? enviame un email y tratare
-							de ponerme en contacto contigo lo antes posible, recuerda 
-							que todos los campos del formulario son requeridos...
-						</p>
+						<div class="box_card_form">
+							<h2>Deseas contactarme?</h2>
+							
+							<p class="text_card_form text_dark">
+								enviame un email y tratare de contactarme contigo lo antes posible, 
+								recuerda  que todos los campos del formulario son requeridos...
+							</p>
+						</div>
 
 						<!--  
 							FORM: contiene a 5 TAGS DIV, le definimos un ID (formulario) 

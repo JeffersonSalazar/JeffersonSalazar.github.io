@@ -11,17 +11,18 @@
     z-index: 79;
     display: flex;
     justify-content: space-around;
-    height: 60px;
+    height: 80px;
     align-items: center;
-    transition: background-color .3s ease-in-out;
+    transition: all .3s ease-in-out;
 
     /*
         clase añadida con 'src/js/header.js' a COMPONENT_HEADER 
     */
     &.scroll_light {
-        background-color: #f1f1f1;
+        background-color: $background_one;
         box-shadow: $shadow_one;
-        border-bottom: 1px solid #d6d6d6;
+        // border-bottom: 1px solid #d6d6d6;
+        height: 60px;
     };
     
     /*
@@ -30,7 +31,8 @@
     &.scroll_dark {
         background-color: #46484A;
         box-shadow: $shadow_one;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.150);
+        // border-bottom: 1px solid rgba(0, 0, 0, 0.150);
+        height: 60px;
     };
 
     /*
