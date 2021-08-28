@@ -24,7 +24,14 @@
             cursor: pointer;
 
             h2 {
-                font-size: 2rem;
+                
+                @media (max-width: 369px) {
+                    font-size: 1.5rem;
+                }
+                
+                @media (min-width: 370px) {
+                    font-size: 2rem;
+                }
             };
 
             .icon_certify {

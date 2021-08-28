@@ -125,6 +125,8 @@ $sections[4].addEventListener('click', function() {
 let $btn_navbar = document.querySelector("#btn_navbar");
     $bg_group = document.querySelectorAll(".bg_js"),
     $color_group = document.querySelectorAll(".color_js"),
+    $box_circles = document.querySelectorAll(".box_circle"),
+    $borders = document.querySelectorAll(".box_border"),
     $strongs = document.querySelectorAll("strong"),
     $img_banner = document.querySelector("#img_banner");
 
@@ -167,7 +169,7 @@ $btn_navbar.addEventListener("click", function() {
         que seran igual a los valores que nos trae la funcion 
         almacenada en NEWCOLOR
     */
-    // $img_banner.style.borderColor = NEW_COLOR;
+    $img_banner.style.border = `5px solid ${NEW_COLOR}`;
     
     /* 
         hacemos un FOREACH en las VARS $BG_GROUP, $COLOR_GROUP
@@ -183,9 +185,18 @@ $btn_navbar.addEventListener("click", function() {
         color.style.color = NEW_COLOR
     });
 
+    $box_circles.forEach(circles => {
+        circles.style.border = `5px solid ${NEW_COLOR}`
+    });
+
+    $borders.forEach(border => {
+        border.style.borderTop = `3px solid ${NEW_COLOR}`
+    });
+
     $strongs.forEach(text => {
         text.style.color = NEW_COLOR;
     });
+
 });
 
 // ------------------ END CODE -------------------- //

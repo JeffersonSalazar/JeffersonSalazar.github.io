@@ -4,29 +4,34 @@
     usamos DISPLAY para crear una rejilla
   */
   .container_skills {
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
-    // align-items: center;
     display: grid;
     gap: 10px;
+    padding: 0 50px;
     overflow-x: scroll;
 
     &::-webkit-scrollbar {
       display: none;
     }
 
-    // @media (max-width: 799px) {
-    //   grid-template-columns: repeat(2, 1fr);
-    // }
+    @media (max-width: 499px) {
+      grid-template-columns: repeat(12, 1fr);
+    }
 
-    // @media (min-width: 800px) {
-    //   grid-template-columns: repeat(3, 1fr);
-    // }
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-    // @media (min-width: 1000px) {
+    @media (min-width: 700px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1000px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 1200px) {
       grid-template-columns: repeat(6, 1fr);
-    // }
+    }
       
     /*
       importante definir POSITION y Z-INDEX para posicionar
@@ -37,9 +42,12 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      width: 240px;
       height: 400px;
       cursor: pointer;
+      
+      @media (max-width: 499px) {
+        width: 240px;
+      }
 
       &:hover{
         transform: translateY(-50px);

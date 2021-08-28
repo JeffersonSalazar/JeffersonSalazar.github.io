@@ -6,9 +6,9 @@
     background-color: $background_three;
     height: 100vh;
 
-    // @media (max-width: 599px) { // dispositivos 599px <= <= <=
-    //     margin-top: 60px;
-    // };
+    @media (max-width: 599px) { // dispositivos 599px <= <= <=
+        margin-top: 80px;
+    };
     
     // @media (min-width: 700px) { // dispositivos 700px => => =>
     //     margin-top: 60px;
