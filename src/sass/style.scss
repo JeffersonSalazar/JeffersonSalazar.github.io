@@ -1,7 +1,8 @@
-// /*
-//     @imports: contienen variables y fuentes utilizadas en este proyecto
-//     ademas del layout de las secciones. Su ruta 'src/sass/shared'
-// */
+/*
+    @imports: importacion de variables y fuentes utilizadas en este proyecto,
+    layout contiene la importacion de los estilos de cada una se las secciones.
+    ruta de los archivos 'src/sass/shared'
+*/
 @import './shared/variables';
 @import './shared/fonts';
 @import './shared/layout';
@@ -10,95 +11,65 @@
 /*
     reseteo de las propiedades que traen por defecto los navegadores
 */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 };
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 /*
-    definimos en el body un color de fondo
+    body
 */
 body {
     background-color: $background_four;
-    transition: all .5s ease; 
 
     /*
-        clase añadida con 'src/js/header.js'
+        js_body_dark_mode: clase añadida con javascript en 'src/js/header.js'
+        que añade un color de fondo para este elemento
     */
-    &.body_darkmode { background-color: #3c4042ea; };
+    &.js_body_dark_mode { 
+        background-color: #3c4042ea; 
+    };
+
+    &.js_hidden_scroll {
+        overflow-y: clip;
+    }
 };
 
 
 /*
-    clase para todos los componentes que facilitan la aplicaion
-    del modo oscuro
+    dark_components
 */
-.component_dark {
+.dark_components {
     /*
-        clase añadida con 'src/js/header.js'
+        js_dark_mode_components: clase añadida con javascript en 'src/js/header.js'
+        que añade un color de fondo para este elemento
     */
-    &.component_darkmode {
+    &.js_dark_mode_components {
         background-color: #46484A;
     };
 };
 
 
 /*
-    clase para todos los textos que facilitan la aplicaion
-    del modo oscuro
+    light_text
 */
-.text_dark {
+.light_text {
     /*
-        clase añadida con 'src/js/header.js'
+        js_dark_mode_components: clase añadida con javascript en 'src/js/header.js'
+        que añade color a los textos de este elemento
     */
-    &.text_light {
-        color: $color_one; // esto tiene un !important
+    &.js_light_text {
+        color: $color_one;
     };
 };
-
-.container_body {
-
-    .component_navbar {
-        width: 0;
-        overflow: hidden;
-        transition: width .3s ease-in-out;
-
-        &.open_navbar { width: 240px; };
-    };
-};
-
-/*
-    propiedades compartidas entre los COMPONENTES BANNER, 
-    SKILLS, CERTIFICATES, PROYECTS y CONTACTS
-*/
-.component_banner, .component_skills, .component_certificates,
-.component_proyects, .component_contacts {
-    margin: 80px 0 50px;
-    padding: 40px 20px;
-};
-
-
-/*
-    propiedades compartidas entre los COMPONENTES BANNER,
-    PROYECTS y CONTACTS
-*/
-.component_banner, .component_skills, .component_certificates, 
-.component_proyects, .component_contacts {
-    background-color: $background_one;
-};
-
-
-/*
-
-*/
-.box_skills, .container_certify {
-    background-color: $background_one;
-    border: 1px solid rgba(0, 0, 0, 0.150);
-    border-radius: 10px;
-}
-
 
 /* 
     propiedades compartidas por la TAG BUTTON
@@ -128,6 +99,36 @@ body {
         };
     };
 };
+
+/*
+    propiedades compartidas entre los 
+    SKILLS, CERTIFICATES, PROYECTS y CONTACTS
+*/
+.skills_component, .certificates_component,
+.proyects_component, .contacts_component {
+    margin-top: 80px;
+    padding: 40px 20px;
+};
+
+
+/*
+    propiedades compartidas entre los COMPONENTES BANNER,
+    PROYECTS y CONTACTS
+*/
+.skills_component, .certificates_component, .contacts_component {
+    background-color: $background_one;
+};
+
+
+/*
+
+*/
+.box_skill_cards, .certificates_section {
+    background-color: $background_one;
+}
+
+
+
 
 
 /*
@@ -164,18 +165,6 @@ h2, h4, p {
     color: $color_two;
 };
 
-/*
-    propiedades compartidas por las TAG ION-ICON
-*/
-ion-icon {
-    font-size: 25px;
-};
-
-
-hr {
-    visibility: hidden;
-}
-
 a {
     font-family: 'Baloo', sans-serif;
     font-size: 1.1rem;
@@ -187,8 +176,8 @@ h1, h2, h4, h5, h6 {
     // font-family: 'Open sans', sans-serif;
 }
 
-.box_border {
-    border-top: 3px solid $color_three;
+.box_title_border {
+    border: 2px solid $color_three;
     width: 200px;
     
     @media (max-width: 999px) { // dispositivos 999px <= <= <=

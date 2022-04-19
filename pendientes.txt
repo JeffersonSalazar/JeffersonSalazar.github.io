@@ -1,0 +1,34 @@
+-------- header -------
+completo
+
+------- navbar -------
+completo
+
+------- banner -------
+completo
+
+-------- modal -------
+completo
+
+-------- skills ------
+1. completar el contenido de las tarjetas
+2. documentar css desde box_skill_cards
+
+-------- certificates -------
+completo
+
+-------- contacts ---------
+2. añadir un loading mientras llega la respuesta del servidor
+
+-------- footer ----------
+completo
+
+
+como hacer scrollpsy y smoot scroll
+https://www.youtube.com/watch?v=fAAk9CATILc
+
+
+medidas rem y em
+https://www.youtube.com/watch?v=nz6DIeBdZtY
+
+https://es.camsoda.com/peitt

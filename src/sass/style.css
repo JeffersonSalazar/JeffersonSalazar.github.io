@@ -1,0 +1,1865 @@
+@charset "UTF-8";
+/*
+    @imports: importacion de variables y fuentes utilizadas en este proyecto,
+    layout contiene la importacion de los estilos de cada una se las secciones.
+    ruta de los archivos 'src/sass/shared'
+*/
+/*
+    colores
+*/
+/*
+    fondos
+*/
+/*
+    sombras
+*/
+/*
+    bordes
+*/
+/*
+    esta hoja de estilos contiene las fuentes utilizadas en
+    cada una de las secciones de este proyecto y sera consumida
+    por la hoja de estilos raiz en la RUTA 'assets/sass/main.scss' 
+*/
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=PT+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/*
+    @imports: de las hojas de estilo de cada una de las secciones 
+    de este proyecto, esta hoja layout sera importada a la
+    hoja de estilos principal en la ruta 'assets/sass/main.scss'
+*/
+/*
+    header_component: definimos flexbox y sus propiedades justify-content y 
+    align-items junto con un height para centrar de manera horizontal y 
+    vertical los elementos que este contiene
+*/
+.header_component {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #fff;
+  height: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: height .3s;
+  transition: height .3s;
+  /*
+        .js_header_scroll: clases añadidas con desde 'src/js/header.js',
+        .definimos position: fixed y sus propiedades top, right, left y z-index 
+        .para fijar este elemento y darle tamaño implementando una altura
+    */
+  /*
+        box_dark_mode: definimos position: relative debido a que uno de
+        sus elementos hijos tiene definido position: absolute
+    */
+  /*
+        box_menu_icon
+    */
+}
+
+.header_component.js_header_scroll {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 79;
+  height: 60px;
+  -webkit-box-shadow: 0 0 10px 0 #0000001f;
+          box-shadow: 0 0 10px 0 #0000001f;
+}
+
+.header_component .box_dark_mode {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 100px;
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.157), inset 0 -4px 4px 0 rgba(199, 195, 195, 0.246);
+          box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.157), inset 0 -4px 4px 0 rgba(199, 195, 195, 0.246);
+  /*
+            dark_mode_icon: definimos position: absolute y sus propiedades top y left 
+            para posicionar el icono dentro de su contenedor padre, finalmente la
+            propeidad tarnsform: scale para ajustar el tamaño del icono
+        */
+}
+
+.header_component .box_dark_mode .dark_mode_icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#f9f9f9));
+  background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+  border-radius: 50%;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-box-shadow: inset 0 4px 4px 0  #ffffff, inset 0 -4px 4px 0 #ffffff;
+          box-shadow: inset 0 4px 4px 0  #ffffff, inset 0 -4px 4px 0 #ffffff;
+  cursor: pointer;
+  -webkit-transition: left .3s;
+  transition: left .3s;
+  /*
+                .js_active_dark_mode: clase añadida desde 'src/js/header.js',
+                .cuando dark_mode_icon tiene esta clase definimos left: 30px 
+                .que hace desplazar el icono y cambia el color de fondo
+            */
+}
+
+.header_component .box_dark_mode .dark_mode_icon.js_active_dark_mode {
+  left: 30px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#575555));
+  background: linear-gradient(to bottom, #454545, #575555);
+  -webkit-box-shadow: inset 0 4px 4px 0  #46484A, inset 0 -4px 4px 0 #46484A;
+          box-shadow: inset 0 4px 4px 0  #46484A, inset 0 -4px 4px 0 #46484A;
+}
+
+.header_component .box_open_menu_icon {
+  margin-top: 1px;
+  cursor: pointer;
+  /*
+            tag-svg: definimos la propiedad vertical-align: top para remover
+            un espaciado que genera el navegador en los iconos
+        */
+}
+
+.header_component .box_open_menu_icon svg {
+  vertical-align: top;
+  fill: #4c90f9;
+  width: 38px;
+  height: 38px;
+}
+
+/*
+    navbar_component: definimos position: fixed y sus propiedades top, 
+    left, right y z-index para fijar este elemento y darle tamaño 
+    height: 100vh permite que este tome el alto total del viewport, 
+    finalmente visibility: hidden lo usamos para ocultar este elemento
+*/
+.navbar_component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 89;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  /*
+        .js_show_overlay: clase añadida desde 'src/js/navbar.js',
+        .cuando navbar_component tiene esta clase cambiamos a
+        .visibility: visible permitiendo que este elemento sea visible
+    */
+  /*
+        navbar_component: definimos width: 0 para eliminar el ancho del elemento
+        y height: 100% para que este tome el alto total de su contenedor padre, 
+        finalmente overflow: hidden lo usamos para ocultar los elementos que queden 
+        visibles al superar el ancho del contenedor y con overflow-y: auto generamos
+        un scroll en el eje Y para cuado la altura de la pantalla se reduce
+    */
+}
+
+.navbar_component.js_show_overlay {
+  visibility: visible;
+}
+
+.navbar_component nav {
+  background-color: #4c90f9;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-transition: width .2s;
+  transition: width .2s;
+  /*
+            .cuando hacemos :hover implementamos el pseudo elemento
+            .::-webkit-scrollbar-thumb para mostrar el scroll
+        */
+  /*
+            .implementamos el pseudo elemento ::-webkit-scrollbar 
+            .para definir el color de fondo y el ancho de la caja
+            .que contiene al scroll
+        */
+  /*
+            .js_show_menu_nav: clase añadida desde 'src/js/header.js',
+            .cuando navbar_component tiene esta clase modificamos el width 
+            .permitiendole al navbar que sea visible
+        */
+  /*
+            box_navbar_menu: definimos flexbox y sus propiedades justify-content y 
+            align-items junto con un height para centrar de manera horizontal y 
+            vertical los elementos que este contiene, finalmente un espaciado para
+            separar el contenido de los bordes de este elemento
+        */
+  /*
+            ul_navbar: definimos un espaciado para separar de los bordes los 
+            elementos que este contiene
+        */
+}
+
+.navbar_component nav::-webkit-scrollbar-thumb {
+  background-color: #bcc0c4;
+}
+
+.navbar_component nav::-webkit-scrollbar {
+  background-color: #f1f1f1;
+  width: 12px;
+}
+
+.navbar_component nav.js_show_menu_nav {
+  width: 240px;
+}
+
+.navbar_component nav .box_navbar_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #fff;
+  padding: 0 20px;
+  /*
+                tag-h4
+            */
+  /*
+                box_menu_close_icon
+            */
+}
+
+.navbar_component nav .box_navbar_menu h4 {
+  color: #fff;
+  font-size: 20px;
+}
+
+.navbar_component nav .box_navbar_menu .box_menu_close_icon {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  /*
+                    tag-svg: definimos la propiedad vertical-align: top para remover
+                    un espaciado que genera el navegador en los iconos
+                */
+}
+
+.navbar_component nav .box_navbar_menu .box_menu_close_icon svg {
+  vertical-align: top;
+  fill: #fff;
+  width: 32px;
+  height: 32px;
+}
+
+.navbar_component nav .ul_navbar {
+  padding: 20px 0 20px 9px;
+}
+
+.navbar_component nav .ul_navbar li {
+  list-style: none;
+  /*
+                    .js_active_link: clase añadida desde 'src/js/navbar.js', 
+                    .cuando tag-li tiene esta clase añadimos color de fondo y
+                    .con las propiedades border-top-left-radius y
+                    .border-bottom-left-radius creamos los bordes redondeados
+                */
+  /*
+                    tag-a: definimos inline-flex y su propiedad align-items junto con
+                    un height para centrar de manera vertical los elementos que 
+                    este contiene
+                */
+}
+
+.navbar_component nav .ul_navbar li.js_active_link {
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  /*
+                        .cunado tag-li tiene la clase js_active_link,
+                        .relaciona a tag-a y añade la porpiedad color
+                    */
+}
+
+.navbar_component nav .ul_navbar li.js_active_link a {
+  color: #333;
+  /*
+                            .cunado tag-li tiene la clase js_active_link,
+                            .relaciona a tag-svg y añade la porpiedad fill
+                        */
+  /*
+                            .cunado tag-li tiene la clase js_active_link,
+                            .relaciona a tag-button y añade la porpiedad color
+                        */
+}
+
+.navbar_component nav .ul_navbar li.js_active_link a svg {
+  fill: #333;
+}
+
+.navbar_component nav .ul_navbar li.js_active_link a button {
+  color: #333;
+}
+
+.navbar_component nav .ul_navbar li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*
+                        tag-svg: definimos la propiedad vertical-align: top para
+                        remover un espaciado que genera el navegador en los iconos
+                    */
+  /*
+                        tag-button: definimos border y outline none para remover
+                        los bordes que añade el navegador en los botones
+                    */
+}
+
+.navbar_component nav .ul_navbar li a svg {
+  vertical-align: top;
+  fill: #fff;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+}
+
+.navbar_component nav .ul_navbar li a button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+  cursor: pointer;
+}
+
+/*
+    banner_component: definimos un espaciado para separar de los
+    bordes los elementos que este contiene
+*/
+.banner_component {
+  padding: 40px 20px;
+  /*
+        banner_flexbox
+    */
+}
+
+.banner_component .banner_flexbox {
+  /*
+            _@query 1000px ==> : definimos flexbox y sus propiedades
+            _justify-content y align-items para centrar de manera
+            _vertical y horizontal los elementos que este contiene
+        */
+  /*
+            box_banner_biografy
+        */
+  /*
+            box_banner_img: definimos position: relative debido a que uno de sus
+            elementos hijo tiene definido position: absolute, finalmente con
+            text-align: center ponemos al centro los elementos que este contine
+        */
+}
+
+@media (min-width: 1000px) {
+  .banner_component .banner_flexbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.banner_component .banner_flexbox .box_banner_biografy {
+  position: relative;
+  z-index: 7;
+  /*
+                _@query 1000px ==> : definimos un ancho para este elemento
+                _en esta medida
+            */
+  /*
+                tag-h1
+            */
+  /*
+                tag-h4
+            */
+  /*
+                tag-p
+            */
+}
+
+@media (min-width: 1000px) {
+  .banner_component .banner_flexbox .box_banner_biografy {
+    width: 45%;
+  }
+}
+
+.banner_component .banner_flexbox .box_banner_biografy h1 {
+  color: #4c90f9;
+  /*
+                    _@query 300px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+  /*
+                    _@query 400px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+  /*
+                    _@query 600px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+  /*
+                    _@query 1000px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+  /*
+                    _@query 1200px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+}
+
+@media (min-width: 300px) {
+  .banner_component .banner_flexbox .box_banner_biografy h1 {
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 400px) {
+  .banner_component .banner_flexbox .box_banner_biografy h1 {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 600px) {
+  .banner_component .banner_flexbox .box_banner_biografy h1 {
+    font-size: 42px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .banner_component .banner_flexbox .box_banner_biografy h1 {
+    font-size: 39px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .banner_component .banner_flexbox .box_banner_biografy h1 {
+    font-size: 46px;
+  }
+}
+
+.banner_component .banner_flexbox .box_banner_biografy h4 {
+  margin-bottom: 5px;
+  /*
+                    _@query 300px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+  /*
+                    _@query 400px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+  /*
+                    _@query 600px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+}
+
+@media (min-width: 300px) {
+  .banner_component .banner_flexbox .box_banner_biografy h4 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 400px) {
+  .banner_component .banner_flexbox .box_banner_biografy h4 {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 600px) {
+  .banner_component .banner_flexbox .box_banner_biografy h4 {
+    font-size: 28px;
+  }
+}
+
+.banner_component .banner_flexbox .box_banner_biografy p {
+  padding: 30px 0 40px;
+}
+
+.banner_component .banner_flexbox .box_banner_img {
+  position: relative;
+  text-align: center;
+  /*
+                box_border_img: definimos position: absolute y sus propiedades
+                top y left para posicionar este elemento por encima de la imagen,
+                finalmente implementamos width y height para darle tamaño
+            */
+  /*
+                tag-img: definimos position: relative para posicionar la imagen
+                por encima del borde, finalmente vertical-align para remover
+                el espaciado que generan los navegadores en las imagenes
+            */
+}
+
+.banner_component .banner_flexbox .box_banner_img .box_img_border {
+  position: absolute;
+  top: 53px;
+  left: 58px;
+  border: 5px solid #4c90f9;
+  border-radius: 5px;
+  width: 70%;
+  height: 89%;
+  /*
+                    _@query 999px <== : definimos display: none para remover este
+                    _elemento de la vista en esta medida
+                */
+}
+
+@media (max-width: 999px) {
+  .banner_component .banner_flexbox .box_banner_img .box_img_border {
+    display: none;
+  }
+}
+
+.banner_component .banner_flexbox .box_banner_img img {
+  position: relative;
+  vertical-align: top;
+  /*
+                    _@query 999px <== : definimos display: none para remover este
+                    _elemento de la vista en esta medida
+                */
+  /*
+                    _@query 1000px ==> : definimos  width y height para darle tamaño
+                    _a este elemento para en esta medida
+                */
+}
+
+@media (max-width: 999px) {
+  .banner_component .banner_flexbox .box_banner_img img {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .banner_component .banner_flexbox .box_banner_img img {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/*
+    modal_component: definimos position: fixed y sus propiedades top, bottom, 
+    left, right y z-index para fijar este elemento y darle tamaño. tambien 
+    implementamos flexbox y sus propiedades justify-content y align-items para 
+    centrar de manera horizontal y vertical los elementos que este contiene,
+    finalmente la propiedad visibility: hidden para ocultar el modal
+*/
+.modal_component {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: #0000004b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  cursor: pointer;
+  /*
+        .js_show_modal: clase añadida con javascript en 'src/js/banner_modal.js',
+        .definimos visibility: visible para hacer visible el modal
+    */
+  /*
+        modal_card: definimos transform: translateY() para transladar -100px hacia 
+        arriba la tarjeta modal
+    */
+}
+
+.modal_component.js_show_modal {
+  visibility: visible;
+}
+
+.modal_component .modal_card {
+  background-color: #fff;
+  width: 84%;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  /*
+            .js_translate_down: clase añadida con javascritp en 'src/js/banner_modal.js',
+            .definimos transform: translateY() para transladar la tarjeta modal a su 
+            .posicion 0
+        */
+  /*
+            _@query 1199px <== : modificamos el ancho y añadimos overflow: hidden
+            _para ocultar el contenido que supera el contenedor padre, finalmente
+            _overflow-y: auto para generar un scroll cuando la altura de la pantalla 
+            _disminuya
+        */
+  /*
+            _@query 1200px <== : definimos flexbox para poner en linea los elementos
+            _que este contiene en esta medida
+        */
+  /*
+            box_modal_img: definimos position: relative debido a que uno de sus
+            elementos hijos tiene definido position: absolute
+        */
+  /*
+            box_modal_content
+        */
+}
+
+.modal_component .modal_card.js_translate_down {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+}
+
+@media (max-width: 1199px) {
+  .modal_component .modal_card {
+    height: 85%;
+    max-width: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+    /*
+                .cuando hacemos :hover implementamos el pseudo elemento
+                .::-webkit-scrollbar-thumb para mostrar el scroll
+            */
+    /*
+                .implementamos el pseudo elemento ::-webkit-scrollbar 
+                .para definir el color de fondo y el ancho de la caja
+                .que contiene al scroll
+            */
+  }
+  .modal_component .modal_card:hover::-webkit-scrollbar-thumb {
+    background-color: #bcc0c4;
+  }
+  .modal_component .modal_card::-webkit-scrollbar {
+    background-color: #f1f1f1;
+    width: 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal_component .modal_card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 5px;
+  }
+}
+
+.modal_component .modal_card .box_modal_img {
+  position: relative;
+  background-color: #f5f6f6;
+  /*
+                _@query 1200px ==> : definimos un ancho para este elemento
+                _en esta medida
+            */
+  /*
+                box_img_border: definimos position: absolute e implementamos width 
+                y height para darle tamaño a este elemento
+            */
+  /*
+                tag-img: definimos position: relative para posicionar la imagen
+                por encima del borde, finalmente vertical-align para remover
+                el espaciado que generan los navegadores en las imagenes
+            */
+}
+
+@media (min-width: 1200px) {
+  .modal_component .modal_card .box_modal_img {
+    width: 40%;
+  }
+}
+
+.modal_component .modal_card .box_modal_img .box_img_border {
+  position: absolute;
+  border: 5px solid #4c90f9;
+  border-radius: 5px;
+  width: 70%;
+  height: 71%;
+  /*
+                    _@query 1200px ==> : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+  /*
+                    _@query 1199px <== : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+  /*
+                    _@query 599px <== : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+  /*
+                    _@query 520px <== : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+  /*
+                    _@query 399px <== : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+  /*
+                    _@query 359px <== : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+}
+
+@media (min-width: 1200px) {
+  .modal_component .modal_card .box_modal_img .box_img_border {
+    top: 100px;
+    left: 70px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .modal_component .modal_card .box_modal_img .box_img_border {
+    top: 110px;
+    left: 77px;
+  }
+}
+
+@media (max-width: 599px) {
+  .modal_component .modal_card .box_modal_img .box_img_border {
+    top: 100px;
+    left: 77px;
+  }
+}
+
+@media (max-width: 520px) {
+  .modal_component .modal_card .box_modal_img .box_img_border {
+    top: 65px;
+    left: 52px;
+  }
+}
+
+@media (max-width: 399px) {
+  .modal_component .modal_card .box_modal_img .box_img_border {
+    top: 60px;
+    left: 46px;
+  }
+}
+
+@media (max-width: 359px) {
+  .modal_component .modal_card .box_modal_img .box_img_border {
+    top: 50px;
+    left: 38px;
+  }
+}
+
+.modal_component .modal_card .box_modal_img img {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+}
+
+.modal_component .modal_card .box_modal_content {
+  color: #7e7b7c;
+  font-family: 'PT Sans', sans-serif;
+  /*
+                _@query 1199px <== : definimos un espaciado para separar el
+                _contenido de los bordes del contenedor en esta medida
+            */
+  /*
+                _@query 1200px ==> : definimos un ancho y espaciado para separar
+                _el contenido de los bordes del contenedor en esta medida
+            */
+  /*
+                box_modal_icon: definimos position: relative y su propeidad left
+                para posicionar este elemento, finalmente display: inline-block para 
+                ajustar el borde redondeado dentro del icono
+            */
+  /*
+                tag-ol
+            */
+}
+
+@media (max-width: 1199px) {
+  .modal_component .modal_card .box_modal_content {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal_component .modal_card .box_modal_content {
+    width: 60%;
+    padding: 25px;
+  }
+}
+
+.modal_component .modal_card .box_modal_content .box_modal_icon {
+  position: relative;
+  left: 45%;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 2px solid #4c90f9;
+  border-radius: 50px;
+  /*
+                    tag-svg
+                */
+}
+
+.modal_component .modal_card .box_modal_content .box_modal_icon svg {
+  vertical-align: top;
+  fill: #4c90f9;
+  width: 34px;
+  height: 34px;
+}
+
+.modal_component .modal_card .box_modal_content ol {
+  /*
+                    tag-li
+                */
+}
+
+.modal_component .modal_card .box_modal_content ol li {
+  list-style: none;
+  font-size: 20px;
+  margin: 14px 0;
+  /*
+                        tag-svg
+                    */
+}
+
+.modal_component .modal_card .box_modal_content ol li svg {
+  vertical-align: top;
+  fill: #4c90f9;
+  width: 24px;
+  height: 24px;
+}
+
+/*
+  skills_component
+*/
+.skills_component {
+  /*
+    skills_container
+  */
+}
+
+.skills_component .skills_container {
+  /*
+      skills_grid: definimos display: grid y su propiedad
+      gap para generar espaciado entre los elementos, finalmente
+      overflow-x: scroll para generar un efecto slider sin tener 
+      problemas de scroll
+    */
+}
+
+.skills_component .skills_container .skills_grid {
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  padding: 0 50px;
+  overflow-x: scroll;
+  /*
+        _@query 499px <== : definimos una grilla de 12 columnas 
+        _para esta medida
+      */
+  /*
+        _@query 500px ==> : definimos una grilla de 2 columnas 
+        _para esta medida
+      */
+  /*
+        _@query 700px ==> : definimos una grilla de 3 columnas 
+        _para esta medida
+      */
+  /*
+        _@query 1000px ==> : definimos una grilla de 4 columnas 
+        _para esta medida
+      */
+  /*
+        _@query 1200px ==> : definimos una grilla de 6 columnas 
+        _para esta medida
+      */
+  /*
+        box_skill_cards: definimos una altura para todas las tarjetas y un espaciado
+        para separar el contenido de los bordes de las mismas
+      */
+}
+
+@media (max-width: 499px) {
+  .skills_component .skills_container .skills_grid {
+    -ms-grid-columns: (200px)[12];
+        grid-template-columns: repeat(12, 200px);
+  }
+}
+
+@media (min-width: 500px) {
+  .skills_component .skills_container .skills_grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    /*
+          ::-webkit-scrollbar: esta propiedad me permite remover el
+          scroll que se genera por la porpiedad overflow-x: scroll
+        */
+  }
+  .skills_component .skills_container .skills_grid::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (min-width: 700px) {
+  .skills_component .skills_container .skills_grid {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .skills_component .skills_container .skills_grid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .skills_component .skills_container .skills_grid {
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.skills_component .skills_container .skills_grid .box_skill_cards {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 400px;
+  padding: 10px 12px;
+  border: 1px solid #00000026;
+  cursor: pointer;
+  /*
+          .cuando hacemos :hover en las targetas impelmentamos la propiedad 
+          .transform: scale(.98) para minimizar la targeta
+        */
+  /*
+          tag-img
+        */
+  /*
+          tag-p
+        */
+}
+
+.skills_component .skills_container .skills_grid .box_skill_cards:hover::before, .skills_component .skills_container .skills_grid .box_skill_cards:hover::after {
+  opacity: .2;
+}
+
+.skills_component .skills_container .skills_grid .box_skill_cards::before, .skills_component .skills_container .skills_grid .box_skill_cards::after {
+  content: "";
+  display: block;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.skills_component .skills_container .skills_grid .box_skill_cards::before {
+  left: 10px;
+  top: 10px;
+  border-radius: 0 0 50% 0;
+  width: 40px;
+  height: 40px;
+}
+
+.skills_component .skills_container .skills_grid .box_skill_cards::after {
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50% 0 0 0;
+  width: 60px;
+  height: 60px;
+}
+
+.skills_component .skills_container .skills_grid .box_skill_cards img {
+  /*
+            _@query 479px <== : definimos un ancho y alto para este elemento
+            _en esta medida
+          */
+  /*
+            _@query 480px ==> : definimos un ancho y alto para este elemento
+            _en esta medida
+          */
+  /*
+            _@query 1000px ==> : definimos un ancho y alto para este elemento
+            _en esta medida
+          */
+}
+
+@media (max-width: 479px) {
+  .skills_component .skills_container .skills_grid .box_skill_cards img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (min-width: 480px) {
+  .skills_component .skills_container .skills_grid .box_skill_cards img {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .skills_component .skills_container .skills_grid .box_skill_cards img {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+.skills_component .skills_container .skills_grid .box_skill_cards p {
+  font-size: 16px;
+}
+
+.html::before, .html::after {
+  background-color: #FF6D00;
+}
+
+.css::before, .css::after {
+  background-color: #039BE5;
+}
+
+.sass::before, .sass::after {
+  background-color: #F06292;
+}
+
+.bootstrap::before, .bootstrap::after {
+  background-color: #673AB7;
+}
+
+.javascript::before, .javascript::after {
+  background-color: #FFD600;
+}
+
+.angular::before, .angular::after {
+  background-color: #DD2C00;
+}
+
+.angular::before, .angular::after {
+  background-color: #DD2C00;
+}
+
+.node::before, .node::after {
+  background-color: #4CAF50;
+}
+
+.mysql::before, .mysql::after {
+  background-color: #00796B;
+}
+
+.mongodb::before, .mongodb::after {
+  background-color: #4CAF50;
+}
+
+.git::before, .git::after {
+  background-color: #F4511E;
+}
+
+.illustrator::before, .illustrator::after {
+  background-color: #1C0802;
+}
+
+.ui_ux::before, .ui_ux::after {
+  background-color: #83D8F4;
+}
+
+/*
+    certificates_component
+*/
+.certificates_component {
+  /*
+        certificates_section
+    */
+}
+
+.certificates_component .certificates_section {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  /*
+            .js_show_certificates: clase añadida desde 'src\js\certificates.js' 
+            .que relaciona a tag-svg que se encentra dentro de box_certificates_title
+            .en esta añadimos la propiedad transform: rotate() para rotar el
+            .icono -180deg
+        */
+  /*
+            .js_show_certificates: clase añadida desde 'src\js\certificates.js' 
+            .que relaciona a box_certificates_content, añadimos height: auto y
+            .overflow: visible para mostrar el contenido
+        */
+  /*
+            _@query 999px <== : definimos un espaciado para separar
+            _los elementos del borde de este contenedor, finalmente
+            _un margen superior para separar las secciones en esta 
+            _medida
+        */
+  /*
+            _@query 1000px ==> : definimos un ancho calculado, un espaciado
+            _para separar los elementos del borde de este contenedor, finalmente
+            _un margen auto para centrar de manera horizontal este elemento y
+            _un margen en la parte inferior para separar las secciones en esta 
+            _medida
+        */
+  /*
+            box_certificates_title: definimos flexbox y sus propiedades justify-content y
+            align-items para centrar de manera vertical y horizontal los elementos que
+            este contiene
+        */
+  /*
+            box_certificates_content: definimos un height: 0 para reducir
+            la altura del contenedor y con overflow: hidden ocultamos
+            el contenido que queda expuesto
+        */
+}
+
+.certificates_component .certificates_section.js_show_certificates .box_certificates_title svg {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.certificates_component .certificates_section.js_show_certificates .box_certificates_content {
+  height: auto;
+  overflow: visible;
+}
+
+@media (max-width: 999px) {
+  .certificates_component .certificates_section {
+    padding: 12px 24px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .certificates_component .certificates_section {
+    width: calc(100% - 300px);
+    padding: 20px 40px;
+    margin: 0 auto 25px;
+  }
+}
+
+.certificates_component .certificates_section .box_certificates_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*
+                tag-h2
+            */
+  /*
+                tag-svg
+            */
+}
+
+.certificates_component .certificates_section .box_certificates_title h2 {
+  /*
+                    _@query 369px <== : definimos un tamaño de fuente para este elemento
+                    _en esta medida
+                */
+  /*
+                    _@query 370px ==> : definimos un tamaño de fuente para este elemento
+                    _en esta medida
+                */
+}
+
+@media (max-width: 369px) {
+  .certificates_component .certificates_section .box_certificates_title h2 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 370px) {
+  .certificates_component .certificates_section .box_certificates_title h2 {
+    font-size: 32px;
+  }
+}
+
+.certificates_component .certificates_section .box_certificates_title svg {
+  vertical-align: top;
+  fill: #4c90f9;
+  width: 48px;
+  height: 48px;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.certificates_component .certificates_section .box_certificates_content {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .7s;
+  transition: height .7s;
+  /*
+                tag-h4
+            */
+  /*
+                tag-p
+            */
+  /*
+                box_certificates_files {
+            */
+}
+
+.certificates_component .certificates_section .box_certificates_content h4 {
+  margin: 10px 0;
+}
+
+.certificates_component .certificates_section .box_certificates_content p {
+  margin: 20px 0;
+  /*
+                    tag-strong
+                */
+}
+
+.certificates_component .certificates_section .box_certificates_content p strong {
+  color: #4c90f9;
+  letter-spacing: 1.1px;
+}
+
+.certificates_component .certificates_section .box_certificates_content .box_certificates_files {
+  /*
+                    tag-a: definimos displa: block para que esta se comporte
+                    como un elemento de bloque y pueda tomar el margen que 
+                    definimos 
+                */
+}
+
+.certificates_component .certificates_section .box_certificates_content .box_certificates_files a {
+  display: block;
+  margin: 14px 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  background-color: blueviolet;
+}
+
+.swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+}
+
+/*
+    contacts_component
+*/
+.contacts_component {
+  /*
+        form_flexbox
+    */
+}
+
+.contacts_component .form_flexbox {
+  /*
+            _@query 1000px ==> : definimos flexbox y sus propiedades
+            _justify-content y align-items para centrar de manera
+            _vertical y horizontal los elementos que este contiene 
+            _para esta medida
+        */
+  /*
+            box_form_card
+        */
+  /*
+            tag-form
+        */
+}
+
+@media (min-width: 1000px) {
+  .contacts_component .form_flexbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.contacts_component .form_flexbox .box_form_card {
+  /*
+                _@query 999px <== : definimos un margen inferior para generar
+                _espacio para este elemento en esta medida
+            */
+  /*
+                _@query 1000px ==> : con la propiedad order cambiamos el orden de 
+                _este elemento y definimos un ancho para esta medida
+            */
+  /*
+                tag-h2
+            */
+}
+
+@media (max-width: 999px) {
+  .contacts_component .form_flexbox .box_form_card {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .contacts_component .form_flexbox .box_form_card {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 380px;
+  }
+}
+
+.contacts_component .form_flexbox .box_form_card h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contacts_component .form_flexbox form {
+  /*
+                _@query 1000px ==> : con la propiedad order cambiamos el orden de 
+                _este elemento y definimos un ancho para esta medida
+            */
+  /*
+                box_inputs: definimos position: relative debido a que uno de sus 
+                elementos hijos tiene definido position: absolute
+            */
+  /*
+                box_btn
+            */
+  /*
+                box_socials_contacts: definimos flexbox y su propiedad justify-content
+                para centrar de manera horizontal los elementos que este contiene
+            */
+}
+
+@media (min-width: 1000px) {
+  .contacts_component .form_flexbox form {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    border: 1px solid #cccccc86;
+    border-radius: 10px;
+    width: 380px;
+    padding: 30px;
+  }
+}
+
+.contacts_component .form_flexbox form .box_inputs {
+  position: relative;
+  /*
+                    .nth-child: haciendo uso de este pseudo elemento seleccionamos
+                    .el segundo input y generamos un margen
+                */
+  /*
+                    tag-input: definimos outline y border none para remover un borde
+                    que añade el navegador a las tag-input
+                */
+  /*
+                    tag-textarea: implementamos vertical-align para remover
+                    un espaciado que genera el navegador en la tag-textarea
+                    outline y border: none para eliminar los bordes de los
+                    inputs, finalmente definimos las propiedades min-width 
+                    max-width, min-height y max-height para darle tamaño
+                */
+  /*
+                    border_animated: definimos position: absolute y sus propiedades bottom y left
+                    para posicionar el borde animado debajo de tag-input y tag-textarea,
+                    fialmente definimos display: block para que tag-span pueda tomar un ancho y alto
+                    el cual usaremos para mostrar el borde animado
+                */
+  /*
+                    box_errors: definimos display: none para remover la caja de errores 
+                    del fomulario
+                */
+}
+
+.contacts_component .form_flexbox form .box_inputs:nth-child(2) {
+  margin: 30px 0;
+}
+
+.contacts_component .form_flexbox form .box_inputs input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #7e7b7c;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #cccccc86;
+  width: 100%;
+  padding: 8px;
+  /*
+                        .cuando tag-input tiene el :focus haciendo uso del selector (~)
+                        .relacionamos a border_animated para redefinir el ancho haciendo
+                        .visible el borde animado
+                    */
+}
+
+.contacts_component .form_flexbox form .box_inputs input:focus ~ .border_animated {
+  width: 100%;
+  background-color: #4c90f9;
+}
+
+.contacts_component .form_flexbox form .box_inputs textarea {
+  vertical-align: top;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #7e7b7c;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #cccccc86;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  max-height: 100px;
+  padding: 8px;
+  /*
+                        .cuando tag-textarea tiene el :focus haciendo uso del selector (~)
+                        .relacionamos a border_animated para redefinir el ancho haciendo
+                        .visible el borde animado
+                    */
+}
+
+.contacts_component .form_flexbox form .box_inputs textarea:focus ~ .border_animated {
+  width: 100%;
+  background-color: #4c90f9;
+}
+
+.contacts_component .form_flexbox form .box_inputs .border_animated {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 0;
+  height: 2px;
+  -webkit-transition: width .5s ease-in;
+  transition: width .5s ease-in;
+}
+
+.contacts_component .form_flexbox form .box_inputs .box_errors {
+  display: none;
+  color: #fff;
+  background-color: #4c90f9;
+  font-size: 1.2rem;
+  letter-spacing: 1;
+  width: inherit;
+  padding: 8px;
+  /*
+                        .js_show_error: clase añadida desde 'src/js/conatcts.js', 
+                        .cuando box_errors tiene esta clase le definimos display: block
+                        .para hacer visible la caja de errores del fomulario
+                    */
+}
+
+.contacts_component .form_flexbox form .box_inputs .box_errors.js_show_error {
+  display: block;
+}
+
+.contacts_component .form_flexbox form .box_btn {
+  margin: 60px 0 40px;
+}
+
+.contacts_component .form_flexbox form .box_socials_contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /*
+                    socials_media
+                */
+}
+
+.contacts_component .form_flexbox form .box_socials_contacts .socials_media {
+  background-color: #4c90f9;
+  border-radius: 100%;
+  padding: 6px;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  cursor: pointer;
+  /*
+                        .haciendo uso del pseudo elemento :nth-child(), seleccionamos
+                        .al segundo elemento con clase socials_media y generamos un
+                        .margen
+                    */
+  /*
+                        .cuando hacemos :hover implementamos la propeidad
+                        .transform: scale() para aumentar el tamaño de
+                        .los iconos
+                    */
+  /*
+                        tag-a
+                    */
+}
+
+.contacts_component .form_flexbox form .box_socials_contacts .socials_media:nth-child(2) {
+  margin: 0 8px;
+}
+
+.contacts_component .form_flexbox form .box_socials_contacts .socials_media:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.contacts_component .form_flexbox form .box_socials_contacts .socials_media a {
+  /*
+                            tag-svg: definimos la propiedad vertical-align: top
+                            para remover un espaciad que genera el navegador en
+                            los iconos
+                        */
+}
+
+.contacts_component .form_flexbox form .box_socials_contacts .socials_media a svg {
+  vertical-align: top;
+  fill: #fff;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+}
+
+/*
+    footer_component
+*/
+.footer_component {
+  text-align: center;
+  /*
+        tag-svg: definimos vertical-align: top para remover un espaciado que
+        genera el navegador en los iconos, finalmente visibility: hidden
+        para ocultar el icono
+    */
+  /*
+        tag-p
+    */
+}
+
+.footer_component svg {
+  vertical-align: top;
+  width: 40px;
+  height: 40px;
+  visibility: hidden;
+  /*
+            .js_show_gotop: clase añadida desde 'src\js\footer.js' que añade 
+            .color y color de fondo a este elemento que junto con visibility: visible 
+            .lo hacemos nuevamente visible
+        */
+  /*
+            @query 500px ==> : definimos position: fixed y sus propiedades right, 
+            bottom y z-index para darle posicion a este elemento en esta medida
+        */
+}
+
+.footer_component svg.js_show_gotop {
+  fill: #fff;
+  background-color: #4c90f9;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  visibility: visible;
+  -webkit-animation: animateGotop 1s ease 1s 3;
+          animation: animateGotop 1s ease 1s 3;
+  cursor: pointer;
+  /*
+                animateGotop: en 0% implementamos un transform: translateY(0)
+                en 50% implementamos un transform: translateY(0) para trasladar 
+                elicono -30px hacia arriba finalemnte en 100% vuelve a su 
+                posicion original
+            */
+}
+
+@-webkit-keyframes animateGotop {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes animateGotop {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@media (min-width: 500px) {
+  .footer_component svg {
+    position: fixed;
+    right: 5px;
+    bottom: 40px;
+    z-index: 69;
+  }
+}
+
+.footer_component p {
+  padding: 40px 0;
+}
+
+/*
+    reseteo de las propiedades que traen por defecto los navegadores
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+    body
+*/
+body {
+  background-color: #eee;
+  /*
+        js_body_dark_mode: clase añadida con javascript en 'src/js/header.js'
+        que añade un color de fondo para este elemento
+    */
+}
+
+body.js_body_dark_mode {
+  background-color: #3c4042ea;
+}
+
+body.js_hidden_scroll {
+  overflow-y: clip;
+}
+
+/*
+    dark_components
+*/
+.dark_components {
+  /*
+        js_dark_mode_components: clase añadida con javascript en 'src/js/header.js'
+        que añade un color de fondo para este elemento
+    */
+}
+
+.dark_components.js_dark_mode_components {
+  background-color: #46484A;
+}
+
+/*
+    light_text
+*/
+.light_text {
+  /*
+        js_dark_mode_components: clase añadida con javascript en 'src/js/header.js'
+        que añade color a los textos de este elemento
+    */
+}
+
+.light_text.js_light_text {
+  color: #fff;
+}
+
+/* 
+    propiedades compartidas por la TAG BUTTON
+*/
+.box_btn {
+  text-align: center;
+}
+
+.box_btn button {
+  outline: none;
+  border: none;
+  background-color: #4c90f9;
+  color: #fff;
+  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  padding: 16px 70px;
+  cursor: pointer;
+}
+
+.box_btn button.btn_animated {
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.box_btn button.btn_animated:hover {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-box-shadow: 0 5px 15px -5px #686767d8;
+          box-shadow: 0 5px 15px -5px #686767d8;
+}
+
+/*
+    propiedades compartidas entre los 
+    SKILLS, CERTIFICATES, PROYECTS y CONTACTS
+*/
+.skills_component, .certificates_component,
+.proyects_component, .contacts_component {
+  margin-top: 80px;
+  padding: 40px 20px;
+}
+
+/*
+    propiedades compartidas entre los COMPONENTES BANNER,
+    PROYECTS y CONTACTS
+*/
+.skills_component, .certificates_component, .contacts_component {
+  background-color: #fff;
+}
+
+/*
+
+*/
+.box_skill_cards, .certificates_section {
+  background-color: #fff;
+}
+
+/*
+    propiedades compartidas por las TAG H3
+*/
+h3 {
+  text-align: center;
+  color: #4c90f9;
+  font-family: 'Open sans', sans-serif;
+}
+
+@media (max-width: 999px) {
+  h3 {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1000px) {
+  h3 {
+    font-size: 60px;
+  }
+}
+
+/*
+    propiedades compartidas por las TAG P
+*/
+p {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+h2, h4, p {
+  color: #7e7b7c;
+}
+
+a {
+  font-family: 'Baloo', sans-serif;
+  font-size: 1.1rem;
+  color: #4c90f9;
+}
+
+h1, h2, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.box_title_border {
+  border: 2px solid #4c90f9;
+  width: 200px;
+}
+
+@media (max-width: 999px) {
+  .box_title_border {
+    margin: 0 auto 30px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .box_title_border {
+    margin: 0 auto 50px;
+  }
+}
+
+.box_imgMovil {
+  text-align: center;
+}
+
+.box_imgMovil img {
+  width: 140px;
+  height: 140px;
+  border: 5px solid #4c90f9;
+  border-radius: 5px;
+  padding: 0 0 0 10px;
+}
+
+@media (max-width: 999px) {
+  .box_imgMovil img {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .box_imgMovil img {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

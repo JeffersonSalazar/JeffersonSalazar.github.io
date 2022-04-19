@@ -1,58 +1,69 @@
-.component_footer { 
-    /*
-        definimos POSITION para posicionar el H4
-    */
-    h4 {
-        text-align: center;
-        padding: 20px 0;
-    };
+/*
+    footer_component
+*/
+.footer_component { 
+    text-align: center;
 
     /*
-        definimos POSITION y sus medidas para posicionar contenedor
-        del icono
-    */
-    .box_icon_footer {
-        position: fixed;
-        right: 0;
-        bottom: 46px;
-        z-index: 69;
-        margin: 0 15px;
+        tag-svg: definimos vertical-align: top para remover un espaciado que
+        genera el navegador en los iconos, finalmente visibility: hidden
+        para ocultar el icono
+    */ 
+    svg {
+        vertical-align: top;
+        width: 40px;
+        height: 40px;
+        visibility: hidden;
 
         /*
-            definimos OPACITY para desvanecer el icono 
+            .js_show_gotop: clase añadida desde 'src\js\footer.js' que añade 
+            .color y color de fondo a este elemento que junto con visibility: visible 
+            .lo hacemos nuevamente visible
         */
-        ion-icon {
+        &.js_show_gotop {
+            fill: $color_one;
             background-color: $background_three;
-            color: $color_one;
-            font-size: 25px;
+            border: 1px solid $color_one;
             border-radius: 50%;
-            padding: 12px;
-            opacity: 0;
+            visibility: visible;
+            animation: animateGotop 1s ease 1s 3;
             cursor: pointer;
-            transition: opacity .3s ease-in-out;
-            
-            /*
-                clase añadida con 'src/js/footer.js' a ION-ICON
-            */
-            &.show_gotop {
-                opacity: 1;
-                animation: animateGotop 1s ease 1s 3;
 
-                /*
-                    esta ANIMACION genera un movimiento al boton
-                */
-                @keyframes animateGotop {
-                    0% {
-                        transform: translateY(0);
-                    };
-                    50% {
-                        transform: translateY(-30px);
-                    };
-                    100% {
-                        transform: translateY(0);
-                    };
+            /*
+                animateGotop: en 0% implementamos un transform: translateY(0)
+                en 50% implementamos un transform: translateY(0) para trasladar 
+                elicono -30px hacia arriba finalemnte en 100% vuelve a su 
+                posicion original
+            */
+            @keyframes animateGotop {
+                0% {
+                    transform: translateY(0);
+                };
+                50% {
+                    transform: translateY(-30px);
+                };
+                100% {
+                    transform: translateY(0);
                 };
             };
-        };
-    };
-};
+        }
+
+        /*
+            @query 500px ==> : definimos position: fixed y sus propiedades right, 
+            bottom y z-index para darle posicion a este elemento en esta medida
+        */
+        @media (min-width: 500px) {
+            position: fixed;
+            right: 5px;
+            bottom: 40px;
+            z-index: 69;
+        }
+    }
+
+    /*
+        tag-p
+    */
+    p {
+        padding: 40px 0;
+    }
+}

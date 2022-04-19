@@ -1,0 +1,247 @@
+/*
+    contacts_component
+*/
+.contacts_component {
+    /*
+        form_flexbox
+    */
+    .form_flexbox {
+        /*
+            _@query 1000px ==> : definimos flexbox y sus propiedades
+            _justify-content y align-items para centrar de manera
+            _vertical y horizontal los elementos que este contiene 
+            _para esta medida
+        */
+        @media (min-width: 1000px) {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        /*
+            box_form_card
+        */
+        .box_form_card {
+            /*
+                _@query 999px <== : definimos un margen inferior para generar
+                _espacio para este elemento en esta medida
+            */
+            @media (max-width: 999px) {
+                margin-bottom: 40px;
+            }
+
+            /*
+                _@query 1000px ==> : con la propiedad order cambiamos el orden de 
+                _este elemento y definimos un ancho para esta medida
+            */
+            @media (min-width: 1000px) {
+                order: 2;
+                width: 380px;
+            }
+
+            /*
+                tag-h2
+            */ 
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        /*
+            tag-form
+        */
+        form {
+            /*
+                _@query 1000px ==> : con la propiedad order cambiamos el orden de 
+                _este elemento y definimos un ancho para esta medida
+            */
+            @media (min-width: 1000px) {
+                order: 1;
+                border: $border_one;
+                border-radius: 10px;
+                width: 380px;
+                padding: 30px;
+            }
+            
+            /*
+                box_inputs: definimos position: relative debido a que uno de sus 
+                elementos hijos tiene definido position: absolute
+            */
+            .box_inputs {
+                position: relative;
+
+                /*
+                    .nth-child: haciendo uso de este pseudo elemento seleccionamos
+                    .el segundo input y generamos un margen
+                */
+                &:nth-child(2) {
+                    margin: 30px 0;
+                };
+                
+                /*
+                    tag-input: definimos outline y border none para remover un borde
+                    que añade el navegador a las tag-input
+                */
+                input {
+                    outline: none;
+                    border: none;
+                    background-color: transparent;
+                    color: $color_two;
+                    font-family: 'PT Sans', sans-serif;
+                    font-size: 1.5rem;
+                    letter-spacing: 1px;
+                    border-bottom: $border_one;
+                    width: 100%;
+                    padding: 8px;
+
+                     /*
+                        .cuando tag-input tiene el :focus haciendo uso del selector (~)
+                        .relacionamos a border_animated para redefinir el ancho haciendo
+                        .visible el borde animado
+                    */
+                    &:focus ~ .border_animated {
+                        width: 100%;
+                        background-color: $background_three;
+                    }
+                }
+
+                /*
+                    tag-textarea: implementamos vertical-align para remover
+                    un espaciado que genera el navegador en la tag-textarea
+                    outline y border: none para eliminar los bordes de los
+                    inputs, finalmente definimos las propiedades min-width 
+                    max-width, min-height y max-height para darle tamaño
+                */
+                textarea {
+                    vertical-align: top;
+                    outline: none;
+                    border: none;
+                    background-color: transparent;
+                    color: $color_two;
+                    font-family: 'PT Sans', sans-serif;
+                    font-size: 1.5rem;
+                    letter-spacing: 1px;
+                    border-bottom: $border_one;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100px;
+                    max-height: 100px;
+                    padding: 8px;
+
+                    /*
+                        .cuando tag-textarea tiene el :focus haciendo uso del selector (~)
+                        .relacionamos a border_animated para redefinir el ancho haciendo
+                        .visible el borde animado
+                    */
+                    &:focus ~ .border_animated {
+                        width: 100%;
+                        background-color: $background_three;
+                    }
+                }
+
+                /*
+                    border_animated: definimos position: absolute y sus propiedades bottom y left
+                    para posicionar el borde animado debajo de tag-input y tag-textarea,
+                    fialmente definimos display: block para que tag-span pueda tomar un ancho y alto
+                    el cual usaremos para mostrar el borde animado
+                */
+                .border_animated {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    transition: width .5s ease-in;
+                }
+
+                /*
+                    box_errors: definimos display: none para remover la caja de errores 
+                    del fomulario
+                */
+                .box_errors {
+                    display: none;
+                    color: $color_one;
+                    background-color: $background_three;
+                    font-size: 1.2rem;
+                    letter-spacing: 1;
+                    width: inherit;
+                    padding: 8px;
+                    
+                    /*
+                        .js_show_error: clase añadida desde 'src/js/conatcts.js', 
+                        .cuando box_errors tiene esta clase le definimos display: block
+                        .para hacer visible la caja de errores del fomulario
+                    */
+                    &.js_show_error {
+                        display: block;
+                    }
+                }
+            }
+        
+            /*
+                box_btn
+            */
+            .box_btn {
+                margin: 60px 0 40px;
+            }
+
+            /*
+                box_socials_contacts: definimos flexbox y su propiedad justify-content
+                para centrar de manera horizontal los elementos que este contiene
+            */
+            .box_socials_contacts {
+                display: flex;
+                justify-content: center;
+
+                /*
+                    socials_media
+                */
+                .socials_media {
+                    background-color: $background_three;
+                    border-radius: 100%;
+                    padding: 6px;
+                    transition: transform .3s;
+                    cursor: pointer;
+
+                    /*
+                        .haciendo uso del pseudo elemento :nth-child(), seleccionamos
+                        .al segundo elemento con clase socials_media y generamos un
+                        .margen
+                    */
+                    &:nth-child(2) {
+                        margin: 0 8px;
+                    }
+
+                    /*
+                        .cuando hacemos :hover implementamos la propeidad
+                        .transform: scale() para aumentar el tamaño de
+                        .los iconos
+                    */
+                    &:hover {
+                        transform: scale(1.1)
+                    }
+
+                    /*
+                        tag-a
+                    */
+                    a {
+                        /*
+                            tag-svg: definimos la propiedad vertical-align: top
+                            para remover un espaciad que genera el navegador en
+                            los iconos
+                        */
+                        svg {
+                            vertical-align: top;
+                            fill: $color_one;
+                            border-radius: 50%;
+                            width: 26px;
+                            height: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

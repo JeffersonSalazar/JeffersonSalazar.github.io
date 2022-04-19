@@ -1,77 +1,183 @@
-.component_banner {
+/*
+    banner_component: definimos un espaciado para separar de los
+    bordes los elementos que este contiene
+*/
+.banner_component {
+    padding: 40px 20px;
 
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    };
-    
-    .box_img_banner {
-        position: relative;
-        text-align: center;
-
-        .box_circle {
-            position: absolute;
-            top: 50px;
-            left: 58px;
-            border: 5px solid $background_three;
-            border-radius: 5px;
-            width: 70%;
-            height: 89%;
-
-            @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-                display: none;
-            };
+    /*
+        banner_flexbox
+    */
+    .banner_flexbox {
+        /*
+            _@query 1000px ==> : definimos flexbox y sus propiedades
+            _justify-content y align-items para centrar de manera
+            _vertical y horizontal los elementos que este contiene
+        */
+        @media (min-width: 1000px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-            
-        img {
+        /*
+            box_banner_biografy
+        */
+        .box_banner_biografy {  
             position: relative;
-            
-            @media (max-width: 999px) { // dispositivos 1000px <= <= <=
-                display: none;
-            };
-            
-            @media (min-width: 1000px) { // dispositivos 1000px => => =>
-                width: 90%;
-                height: 90%;
-            };
-        };
-    };
+            z-index: 7;
+            /*
+                _@query 1000px ==> : definimos un ancho para este elemento
+                _en esta medida
+            */
+            @media (min-width: 1000px) {
+                width: 45%;
+            }
     
+            /*
+                tag-h1
+            */
+            h1 {
+                color: $color_three;
+                
+                /*
+                    _@query 300px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+                @media (min-width: 300px) {
+                    font-size: 23px;
+                }
 
-    .box_biografy {
-        
-        @media (min-width: 1000px) { // dispositivos 1000px => => =>
-            width: 45%;
-        };
+                /*
+                    _@query 400px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+                @media (min-width: 400px) {
+                    font-size: 32px;
+                }
 
-        h1 {
-            color: $color_three;
+                /*
+                    _@query 600px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+                @media (min-width: 600px) {
+                    font-size: 42px;
+                }
+
+                /*
+                    _@query 1000px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+                @media (min-width: 1000px) {
+                    font-size: 39px;
+                }
+
+                /*
+                    _@query 1200px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+                @media (min-width: 1200px) {
+                    font-size: 46px;
+                }
+            }
             
-            @media (min-width: 1000px) { // dispositivos 1000px => => =>
-                font-size: 3rem;
-            };
-        };
-        
-        h4 {
-            
-            @media (max-width: 999px) { // dispositivos 999px <= <= <=
-                font-size: 1.2rem;
-            };
+            /*
+                tag-h4
+            */
+            h4 {
+                margin-bottom: 5px;
+                
+                /*
+                    _@query 300px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+                @media (min-width: 300px) {
+                    font-size: 18px;
+                }
 
-            @media (min-width: 1000px) { // dispositivos 1000px => => =>
-                font-size: 1.5rem;
-            };
-        };
+                /*
+                    _@query 400px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+                @media (min-width: 400px) {
+                    font-size: 22px;
+                }
 
-        a {  
-            display: block;
-            margin-top: 5px;
-        };
+                /*
+                    _@query 600px ==> : definimos un tamaño de fuente para 
+                    _este elemento en esta medida
+                */
+                @media (min-width: 600px) {
+                    font-size: 28px;
+                }
+            }
+    
+            /*
+                tag-p
+            */
+            p {
+                padding: 30px 0 40px;
+            }
+        }
 
-        p {
-            padding: 30px 0 40px;
-        };
-    };
-};
+        /*
+            box_banner_img: definimos position: relative debido a que uno de sus
+            elementos hijo tiene definido position: absolute, finalmente con
+            text-align: center ponemos al centro los elementos que este contine
+        */
+        .box_banner_img {
+            position: relative;
+            text-align: center;
+
+            /*
+                box_border_img: definimos position: absolute y sus propiedades
+                top y left para posicionar este elemento por encima de la imagen,
+                finalmente implementamos width y height para darle tamaño
+            */
+            .box_img_border {
+                position: absolute;
+                top: 53px;
+                left: 58px;
+                border: 5px solid $background_three;
+                border-radius: 5px;
+                width: 70%;
+                height: 89%;
+    
+                /*
+                    _@query 999px <== : definimos display: none para remover este
+                    _elemento de la vista en esta medida
+                */
+                @media (max-width: 999px) {
+                    display: none;
+                }
+            }
+    
+            /*
+                tag-img: definimos position: relative para posicionar la imagen
+                por encima del borde, finalmente vertical-align para remover
+                el espaciado que generan los navegadores en las imagenes
+            */
+            img {
+                position: relative;
+                vertical-align: top;
+                
+                /*
+                    _@query 999px <== : definimos display: none para remover este
+                    _elemento de la vista en esta medida
+                */
+                @media (max-width: 999px) {
+                    display: none;
+                }
+                
+                /*
+                    _@query 1000px ==> : definimos  width y height para darle tamaño
+                    _a este elemento para en esta medida
+                */
+                @media (min-width: 1000px) { 
+                    width: 90%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

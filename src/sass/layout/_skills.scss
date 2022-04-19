@@ -1,0 +1,212 @@
+/*
+  skills_component
+*/
+.skills_component {
+  /*
+    skills_container
+  */
+  .skills_container {
+    /*
+      skills_grid: definimos display: grid y su propiedad
+      gap para generar espaciado entre los elementos, finalmente
+      overflow-x: scroll para generar un efecto slider sin tener 
+      problemas de scroll
+    */
+    .skills_grid {
+      display: grid;
+      gap: 10px;
+      padding: 0 50px;
+      overflow-x: scroll;
+
+      /*
+        _@query 499px <== : definimos una grilla de 12 columnas 
+        _para esta medida
+      */
+      @media (max-width: 499px) {
+        grid-template-columns: repeat(12, 200px);
+      }
+
+      /*
+        _@query 500px ==> : definimos una grilla de 2 columnas 
+        _para esta medida
+      */
+      @media (min-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+
+        /*
+          ::-webkit-scrollbar: esta propiedad me permite remover el
+          scroll que se genera por la porpiedad overflow-x: scroll
+        */
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      /*
+        _@query 700px ==> : definimos una grilla de 3 columnas 
+        _para esta medida
+      */
+      @media (min-width: 700px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      /*
+        _@query 1000px ==> : definimos una grilla de 4 columnas 
+        _para esta medida
+      */
+      @media (min-width: 1000px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      /*
+        _@query 1200px ==> : definimos una grilla de 6 columnas 
+        _para esta medida
+      */
+      @media (min-width: 1200px) {
+        grid-template-columns: repeat(6, 1fr);
+      }
+        
+      /*
+        box_skill_cards: definimos una altura para todas las tarjetas y un espaciado
+        para separar el contenido de los bordes de las mismas
+      */
+      .box_skill_cards { 
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        padding: 10px 12px;
+        border: 1px solid #00000026;
+        cursor: pointer;
+
+        /*
+          .cuando hacemos :hover en las targetas impelmentamos la propiedad 
+          .transform: scale(.98) para minimizar la targeta
+        */
+        &:hover{
+          &::before, &::after {
+            opacity: .2;
+          }
+        }
+
+        &::before, &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          opacity: 0;
+          transition: .5s;
+        }
+
+        &::before {
+          left: 10px;
+          top: 10px;
+          border-radius: 0 0 50% 0;
+          width: 40px;
+          height: 40px;
+        }
+
+        &::after {
+          right: 10px;
+          bottom: 10px;
+          border-radius: 50% 0 0 0;
+          width: 60px;
+          height: 60px;
+        }
+
+        /*
+          tag-img
+        */
+        img {
+          /*
+            _@query 479px <== : definimos un ancho y alto para este elemento
+            _en esta medida
+          */
+          @media (max-width: 479px) {
+            width: 75px;
+            height: 75px;
+          }
+
+           /*
+            _@query 480px ==> : definimos un ancho y alto para este elemento
+            _en esta medida
+          */
+          @media (min-width: 480px) {
+            width: 95px;
+            height: 95px;
+          }
+
+          /*
+            _@query 1000px ==> : definimos un ancho y alto para este elemento
+            _en esta medida
+          */
+          @media (min-width: 1000px) {
+            width: 110px;
+            height: 110px;
+          }
+        }
+      
+        /*
+          tag-p
+        */
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+
+.html::before, .html::after {
+  background-color: #FF6D00;
+}
+
+.css::before, .css::after {
+  background-color: #039BE5;
+}
+
+.sass::before, .sass::after {
+  background-color: #F06292;
+}
+
+.bootstrap::before, .bootstrap::after {
+  background-color: #673AB7;
+}
+
+.javascript::before, .javascript::after {
+  background-color: #FFD600;
+}
+
+.angular::before, .angular::after {
+  background-color: #DD2C00;
+}
+
+.angular::before, .angular::after {
+  background-color: #DD2C00;
+}
+
+.node::before, .node::after {
+  background-color: #4CAF50;
+}
+
+.mysql::before, .mysql::after {
+  background-color: #00796B;
+}
+
+.mongodb::before, .mongodb::after {
+  background-color: #4CAF50;
+}
+
+.git::before, .git::after {
+  background-color: #F4511E;
+}
+
+.illustrator::before, .illustrator::after {
+  background-color: #1C0802;
+}
+
+.ui_ux::before, .ui_ux::after {
+  background-color: #83D8F4;
+}

@@ -1,77 +1,106 @@
-// ------------- START CODE - SHOW ICON -------------- //
-/*
-    almacenamos en 1 VAR el ICONO definido dentro del COMPONENT_FOOTER
-*/
-let $icon_gotop = document.querySelector('#icon_gotop');
+// __________ start code - show icon go-top __________ //
 
 /* 
-    generamos un evento SCROLL al OBJETO WINDOW y declaramos una FUNCTION
+	.$iconGotop: alamacena el elemento html con el ID icon-gotop
+*/
+let $iconGotop = document.querySelector('#footer-icon-gotop');
+
+/* 
+    generamos un evento scroll en el objeto windows y definimos
+    una funcion
 */
 window.addEventListener('scroll', function() {
-    /*  
-        definimos un condicional, si el PAGEYOFFSET es mayor a 100, añade a
-        $ICON_GOTOP la clase (show_gotop) definida en 'src/sass/layout/footer.scss'
-        que muestra el boton goTop, cuando es menor remueve la clase
+    /* 
+        si el scrollY es mayor a 100 añadimos a $iconGotop la 
+        clase js_show_gotop definida en la hoja de estilos 
+        'src\sass\layout\_footer.scss'
     */
-    if(this.pageYOffset > 100) {
-        $icon_gotop.classList.add('show_gotop');
+    if(this.scrollY > 100) {
+        $iconGotop.classList.add('js_show_gotop');
     } else {
-        $icon_gotop.classList.remove('show_gotop');
+        /* 
+			de lo contrario removemos de $iconGotop la clase 
+            js_show_gotop
+		*/
+        $iconGotop.classList.remove('js_show_gotop');
     };
 });
     
-// ----------------- END CODE -------------------- //
+// __________ end code - show icon go-top __________ //
 
 
-// ---------- START CODE - GO TOP 0 -------------- //
+// __________ start code - scrollToTop __________ //
+
 /*  
-    almacenamos en 1 VAR un 0 como inicio en la parte
-    superior de la pantalla TOP = 0   
+    .topWindow: esta almacena como valor 0, cual indica la
+    .posicion inicial del header en la pagina
 */
 let topWindow = 0;
 
 /* 
-    declaramos una FUNCTION y definimos un condicional
+    ejecutamos la funcion definida en el setInterval
 */
 function scrollStep() {
     /*
         si el PAGEYOFFSET es igual a 0 CLEARINTERVAL limpia el valor 
         de la VAR TOPWINDOW
     */
-    if (window.pageYOffset === 0) {
+   /* 
+        si window.scrollY es igual a 0, clearInterval se encarga
+        de limpiar el valor que tenga topWindow
+    */
+    if (window.scrollY === 0) {
         clearInterval(topWindow);
-    };
-    window.scroll(0, window.pageYOffset - 10);
+    } else {
+        /* 
+            de lo contrario pasamos a window el metodo croll
+            que recibe como primer parametro top: 0 y el
+            segundo window.pageYOffset - 10 que nos permite
+            definir la velocidad en que regresa a la posicion 0
+        */
+        window.scroll(0, window.pageYOffset - 15);
+    }
     
 };
 
 /*
-    declaramos una FUNCTION y redefinimos el valor de TOP
+    declaramos una funcion
 */
 function scrollToTop() {
+    /* 
+        pasamos a topWindow el metodo setInterval que recibe
+        como parametro una funcion y la velocidad de ejecucion 
+    */
     topWindow = setInterval(scrollStep, 0);
 };
 
 /* 
-    generamos un evento CLICK en $ICON_GOTOP y llamamos la FUNCTION
+    generamos un evento click en $iconGotop y pasamos la
+    funcion scrollToTop anteriormente definida
 */
-$icon_gotop.addEventListener('click', scrollToTop);
+$iconGotop.addEventListener('click', scrollToTop);
 
-// ----------------- END CODE ---------------------- //
+// __________ end code - scrollToTop __________ //
 
 
-// ---------- START CODE - GET YEAR -------------- //
-/*  
-    almacenamos en 1 VAR a DATA YEAR definido en COMPONENT FOOTER
-    y en 1 VAR el año actual dado por el metodo (getFullYear())
+// __________ start code - currentYear __________ //
+
+/* 
+	$footerYear: alamacena el elemento html con el ID
+	footer-year
 */
-let $textFooter = document.querySelector('#data_year'),
-    year = new Date().getFullYear();
+let $footerYear = document.querySelector('#footer-year');
 
-/*
-    luego a travez de la propiedad (textContent) añadimos a
-    $TEXTFOOTER el texto mas el año actual
-*/ 
-$textFooter.textContent = `© Copyright Jefferson Salazar ${year}`;
+/* 
+	currentYear: alamacena el año actual gracias al uso del
+    objeto new Date().getFullYear()
+*/
+let currentYear = new Date().getFullYear();
 
-// ----------------- END CODE ---------------------- //
+/* 
+	haciendo uso de la propiedad innerHtml almacenamos en la variable
+	$footerYear el año actual que almacena currentYear
+*/
+$footerYear.innerHTML = `© Copyright Jefferson Salazar ${currentYear}`;
+
+// __________ end code - currentYear __________ //

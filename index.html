@@ -6,199 +6,364 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
         <title>Portafolio Js</title>
 		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-		<link rel="stylesheet" href="./src/sass/main.css">
+		<!-- scroll reveal -->
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<link rel="stylesheet" href="./src/sass/style.css">
     </head>
 
-    <body>
+	<!--  
+		_tag-body: le definimos un ID para implementar este elemento 
+		_en 'src/js/navbar.js' y 'src/js/header.js'
+	-->
+    <body id="body">
 		<!-- 
-			COMPONENT_HEADER: su hoja de estilos src/sass/layout/_header.scss le 
-			definimos un ID (header) utilizado en 'src/js/header.js' y 'src/js/navbar.js',			  
+			_header_component: contenedor de la seccion,
+			_hoja de estilos 'src/sass/layout/_header.scss',
+			_le definimos un ID para implementar este elemento 
+			_en 'src/js/header.js'  
 		-->
-		<header class="component_header" id="header">
+		<header class="header_component dark_components" id="header-component">
 			<!--  
-				DIV (box_dark): contiene 1 TAG I le definimos un ID (dark_mode) 
-				utilizado en 'src/js/header.js'
+				box_dark_mode: contenedor de 1 tag-i, le definimos un ID para 
+				implementar este elemento en 'src/js/header.js'
 			-->
-			<div class="box_dark">
-				<i class="icon_dark" id="dark_mode"></i>
+			<div class="box_dark_mode">
+				<!--  
+					.tag-i: en esta definimos el icono para implementar
+					.el modo oscuro
+				-->
+				<i class="dark_mode_icon" id="dark-mode-icon"></i>
 			</div>
 
 			<!--  
-				DIV (box_menuIcon_header): contiene a 3 TAGS SPAN le definimos un ID 
-				(menuIcon) utilizado en 'src/js/header.js'
+				box_open_menu_icon: contenedor de 1 tag-svg, le definimos 
+				un ID para implementar este elemento en 'src/js/header.js'
 			-->
-			<div class="box_menuIcon_header" id="menuIcon">
-				<span class="line_icon bg_js"></span>
-				<span class="line_icon bg_js"></span>
-				<span class="line_icon bg_js"></span>
+			<div class="box_open_menu_icon" title="Abrir menu" id="menu-icon-header">
+				<!--  
+					.tag-svg: en esta definimos el icono que abre el menu
+				-->
+				<svg viewBox="0 0 24 24" class="js_icon_color_change">
+					<path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+				</svg>
 			</div>
 		</header>
 		
-
 		<!-- 
-			CONTAINER_BODY: cuerpo de la pagina
+			_tag-main: contenedor de 1 navbar_component y de container_right
 		-->
-		<main class="container_body">
+		<main>
 			<!-- 
-				COMPONENT_NAVBAR: su hoja de estilos => src/sass/layout/_navbar.scss
-				le definimos un ID (navbar) utilizado en 'src/js/header.js'	
+				_navbar_component: contenedor de la seccion,
+				_hoja de estilos 'src/sass/layout/_navbar.scss',
+				_le definimos un ID para implementar este elemento 
+				_en 'src/js/navbar.js' y 'src/js/header.js'
 			-->
-			<nav class="component_navbar bg_js" id="navbar">
+			<div class="navbar_component" id="navbar-component">
 				<!--  
-					UL: contiene 5 TAGS LI,  
+					.tag-nav: contiene a box_navbar_menu y 1 tag-ul,
+					.le definimos un ID para implementar este elemento 
+					.en 'src/js/navbar.js' y 'src/js/header.js'
 				-->
-				<ul>
+				<nav id="navbar-nav">
 					<!--  
-						LI: cada una contienen 1 TAG A le definimos una clase 
-						(active-link) utilizado en 'src/js/navbar.js'
+						box_navbar_menu: contenedor de 1 tah-h4 y de box_close_icon
 					-->
-					<li class="active_link">
+					<section class="box_navbar_menu">
 						<!--  
-							A: encargadas del redireccionamiento entre secciones, contiene 
-							a 2 TAGS SPAN, le definimos una clase (sections) utiizado en 'src/js/navbar.js' 
+							.tag-h4: ene sta definimos el titulo menu
 						-->
-						<a href="#redirect_banner" class="sections">
-							<span class="icon_ion"><ion-icon name="person-outline"></ion-icon></span>
-							<span>Conoceme</span>
-						</a>
-					</li>
+						<h4>Menu</h4>
 
-					<li>
-						<a href="#redirect_skills" class="sections">
-							<span class="icon_ion"><ion-icon name="bookmarks-outline"></ion-icon></span>
-							<span>Habilidades</span>
-						</a>
-					</li>
+						<!--  
+							box_menu_close_icon: contenedor de 1 tag-svg, le definimos
+							un ID para implementar este elemento en 'src\js\navbar.js'
+						-->
+						<div class="box_menu_close_icon" title="Cerrar menu" id="menu-icon-navbar">
+							<!--  
+								.tag-svg: en esta definimos el icono que cierra el menu
+							-->
+							<svg viewBox="0 0 24 24">
+								<path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
+							</svg>
+						</div>
+					</section>
 
-					<li>
-						<a href="#redirect_certify" class="sections">
-							<span class="icon_ion"><ion-icon name="trophy-outline"></ion-icon></span>
-							<span>Certificados</span>
-						</a>
-					</li>
+					<!--  
+						.tag-ul: contenedor de 6 tags-li  
+					-->
+					<ul class="ul_navbar">
+						<!--  
+							.tag-li: contiene 1 tag-a, js_active_link es
+							.una clase trabajada desde 'src\js\navbar.js'
+						-->
+						<li class="js_active_link">
+							<!--  
+								.tag-a: contiene 1 tag-svg y 1 tag-span
+							-->
+							<a href="#redirection_banner_component">
+								<!--  
+									.tag-svg: en esta definimos el icono que acompaña al enlace
+								-->
+								<svg>
+									<path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
+								</svg>
 
-					<li>
-						<a href="#redirect_proyects" class="sections">
-							<span class="icon_ion"><ion-icon name="layers-outline"></ion-icon></span>
-							<span>Proyectos</span>
-						</a>
-					</li>
+								<!--  
+									.tag-span: en esta definimos el titulo del enlace
+								-->
+								<span>Conoceme</span>
+							</a>
+						</li>
 
-					<li>
-						<a href="#redirect_contacts" class="sections">
-							<span class="icon_ion"><ion-icon name="mail-outline"></ion-icon></span>
-							<span>Contactos</span>
-						</a>
-					</li>
-				</ul>
+						<li>
+							<a href="#redirection_skills_component">
+								<svg>
+									<path d="M14 5H6c-1.103 0-2 .897-2 2v16l6-3.601L16 23V7c0-1.103-.897-2-2-2zm0 14.467-4-2.399-4 2.399V7h8v12.467z"></path>
+									<path d="M18 1h-8c-1.103 0-2 .897-2 2h8c1.103 0 2 .897 2 2v10.443l2 2.489V3c0-1.103-.897-2-2-2z"></path>
+								</svg>
 
-				<!--  
-					DIV (box_navbar_color): contiene una TAG BUTTON 
-				-->
-				<div class="box_btn box_navbar_colors">
-					<button type="button" class="btn_animated bg_js" id="btn_navbar">Skins</button>
-				</div>
-			</nav>
+								<span>Habilidades</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="#redirection_certificates_component">
+								<svg>
+									<path d="M21 4h-3V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3a1 1 0 0 0-1 1v3c0 4.31 1.799 6.91 4.819 7.012A6.001 6.001 0 0 0 11 17.91V20H9v2h6v-2h-2v-2.09a6.01 6.01 0 0 0 4.181-2.898C20.201 14.91 22 12.31 22 8V5a1 1 0 0 0-1-1zM4 8V6h2v6.83C4.216 12.078 4 9.299 4 8zm8 8c-2.206 0-4-1.794-4-4V4h8v8c0 2.206-1.794 4-4 4zm6-3.17V6h2v2c0 1.299-.216 4.078-2 4.83z"></path>
+								</svg>
+
+								<span>Certificados</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="#redirection_proyects_component">
+								<svg>
+									<path d="m21.484 11.125-9.022-5a1 1 0 0 0-.968-.001l-8.978 4.96a1 1 0 0 0-.003 1.749l9.022 5.04a.995.995 0 0 0 .973.001l8.978-5a1 1 0 0 0-.002-1.749zm-9.461 4.73-6.964-3.89 6.917-3.822 6.964 3.859-6.917 3.853z"></path><path d="M12 22a.994.994 0 0 0 .485-.126l9-5-.971-1.748L12 19.856l-8.515-4.73-.971 1.748 9 5A1 1 0 0 0 12 22zm8-20h-2v2h-2v2h2v2h2V6h2V4h-2z"></path>
+								</svg>
+
+								<span>Proyectos</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="#redirection_contacts_component">
+								<svg>
+									<path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path>
+								</svg>
+
+								<span>Contactos</span>
+							</a>
+						</li>
+
+						<li>
+							<a>
+								<svg>
+									<path d="M13.4 2.096a10.08 10.08 0 0 0-8.937 3.331A10.054 10.054 0 0 0 2.096 13.4c.53 3.894 3.458 7.207 7.285 8.246a9.982 9.982 0 0 0 2.618.354l.142-.001a3.001 3.001 0 0 0 2.516-1.426 2.989 2.989 0 0 0 .153-2.879l-.199-.416a1.919 1.919 0 0 1 .094-1.912 2.004 2.004 0 0 1 2.576-.755l.412.197c.412.198.85.299 1.301.299A3.022 3.022 0 0 0 22 12.14a9.935 9.935 0 0 0-.353-2.76c-1.04-3.826-4.353-6.754-8.247-7.284zm5.158 10.909-.412-.197c-1.828-.878-4.07-.198-5.135 1.494-.738 1.176-.813 2.576-.204 3.842l.199.416a.983.983 0 0 1-.051.961.992.992 0 0 1-.844.479h-.112a8.061 8.061 0 0 1-2.095-.283c-3.063-.831-5.403-3.479-5.826-6.586-.321-2.355.352-4.623 1.893-6.389a8.002 8.002 0 0 1 7.16-2.664c3.107.423 5.755 2.764 6.586 5.826.198.73.293 1.474.282 2.207-.012.807-.845 1.183-1.441.894z"></path>
+									<circle cx="7.5" cy="14.5" r="1.5"></circle>
+									<circle cx="7.5" cy="10.5" r="1.5"></circle>
+									<circle cx="10.5" cy="7.5" r="1.5"></circle>
+									<circle cx="14.5" cy="7.5" r="1.5"></circle>
+								</svg>
+
+								<!--  
+									.tag-button: en esta definimos el boton para cambiar el skin de la
+									.pagina, js_background_change, le definimos un ID para implementar
+									.este elemento en 'src\js\navbar.js'
+								-->
+								<button type="button" class="btn_animated" id="navbar-skin-btn">Skins</button>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
 
 			<!--  
 				CONTAINER_RIGHT: contiene a 5 TAGS SECTIONS, 1 TAG DIV y 
 				1 TAG FOOTER que conforman el lado derecho del dashboard
 				su hoja de estilos 'src/sass/main.scss'
 			-->
-			<div class="container_right">		
-				<hr id="redirect_banner">
+			<div class="container_right">
+
 				<!-- 
-					COMPONENT_BANNER: hoja de estilos 'src/sass/layout/_banner.scss',
-					le definimos un ID (banner) utilizado en 'src/js/navbar.js' 
+					_banner_component: contenedor de la seccion,
+					_hoja de estilos 'src\sass\layout\_banner.scss',
+					_le definimos un ID para implementarlo en las tags-a del
+					_menu de navegacion
 				-->
-				<div class="component_banner component_dark" id="banner">
-					<div class="box_imgMovil">
-						<img src="assets/images/bannerresponsive.png" id="img_banner" alt="img_banner">
-					</div>
-
-					<section class="box_biografy">
-						<h1 class="color_js">Soy Jefferson Salazar</h1>
-
-						<h4>Desarrollador Web</h4>
-
-						<a href="./assets/docs/HojadeVida.pdf" download="HDV Jefferson Salazar" class="color_js">Descargar HDV</a>
-
-						<p class="parraf_biografy text_dark">
-							Naci el 10 de Febrero de 1989 en Palmira Valle. Me considero una 
-							persona sencilla, respetuosa, sociable, apasionado de la vida el 
-							emprendimiento y la tecnología. Me dedico al desarrollo Frontend 
-							hace 3 años en los cuales he participado en el desarrollo de sitios
-							web y pequeñas aplicaciones... 
-						</p>
-
-						<!--  
-							DIV (box_btn): contiene a 1 TAG BUTTON le definimos un ID 
-							(btnOpen_modal) utilizado en 'src/js/banner_modal.js'
-						-->
-						<div class="box_btn">
-							<button type="button" class="btn_animated bg_js" id="btnOpen_modal">Leer Mas</button>
-						</div>
-					</section>
-
-					<!-- 
-						DIV (box_img_banner): contiene a 1 TAG IMG y 1 DIV	
+				<div class="banner_component" id="redirection_banner_component">
+					<!--  
+						banner_flexbox: contenedor defido para implementar
+						flexbox en la seccion
 					-->
-					<div class="box_img_banner">
-						<div class="box_circle"></div>
+					<div class="banner_flexbox">
 						<!--  
-							IMG: le definimos un ID (img_banner) utilizado en 'src/js/navbar.js',
+							box_banner_biografy: contenedor de 1 tag-h1, 1 tag-h4, 1 tag-p 
+							y de box_btn
 						-->
-						<img src="./assets/images/model1.png" alt="model" id="img_banner">
+						<section class="box_banner_biografy">
+							<!--  
+								.tag-h1: en esta definimos el titulo del banner, la clase 
+								.js_color_change es una clase trabajada desde 'src\js\navbar.js'
+							-->
+							<h1 class="js_color_change">Soy Jefferson Salazar</h1>
+
+							<!--  
+								.tag-h4: en esta definimos el subtitulo del banner
+							-->
+							<h4>Desarrollador Frontend</h4>
+
+							<!--  
+								.tag-a: en esta definimos un enlace de descarga de archivos,, la clase 
+								.js_color_change es una clase trabajada desde 'src\js\navbar.js'
+							-->
+							<a href="./assets/docs/HojadeVida.pdf" download="HDV Jefferson Salazar" class="js_color_change">
+								Descargar HDV
+							</a>
+
+							<!--  
+								.tag-p: en esta definimos el parrafo del banner
+							-->
+							<p class="light_text">
+								Naci el 10 de Febrero de 1989 en Palmira Valle. Me considero una 
+								persona sencilla, respetuosa, sociable, apasionado de la vida el 
+								emprendimiento y la tecnología. Me dedico al desarrollo Frontend 
+								hace 3 años en los cuales he participado en el desarrollo de sitios
+								web y pequeñas aplicaciones... 
+							</p>
+
+							<!--  
+								box_btn: contenedor de 1 tag-button, esta es una clase general
+								definida para todos los botones, sus estilos 'src/sass/style.scss'
+							-->
+							<div class="box_btn">
+								<!--  
+									.tag-button: en esta definimos el boton del navbar,
+									.le definimos un ID para implementar este elemento 
+									.en 'src/js/modal.js', la clase js_background_change 
+									.es una clase trabajada desde 'src\js\navbar.js'
+								-->
+								<button type="button" class="btn_animated js_background_change" id="btn-open-modal">
+									Leer Mas
+								</button>
+							</div>
+						</section>
+
+						<!-- 
+							box_banner_img: contenedor de box_border_img y 1 tag-img	
+						-->
+						<div class="box_banner_img">
+							<!-- 
+								box_img_border: este elemento lo implementamos para crear el
+								borde que tiene la imagen, le definimos un ID para impelemntar 
+								este elemento 
+							-->
+							<div class="box_img_border"></div>
+
+							<!--  
+								.tag-img: en esta definimos la imagen del banner
+							-->
+							<img src="./assets/images/model1.png" alt="model">
+						</div>
 					</div>
 				</div>
 
-
 				<!-- 
-					COMPONENT_MODAL: su hoja de estilos src/sass/layout/_modal.scss le
-					definimos un ID (window_modal) utilizado en 'src/js/banner_modal.js'
+					_modal_component: contenedor de la seccion,
+					_hoja de estilos 'src/sass/layout/_modal.scss',
+					_le definimos un ID para implementar este elemento 
+					_en 'src/js/modal.js'
 				-->
-				<div class="component_modal" id="window_modal">
+				<div class="modal_component" id="modal-component">
 					<!--  
-						DIV (container_card_modal): contiene a 2 TAGS ASIDE, le definimos 
-						un ID (card_modal) para trabajarlo con 'src/js/banner_modal.js'
+						modal_card: contenedor de box_modal_img y de
+						box_modal_content, le definimos un ID para impelementar
+						este elemento en 'src/js/modal.js'
 					-->
-					<div class="container_card_modal component_dark" id="card_modal">
+					<div class="modal_card dark_components" id="modal-card">
 						<!--  
-							ASIDE (box_img_modal): contiene a 1 TAG IMG
+							box_modal_img: contenedor de box_border_img y 1 tag-img
 						-->
-						<aside class="box_img_modal">
-							<div class="box_circle"></div>
+						<aside class="box_modal_img">
+							<!-- 
+								box_img_border: este elemento lo implementamos para crear el
+								borde que tiene la imagen, esta misma clase la implementamos
+								en 'src\js\navbar.js'
+							-->
+							<div class="box_img_border"></div>
 
+							<!--  
+								.tag-img: en esta definimos la imagen del banner
+							-->
 							<img src="./assets/images/modal4.png" alt="person">
 						</aside>
 
-							<!--  
-							ASIDE (box_content_modal): contiene a 1 DIV, 2 TAGS P y 1 TAG OL
+						<!--  
+							box_modal_content: contenedor de box_modal_icon, 2 tags-p y
+							1 tag-ol
 						-->
-						<aside class="box_content_modal">
+						<aside class="box_modal_content">
 							<!--  
-								DIV (box_icon_modal): contiene al una TAG ION-ICON, 
+								box_modal_icon: contenedor de 1 tag-svg 
 							-->
-							<div class="box_icon_modal">
-								<ion-icon name="close-circle-outline" class="icon_modal color_js"></ion-icon>
+							<div class="box_modal_icon js_color_border_change" title="Cerrar modal">
+								<!--  
+									.tag-svg: en esta definimos el icno que cierre el modal
+								-->
+								<svg viewBox="0 0 24 24" class="js_icon_color_change">
+									<path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
+								</svg>
 							</div>
 
-							<p class="text_dark">
+							<!--  
+								.tag-p: en esta definimos el parrafo del modal
+							-->
+							<p class="light_text">
 								Tengo conocimientos basicos en Backend creando APIS y haciendo
 								uso de ellas. Entre mis virtudes esta:
 							</p>
 
 							<!--  
-								OL: contiene 4 TAGS LI y cada una contiene 1 TAG ION-ICON
+								.tag-ol: contiene 4 tags-li
 							-->
-							<ol class="text_dark">
-								<li><ion-icon name="checkmark-outline" class="icon_modal color_js"></ion-icon>El trabajo en equipo.</li>
-								<li><ion-icon name="checkmark-outline" class="icon_modal color_js"></ion-icon>La capacidad de solucionar problemas emergentes.</li>
-								<li><ion-icon name="checkmark-outline" class="icon_modal color_js"></ion-icon>EL aprendizaje empírico y autodidacta.</li>
-								<li><ion-icon name="checkmark-outline" class="icon_modal color_js"></ion-icon>La motivacion con que realizo mis proyectos</li>
+							<ol class="light_text">
+								<!--  
+									tag-li: contiene 1 tag-svg
+								-->
+								<li>
+									<!--  
+										.tag-svg: en esta definimos el icno de los checks de la lista
+									-->
+									<svg class="js_icon_color_change">
+										<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+									</svg>
+									El trabajo en equipo.
+								</li>
+
+								<li>
+									<svg class="js_icon_color_change">
+										<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+									</svg>
+									La capacidad de solucionar problemas emergentes.
+								</li>
+
+								<li>
+									<svg class="js_icon_color_change">
+										<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+									</svg>
+									EL aprendizaje empírico y autodidacta.
+								</li>
+								
+								<li>
+									<svg class="js_icon_color_change">
+										<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+									</svg>
+									La motivacion con que realizo mis proyectos
+								</li>
 							</ol>
 
-							<p class="text_dark">
+							<p class="light_text">
 								Me encanta la formula 1, ir a cine y compartir 
 								en familia. A mediano plazo anhelo iniciar una 
 								carrerra afin al desarrollo web.
@@ -206,52 +371,74 @@
 						</aside>
 					</div>
 				</div>
-				
 
-				<hr id="redirect_skills">
 				<!-- 
-					COMPONENT_SKILLS: su hoja de estilos src/sass/layout/_habilidades.scss
-					le definimos un ID (skills) utilizado en 'src/js/navbar.js'
+					_skills_component: contenedor de la seccion,
+					_hoja de estilos 'src/sass/layout/_skills.scss',
+					_le definimos un ID para implementarlo en las tags-a del
+					_menu de navegacion
 				-->
-				<section class="component_skills" id="skills">
-					<h3 class="color_js">Habilidades</h3>
+				<div class="skills_component" id="redirection_skills_component">
+					<!--  
+						.tag-h3: en esta definimos el titulo de la seccion, la clase 
+						.js_change_color es una clase manejada con javascript en '' 
+					-->
+					<h3 class="js_color_change">Habilidades</h3>
 
-					<div class="box_border color_js"></div>
+					<!--  
+						box_title_border: definido para implementar el borde que decora
+						el titulo de la seccion, js_color_border_change es una
+						clase trabajada desde 'src\js\navbar.js'
+					-->
+					<div class="box_title_border js_color_border_change"></div>
 
 					<!-- 
-						DIV (container_skills): contiene a 12 TAGS DIV 
+						skills_container: contenedor definido para manejar el responsive
+						de la seccion
 					-->
-					<div class="container_skills">
+					<div class="skills_container">
 						<!--  
-							12 DIVS (box_skills): cada uno contiene a 2 TAGS DIV, tambien
-							definimos una clase segun la habilidad para dar estilos propios
+							skills_grid: contenedor definido para implementar grid en la
+							seccion
 						-->
-						<div class="box_skills component_dark html">
-							<div class="box_content_skills">
+						<div class="skills_grid">
+							<!--  
+								box_skill_cards: contenedor de 1 tag-img y 1 tag-p, la clase 
+								js_dark_components es una clase manejada con javascript en ''
+							-->
+							<div class="box_skill_cards dark_components html">
+								<!--  
+									.tag-img: en esta definimos la imagen de la habilidad
+								-->
 								<img src="./assets/images/html5.png" alt="html">
 								
-								<p class="html_level">
+								<!--  
+									.tag-img: en esta definimos el parrafo de la habilidad
+								-->
+								<p>
 									creacion de sitios web accesibles y responsive,
 									diseño de tablas, menus de navegacion, modales, trajetas,
 									acordeones, formularios. Uso de buenas practicas 
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark css">
-							<div class="box_content_skills">
+							<!--  
+								02 css
+							-->
+							<div class="box_skill_cards dark_components css">
 								<img src="./assets/images/css.png" alt="css">
 								
-								<p class="css_level">			
+								<p>			
 									implementacion de keyframes, media querys sistema de regillas
 									con css grid y flexbox, uso de pseudo clases, pseudo elementos
 									y manejo de posiciones relativas
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark sass">
-							<div class="box_content_skills">
+							<!--  
+								03 sass
+							-->
+							<div class="box_skill_cards dark_components sass">
 								<img src="./assets/images/sass.png" alt="sass">
 								
 								<p class="sass_level">
@@ -260,143 +447,181 @@
 									mantenimiento del codigo y uso de importaciones
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark bootstrap">
-							<div class="box_content_skills">
+							<!--  
+								04 bootstrap
+							-->
+							<div class="box_skill_cards dark_components bootstrap">
 								<img src="./assets/images/bootstrap.png" alt="bootstrap">
 							
-								<p class="bootstrap_level">
+								<p>
 									implementacion completa de bootstrap para estilos de botones, 
 									tablas, menus de navegacion, tarjetas, modales, sliders,
 									layouts, formularios etc.
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark javascript">
-							<div class="box_content_skills">
+							<!--  
+								05 javascript
+							-->
+							<div class="box_skill_cards dark_components javascript">
 								<img src="./assets/images/javascript.png" alt="javascript">
 								
-								<p class="javascript_level">
+								<p>
 									Uso de eventos, bucles, condicionales, arrays, 
 									funciones y objetos. Interaccion con el DOM
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark angular">
-							<div class="box_content_skills">
+							<!--  
+								06 angular
+							-->
+							<div class="box_skill_cards dark_components angular">
 								<img src="./assets/images/angular.png" alt="angular">
 								
-								<p class="angular_level">
+								<p>
 									Creacion de componentes, modulos, servicios, clases,
 									
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark nodejs">
-							<div class="box_content_skills">
-								<img src="./assets/images/node.png" alt="nodejs">
+							<!--  
+								07 node
+							-->
+							<div class="box_skill_cards dark_components node">
+								<img src="./assets/images/node.png" alt="node">
 								
-								<p class="nodejs_level">
+								<p>
 									Creacion de un servidor local con express, creacion de APIS
 									conexion a bases de datos mysql y mongo db, implementacion
 									de modulos como morgan, cors, dotenv, mysql, mongoose, bcrypt
 									jwebtoken y express-validator
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark mysql">
-							<div class="box_content_skills">
+							<!--  
+								08 mysql
+							-->
+							<div class="box_skill_cards dark_components mysql">
 								<img src="./assets/images/mysql.png" alt="mysql">
 								
-								<p class="mysql_level">
+								<p>
 									creacion de 
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark mongodb">
-							<div class="box_content_skills">
+							<!--  
+								09 mongodb
+							-->
+							<div class="box_skill_cards dark_components mongodb">
 								<img src="./assets/images/mongo.png" alt="mongo">
 								
-								<p class="mongodb_level">
+								<p>
 									crear base de datos por medio de schemas, interaccion 
 									con los meotodos POST, GET, DELETE y UPDATE, paginacion
 									de datos
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark git">
-							<div class="box_content_skills">
+							<!--  
+								10 git
+							-->
+							<div class="box_skill_cards dark_components git">
 								<img src="./assets/images/git.png" alt="git">
 								
-								<p class="git_level">
+								<p>
 									iniciar realizacion de commits
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark illustrator">
-							<div class="box_content_skills">
+							<!--  
+								11 illustrator
+							-->
+							<div class="box_skill_cards dark_components illustrator">
 								<img src="./assets/images/ilustrator.png" alt="ilustrator">
 								
-								<p class="illustrator_level">
+								<p>
 									fsdfsjkfsjkfs fkbsjkfsdf jkshfjhsdjkfhsdjkf
 									ksdfjskldfjskld
 								</p>
 							</div>
-						</div>
 
-						<div class="box_skills component_dark ui_ux">
-							<div class="box_content_skills">
+							<!--  
+								12 iu-ux
+							-->
+							<div class="box_skill_cards dark_components ui_ux">
 								<img src="./assets/images/ui-ux.png" alt="ui-ux">
 								
-								<p class="ui_ux_level">
+								<p>
 									Diseños para dispositivos moviles accesibles y funcionales
 								</p>
 							</div>
 						</div>
 					</div>
-				</section>
+				</div>
 
-
-				<hr id="redirect_certify">
 				<!-- 
-					COMPONENT_CERTIFICATES: su hoja de estilos 'src/sass/layout/_certificados.scss'
-					le definimos un ID (certify) utilizado en 'src/js/navbar.js' 
+					_certificates_component: contenedor de la seccion,
+					_hoja de estilos 'src/sass/layout/_certificates.scss',
+					_le definimos un ID para implementarlo en las tags-a del
+					_menu de navegacion
 				-->
-				<section class="component_certificates" id="certify">
-					<h3 class="color_js">Certificados</h3>
-
-					<div class="box_border color_js"></div>
+				<div class="certificates_component dark_components" id="redirection_certificates_component">
+					<!--  
+						.tag-h3: en esta definimos el titulo de la seccion, la clase 
+						.js_change_color es una clase trabajada desde 'src/js/navbar.js'
+					-->
+					<h3 class="js_color_change">Certificados</h3>
 
 					<!--  
-						4 DIVS (container_certify) cada uno contiene a 2 TAGS SECTIONS
+						box_title_border: definido para implementar el borde que decora
+						el titulo de la seccion, js_color_border_change es una
+						clase trabajada desde 'src\js\navbar.js'
 					-->
-					<div class="container_certify component_dark">
+					<div class="box_title_border js_color_border_change"></div>
+
+					<!--  
+						certificates_section: contenedor de box_certificates_title y de 
+                        box_certificates_content, la clase certificates_section es
+						implementada en 'src\js\certificates.js'
+					-->
+					<div class="certificates_section dark_components">
 						<!--  
-							SECTION (box_title) contiene a 1 TAG H2, 1 TAG ION-ICON esta 
-							con clase (icon_certify) utilizada en 'src/js/certificates.js'
+							box_certificates_title: contenedor de 1 tag-h2 y 1 tag-svg
 						-->
-						<section class="box_title">
-							<h2 class="text_dark">Diseño Web</h2>
-							<ion-icon name="chevron-down-outline" class="icon_certify color_js"></ion-icon>
+						<section class="box_certificates_title">
+                            <!--  
+                                .tag-h2: en esta definimos el titulo del programa
+                            -->
+							<h2 class="light_text">Diseño Web</h2>
+							
+                            <!--  
+                                .tag-svg: en esta definimos el icono
+                            -->
+                            <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                            </svg>
 						</section>
 						
 						<!--  
-							SECTION (content_certify) contiene 2 TAGS H4, 1 TAG P y 1 TAG DIV
+							box_certificates_content: contenedor de 2 tags-h4, 1 tag-p y de
+                            box_certificates_file
 						-->
-						<section class="content_certify">
-							<h4 class="text_dark">Instituto:<strong> Udemy </strong></h4>
+						<section class="box_certificates_content">
+                            <!--  
+                                .tag-4: en esta definimos el titulo del certificado
+                            -->
+							<h4 class="light_text">Instituto:<strong> Udemy</strong></h4>
 
-							<h4 class="text_dark">Intensidad:<strong> 77 Horas </strong></h4>
+                            <!--  
+                                .tag-4: en esta definimos el subtitulo del certificado
+                            -->
+							<h4 class="light_text">Intensidad:<strong> 77 Horas </strong></h4>
 
-							<p class="text_certify text_dark">
+                            <!--  
+                                .tag-p: en esta definimos el parrafo del certificado
+                            -->
+							<p class="light_text">
 								Creacion de sitios web responsive con<strong> html y css</strong>,
 								maquetacion avanzada con<strong> flexbox y grid loyout </strong> 
 								implementacion de compiladores para css<strong> sass y less </strong>
@@ -407,29 +632,42 @@
 							</p>
 
 							<!--  
-								1 DIV (box_certify) contiene a 3 TAGS A para descargar los certificados 
-								definimos una clase (color_js) utilizada en 'src/js/navbar.js'
+								box_certificates_files: contenedor de 3 tags-a 
 							-->
-							<div class="box_certify">
-								<a href="./assets/docs/html1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload color_js">1. Descargar Certificados</a>
-								<a href="./assets/docs/html2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload color_js">2. Descargar Certificados</a>
-								<a href="./assets/docs/js1.pdf"  download="certificado tres" title="descargar certificado" class="links_donwload color_js">3. Descargar Certificados</a>
+							<div class="box_certificates_files">
+                                <!--  
+                                    .tag-a: en esta definimos los certificados para descargar
+                                -->
+								<a href="./assets/docs/html1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change">
+                                    1. Descargar Certificados
+                                </a>
+                                
+								<a href="./assets/docs/html2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change">
+                                    2. Descargar Certificados
+                                </a>
+								
+                                <a href="./assets/docs/js1.pdf"  download="certificado tres" title="descargar certificado" class="links_donwload js_color_change">
+                                    3. Descargar Certificados
+                                </a>
 							</div>
 						</section>
 					</div>
 
-					<div class="container_certify component_dark">
-						<section class="box_title">
-							<h2 class="text_dark">Frontend</h2>
-							<ion-icon name="chevron-down-outline" class="icon_certify color_js"></ion-icon>
+					<div class="certificates_section dark_components">
+						<section class="box_certificates_title">
+							<h2 class="light_text">Frontend</h2>
+							
+                            <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                            </svg>
 						</section>
 
-						<section class="content_certify">
-							<h4 class="text_dark">Instituto:<strong> Udemy </strong></h4>
+						<section class="box_certificates_content">
+							<h4 class="light_text">Instituto:<strong> Udemy </strong></h4>
 
-							<h4 class="text_dark">Intensidad:<strong> 54 Horas </strong></h4>
+							<h4 class="light_text">Intensidad:<strong> 54 Horas </strong></h4>
 
-							<p class="text_certify text_dark">
+							<p class="light_text">
 								Creacion de proyectos<strong> spa </strong>( single page application ) 
 								con<strong> angular </strong>implementando<strong> typescript </strong>
 								y las ultimas actualizaciones de <strong>ecmascript 6</strong>, todo sobre
@@ -439,25 +677,28 @@
 								<strong> apis </strong>entre otros temas.
 							</p>
 
-							<div class="box_certify">
-								<a href="./assets/docs/angular1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload color_js">1. Descargar Certificados</a>
-								<a href="./assets/docs/angular2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload color_js">2. Descargar Certificados</a>
+							<div class="box_certificates_files">
+								<a href="./assets/docs/angular1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change">1. Descargar Certificados</a>
+								<a href="./assets/docs/angular2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change">2. Descargar Certificados</a>
 							</div>
 						</section>
 					</div>
 
-					<div class="container_certify component_dark">
-						<section class="box_title">
-							<h2 class="text_dark">Backend</h2>
-							<ion-icon name="chevron-down-outline" class="icon_certify color_js"></ion-icon>
+					<div class="certificates_section dark_components">
+						<section class="box_certificates_title">
+							<h2 class="light_text">Backend</h2>
+
+							<svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                            </svg>
 						</section>
 
-						<section class="content_certify">
-							<h4 class="text_dark">Instituto:<strong> Udemy </strong></h4>
+						<section class="box_certificates_content">
+							<h4 class="light_text">Instituto:<strong> Udemy </strong></h4>
 
-							<h4 class="text_dark">Intensidad:<strong> 24 Horas </strong></h4>
+							<h4 class="light_text">Intensidad:<strong> 24 Horas </strong></h4>
 
-							<p class="text_certify text_dark">
+							<p class="light_text">
 								Creacion de un servidor local con<strong> nodejs </strong> y su framework mas
 								popular <strong>express</strong> uso de modulos morgan, cors, mysql, mongoose, 
 								creacion de variables de entorno, generacion de tokens, encriptamiento de contraseñas,
@@ -467,26 +708,29 @@
 								comprobacion de apis con<strong> postman </strong>y mas.
 							</p>
 
-							<div class="box_certify">
-								<a href="./assets/docs/node1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload color_js">1. Descargar Certificados</a>
-								<a href="./assets/docs/sql2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload color_js">2. Descargar Certificados</a>
-								<a href="./assets/docs/mongo1.pdf" download="certificado tres" title="descargar certificado" class="links_donwload color_js">3. Descargar Certificados</a>
+							<div class="box_certificates_files">
+								<a href="./assets/docs/node1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change">1. Descargar Certificados</a>
+								<a href="./assets/docs/sql2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change">2. Descargar Certificados</a>
+								<a href="./assets/docs/mongo1.pdf" download="certificado tres" title="descargar certificado" class="links_donwload js_color_change">3. Descargar Certificados</a>
 							</div>
 						</section>
 					</div>
 
-					<div class="container_certify component_dark">
-						<section class="box_title">
-							<h2 class="text_dark">Mas</h2>
-							<ion-icon name="chevron-down-outline" class="icon_certify color_js"></ion-icon>
+					<div class="certificates_section dark_components">
+						<section class="box_certificates_title">
+							<h2 class="light_text">Mas</h2>
+						
+							<svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                            </svg>
 						</section>
 
-						<section class="content_certify">
-							<h4 class="text_dark">Instituto:<strong> Internet </strong></h4>
+						<section class="box_certificates_content">
+							<h4 class="light_text">Instituto:<strong> Internet </strong></h4>
 
-							<h4 class="text_dark">Intensidad:<strong> Infinito </strong></h4>
+							<h4 class="light_text">Intensidad:<strong> Infinito </strong></h4>
 
-							<p class="text_certify text_dark">
+							<p class="light_text">
 								Tengo cientos de horas consumidas en<strong> foros, documentaciones, comunidad, cursos
 								sin certificacion, youtube etc </strong>sobre todo lo referente al <strong>desarrollo web</strong>, 
 								estos metodos de aprendizaje me han ayudado a complementar y afianzar los conocimientos adquiridos 
@@ -496,18 +740,25 @@
 							</p>
 						</section>
 					</div>
-				</section>
+				</div>
 
 
-				<hr id="redirect_proyects">
 				<!--  
-					COMPONENT_PROYECTS: su hoja de estilos 'src/sass/layout/_proyectos.scss'
-					le definimos un ID (proyects) utiizado enn 'src/js/navbar.js' 		
+					proyects_component: su hoja de estilos 'src/sass/layout/_proyectos.scss'
+					le definimos un ID (proyects) utiizado enn 'src/js/navbar.js'
+					le definimos un ID para implementarlo en las tags-a del
+					menu de navegacion 		
 				-->
-				<section class="component_proyects component_dark" id="proyects">
-					<h3 class="color_js">Proyectos</h3>
+				<div class="proyects_component dark_components" id="redirection_proyects_component">
 
-					<div class="box_border color_js"></div>
+					<h3 class="js_color_change">Proyectos</h3>
+
+					<!--  
+						box_title_border: definido para implementar el borde que decora
+						el titulo de la seccion, js_color_border_change es una
+						clase trabajada desde 'src\js\navbar.js'
+					-->
+					<div class="box_title_border js_color_border_change"></div>
 
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
@@ -518,51 +769,79 @@
 						  <div class="swiper-slide">Slide 5</div>
 						</div>
 					</div>
-				</section>
+				</div>
 
-
-				<hr id="redirect_contacts">
 				<!-- 
-					COMPONENT_CONTACTS: su hoja de estilos src/sass/layout/_contactos.scss
-					le definimos un ID (contacts) utilizado en 'src/js/navbar.js'	
+					_contacts_component: contenedor de la seccion,
+					_hoja de estilos 'src\sass\layout\_contacts.scss',
+					_le definimos un ID para implementarlo en las tags-a del
+					_menu de navegacion
 				-->
-				<section class="component_contacts component_dark" id="contacts">
-					<h3 class="color_js">Contactos</h3>
-
-					<div class="box_border color_js"></div>
+				<div class="contacts_component dark_components" id="redirection_contacts_component">
+					<!--  
+						.tag-h3: en esta definimos el titulo de la seccion, la clase 
+						.js_change_color es una clase trabajada desde 'src/js/navbar.js'
+					-->
+					<h3 class="js_color_change">Contactos</h3>
 
 					<!--  
-						DIV (box_data_form): contiene a 1 TAG FORM y 1 TAG P
+						box_title_border: contenedor definido para crear el borde que
+						decora el titulo de la seccion, js_color_border_change es una
+						clase trabajada desde 'src\js\navbar.js'
 					-->
-					<div class="box_data_form">
-						<div class="box_card_form">
+					<div class="box_title_border js_color_border_change"></div>
+
+					<!--  
+						form_flexbox: contenedor definido para implementar flexbox
+						en la seccion
+					-->
+					<div class="form_flexbox">
+						<!--  
+							box_form_card: contenedor de 1 tah-h2 y 1 tag-p
+						-->
+						<div class="box_form_card">
+							<!--  
+								.tag-h2: en esta definimos el titulo de la tarjeta
+							-->
 							<h2>Deseas contactarme?</h2>
 							
-							<p class="text_card_form text_dark">
+							<!--  
+								.tag-p: en esta definimos el titulo de la tarjeta, js_light_text
+								.es una clase trabajada desde 'src\js\header.js'
+							-->
+							<p class="light_text">
 								enviame un email y tratare de contactarme contigo lo antes posible, 
 								recuerda  que todos los campos del formulario son requeridos...
 							</p>
 						</div>
 
 						<!--  
-							FORM: contiene a 5 TAGS DIV, le definimos un ID (formulario) 
-							utilizado en 'src/js/contactos.js'
+							form: contenedor de 3 box_inputs, 1 box_btn y de 1 box_socials_contacts,
+							le definimos un ID para implementar este elemento en 'src/js/contacts.js'
 						-->
-						<form autocomplete="off" id="formulario">
+						<form autocomplete="off" novalidate id="formulario">
 							<!--  
-								3 DIVS (box_inputs): cada uno contiene a 1 TAG INPUT, 
-								1 TAG SPAN para crear un borde animado y TAG P
+								box_inputs: contenedor de 1 tag-input, 1 tag-span y 1 tag-p
 							-->
 							<div class="box_inputs">
+								<!--  
+									.tag-input: en esta definimos el input del formulario
+								-->
 								<input type="text" name="name" placeholder="Nombre *"/>
 
-								<span class="border_animated"></span>
+								<!--  
+									.tag-span: esta la definimos para crear un borde animado
+									.para los campos del fomulario 
+								-->
+								<span class="border_animated js_background_change"></span>
 
 								<!--  
-									P (box_errors): les definimos un ID (error_???) 
-									utilizado en 'src/js/contactos.js'
+									.tag-p: en esta definimos la caja de errores del formulario
+									.la clase js_background_change es una clase trabajada con
+									.'src/js/navbar.js', le definimos un ID para implementar
+									.este elemento en 'src/js/contacts.js'
 								-->
-								<p class="box_errors bg_js" id="error_name">
+								<p class="box_errors js_background_change" id="error-name">
 									De 4 a 16 digitos no simbolos no numeros	
 								</p>
 							</div>
@@ -570,74 +849,109 @@
 							<div class="box_inputs">
 								<input type="text" name="email" placeholder="Email *"/>
 
-								<span class="border_animated"></span>
+								<span class="border_animated js_background_change"></span>
 
-								<p class="box_errors bg_js" id="error_email">
+								<p class="box_errors js_background_change" id="error-email">
 									El email no es valido
 								</p>
 							</div>
 
 							<div class="box_inputs">
-								<input type="text" name="post" placeholder="Comentarios *"/>
+								<!--  
+									tag-textarea: en esta definimos un campo del 
+									formulario
+								-->
+								<textarea name="post" placeholder="Comentarios *"></textarea>
 
-								<span class="border_animated"></span>
-								
-								<p class="box_errors bg_js" id="error_post">
+								<span class="border_animated js_background_change"></span>
+
+								<p class="box_errors js_background_change" id="error-post">
 									De 10 a 100 digitos no simbolos
 								</p>
 							</div>
 
 							<!--  
-								1 DIV (box_btn): contiene a 1 TAG BUTTON tipo SUBMIT
+								box_btn: contenedor de 1 tag-button, esta es una clase general
+								definida para todos los botones, sus estilos 'src/sass/style.scss'
 							-->
 							<div class="box_btn">
-								<button type="submit" class="btn_animated bg_js">Enviar</button>
+								<!--  
+									.tag-button: en esta definimos el boton del formulario,
+									.la clase js_background_change es una clase trabajada 
+									.desde 'src\js\navbar.js'
+								-->
+								<button type="submit" class="btn_animated js_background_change">Enviar</button>
 							</div>
 
 							<!--  
-								1 DIV (box_socials_contacts): contiene a 3 TAGS A cada una
-								con 3 TAGS ION-ICON
+								box_socials_contacts: contenedor de 3 socials_media
 							-->
 							<div class="box_socials_contacts">
-								<a href="https://github.com/JeffersonSalazar?tab=repositories" target="_blank">
-									<ion-icon class="icon_contacts bg_js" name="logo-github"></ion-icon>
-								</a>
-								<a href="https://www.linkedin.com/in/jefferson-salazar-032870174/" target="_blank">
-									<ion-icon class="icon_contacts bg_js" name="logo-linkedin"></ion-icon>
-								</a>
-								<a href="https://wa.me/+0573215142379">
-									<ion-icon class="icon_contacts bg_js" name="logo-whatsapp"></ion-icon>
-								</a>		
+								
+								<div class="socials_media js_background_change">
+									<!--  
+										.tag-a: contiene 1 tag-svg
+									-->
+									<a href="https://github.com/JeffersonSalazar?tab=repositories" target="_blank" title="Ir a github">
+										<!--  
+											.tag-svg: en esta definimos el icono de los contactos
+										-->
+										<svg viewBox="0 0 24 24">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"></path>
+										</svg>
+									</a>
+								</div>
+
+								<div class="socials_media js_background_change">
+									<a href="https://www.linkedin.com/in/jefferson-salazar-032870174/" target="_blank" title="Ir a linkedin">
+										<svg viewBox="0 0 24 24">
+											<path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"></path>
+										</svg>
+									</a>
+								</div>
+
+								<div class="socials_media js_background_change">
+									<a href="https://wa.me/+0573215142379" title="Ir a whatsapp">
+										<svg viewBox="0 0 24 24">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path>
+										</svg>
+									</a>		
+								</div>
 							</div>
 						</form>
 					</div>
-				</section>
-
+				</div>
 
 				<!-- 
-					COMPONENT_FOOTER: su hoja de estilos src/sass/layout/_footer.scss
+					_footer_component: contenedor de la seccion,
+					_hoja de estilos 'src\sass\layout\_footer.scss',
 				-->
-				<footer class="component_footer">
-					<h4 id="data_year"></h4>
-
-					<div class="box_icon_footer">
+				<footer class="footer_component">
+					<!--  
+						box_footer_icon: contenedor de 1 tag-svg
+					-->
+					<div class="box_footer_icon"  title="Ir arriba">
 						<!--  
-							ICON-ICON: le definimos un ID (icon_gotop) 
-							utilizado en 'src/js/footer.js'
+							.tag-svg: en esta definimos el icono del footer go-top, le definimos
+							.un ID para impelmentar este elemento en 'src\js\footer.js'
 						-->
-						<ion-icon name="arrow-up-outline" class="bg_js" id="icon_gotop"></ion-icon>
+						<svg viewBox="0 0 24 24" class="js_background_change" id="footer-icon-gotop">
+							<path d="M11 8.414V18h2V8.414l4.293 4.293 1.414-1.414L12 4.586l-6.707 6.707 1.414 1.414z"></path>
+						</svg>
 					</div>
+
+					<!--  
+						.tag-p: definida para añadir el año actual de la pagina,
+						.le definimos un un ID para implementar este elemento 
+						.en 'src\js\footer.js'
+					-->
+					<p id="footer-year"></p>
 				</footer>
 			</div>
 		</main>
 
 		<!-- 
-			scripts icons ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
-		-->
-		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> 
-
-		<!-- 
-			scripts sweet alert
+			sweetalert JS
 		-->
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -653,13 +967,14 @@
 		</script>
 
 		<!-- 
-			scripts javascript ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
+			custom js
 		-->
 		<script src="./src/js/header.js"></script>
 		<script src="./src/js/navbar.js"></script>
-		<script src="./src/js/banner_modal.js"></script>
+		<script src="./src/js/banner.js"></script>
+		<script src="./src/js/modal.js"></script>
 		<script src="./src/js/certificates.js"></script>
-		<script src="./src/js/contactos.js"></script>
+		<script src="./src/js/contacts.js"></script>
 		<script src="./src/js/footer.js"></script>
     </body>
 </html>

@@ -1,202 +1,176 @@
-// ------------ START CODE - ACTIVE LINKS ----------- //
-/* 
-    almacenamos en una VAR las TAGS LI definidas en COMPONENT_NAVBAR
-*/
-let $links = document.querySelectorAll('li');
+// __________ start code - active link __________ //
 
 /* 
-    Definimos una FUNCION
+   .$navbarLinks: almacena todos los elementos html tag-li que
+   .estan dentro de ul_navbar 
+*/
+let $navbarLinks = document.querySelectorAll('ul_navbar, li');
+
+/* 
+    declaracion de la funcion activeLink
 */
 function activeLink() {
     /* 
-        hacemos un FOREACH en $LINKS para remover de cada ENLACE la clase 
-        'active_link' definida en 'src/sass/layout/navbar.scss' que añade 
-        un color de fondo mostrando el enlace como seleccionado
+        hacemos un recorrido forEach en $links para remover de cada elemento
+        la clase js_active_link definida en 'src/sass/layout/navbar.scss' 
     */
-    $links.forEach(link => link.classList.remove('active_link'));
+    $navbarLinks.forEach(link => link.classList.remove('js_active_link'));
 
     /* 
-        agregamos la clase 'active_link' a un solo ENLACE
+        añadimos la clase js_active_link definida en 'src/sass/layout/navbar.scss' 
+        al elemento seleccionado
     */
-    this.classList.add('active_link');
+    this.classList.add('js_active_link');
 };  
-/* 
-    realizamos un FOREACH en $LINKS y generamos un evento CLICK
-    al parametro seguido pasamos la FUNCION previamente definida
-*/
-$links.forEach(link => link.addEventListener('click', activeLink));
-
-// ------------------ END CODE -------------------- //
-
-
-// ------------ START CODE - PAGE NAVIGATION ----------- //
-
-/*
-    definimos una FUNCION y pasamos 2 parametros
-*/
-function smoothScroll(target, duration){
-    /*
-        almacenamos en una VAR el TARGET este nos indica cual SECCION
-        estamos seleccionado
-    */
-	let sectionSelected = document.querySelector(target),
-
-    /* 
-        almacenamos en una VAR (target.getBoundingClientRect().top) y
-        (window.pageYOffset) estas prpiedades nos muestra numericamente 
-        la posicion de la SECCION
-    */
-        sectionPosition = sectionSelected.getBoundingClientRect().top,
-        startPosition = window.pageYOffset;
-        distance = sectionPosition,
-        startTime = null;
-	
-    /* 
-        definimos una FUNCION y pasamos un 1 parametro
-    */
-	function animation(currentTime) {
-        /* 
-            definimos un condicional si el valor de STARTTIME es igual  
-            NULL va a almacenar el valor de CURRENTTIME que nos muestra 
-            numericamente la velocidad de desplazamiento entre SECCIONES 
-        */
-		if(startTime === null) startTime = currentTime;
-
-		let timeElapsed = currentTime - startTime,
-		    run = ease(timeElapsed, startPosition, distance, duration);
-		    window.scrollTo(0, run);
-
-		if(timeElapsed < duration) requestAnimationFrame(animation);
-	}
-
-	function ease(t,b,c,d){
-			t /= d/2;
-			if (t < 1) return c/2*t*t + b;
-			t--;
-			return -c/2 * (t*(t-2) - 1) + b
-	}
-	
-	requestAnimationFrame(animation);
-}
 
 /* 
-    almacenamos en una VAR los enlaces del menu de navegacion
-    definidos en COMPONENT_NAVBAR
+    realizamos un recorrido forEach en $links, pasamos un parametro
+    (link) y definimos una funcion. generamos un evento CLICK
+    al parametro (link) y pasamos la funcion previamente definida
 */
-let $sections = document.querySelectorAll('.sections');
+$navbarLinks.forEach(link => link.addEventListener('click', activeLink));
+
+// __________ end code - active link __________ //
+
+
+// __________ start code - background color generator __________ //
 
 /* 
-    definimos un evento CLICK en las diferentes $SECTIONS y
-    pasamos una FUNCION
+   .$navbarSkinBtn: almacena el elemento html con ID navbar-skin-btn
 */
-$sections[0].addEventListener('click', function() {
-    /* 
-        pasamos la funcion y como valor de los parametros
-        pasamos los ID y la velocidad de paginacion
-    */
-    smoothScroll('#redirect_banner', 2000);
-})
-
-$sections[1].addEventListener('click', function() {
-    smoothScroll('#redirect_skills', 2000);
-})
-
-$sections[2].addEventListener('click', function() {
-    smoothScroll('#redirect_certify', 2000);
-})
-
-$sections[3].addEventListener('click', function() {
-    smoothScroll('#redirect_proyects', 2000);
-})
-
-$sections[4].addEventListener('click', function() {
-    smoothScroll('#redirect_contacts', 2000);
-});
-
-// ------------------ END CODE -------------------- //
-
-
-// ----- START CODE - GENERATOR BG AND COLOR ------ //
+let $navbarSkinBtn = document.querySelector("#navbar-skin-btn");
 
 /* 
-    almacenamos en una VAR los enlaces del menu de navegacion
-    definidos en COMPONENT_NAVBAR
+   .$backgroundChange: almacena todos los elementos html que tengan
+   .la clase js_background_change
+
+   .$colorChange: almacena todos los elementos html que tengan
+   .la clase js_color_change
+
+   .$colorBorderChange: almacena todos los elementos html que tengan
+   .la clase js_color_border_change
+
+   .$imgBorder: almacena todos los elementos html que tengan
+   .la clase box_img_border
+
+   .$iconColorChange: almacena todos los elementos html que tengan
+   .la clase js_icon_color_change
+
+   .$strongs: almacena todos los elementos html definidos con la tag-strong
 */
-let $btn_navbar = document.querySelector("#btn_navbar");
-    $bg_group = document.querySelectorAll(".bg_js"),
-    $color_group = document.querySelectorAll(".color_js"),
-    $box_circles = document.querySelectorAll(".box_circle"),
-    $borders = document.querySelectorAll(".box_border"),
-    $strongs = document.querySelectorAll("strong"),
-    $img_banner = document.querySelector("#img_banner");
+let $backgroundChange = document.querySelectorAll(".js_background_change"),
+    $colorChange = document.querySelectorAll(".js_color_change"),
+    $colorBorderChange = document.querySelectorAll(".js_color_border_change");
+    $imgBorder = document.querySelectorAll(".box_img_border"),
+    $iconColorChange = document.querySelectorAll(".js_icon_color_change");
+    $strongs = document.querySelectorAll("strong");
 
 /* 
-    almacenamos en una VAR 1 ARROW FUNCTION 
+    generateRandomColor: almacena una arrow function
 */
 const generateRandomColor = () => {
     /*
-        almacenamos en CONST numeros aleatorios generados con la 
-        propiedad (Match.random()) x 256 el resultado lo pasamos 
-        por la propiedad (Match.floor()) que redondea un numero 
-        decimal a su entero descendiente mas cercano
+        haciendo uso de la propiedad (Match.random() * 256),
+        generamos numeros aleatorios que posteriormente con
+        la propiedad (Match.floor()) redondeamos un numero 
+        decimal a su entero descendiente mas cercano. 
+        finalmente almacenamos los numeros generados
     */
-    const R = Math.floor(Math.random() * 256),
-          G = Math.floor(Math.random() * 256),
-          B = Math.floor(Math.random() * 256);
+    const r = Math.floor(Math.random() * 256),
+          g = Math.floor(Math.random() * 256),
+          b = Math.floor(Math.random() * 256);
 
     /* 
-        alamacenamos en 1 VAR la union de los 3 numeros
+        rgb_color: alamacena los diferentes valores convertidos
+        a rgb
     */
-    let rgb_color = `rgb(${R},${G},${B})`;
+    let rgb_color = `rgb(${r},${g},${b})`;
     
     /* 
-        por ultimo es importante retornar la VAR
+        finalmente hacemos un return de rgb_color
     */
     return rgb_color;
 };
 
 /* 
-    definimos un evento CLICK en $BTN_NAVBAR y pasamos una FUNCION
+    definimos un evento click en $navbarBtn y definimos una funcion
 */
-$btn_navbar.addEventListener("click", function() {
+$navbarSkinBtn.addEventListener("click", function() {
     /* 
-        alamacenamos en 1 VAR la FUNCION antes definida
+        newColor: alamacena la funcion generateRandomColor()
+        que es la encargada de generar los valores rgb
     */
-    const NEW_COLOR = generateRandomColor();
+    const newColor = generateRandomColor();
 
     /* 
-        pasamos a las VAR $IMG_BANNER la propiedad STYLE 
-        que seran igual a los valores que nos trae la funcion 
-        almacenada en NEWCOLOR
+        $navComponent.style.backgroundColor recibe como valor
+        la costante newColor
     */
-    $img_banner.style.border = `5px solid ${NEW_COLOR}`;
+    $navbarNav.style.backgroundColor = newColor;
     
     /* 
-        hacemos un FOREACH en las VARS $BG_GROUP, $COLOR_GROUP
-        $STRONGS pasamos un parametro a la cual le pasamos la 
-        propiedad STYLE que seran igual a los valores que nos 
-        trae la funcion almacenada en NEWCOLOR
+        hacemos un recorrido forEach, pasamos un parametro y definimos
+        una funcion. a esteoarametro pasamos un estilo css que recibe
+        como valor la constante newColor
     */
-    $bg_group.forEach(bg => {
-        bg.style.backgroundColor = NEW_COLOR
+    $backgroundChange.forEach(background => {
+        background.style.backgroundColor = newColor
     });
 
-    $color_group.forEach(color => {
-        color.style.color = NEW_COLOR
+    $colorChange.forEach(color => {
+        color.style.color = newColor
     });
 
-    $box_circles.forEach(circles => {
-        circles.style.border = `5px solid ${NEW_COLOR}`
+    $colorBorderChange.forEach(colorBorder => {
+        colorBorder.style.border = `2px solid ${newColor}`
     });
 
-    $borders.forEach(border => {
-        border.style.borderTop = `3px solid ${NEW_COLOR}`
+    $imgBorder.forEach(img => {
+        img.style.border = `5px solid ${newColor}`
     });
 
-    $strongs.forEach(text => {
-        text.style.color = NEW_COLOR;
+    $strongs.forEach(colorText => {
+        colorText.style.color = newColor;
+    });
+
+    $iconColorChange.forEach(icon => {
+        icon.style.fill = newColor;
     });
 
 });
 
-// ------------------ END CODE -------------------- //
+// __________ end code - background color generator __________ //
+
+
+
+// __________ start code - close menu __________ //
+
+/* 
+    .$menuIconNavbar: almacena el elemento html con ID menu-icon-navbar
+*/
+$menuIconNavbar = document.querySelector('#menu-icon-navbar');
+
+/* 
+    generamos un evento click en menuIconNavbar y definimos una funcion
+*/
+$menuIconNavbar.addEventListener('click', function() { 
+    /*
+        removemos de $navbarComponent la clase js_show_overlay
+        definida en 'src/sass/navbar.scss'  
+    */
+        $navbarComponent.classList.remove('js_show_overlay');
+            
+    /*
+        removemos de $navbarNav la clase js_show_menu_nav
+        definida en 'src/sass/navbar.scss'  
+    */
+    $navbarNav.classList.remove('js_show_menu_nav');
+
+    /*
+        removemos de $body la clase js_hidden_scroll
+        definida en 'src/sass/style.scss'  
+    */
+    $body.classList.remove('js_hidden_scroll');
+});
+
+// __________ end code - close menu __________ //
