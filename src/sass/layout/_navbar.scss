@@ -11,7 +11,7 @@
     right: 0;
     z-index: 89;
     height: 100vh; 
-    background: rgba(0, 0, 0, .5); 
+    background: $darkBackgroundOverlay; 
     visibility: hidden;
     
     /*
@@ -31,7 +31,7 @@
         un scroll en el eje Y para cuado la altura de la pantalla se reduce
     */
     nav {
-        background-color: $background_three;
+        background-color: $mainPageBackgroundColor;
         width: 0;
         height: 100%;
         overflow: hidden;
@@ -39,21 +39,21 @@
         transition: width .2s;
 
         /*
-            .cuando hacemos :hover implementamos el pseudo elemento
-            .::-webkit-scrollbar-thumb para mostrar el scroll
+            .implementamos el pseudo elemento ::-webkit-scrollbar-thumb 
+            .para darle color de fondo al scroll
         */
         &::-webkit-scrollbar-thumb {
-            background-color: #bcc0c4;
+            background-color: $lightBackgroundOne;
+            border-radius: 5px;
         }
 
         /*
             .implementamos el pseudo elemento ::-webkit-scrollbar 
-            .para definir el color de fondo y el ancho de la caja
-            .que contiene al scroll
+            .para definir el ancho de la caja que contiene al scroll
         */
         &::-webkit-scrollbar {
-            background-color: #f1f1f1;
-            width: 12px;
+            // background-color: $lightBackgroundOverlay;
+            width: 8px;
         }
 
         /*
@@ -76,14 +76,14 @@
             justify-content: space-between;
             height: 80px;
             align-items: center;
-            border-bottom: 1px solid $color_one;
+            border-bottom: 2px solid $lightBorderOne;
             padding: 0 20px;
 
             /*
                 tag-h4
             */
             h4 {
-                color: $color_one;
+                color: $lightColorTextOne;
                 font-size: 20px;
             }
 
@@ -91,17 +91,15 @@
                 box_menu_close_icon
             */
             .box_menu_close_icon {
-                border: 2px solid $color_one;
+                border: 2px solid $lightBorderOne;
                 border-radius: 50%;
                 cursor: pointer;
 
                 /*
-                    tag-svg: definimos la propiedad vertical-align: top para remover
-                    un espaciado que genera el navegador en los iconos
+                    tag-svg
                 */
                 svg {
-                    vertical-align: top;
-                    fill: $color_one;
+                    fill: $lightColorTextOne;
                     width: 32px;
                     height: 32px;
                 }
@@ -125,74 +123,74 @@
                     .border-bottom-left-radius creamos los bordes redondeados
                 */
                 &.js_active_link {
-                    background-color: $background_one;
+                    background-color: $lightBackgroundComponents;
                     border-top-left-radius: 20px;
                     border-bottom-left-radius: 20px;
                 
                     /*
                         .cunado tag-li tiene la clase js_active_link,
-                        .relaciona a tag-a y añade la porpiedad color
+                        .relaciona a tag-a y tag-button
                     */
-                    a {
-                        color: $color_four;
-
+                    a, button {
                         /*
-                            .cunado tag-li tiene la clase js_active_link,
-                            .relaciona a tag-svg y añade la porpiedad fill
+                            .buscamos dentro a tag-svg y cambiamos su color de fuente
                         */
                         svg {
-                            fill: $color_four;
+                            fill: $darkColorTextTwo;
                         }
 
                         /*
-                            .cunado tag-li tiene la clase js_active_link,
-                            .relaciona a tag-button y añade la porpiedad color
+                            .buscamos dentro a tag-span y cambiamos su color de fuente
                         */
-                        button {
-                            color: $color_four;
+                        span {
+                            color: $darkColorTextTwo;
                         }
                     }
                 }
 
                 /*
-                    tag-a: definimos inline-flex y su propiedad align-items junto con
-                    un height para centrar de manera vertical los elementos que 
+                    tag-a y tag-button: definimos inline-flex y su propiedad align-items 
+                    junto con un height para centrar de manera vertical los elementos que 
                     este contiene
                 */
-                a {
-                    text-decoration: none;
-                    color: $color_one;
-                    font-size: 20px;
-                    font-family: 'PT Sans', sans-serif;
+                a, button {
                     display: inline-flex;
                     height: 60px;
                     align-items: center;
 
                     /*
-                        tag-svg: definimos la propiedad vertical-align: top para
-                        remover un espaciado que genera el navegador en los iconos
+                        tag-svg
                     */
                     svg {
-                        vertical-align: top;
-                        fill: $color_one;
+                        fill: $lightColorTextOne;
                         width: 24px; 
                         height: 24px; 
                         margin: 0 10px;
                     }
 
                     /*
-                        tag-button: definimos border y outline none para remover
-                        los bordes que añade el navegador en los botones
+                        tag-span
                     */
-                    button {
-                        border: none;
-                        outline: none;
-                        background-color: transparent;
-                        color: $color_one;
+                    span {
+                        color: $lightColorTextOne;
+                        font-family: 'ubuntu-regular', sans-serif;
                         font-size: 20px;
-                        font-family: 'PT Sans', sans-serif;
-                        cursor: pointer;
                     }
+                }
+
+                /*
+                    tag-a
+                */
+                a {
+                    text-decoration: none;
+                }
+
+                /*
+                    tag-button: definimos background-color: transparent para remover
+                    cualquier color de fondo que tenga el botton
+                */
+                button {
+                    background-color: transparent;
                 }
             }
         }

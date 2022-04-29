@@ -11,11 +11,16 @@ completo
 completo
 
 -------- skills ------
-1. completar el contenido de las tarjetas
-2. documentar css desde box_skill_cards
+completo
 
 -------- certificates -------
 completo
+
+-------- proyects ---------
+1. pendiente todo
+
+-------- customers ---------
+1. agregar el parrafo de opinion del cliente
 
 -------- contacts ---------
 2. añadir un loading mientras llega la respuesta del servidor
@@ -27,8 +32,8 @@ completo
 como hacer scrollpsy y smoot scroll
 https://www.youtube.com/watch?v=fAAk9CATILc
 
-
-medidas rem y em
-https://www.youtube.com/watch?v=nz6DIeBdZtY
-
+https://es.camsoda.com/aanttonella
 https://es.camsoda.com/peitt
+Andrea-Fernandez
+https://es.camsoda.com/amypurple
+Sexydea's Cam chatur

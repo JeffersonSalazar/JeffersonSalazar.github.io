@@ -1,10 +1,94 @@
 /*
-    esta hoja de estilos contiene las fuentes utilizadas en
-    cada una de las secciones de este proyecto y sera consumida
-    por la hoja de estilos raiz en la RUTA 'assets/sass/main.scss' 
+	Poppins Font
 */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=PT+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@font-face {
+	font-family: 'poppins-light';
+	src: url('../../../assets/fonts/poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+	font-family: 'poppins-regular';
+	src: url('../../../assets/fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'poppins-semibold';
+	src: url('../../../assets/fonts/poppins/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: 'poppins-bold';
+	src: url('../../../assets/fonts/poppins/Poppins-Bold.ttf');
+}
+
+/*
+	Montserrat Font
+*/
+@font-face {
+	font-family: 'montserrat-light';
+	src: url('../../../assets/fonts/montserrat/Montserrat-Light.ttf');
+}
+
+@font-face {
+	font-family: 'montserrat-regular';
+	src: url('../../../assets/fonts/montserrat/Montserrat-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'montserrat-semibold';
+	src: url('../../../assets/fonts/montserrat/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: 'montserrat-bold';
+	src: url('../../../assets/fonts/montserrat/Montserrat-Bold.ttf');
+}
+
+/*
+	Ubuntu Font
+*/
+@font-face {
+	font-family: 'ubuntu-light';
+	src: url('../../../assets/fonts/ubuntu/Ubuntu-Light.ttf');
+}
+
+@font-face {
+	font-family: 'ubuntu-regular';
+	src: url('../../../assets/fonts/ubuntu/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'ubuntu-medium';
+	src: url('../../../assets/fonts/ubuntu/Ubuntu-Medium.ttf');
+}
+
+@font-face {
+	font-family: 'ubuntu-bold';
+	src: url('../../../assets/fonts/ubuntu/Ubuntu-Bold.ttf');
+}
+
+/*
+	Baloo 2 Font
+*/
+@font-face {
+	font-family: 'baloo2-regular';
+	src: url('../../../assets/fonts/baloo_2/Baloo2-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'baloo2-medium';
+	src: url('../../../assets/fonts/baloo_2/Baloo2-Medium.ttf');
+}
+
+@font-face {
+	font-family: 'baloo2-semibold';
+	src: url('../../../assets/fonts/baloo_2/Baloo2-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: 'baloo2-bold';
+	src: url('../../../assets/fonts/baloo_2/Baloo2-Bold.ttf');
+}
+
+
+

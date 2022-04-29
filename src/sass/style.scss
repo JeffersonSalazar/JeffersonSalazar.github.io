@@ -1,12 +1,11 @@
 /*
-    @imports: importacion de variables y fuentes utilizadas en este proyecto,
-    layout contiene la importacion de los estilos de cada una se las secciones.
-    ruta de los archivos 'src/sass/shared'
+    @imports: importacion de fuentes variables, mixins y el layout css
+    ruta de los archivos src\sass\shared
 */
-@import './shared/variables';
 @import './shared/fonts';
+@import './shared/variables';
+@import './shared/mixins';
 @import './shared/layout';
-
 
 /*
     reseteo de las propiedades que traen por defecto los navegadores
@@ -17,195 +16,239 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-};
-
-html {
-    scroll-behavior: smooth;
 }
 
+/*
+    tag-html: definimos scroll-behavior: smooth para dar suavidad
+    a las animaciones donde implementamos scroll
+*/
+// html {
+//     scroll-behavior: smooth;
+// }
 
 /*
-    body
+    tag-body
 */
 body {
-    background-color: $background_four;
+    background-color: $lightBackgroundBody;
 
     /*
-        js_body_dark_mode: clase añadida con javascript en 'src/js/header.js'
-        que añade un color de fondo para este elemento
+        js_body_dark_mode: clase añadida desde 'src/js/header.js',
+        definimos un color de fondo para cuando activamso el modo
+        oscuro
     */
     &.js_body_dark_mode { 
-        background-color: #3c4042ea; 
+        background-color: $darkBackgroundBody; 
     };
 
+    /*
+        js_body_dark_mode: clase añadida desde 'src/js/header.js',
+        definimos overflow-y: clip para remover el scroll cuando 
+        desplegamos el menu d enavegacion
+    */
     &.js_hidden_scroll {
         overflow-y: clip;
     }
-};
-
-
-/*
-    dark_components
-*/
-.dark_components {
-    /*
-        js_dark_mode_components: clase añadida con javascript en 'src/js/header.js'
-        que añade un color de fondo para este elemento
-    */
-    &.js_dark_mode_components {
-        background-color: #46484A;
-    };
-};
-
-
-/*
-    light_text
-*/
-.light_text {
-    /*
-        js_dark_mode_components: clase añadida con javascript en 'src/js/header.js'
-        que añade color a los textos de este elemento
-    */
-    &.js_light_text {
-        color: $color_one;
-    };
-};
-
-/* 
-    propiedades compartidas por la TAG BUTTON
-*/
-.box_btn {
-    text-align: center;
-
-    button {
-        outline: none;
-        border: none;
-        background-color: $background_three;
-        color: $color_one;
-        font-size: 20px;
-        font-family: 'PT Sans', sans-serif;
-        letter-spacing: 1px;
-        border-radius: 5px;
-        padding: 16px 70px;
-        cursor: pointer;
-        
-        &.btn_animated {
-            transition: transform 0.5s ease;
-            
-            &:hover {
-                transform: translateY(-8px);
-                box-shadow: $shadow_four;
-            };
-        };
-    };
-};
-
-/*
-    propiedades compartidas entre los 
-    SKILLS, CERTIFICATES, PROYECTS y CONTACTS
-*/
-.skills_component, .certificates_component,
-.proyects_component, .contacts_component {
-    margin-top: 80px;
-    padding: 40px 20px;
-};
-
-
-/*
-    propiedades compartidas entre los COMPONENTES BANNER,
-    PROYECTS y CONTACTS
-*/
-.skills_component, .certificates_component, .contacts_component {
-    background-color: $background_one;
-};
-
-
-/*
-
-*/
-.box_skill_cards, .certificates_section {
-    background-color: $background_one;
 }
 
-
-
-
+/*
+    tag-h1 y tag-h3 : estos estilos son tomados por todas las tag-h1 y tag-h2 
+    definidas en html
+*/
+h1, h3 {
+    font-family: "ubuntu-bold", sans-serif;
+}
 
 /*
-    propiedades compartidas por las TAG H3
+    tag-h2, tag-h4, tag-h5 y tag-h6: estos estilos son tomados 
+    por todas las tag-h2, tag-h4, tag-h5 y tag-h6 definidas en html
+*/
+h2, h4, h5, h6 {
+    font-family: "ubuntu-light", sans-serif;
+}
+
+/*
+    tag-h2 y tag-h4: estos estilos son tomados por todas las tag-h2 
+    y tag-h4 definidas en html
+*/
+h2, h4 {
+    color: $darkColorTextOne;
+}
+
+/*
+    tag-h3: estos estilos son tomados por todas las tag-h3 definidas
+    en html
 */
 h3 {
     text-align: center;
-    color: $color_three;
-    font-family: 'Open sans', sans-serif;
+    color: $mainPageColor;
     
-    @media (max-width: 999px) { // dispositivos 999px <= <= <=
-        font-size: 40px;
-        // margin-bottom: 15px;
-    };
+    /*
+        _@query 499px <== : definimos un tamaño de fuente para este 
+        _elemento en esta medida
+    */
+    @media (max-width: 499px) { 
+        font-size: 43px;
+    }
 
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
+    /*
+        _@query 500px ==> : definimos un tamaño de fuente para este 
+        _elemento en esta medida
+    */
+    @media (min-width: 500px) { 
+        font-size: 50px;
+    }
+
+    /*
+        _@query 1000px ==> : definimos un tamaño de fuente para este 
+        _elemento en esta medida
+    */
+    @media (min-width: 1000px) { 
         font-size: 60px;
-        // margin-bottom: 30px;
-    };
-};
-
+    }
+}
 
 /*
-    propiedades compartidas por las TAG P
+    tag-p: estos estilos son tomados por todas las tag-p definidas
+    en html
 */
 p {
-    font-family: 'PT Sans', sans-serif;
+    color: $darkColorTextOne;
+    font-family: 'poppin-regular', sans-serif;
     font-size: 20px;
+    letter-spacing: .4px;
     line-height: 1.5;
-};
+}
 
-
-h2, h4, p {
-    color: $color_two;
-};
-
+/*
+    tag-a: estos estilos son tomados por todas las tag-a definidas
+    en html
+*/
 a {
-    font-family: 'Baloo', sans-serif;
+    color: $mainPageColor;
+    font-family: 'baloo2-medium', sans-serif;
     font-size: 1.1rem;
-    color: $color_three;
 }
 
-h1, h2, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    // font-family: 'Open sans', sans-serif;
+/*
+    tag-svg, tag-img y tag-textarea: implementamos vertical-align para 
+    remover un espaciado que genera el navegador en estas etiquetas
+*/
+svg, img, textarea {
+    vertical-align: top;
 }
 
+/* 
+    tag-button: definimos outline y border none para remover los bordes
+    que añade el navegador en los botones
+*/
+button {
+    outline: none;
+    border: none;
+    font-family: 'baloo2-medium', sans-serif;
+    cursor: pointer;
+}
+
+/*
+    componentes a los que les definimos un margen en la parte superior
+    y un espaciado
+*/
+.skills_component, .certificates_component,
+.proyects_component, .customers_component, 
+.contacts_component {
+    margin-top: 80px;
+    padding: 60px 20px;
+}
+
+/*
+    componentes a los que les añadimos color de fondo para cuando tiene
+    activo el modo light
+*/
+.banner_component, .skills_component, .certificates_component, 
+.customers_component, .contacts_component {
+    background-color: $lightBackgroundComponents;
+};
+
+/*
+    dark_components: todos los componentes o elementos que tengan definda
+    esta clase son modificados cuando se activa el modo oscuro
+*/
+.dark_components {
+    /*
+        js_dark_mode_components: clase añadida desde 'src/js/header.js'
+        que añade color de fondo a estos elementos
+    */
+    &.js_dark_mode_components {
+        background-color: $darkBackgroundComponents;
+    }
+}
+
+/*
+    light_text: todos los textos o elementos que tengan definda
+    esta clase son modificados cuando se activa el modo oscuro
+*/
+.light_text {
+    /*
+        js_dark_mode_components: clase añadida desde 'src/js/header.js'
+        que añade color a estos elementos
+    */
+    &.js_light_text {
+        color: $lightColorTextOne;
+    }
+}
+
+/* 
+    box_btn: estos estilos son tomados por todas las clases box_btn 
+    definidas en html
+*/
+.box_btn {
+    /* 
+        tag-button
+    */
+    button {  
+        background-color: $mainPageBackgroundColor;
+        color: $lightColorTextOne;
+        font-size: 20px;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        padding: 10px 50px;
+        transition: .2s;
+
+        /*
+            .cuando hacemos :hover definimos transform: translateY() para
+            .desplazar el boton -8px hacia arriba
+        */
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px -10px $darkShadowTwo;
+        }
+    }
+}
+
+/* 
+    box_title_border: estos estilos son tomados por todas las clases
+    box_title_border definidas en html, definimos un borde en la
+    parte inferior con un ancho de 200px
+*/
 .box_title_border {
-    border: 2px solid $color_three;
+    border-bottom: 2px solid $mainPageColor;
     width: 200px;
     
+    /*
+        _@query 999px <== : definimos un un margen auto para centrar
+        _de manera horizontal elborde y un margen en la parte inferior
+        _para este elemento en esta medida
+    */
     @media (max-width: 999px) { // dispositivos 999px <= <= <=
         margin: 0 auto 30px;
-    };
+    }
     
-    @media (min-width: 1000px) { // dispositivos 1000px => => =>
+    /*
+        _@query 1000px ==> : definimos un un margen auto para centrar
+        _de manera horizontal elborde y un margen en la parte inferior
+        _para este elemento en esta medida
+    */
+    @media (min-width: 1000px) {
         margin: 0 auto 50px;
-    };
-}
-
-.box_imgMovil {
-    text-align: center;
-
-    img {
-        width: 140px;
-        height: 140px;
-        border: 5px solid $background_three;
-        border-radius: 5px;
-        padding: 0 0 0 10px;
-        
-        @media (max-width: 999px) { // dispositivos 999px <= <= <=
-            display: inline-block;
-            margin-bottom: 20px;
-        };
-        
-        @media (min-width: 1000px) { // dispositivos 1000px => => =>
-            display: none;
-        }
-    };
+    }
 }

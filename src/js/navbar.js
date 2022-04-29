@@ -37,8 +37,14 @@ $navbarLinks.forEach(link => link.addEventListener('click', activeLink));
 
 /* 
    .$navbarSkinBtn: almacena el elemento html con ID navbar-skin-btn
+
+   .$modalIcon: almacena el elemento html con ID box_modal_icon
+
+   .$btnBannerHdv: almacena el elemento html con ID btn-banner-hdv
 */
-let $navbarSkinBtn = document.querySelector("#navbar-skin-btn");
+let $navbarSkinBtn = document.querySelector("#navbar-skin-btn"),
+    $modalIcon = document.querySelector("#box_modal_icon"),
+    $btnBannerHdv = document.querySelector("#btn-banner-hdv");
 
 /* 
    .$backgroundChange: almacena todos los elementos html que tengan
@@ -47,8 +53,8 @@ let $navbarSkinBtn = document.querySelector("#navbar-skin-btn");
    .$colorChange: almacena todos los elementos html que tengan
    .la clase js_color_change
 
-   .$colorBorderChange: almacena todos los elementos html que tengan
-   .la clase js_color_border_change
+   .$titleBorder: almacena todos los elementos html que tengan
+   .la clase box_title_border
 
    .$imgBorder: almacena todos los elementos html que tengan
    .la clase box_img_border
@@ -60,9 +66,10 @@ let $navbarSkinBtn = document.querySelector("#navbar-skin-btn");
 */
 let $backgroundChange = document.querySelectorAll(".js_background_change"),
     $colorChange = document.querySelectorAll(".js_color_change"),
-    $colorBorderChange = document.querySelectorAll(".js_color_border_change");
+    $titleBorder = document.querySelectorAll(".box_title_border");
     $imgBorder = document.querySelectorAll(".box_img_border"),
     $iconColorChange = document.querySelectorAll(".js_icon_color_change");
+    // $iconBorder = document.querySelectorAll(".js_icon_border"),
     $strongs = document.querySelectorAll("strong");
 
 /* 
@@ -107,6 +114,18 @@ $navbarSkinBtn.addEventListener("click", function() {
         la costante newColor
     */
     $navbarNav.style.backgroundColor = newColor;
+
+    /* 
+        $modalIcon.style.border recibe como valor
+        la costante newColor
+    */
+    $modalIcon.style.border = `3px solid ${newColor}`;
+
+    /* 
+        $btnBannerHdv.style.border recibe como valor
+        la costante newColor
+    */
+    $btnBannerHdv.style.border = `2px solid ${newColor}`;
     
     /* 
         hacemos un recorrido forEach, pasamos un parametro y definimos
@@ -121,12 +140,12 @@ $navbarSkinBtn.addEventListener("click", function() {
         color.style.color = newColor
     });
 
-    $colorBorderChange.forEach(colorBorder => {
-        colorBorder.style.border = `2px solid ${newColor}`
+    $titleBorder.forEach(titleBorder => {
+        titleBorder.style.borderBottom = `2px solid ${newColor}`
     });
 
-    $imgBorder.forEach(img => {
-        img.style.border = `5px solid ${newColor}`
+    $imgBorder.forEach(imgBorder => {
+        imgBorder.style.border = `5px solid ${newColor}`
     });
 
     $strongs.forEach(colorText => {
@@ -136,6 +155,10 @@ $navbarSkinBtn.addEventListener("click", function() {
     $iconColorChange.forEach(icon => {
         icon.style.fill = newColor;
     });
+
+    // $iconBorder.forEach(iconBorder => {
+    //     iconBorder.style.border = `3px solid ${newColor}`
+    // });
 
 });
 

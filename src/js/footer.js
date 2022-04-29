@@ -55,7 +55,7 @@ function scrollStep() {
         /* 
             de lo contrario pasamos a window el metodo croll
             que recibe como primer parametro top: 0 y el
-            segundo window.pageYOffset - 10 que nos permite
+            segundo window.pageYOffset - 15 que nos permite
             definir la velocidad en que regresa a la posicion 0
         */
         window.scroll(0, window.pageYOffset - 15);

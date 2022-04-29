@@ -3,7 +3,7 @@
     bordes los elementos que este contiene
 */
 .banner_component {
-    padding: 40px 20px;
+    padding: 60px 20px;
 
     /*
         banner_flexbox
@@ -26,6 +26,7 @@
         .box_banner_biografy {  
             position: relative;
             z-index: 7;
+
             /*
                 _@query 1000px ==> : definimos un ancho para este elemento
                 _en esta medida
@@ -38,7 +39,7 @@
                 tag-h1
             */
             h1 {
-                color: $color_three;
+                color: $mainPageColor;
                 
                 /*
                     _@query 300px ==> : definimos un tamaño de fuente para 
@@ -82,10 +83,10 @@
             }
             
             /*
-                tag-h4
+                tag-h2
             */
-            h4 {
-                margin-bottom: 5px;
+            h2 {
+                margin-top: 4px;
                 
                 /*
                     _@query 300px ==> : definimos un tamaño de fuente para 
@@ -108,7 +109,7 @@
                     _este elemento en esta medida
                 */
                 @media (min-width: 600px) {
-                    font-size: 28px;
+                    font-size: 25px;
                 }
             }
     
@@ -116,7 +117,74 @@
                 tag-p
             */
             p {
-                padding: 30px 0 40px;
+                padding: 25px 0 40px;
+            }
+
+            /*
+                box_btn
+            */
+            .box_btn {
+                /*
+                    tag-button: definimos vertical-align: top para remover un espaciado
+                    que genera el navegador en los botones
+                */
+                button {
+                    vertical-align: top;
+
+                    /*
+                        _@query 429px <== : definimos un espaciado para este elemento en 
+                        _esta medida
+                    */
+                    @media (max-width: 429px) {
+                        padding: 10px 20px;
+                    }
+                }
+
+                /*
+                    tag-a: para convertir un enlace en un boton, es importante definirle un 
+                    display: inline-flex mas las propiedades width, justify-content, height, 
+                    align-items que dan tamaño al boton y centran su contenido
+                */
+                a {
+                    text-decoration: none;
+                    display: inline-flex;
+                    width: 187px;
+                    justify-content: space-around;
+                    height: 52px;
+                    align-items: center;
+                    border: 2px solid $mainPageBackgroundColor;
+                    border-radius: 5px;
+                    margin-left: 12px;
+                    transition: .2s;
+                    
+                    /*
+                        .cuando hacemos :hover sobre tag-a agregamos color y color de fondo,
+                        .finalmente definimos transform: translateY() para desplazar el boton 
+                        .-8px hacia arriba
+                    */
+                    &:hover {
+                        transform: translateY(-8px);
+                        box-shadow: 0 8px 20px -10px $darkShadowTwo;
+                    }
+
+                    /*
+                        _@query 429px <== : modificamos el ancho y margen izquierdo de este elemento en 
+                        _esta medida
+                    */
+                    @media (max-width: 429px) {
+                        width: 127px;
+                        margin-left: 2px;
+                    }
+
+                    /*
+                        tag-svg
+                    */
+                    svg {
+                        fill: $mainPageBackgroundColor;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
             }
         }
 
@@ -138,7 +206,7 @@
                 position: absolute;
                 top: 53px;
                 left: 58px;
-                border: 5px solid $background_three;
+                border: 5px solid $mainPageBackgroundColor;
                 border-radius: 5px;
                 width: 70%;
                 height: 89%;
@@ -154,12 +222,10 @@
     
             /*
                 tag-img: definimos position: relative para posicionar la imagen
-                por encima del borde, finalmente vertical-align para remover
-                el espaciado que generan los navegadores en las imagenes
+                por encima del borde
             */
             img {
                 position: relative;
-                vertical-align: top;
                 
                 /*
                     _@query 999px <== : definimos display: none para remover este

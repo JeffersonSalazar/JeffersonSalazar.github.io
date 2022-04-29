@@ -12,7 +12,7 @@
     left: 0;
     right: 0;
     z-index: 99;
-    background-color: $background_five;
+    background-color: $darkBackgroundOverlay;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,14 +25,14 @@
     */
     &.js_show_modal { 
         visibility: visible;
-    };
+    }
 
     /*
         modal_card: definimos transform: translateY() para transladar -100px hacia 
         arriba la tarjeta modal
     */
     .modal_card {   
-        background-color: $background_one;
+        background-color: $lightBackgroundComponents;
         width: 84%;
         transform: translateY(-100px);
 
@@ -44,7 +44,7 @@
         &.js_translate_down {
             transform: translateY(0px);
             transition: transform .5s ease-in-out;
-        };
+        }
       
         /*
             _@query 1199px <== : modificamos el ancho y añadimos overflow: hidden
@@ -59,23 +59,22 @@
             overflow-y: auto;
 
             /*
-                .cuando hacemos :hover implementamos el pseudo elemento
-                .::-webkit-scrollbar-thumb para mostrar el scroll
+                .implementamos el pseudo elemento ::-webkit-scrollbar-thumb 
+                .para darle color de fondo al scroll
             */
-            &:hover::-webkit-scrollbar-thumb {
-                background-color: #bcc0c4;
+            &::-webkit-scrollbar-thumb {
+                background-color: $lightBackgroundOne;
+                border-radius: 5px;
             }
 
             /*
                 .implementamos el pseudo elemento ::-webkit-scrollbar 
-                .para definir el color de fondo y el ancho de la caja
-                .que contiene al scroll
+                .para definir el ancho de la caja que contiene al scroll
             */
             &::-webkit-scrollbar {
-                background-color: #f1f1f1;
-                width: 12px;
+                width: 8px;
             }
-        };
+        }
 
         /*
             _@query 1200px <== : definimos flexbox para poner en linea los elementos
@@ -84,7 +83,7 @@
         @media (min-width: 1200px) {
             display: flex;
             border-radius: 5px;
-        };
+        }
 
         /*
             box_modal_img: definimos position: relative debido a que uno de sus
@@ -92,7 +91,7 @@
         */
         .box_modal_img {
             position: relative; 
-            background-color: #f5f6f6;
+            background-color: $lightBackgroundOverlay;
 
             /*
                 _@query 1200px ==> : definimos un ancho para este elemento
@@ -100,7 +99,7 @@
             */
             @media (min-width: 1200px) {
                 width: 40%;
-            };
+            }
 
             /*
                 box_img_border: definimos position: absolute e implementamos width 
@@ -108,7 +107,7 @@
             */
             .box_img_border {
                 position: absolute;
-                border: 5px solid $background_three;
+                border: 5px solid $mainPageBackgroundColor;
                 border-radius: 5px;
                 width: 70%;
                 height: 71%;
@@ -120,7 +119,7 @@
                 @media (min-width: 1200px) {
                     top: 100px;
                     left: 70px;
-                };
+                }
 
                 /*
                     _@query 1199px <== : definimos las propiedades top y left para 
@@ -170,23 +169,20 @@
 
             /*
                 tag-img: definimos position: relative para posicionar la imagen
-                por encima del borde, finalmente vertical-align para remover
-                el espaciado que generan los navegadores en las imagenes
+                por encima del borde
             */
             img {
                 position: relative;
-                vertical-align: top;
                 width: 100%;
                 height: 100%
-            };
-        };
+            }
+        }
 
         /*
             box_modal_content
         */
         .box_modal_content {
-            color: $color_two;
-            font-family: 'PT Sans', sans-serif;
+            color: $darkColorTextOne;
             
             /*
                 _@query 1199px <== : definimos un espaciado para separar el
@@ -194,7 +190,7 @@
             */
             @media (max-width: 1199px) {
                 padding: 16px;
-            };
+            }
             
             /*
                 _@query 1200px ==> : definimos un ancho y espaciado para separar
@@ -203,7 +199,7 @@
             @media (min-width: 1200px) {
                 width: 60%;
                 padding: 25px;
-            };
+            }
 
             /*
                 box_modal_icon: definimos position: relative y su propeidad left
@@ -215,19 +211,26 @@
                 left: 45%;
                 display: inline-block;
                 margin-bottom: 10px;
-                border: 2px solid $color_three;
+                border: 3px solid $mainPageColor;
                 border-radius: 50px;
 
                 /*
                     tag-svg
                 */
                 svg {
-                    vertical-align: top;
-                    fill: $color_three;
+                    fill: $mainPageColor;
                     width: 34px;
                     height: 34px;
                 }
-            };
+            }
+
+            /*
+                tag-p
+            */
+            p {
+                font-family: 'ubuntu-medium', sans-serif;
+                line-height: 1.3;
+            }
 
             /*
                 tag-ol
@@ -238,6 +241,7 @@
                 */
                 li {
                     list-style: none;
+                    font-family: 'ubuntu-medium', sans-serif;
                     font-size: 20px;
                     margin: 14px 0;
                     
@@ -245,13 +249,12 @@
                         tag-svg
                     */
                     svg {
-                        vertical-align: top;
-                        fill: $color_three;
+                        fill: $mainPageColor;
                         width: 24px;
                         height: 24px;
                     }
-                };
-            };
-        };
-    };
-};
+                }
+            }
+        }
+    }
+}

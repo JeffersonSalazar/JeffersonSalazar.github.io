@@ -1,0 +1,146 @@
+/*
+	section_name: contenedor definido para implementar
+	margin o padding con el fin de separar las secciones
+	entre si
+*/
+.section_name {
+	padding: 50px 0;
+
+	/*
+		container_name: contenedor definido para manejar
+		el responsive implementando width
+	*/
+	.container_name {
+		width: 90%;
+		margin: 0 auto;
+
+		/*
+			flexbox_name: contenedor definido para 
+			implementar flexbox si se requiere
+		*/
+		.flexbox_name {
+			/*
+				swiper: tiene definido por defecto position: relative esto
+				evita que los iconos de la paginacion se desplazen hacia 
+				arriba cuando reducimos el alto de la pantalla, finalmente 
+				padding nos ayuda a ampliar la altura de este contenedor 
+				evitando que los iconos de la navegacion se monten encima 
+				de las targetas
+			*/
+			.swiper {
+				padding-bottom: 40px;
+
+				/*
+					swiper-wrapper
+				*/
+				.swiper-wrapper {
+					/*
+						swiper-slide
+					*/
+					.swiper-slide {
+						background: #fff;
+						box-shadow: 0 4px 12px 0 #ccc;
+
+						/*
+							responsive 900px --> : definimos flexbox para poner sus
+							elementos en linea mas su propiedad align-items para centrar 
+							los elementos verticalmente
+						*/
+						@media (min-width: 900px) {
+							display: flex;
+							align-items: center;
+						}
+
+						/*
+							tag-img: la propiedad vertical-align: top 
+							remueve el espaciado que genera el navegador
+							en las tag-img, es importante definir un width
+							y height igual al de su contenedor padre mas la
+							propiedad object-fit: cover; para que esta se 
+							ajuste al contenedor 
+						*/
+						img {
+							vertical-align: top;
+							width: 100%;
+							height: 400px;
+							object-fit: cover;
+						}
+
+						/*
+							card-description: definimos pading para separar esta caja
+							de la caja que contiene a la tag-img
+						*/
+						.card-description {
+							padding: 30px;
+
+							/*
+								responsive 900px --> : modificamos el padding en el eje Y 
+								ya que flebox genera espaciado cuando centramos el contenido 
+								verticalmente gracias a la altura que tiene la img
+							*/
+							@media (min-width: 900px) {
+								padding: 0 30px;
+							}
+
+							/*
+								tag-p
+							*/
+							p {
+								margin: 30px 0;
+							}
+
+							/*
+								tag-a: para destacar la propiedad
+								display: block para que la tag tome 
+								el ancho total del contenedor y 
+								text-align: center para centrar el
+								contenido del boton
+							*/
+							a {
+								text-decoration: none;
+								display: block;
+								text-align: center;
+								font-size: 1.3rem;
+								letter-spacing: 2px;
+								background: tomato;
+								color: #fff;
+								padding: 12px 0;
+							}
+						}
+					}
+				}
+
+				/*
+					swiper-pagination: tiene definido por defecto 
+					position: absolute por lo que implementando su
+					propiedad bottom podemos posicionar los iconos
+					del slider, tambien podemos manejar el width de 
+					este contenedor y el centrado de los iconos
+				*/
+				.swiper-pagination {
+					bottom: 0;
+
+					/*
+						swiper-pagination-bullet: a travez de esta clase podemos 
+						modificar el width y height de los iconos de la paginacion 
+						y con margin separarlos entre si
+					*/
+					.swiper-pagination-bullet {
+						width: 14px;
+						height: 14px;
+						// margin: 0 12px;
+					}
+
+					/*
+						swiper-pagination-bullet-active: por medio de esta clase 
+						podemos modificar el color de los iconos de la paginacion 
+						cuando estos esten activos
+					*/
+					.swiper-pagination-bullet-active {
+						background-color: #d626c8;
+					}
+				}
+			}
+		}
+	}
+}

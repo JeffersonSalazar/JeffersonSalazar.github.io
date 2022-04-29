@@ -176,4 +176,4 @@ $menuIconHeader.addEventListener('click', function() {
     $body.classList.add('js_hidden_scroll');
 });
 
-// __________ end code - transform icon and show menu __________ //
+// __________ end code - show menu __________ //

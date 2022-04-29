@@ -1,30 +1,89 @@
-/*
-    colores
-*/
-$color_one: #fff;
-$color_two: #7e7b7c;
-$color_three: rgb(76, 144, 249);
-$color_four: #333;
+/* ____________________ start main colors ____________________ /*
 
 /*
-    fondos
+    $mainPageColor: almacena el color principal de la pagina
+    el cual es impelmentado en varios elementos html
+
+    $mainPageBackgroundColor: almacena el color de fondo principal 
+    de la pagina el cual es impelmentado en varios elementos html
+
+    $mainPageBorderColor: almacena el color de bordes principal 
+    de la pagina el cual es impelmentado en varios elementos html
 */
-$background_one: #fff;
-$background_two: #46484A;
-$background_three: rgb(76, 144, 249);
-$background_four: #eee;
-$background_five: #0000004b;
+$mainPageColor: rgb(233, 54, 15);
+$mainPageBackgroundColor: rgb(233, 54, 15);
+$mainPageBorderColor: rgb(233, 54, 15);
+
+/* ____________________ end main colors ____________________ /*
+
+
+
+/* ____________________ start colors ____________________ /*
+
+/*
+    light text colors
+*/
+$lightColorTextOne: #fff;
+
+/*
+    dark text colors
+*/
+$darkColorTextOne: #7e7b7c;
+$darkColorTextTwo: #333;
+
+/* ____________________ end colors ____________________ /*
+
+
+/* ____________________ start backgrounds ____________________ /*
+
+/*
+    light background colors
+*/
+$lightBackgroundOne: #bcc0c4;
+$lightBackgroundBody: #eee;
+$lightBackgroundComponents: #fff;
+$lightBackgroundOverlay: #f5f6f6;
+
+/*
+    dark background colors
+*/
+$darkBackgroundBody: #3c4042ea;
+$darkBackgroundComponents: #46484A;
+$darkBackgroundOverlay: #00000080;
+
+/* ____________________ end backgrounds ____________________ /*
+
+
+/* ____________________ start shadows ____________________ /*
+    
+/*
+    light shadow colors
+*/
+$lightShadowOne: #c1c1c1;
+$lightShadowTwo: #ccc;
 
 
 /*
-    sombras
+    dark shadow colors
 */
-$shadow_one: 0 0 10px 0 #0000001f;
-$shadow_four: 0 5px 15px -5px #686767d8;
-$shadow_five: #8d8a8a55;
+$darkShadowOne: #0000001f;
+$darkShadowTwo: #686767d8;
+
+/* ____________________ end shadows ____________________ /*
+
+
+
+/* ____________________ start borders ____________________ /*
 
 /*
-    bordes
+    light border colors
 */
-$border_one: 1px solid #cccccc86;
-$border_two: 1px solid #cccccc46;
+$lightBorderOne: #fff;
+
+/*
+    dark border colors
+*/
+$darkBorderOne: #00000026;
+
+
+
