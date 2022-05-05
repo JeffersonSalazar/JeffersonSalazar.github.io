@@ -41,10 +41,6 @@ let topWindow = 0;
     ejecutamos la funcion definida en el setInterval
 */
 function scrollStep() {
-    /*
-        si el PAGEYOFFSET es igual a 0 CLEARINTERVAL limpia el valor 
-        de la VAR TOPWINDOW
-    */
    /* 
         si window.scrollY es igual a 0, clearInterval se encarga
         de limpiar el valor que tenga topWindow
@@ -60,7 +56,6 @@ function scrollStep() {
         */
         window.scroll(0, window.pageYOffset - 15);
     }
-    
 };
 
 /*

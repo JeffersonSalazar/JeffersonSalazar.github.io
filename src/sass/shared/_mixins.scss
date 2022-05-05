@@ -1,9 +1,12 @@
-/* ____________________ start inputs style ____________________ */
+/* ____________________ start icon check style ____________________ */
 
 /*
-    inputsStyle: contiene los estilos principales aplicados a todas
-    las tag-input y tag-textarea
+    _iconCheckStyle: mixin aplicado a las tag-svg que sean iconos de check
 */
+@mixin iconCheckStyle {    
+    fill: $mainPageColor;
+    width: 34px;
+    height: 34px;
+}
 
-
-/* ____________________ end inputs style ____________________ */
+/* ____________________ end icon check style ____________________ */

@@ -11,9 +11,7 @@ let $inputs = document.querySelectorAll('input');
     .ID error-name
 
     .errorEmail: alamacena el elemento html definido con 
-    .ID error-email
-
-    
+    .ID error-email  
 */
 let $errorName = document.querySelector('#error-name'),
     $errorEmail = document.querySelector('#error-email');
@@ -26,7 +24,7 @@ let expName = /^[a-zA-Z\s]{4,16}$/,
     expEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,3}$/;
 
 /* 
-    hacemos un recorrido forEach a $inputs, este recibe un 
+    hacemos un recorrido forEach en $inputs, este recibe un 
     parametro y definimos una funcion
 */
 $inputs.forEach(input => {
@@ -141,8 +139,6 @@ $form.addEventListener('submit', function(e){
         email: e.target.email.value,
         post: e.target.post.value
     };
-
-    console.log(formFields)
 
     /* 
         FETCH: recibe como parametro la variable api, luego definimos un OBJETO

@@ -93,11 +93,13 @@ componentes
 </carpeta src> 
 
 
+index.html: archivo principal del proyecto
+
+
 readme.md: en este definimos la guia de como esta construido o estructurado 
 el proyecto
 
 
-index.html: archivo principal del proyecto
 
 
 // ____________________ estuctura html ____________________ //
@@ -137,10 +139,10 @@ index.html: archivo principal del proyecto
 
 
         //
-            main_container: definido para contener los diferentes componentes que conforman
-            el cuerpo del portafolio
+            main_components_container: definido para contener los diferentes componentes que
+            conforman el cuerpo del portafolio
         //
-        <main class="main_container">
+        <main class="main_components_container">
             //
                 banner_component: en este definimos la descripcion personal acompañada de una
                 imagen, el boton encargado de abril el modal y un enlace para descargar la
@@ -220,7 +222,7 @@ index.html: archivo principal del proyecto
 
     custom js: estos son son archivos javascript personalizados para cada
     componente, cabe dastacar que estos estan nombrados de la misma manera
-    que se nombraron los componentes en html
+    que se nombraron los componentes en html y estan definidos en el mismo orden
 </body>
 
 
@@ -270,10 +272,12 @@ navbar.js {
     3. cerrar el menu de navegacion
 }
 
-modal.js {
+banner.js {
     1. abrir el modal
+}
 
-    2. cerrar el modal
+modal.js {
+    1. cerrar el modal
 }
 
 certificates.js {

@@ -1,89 +1,78 @@
 /* ____________________ start main colors ____________________ /*
 
 /*
-    $mainPageColor: almacena el color principal de la pagina
-    el cual es impelmentado en varios elementos html
-
-    $mainPageBackgroundColor: almacena el color de fondo principal 
-    de la pagina el cual es impelmentado en varios elementos html
-
-    $mainPageBorderColor: almacena el color de bordes principal 
-    de la pagina el cual es impelmentado en varios elementos html
+    .$mainPageColor: almacena el color principal de la pagina
+    .el cual es impelmentado en varios elementos html
 */
-$mainPageColor: rgb(233, 54, 15);
-$mainPageBackgroundColor: rgb(233, 54, 15);
-$mainPageBorderColor: rgb(233, 54, 15);
+$mainPageColor: rgb(197, 147, 254);
 
-/* ____________________ end main colors ____________________ /*
+/*
+    .$mainPageBackgroundColor: almacena el color de fondo principal 
+    .de la pagina el cual es impelmentado en varios elementos html
+*/
+$mainPageBackgroundColor: rgb(197, 147, 254);
+
+/*
+    .$mainPageBorderColor: almacena el color de bordes principal 
+    .de la pagina el cual es impelmentado en varios elementos html
+*/
+$mainPageBorderColor: rgb(197, 147, 254);
 
 
 
 /* ____________________ start colors ____________________ /*
 
 /*
-    light text colors
+    .$lightColorIconsOne: variable implementada en los iconos de 
+    .contacts_component y footer_component
 */
-$lightColorTextOne: #fff;
+$lightColorIconsOne: #fff;
 
 /*
-    dark text colors
+    .$lightColorSubtitlesOne: variable implementada en los subtitulos de 
+    .banner_component y customers_component
 */
-$darkColorTextOne: #7e7b7c;
-$darkColorTextTwo: #333;
+$lightColorSubtitlesOne: #aaaaaa;
 
-/* ____________________ end colors ____________________ /*
 
 
 /* ____________________ start backgrounds ____________________ /*
 
 /*
-    light background colors
+    .bodyBackgroundLightMode: varibale implementada en tag-body para manejar
+    .el light mode del sitio web
 */
-$lightBackgroundOne: #bcc0c4;
-$lightBackgroundBody: #eee;
-$lightBackgroundComponents: #fff;
-$lightBackgroundOverlay: #f5f6f6;
+$bodyBackgroundLightMode: #eee;
 
 /*
-    dark background colors
+    .bodyBackgroundDarkMode: varibale implementada en tag-body para manejar
+    .el dark mode del sitio web
 */
-$darkBackgroundBody: #3c4042ea;
-$darkBackgroundComponents: #46484A;
-$darkBackgroundOverlay: #00000080;
+$bodyBackgroundDarkMode: #3c4042ea;
 
-/* ____________________ end backgrounds ____________________ /*
+/*
+    .$darkBackgroundOverlayOne: variable implementada al overlay de
+    .navbar_component y modal_component
+*/
+$darkBackgroundOverlayOne: #00000080;
+
+/*
+    .$lightBackgroundScrollOne: variable implementada al de scrollY de
+    .navbar_component y modal_component
+*/
+$lightBackgroundScrollOne: #bcc0c4;
+
 
 
 /* ____________________ start shadows ____________________ /*
-    
-/*
-    light shadow colors
-*/
-$lightShadowOne: #c1c1c1;
-$lightShadowTwo: #ccc;
-
 
 /*
-    dark shadow colors
+    .$darkShadowButtonsOne: variable implementada en los botones de 
+    .banner_component y contacts_component
 */
-$darkShadowOne: #0000001f;
-$darkShadowTwo: #686767d8;
-
-/* ____________________ end shadows ____________________ /*
+$darkShadowButtonsOne: #696969d8;
 
 
-
-/* ____________________ start borders ____________________ /*
-
-/*
-    light border colors
-*/
-$lightBorderOne: #fff;
-
-/*
-    dark border colors
-*/
-$darkBorderOne: #00000026;
 
 
 

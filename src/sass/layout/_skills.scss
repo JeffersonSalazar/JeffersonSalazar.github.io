@@ -15,7 +15,7 @@
         .skills_grid {
             display: grid;
             gap: 16px;
-            padding: 10px 50px;
+            padding: 10px 30px;
             overflow-x: scroll;
   
             /*
@@ -74,17 +74,29 @@
             .box_skill_cards { 
                 position: relative;
                 text-align: center;
-                box-shadow: 0 5px 10px 0 $lightShadowTwo;
+                box-shadow: 0 5px 10px 0 var(--shadowColor);
                 padding: 10px 12px;
-                transition: .3s;
                 cursor: pointer;
-        
+
                 /*
-                    .cuando hacemos :hover en las targetas implementamos la propiedad
-                    .transform: scale(); para ampliar el tamaño de estas
+                    .cuando hacemos :hover en box_skill_cards
                 */
-                &:hover{
-                    transform: scale(1.05);
+                &:hover {
+                    /*
+                        .agregamos la propiedad transform: scale() para aumentar el 
+                        .tamaño de pseudo elementos
+                    */
+                    &::before, &::after {
+                        transform: scale(0.9);
+                    }
+
+                    /*
+                        .modificamos la propiedad transform: scale() para aumentar el 
+                        .tamaño de las imagenes
+                    */
+                    img {
+                        transform: scale(1);
+                    }
                 }
     
                 /*
@@ -98,7 +110,7 @@
                     display: block;
                     position: absolute;
                     opacity: .2;
-                    transition: .5s;
+                    transition:  transform .3s;
                 }
     
                 /*
@@ -126,9 +138,13 @@
                 }
     
                 /*
-                    tag-img
+                    tag-img: definimos la propiedad transform: scale() para disminuir el 
+                    tamaño de las imagenes
                 */
                 img {
+                    transform: scale(0.9);
+                    transition: transform .3s;
+
                     /*
                         _@query 479px <== : definimos un ancho y alto para este elemento
                         _en esta medida
@@ -156,12 +172,12 @@
                         height: 110px;
                     }
                 }
-            
+
                 /*
-                    tag-p
+                    tag-h6
                 */
-                p {
-                    font-size: 16px;
+                h6 {
+                    color: var(--textColor);
                 }
             }
   

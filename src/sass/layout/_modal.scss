@@ -12,7 +12,7 @@
     left: 0;
     right: 0;
     z-index: 99;
-    background-color: $darkBackgroundOverlay;
+    background-color: $darkBackgroundOverlayOne;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,7 @@
         arriba la tarjeta modal
     */
     .modal_card {   
-        background-color: $lightBackgroundComponents;
+        background-color: var(--backgroundColor);
         width: 84%;
         transform: translateY(-100px);
 
@@ -63,7 +63,7 @@
                 .para darle color de fondo al scroll
             */
             &::-webkit-scrollbar-thumb {
-                background-color: $lightBackgroundOne;
+                background-color: $lightBackgroundScrollOne;
                 border-radius: 5px;
             }
 
@@ -91,7 +91,7 @@
         */
         .box_modal_img {
             position: relative; 
-            background-color: $lightBackgroundOverlay;
+            background-color: #f5f6f6;
 
             /*
                 _@query 1200px ==> : definimos un ancho para este elemento
@@ -111,6 +111,7 @@
                 border-radius: 5px;
                 width: 70%;
                 height: 71%;
+                box-shadow: 0 5px 10px 0 #ccc;
 
                 /*
                     _@query 1200px ==> : definimos las propiedades top y left para 
@@ -182,8 +183,6 @@
             box_modal_content
         */
         .box_modal_content {
-            color: $darkColorTextOne;
-            
             /*
                 _@query 1199px <== : definimos un espaciado para separar el
                 _contenido de los bordes del contenedor en esta medida
@@ -215,12 +214,12 @@
                 border-radius: 50px;
 
                 /*
-                    tag-svg
+                    tag-svg: implementamos el mixin 'iconCheckStyle' definido en 
+                    'src\sass\shared\_mixins.scss' que contiene los estilos principales 
+                    de este elemento
                 */
                 svg {
-                    fill: $mainPageColor;
-                    width: 34px;
-                    height: 34px;
+                    @include iconCheckStyle;
                 }
             }
 
@@ -241,6 +240,7 @@
                 */
                 li {
                     list-style: none;
+                    color: var(--textColor);
                     font-family: 'ubuntu-medium', sans-serif;
                     font-size: 20px;
                     margin: 14px 0;

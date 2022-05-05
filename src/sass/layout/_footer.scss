@@ -18,9 +18,10 @@
             .lo hacemos nuevamente visible
         */
         &.js_show_gotop {
-            fill: $lightColorTextOne;
+            fill: $lightColorIconsOne;
             background-color: $mainPageBackgroundColor;
             border-radius: 50%;
+            box-shadow: 0 5px 10px 0 var(--shadowColor);
             visibility: visible;
             animation: animateGotop 1s ease 1s 3;
             cursor: pointer;

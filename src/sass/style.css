@@ -98,67 +98,56 @@
 /* ____________________ start main colors ____________________ /*
 
 /*
-    $mainPageColor: almacena el color principal de la pagina
-    el cual es impelmentado en varios elementos html
-
-    $mainPageBackgroundColor: almacena el color de fondo principal 
-    de la pagina el cual es impelmentado en varios elementos html
-
-    $mainPageBorderColor: almacena el color de bordes principal 
-    de la pagina el cual es impelmentado en varios elementos html
+    .$mainPageColor: almacena el color principal de la pagina
+    .el cual es impelmentado en varios elementos html
 */
-/* ____________________ end main colors ____________________ /*
-
-
-
+/*
+    .$mainPageBackgroundColor: almacena el color de fondo principal 
+    .de la pagina el cual es impelmentado en varios elementos html
+*/
+/*
+    .$mainPageBorderColor: almacena el color de bordes principal 
+    .de la pagina el cual es impelmentado en varios elementos html
+*/
 /* ____________________ start colors ____________________ /*
 
 /*
-    light text colors
+    .$lightColorIconsOne: variable implementada en los iconos de 
+    .contacts_component y footer_component
 */
 /*
-    dark text colors
+    .$lightColorSubtitlesOne: variable implementada en los subtitulos de 
+    .banner_component y customers_component
 */
-/* ____________________ end colors ____________________ /*
-
-
 /* ____________________ start backgrounds ____________________ /*
 
 /*
-    light background colors
+    .bodyBackgroundLightMode: varibale implementada en tag-body para manejar
+    .el light mode del sitio web
 */
 /*
-    dark background colors
+    .bodyBackgroundDarkMode: varibale implementada en tag-body para manejar
+    .el dark mode del sitio web
 */
-/* ____________________ end backgrounds ____________________ /*
-
-
+/*
+    .$darkBackgroundOverlayOne: variable implementada al overlay de
+    .navbar_component y modal_component
+*/
+/*
+    .$lightBackgroundScrollOne: variable implementada al de scrollY de
+    .navbar_component y modal_component
+*/
 /* ____________________ start shadows ____________________ /*
-    
-/*
-    light shadow colors
-*/
-/*
-    dark shadow colors
-*/
-/* ____________________ end shadows ____________________ /*
-
-
-
-/* ____________________ start borders ____________________ /*
 
 /*
-    light border colors
+    .$darkShadowButtonsOne: variable implementada en los botones de 
+    .banner_component y contacts_component
 */
+/* ____________________ start icon check style ____________________ */
 /*
-    dark border colors
+    _iconCheckStyle: mixin aplicado a las tag-svg que sean iconos de check
 */
-/* ____________________ start inputs style ____________________ */
-/*
-    inputsStyle: contiene los estilos principales aplicados a todas
-    las tag-input y tag-textarea
-*/
-/* ____________________ end inputs style ____________________ */
+/* ____________________ end icon check style ____________________ */
 /*
     @imports: de las hojas de estilo de cada una de las secciones 
     de este proyecto definidas dentro de 'src\sass\layout', este 
@@ -175,7 +164,7 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background-color: #fff;
+  background-color: var(--backgroundColor);
   height: 70px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -188,8 +177,8 @@
         .para fijar este elemento y darle tamaño implementando una altura
     */
   /*
-        box_dark_mode: definimos position: relative debido a que uno de
-        sus elementos hijos tiene definido position: absolute
+        dark_mode_content: definimos flexbox y su propiedad align-items para
+        centrar de manera vertical los elementos que este contiene
     */
   /*
         box_menu_icon
@@ -203,11 +192,33 @@
   left: 0;
   z-index: 79;
   height: 60px;
-  -webkit-box-shadow: 0 0 10px 0 #0000001f;
-          box-shadow: 0 0 10px 0 #0000001f;
+  -webkit-box-shadow: 0 0 10px 0 var(--shadowColor);
+          box-shadow: 0 0 10px 0 var(--shadowColor);
 }
 
-.header_component .box_dark_mode {
+.header_component .dark_mode_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*
+            tag-svg
+        */
+  /*
+            box_dark_mode: definimos position: relative debido a que uno de
+            sus elementos hijos tiene definido position: absolute
+        */
+}
+
+.header_component .dark_mode_content svg {
+  fill: #c593fe;
+  width: 36px;
+  height: 36px;
+}
+
+.header_component .dark_mode_content .box_dark_mode {
   position: relative;
   width: 60px;
   height: 30px;
@@ -215,14 +226,15 @@
   background-color: #fff;
   -webkit-box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.157), inset 0 -4px 4px 0 rgba(199, 195, 195, 0.246);
           box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.157), inset 0 -4px 4px 0 rgba(199, 195, 195, 0.246);
+  margin-left: 16px;
   /*
-            dark_mode_icon: definimos position: absolute y sus propiedades top y left 
-            para posicionar el icono dentro de su contenedor padre, finalmente la
-            propeidad tarnsform: scale para ajustar el tamaño del icono
-        */
+                dark_mode_icon: definimos position: absolute y sus propiedades top y left 
+                para posicionar el icono dentro de su contenedor padre, finalmente la
+                propeidad tarnsform: scale para ajustar el tamaño del icono
+            */
 }
 
-.header_component .box_dark_mode .dark_mode_icon {
+.header_component .dark_mode_content .box_dark_mode .dark_mode_icon {
   position: absolute;
   top: 0;
   left: 0;
@@ -235,17 +247,17 @@
           transform: scale(0.9);
   -webkit-box-shadow: inset 0 4px 4px 0  #ffffff, inset 0 -4px 4px 0 #ffffff;
           box-shadow: inset 0 4px 4px 0  #ffffff, inset 0 -4px 4px 0 #ffffff;
+  -webkit-transition: left .2s;
+  transition: left .2s;
   cursor: pointer;
-  -webkit-transition: left .3s;
-  transition: left .3s;
   /*
-                .js_active_dark_mode: clase añadida desde 'src/js/header.js',
-                .cuando dark_mode_icon tiene esta clase definimos left: 30px 
-                .que hace desplazar el icono y cambia el color de fondo
-            */
+                    .js_active_dark_mode: clase añadida desde 'src/js/header.js',
+                    .cuando dark_mode_icon tiene esta clase definimos left: 30px 
+                    .que hace desplazar el icono y cambia el color de fondo
+                */
 }
 
-.header_component .box_dark_mode .dark_mode_icon.js_active_dark_mode {
+.header_component .dark_mode_content .box_dark_mode .dark_mode_icon.js_active_dark_mode {
   left: 30px;
   background: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#575555));
   background: linear-gradient(to bottom, #454545, #575555);
@@ -262,11 +274,19 @@
 }
 
 .header_component .box_open_menu_icon svg {
-  fill: #e9360f;
+  fill: #c593fe;
   width: 38px;
   height: 38px;
 }
 
+/*
+    mainNavbarColorOne: variable local que almacena el primer color 
+    principal implementado solo a los elementos de este componente 
+*/
+/*
+    mainNavbarColorTwo: variable local que almacena el segundo color 
+    principal implementado solo a los elementos de este componente 
+*/
 /*
     navbar_component: definimos position: fixed y sus propiedades top, 
     left, right y z-index para fijar este elemento y darle tamaño 
@@ -280,7 +300,7 @@
   right: 0;
   z-index: 89;
   height: 100vh;
-  background: #00000080;
+  background-color: #00000080;
   visibility: hidden;
   /*
         .js_show_overlay: clase añadida desde 'src/js/navbar.js',
@@ -301,7 +321,7 @@
 }
 
 .navbar_component nav {
-  background-color: #e9360f;
+  background-color: #c593fe;
   width: 0;
   height: 100%;
   overflow: hidden;
@@ -389,6 +409,9 @@
 
 .navbar_component nav .ul_navbar {
   padding: 20px 0 20px 9px;
+  /*
+                tag-li
+            */
 }
 
 .navbar_component nav .ul_navbar li {
@@ -403,9 +426,6 @@
                     tag-a y tag-button: definimos inline-flex y su propiedad align-items 
                     junto con un height para centrar de manera vertical los elementos que 
                     este contiene
-                */
-  /*
-                    tag-a
                 */
   /*
                     tag-button: definimos background-color: transparent para remover
@@ -469,23 +489,42 @@
   font-size: 20px;
 }
 
-.navbar_component nav .ul_navbar li a {
-  text-decoration: none;
-}
-
 .navbar_component nav .ul_navbar li button {
   background-color: transparent;
 }
 
 /*
-    banner_component: definimos un espaciado para separar de los
-    bordes los elementos que este contiene
+    banner_component: definimos margin-top: 0 !important para remover un
+    margen en la parte superior que se definido en todos los componentes
+    en 'src\sass\style.scss' 
 */
 .banner_component {
-  padding: 60px 20px;
+  margin-top: 0 !important;
+  /*
+        _@query 999px <== : definimos padding-top: 0 !important para 
+        _modificar un el espaciado en la parte superior que se definido 
+        _en todos los componentes en 'src\sass\style.scss' para esta medida
+    */
+  /*
+        _@query 478px <== : definimos padding-top: 0 !important para 
+        _modificar un el espaciado en la parte superior que se definido 
+        _en todos los componentes en 'src\sass\style.scss' para esta medida
+    */
   /*
         banner_flexbox
     */
+}
+
+@media (max-width: 999px) {
+  .banner_component {
+    padding-top: 35px !important;
+  }
+}
+
+@media (max-width: 478px) {
+  .banner_component {
+    padding-top: 25px !important;
+  }
 }
 
 .banner_component .banner_flexbox {
@@ -519,8 +558,6 @@
 }
 
 .banner_component .banner_flexbox .box_banner_biografy {
-  position: relative;
-  z-index: 7;
   /*
                 _@query 1000px ==> : definimos un ancho para este elemento
                 _en esta medida
@@ -529,10 +566,13 @@
                 tag-h1
             */
   /*
-                tag-h2
+                tag-h4
             */
   /*
-                tag-p
+                tag-p: definimos un max-width para que apartir de 600px en adelante
+                este elemento tenga un ancho de 700px en referencia al ancho de su 
+                contenedor padre, con esto evitamos que este elemento tome el 100%
+                de ancho
             */
   /*
                 box_btn
@@ -546,21 +586,16 @@
 }
 
 .banner_component .banner_flexbox .box_banner_biografy h1 {
-  color: #e9360f;
   /*
                     _@query 300px ==> : definimos un tamaño de fuente para 
                     _este elemento en esta medida
                 */
   /*
-                    _@query 400px ==> : definimos un tamaño de fuente para 
+                    _@query 372px ==> : definimos un tamaño de fuente para 
                     _este elemento en esta medida
                 */
   /*
-                    _@query 600px ==> : definimos un tamaño de fuente para 
-                    _este elemento en esta medida
-                */
-  /*
-                    _@query 1000px ==> : definimos un tamaño de fuente para 
+                    _@query 479px ==> : definimos un tamaño de fuente para 
                     _este elemento en esta medida
                 */
   /*
@@ -571,25 +606,19 @@
 
 @media (min-width: 300px) {
   .banner_component .banner_flexbox .box_banner_biografy h1 {
-    font-size: 23px;
+    font-size: 24px;
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 372px) {
   .banner_component .banner_flexbox .box_banner_biografy h1 {
     font-size: 32px;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 479px) {
   .banner_component .banner_flexbox .box_banner_biografy h1 {
     font-size: 42px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .banner_component .banner_flexbox .box_banner_biografy h1 {
-    font-size: 39px;
   }
 }
 
@@ -599,7 +628,8 @@
   }
 }
 
-.banner_component .banner_flexbox .box_banner_biografy h2 {
+.banner_component .banner_flexbox .box_banner_biografy h4 {
+  color: #aaaaaa;
   margin-top: 4px;
   /*
                     _@query 300px ==> : definimos un tamaño de fuente para 
@@ -616,41 +646,40 @@
 }
 
 @media (min-width: 300px) {
-  .banner_component .banner_flexbox .box_banner_biografy h2 {
+  .banner_component .banner_flexbox .box_banner_biografy h4 {
     font-size: 18px;
   }
 }
 
 @media (min-width: 400px) {
-  .banner_component .banner_flexbox .box_banner_biografy h2 {
+  .banner_component .banner_flexbox .box_banner_biografy h4 {
     font-size: 22px;
   }
 }
 
 @media (min-width: 600px) {
-  .banner_component .banner_flexbox .box_banner_biografy h2 {
+  .banner_component .banner_flexbox .box_banner_biografy h4 {
     font-size: 25px;
   }
 }
 
 .banner_component .banner_flexbox .box_banner_biografy p {
+  max-width: 700px;
   padding: 25px 0 40px;
 }
 
 .banner_component .banner_flexbox .box_banner_biografy .box_btn {
   /*
-                    tag-button: definimos vertical-align: top para remover un espaciado
-                    que genera el navegador en los botones
+                    tag-button
                 */
   /*
-                    tag-a: para convertir un enlace en un boton, es importante definirle un 
-                    display: inline-flex mas las propiedades width, justify-content, height, 
-                    align-items que dan tamaño al boton y centran su contenido
+                    tag-a: es importante definir un display: inline-flex junto con las propiedades 
+                    width, justify-content, height y align-items para dar tamaño al boton y 
+                    centrar de manera vertical y horizontal su contenido
                 */
 }
 
 .banner_component .banner_flexbox .box_banner_biografy .box_btn button {
-  vertical-align: top;
   /*
                         _@query 429px <== : definimos un espaciado para este elemento en 
                         _esta medida
@@ -664,7 +693,6 @@
 }
 
 .banner_component .banner_flexbox .box_banner_biografy .box_btn a {
-  text-decoration: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -675,7 +703,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 2px solid #e9360f;
+  border: 2px solid #c593fe;
   border-radius: 5px;
   margin-left: 12px;
   -webkit-transition: .2s;
@@ -697,8 +725,8 @@
 .banner_component .banner_flexbox .box_banner_biografy .box_btn a:hover {
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
-  -webkit-box-shadow: 0 8px 20px -10px #686767d8;
-          box-shadow: 0 8px 20px -10px #686767d8;
+  -webkit-box-shadow: 0 8px 20px -10px #696969d8;
+          box-shadow: 0 8px 20px -10px #696969d8;
 }
 
 @media (max-width: 429px) {
@@ -709,7 +737,7 @@
 }
 
 .banner_component .banner_flexbox .box_banner_biografy .box_btn a svg {
-  fill: #e9360f;
+  fill: #c593fe;
   width: 24px;
   height: 24px;
 }
@@ -732,10 +760,12 @@
   position: absolute;
   top: 53px;
   left: 58px;
-  border: 5px solid #e9360f;
+  border: 5px solid #c593fe;
   border-radius: 5px;
   width: 70%;
   height: 89%;
+  -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+          box-shadow: 0 5px 10px 0 var(--shadowColor);
   /*
                     _@query 999px <== : definimos display: none para remover este
                     _elemento de la vista en esta medida
@@ -814,7 +844,7 @@
 }
 
 .modal_component .modal_card {
-  background-color: #fff;
+  background-color: var(--backgroundColor);
   width: 84%;
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
@@ -909,10 +939,12 @@
 
 .modal_component .modal_card .box_modal_img .box_img_border {
   position: absolute;
-  border: 5px solid #e9360f;
+  border: 5px solid #c593fe;
   border-radius: 5px;
   width: 70%;
   height: 71%;
+  -webkit-box-shadow: 0 5px 10px 0 #ccc;
+          box-shadow: 0 5px 10px 0 #ccc;
   /*
                     _@query 1200px ==> : definimos las propiedades top y left para 
                     _posicionar este elemento en esta medida
@@ -988,7 +1020,6 @@
 }
 
 .modal_component .modal_card .box_modal_content {
-  color: #7e7b7c;
   /*
                 _@query 1199px <== : definimos un espaciado para separar el
                 _contenido de los bordes del contenedor en esta medida
@@ -1028,15 +1059,17 @@
   left: 45%;
   display: inline-block;
   margin-bottom: 10px;
-  border: 3px solid #e9360f;
+  border: 3px solid #c593fe;
   border-radius: 50px;
   /*
-                    tag-svg
+                    tag-svg: implementamos el mixin 'iconCheckStyle' definido en 
+                    'src\sass\shared\_mixins.scss' que contiene los estilos principales 
+                    de este elemento
                 */
 }
 
 .modal_component .modal_card .box_modal_content .box_modal_icon svg {
-  fill: #e9360f;
+  fill: #c593fe;
   width: 34px;
   height: 34px;
 }
@@ -1054,6 +1087,7 @@
 
 .modal_component .modal_card .box_modal_content ol li {
   list-style: none;
+  color: var(--textColor);
   font-family: 'ubuntu-medium', sans-serif;
   font-size: 20px;
   margin: 14px 0;
@@ -1063,7 +1097,7 @@
 }
 
 .modal_component .modal_card .box_modal_content ol li svg {
-  fill: #e9360f;
+  fill: #c593fe;
   width: 24px;
   height: 24px;
 }
@@ -1090,7 +1124,7 @@
   display: -ms-grid;
   display: grid;
   gap: 16px;
-  padding: 10px 50px;
+  padding: 10px 30px;
   overflow-x: scroll;
   /*
                 _@query 499px <== : definimos una grilla de 12 columnas 
@@ -1168,15 +1202,12 @@
 .skills_component .skills_container .skills_grid .box_skill_cards {
   position: relative;
   text-align: center;
-  -webkit-box-shadow: 0 5px 10px 0 #ccc;
-          box-shadow: 0 5px 10px 0 #ccc;
+  -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+          box-shadow: 0 5px 10px 0 var(--shadowColor);
   padding: 10px 12px;
-  -webkit-transition: .3s;
-  transition: .3s;
   cursor: pointer;
   /*
-                    .cuando hacemos :hover en las targetas implementamos la propiedad
-                    .transform: scale(); para ampliar el tamaño de estas
+                    .cuando hacemos :hover en box_skill_cards
                 */
   /*
                     .::before y ::after: haecmos uso de estos pseudo elementos para crear animaciones,
@@ -1193,16 +1224,33 @@
                     .elemento, finalmente le damos tamaño con las propiedades width y height
                 */
   /*
-                    tag-img
+                    tag-img: definimos la propiedad transform: scale() para disminuir el 
+                    tamaño de las imagenes
                 */
   /*
-                    tag-p
+                    tag-h6
                 */
 }
 
 .skills_component .skills_container .skills_grid .box_skill_cards:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  /*
+                        .agregamos la propiedad transform: scale() para aumentar el 
+                        .tamaño de pseudo elementos
+                    */
+  /*
+                        .modificamos la propiedad transform: scale() para aumentar el 
+                        .tamaño de las imagenes
+                    */
+}
+
+.skills_component .skills_container .skills_grid .box_skill_cards:hover::before, .skills_component .skills_container .skills_grid .box_skill_cards:hover::after {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.skills_component .skills_container .skills_grid .box_skill_cards:hover img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .skills_component .skills_container .skills_grid .box_skill_cards::before, .skills_component .skills_container .skills_grid .box_skill_cards::after {
@@ -1210,8 +1258,10 @@
   display: block;
   position: absolute;
   opacity: .2;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
 }
 
 .skills_component .skills_container .skills_grid .box_skill_cards::before {
@@ -1231,6 +1281,12 @@
 }
 
 .skills_component .skills_container .skills_grid .box_skill_cards img {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
   /*
                         _@query 479px <== : definimos un ancho y alto para este elemento
                         _en esta medida
@@ -1266,8 +1322,8 @@
   }
 }
 
-.skills_component .skills_container .skills_grid .box_skill_cards p {
-  font-size: 16px;
+.skills_component .skills_container .skills_grid .box_skill_cards h6 {
+  color: var(--textColor);
 }
 
 .skills_component .skills_container .skills_grid .html::before, .skills_component .skills_container .skills_grid .html::after {
@@ -1332,8 +1388,8 @@
 }
 
 .certificates_component .certificates_section {
-  -webkit-box-shadow: 0 5px 10px 0 #ccc;
-          box-shadow: 0 5px 10px 0 #ccc;
+  -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+          box-shadow: 0 5px 10px 0 var(--shadowColor);
   border-radius: 10px;
   cursor: pointer;
   /*
@@ -1408,14 +1464,15 @@
       -ms-flex-align: center;
           align-items: center;
   /*
-                tag-h2
+                tag-h3
             */
   /*
                 tag-svg
             */
 }
 
-.certificates_component .certificates_section .box_certificates_title h2 {
+.certificates_component .certificates_section .box_certificates_title h3 {
+  color: var(--textColor);
   /*
                     _@query 369px <== : definimos un tamaño de fuente para este elemento
                     _en esta medida
@@ -1427,21 +1484,21 @@
 }
 
 @media (max-width: 369px) {
-  .certificates_component .certificates_section .box_certificates_title h2 {
+  .certificates_component .certificates_section .box_certificates_title h3 {
     font-size: 24px;
   }
 }
 
 @media (min-width: 370px) {
-  .certificates_component .certificates_section .box_certificates_title h2 {
+  .certificates_component .certificates_section .box_certificates_title h3 {
     font-size: 32px;
   }
 }
 
 .certificates_component .certificates_section .box_certificates_title svg {
-  fill: #e9360f;
-  width: 48px;
-  height: 48px;
+  fill: #c593fe;
+  width: 40px;
+  height: 40px;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   transition: transform .3s;
@@ -1454,7 +1511,7 @@
   -webkit-transition: height .7s;
   transition: height .7s;
   /*
-                tag-h4
+                tag-h5
             */
   /*
                 tag-p
@@ -1464,7 +1521,8 @@
             */
 }
 
-.certificates_component .certificates_section .box_certificates_content h4 {
+.certificates_component .certificates_section .box_certificates_content h5 {
+  color: var(--textColor);
   letter-spacing: .6px;
   margin: 10px 0;
 }
@@ -1477,7 +1535,7 @@
 }
 
 .certificates_component .certificates_section .box_certificates_content p strong {
-  color: #e9360f;
+  color: #c593fe;
 }
 
 .certificates_component .certificates_section .box_certificates_content .box_certificates_files {
@@ -1494,31 +1552,28 @@
 }
 
 /*
-	section_name: contenedor definido para implementar
-	margin o padding con el fin de separar las secciones
-	entre si
+	proyects_component
 */
-.section_name {
-  padding: 50px 0;
+.proyects_component {
   /*
-		container_name: contenedor definido para manejar
-		el responsive implementando width
+		proyects_container: definimos un width: 90% para que sea en alncho
+		maximo de este contenedor en referencia al ancho de su contenedor 
+		padre, finalmente margin: 0 auto para centrarlo de manera horizontal
 	*/
 }
 
-.section_name .container_name {
+.proyects_component .proyects_container {
   width: 90%;
   margin: 0 auto;
   /*
-			flexbox_name: contenedor definido para 
-			implementar flexbox si se requiere
+			proyects_flexbox
 		*/
 }
 
-.section_name .container_name .flexbox_name {
+.proyects_component .proyects_container .proyects_flexbox {
   /*
-				swiper: tiene definido por defecto position: relative esto
-				evita que los iconos de la paginacion se desplazen hacia 
+				swiper: la libreria le define por defecto position: relative
+				esto evita que los iconos de la paginacion se desplazen hacia 
 				arriba cuando reducimos el alto de la pantalla, finalmente 
 				padding nos ayuda a ampliar la altura de este contenedor 
 				evitando que los iconos de la navegacion se monten encima 
@@ -1526,129 +1581,253 @@
 			*/
 }
 
-.section_name .container_name .flexbox_name .swiper {
-  padding-bottom: 40px;
+.proyects_component .proyects_container .proyects_flexbox .swiper {
+  /*
+					_responsive 900px ==> : definimos flexbox y su propiedad 
+					_align-items para centrar de manera vertical los elementos 
+					_que este contiene
+				*/
   /*
 					swiper-wrapper
 				*/
   /*
+					swiper-button-next, swiper-button-prev: tienen definido por 
+					defecto position absolute
+				*/
+  /*
+					swiper-button-next: definiendo la propiedad right podemos
+					determinar la posicion de este icono
+				*/
+  /*
+					swiper-button-prev: definiendo la propiedad left podemos
+					determinar la posicion de este icono
+				*/
+  /*
 					swiper-pagination: tiene definido por defecto 
-					position: absolute por lo que implementando su
-					propiedad bottom podemos posicionar los iconos
-					del slider, tambien podemos manejar el width de 
-					este contenedor y el centrado de los iconos
+					position: absolute
 				*/
 }
 
-.section_name .container_name .flexbox_name .swiper .swiper-wrapper {
+@media (min-width: 900px) {
+  .proyects_component .proyects_container .proyects_flexbox .swiper {
+    -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+            box-shadow: 0 5px 10px 0 var(--shadowColor);
+  }
+}
+
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper {
   /*
 						swiper-slide
 					*/
 }
 
-.section_name .container_name .flexbox_name .swiper .swiper-wrapper .swiper-slide {
-  background: #fff;
-  -webkit-box-shadow: 0 4px 12px 0 #ccc;
-          box-shadow: 0 4px 12px 0 #ccc;
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide {
+  cursor: pointer;
   /*
-							responsive 900px --> : definimos flexbox para poner sus
-							elementos en linea mas su propiedad align-items para centrar 
-							los elementos verticalmente
+							_responsive 900px ==> : definimos flexbox para poner en linea los
+							_elementos que este contiene para esta medida
 						*/
   /*
-							tag-img: la propiedad vertical-align: top 
-							remueve el espaciado que genera el navegador
-							en las tag-img, es importante definir un width
-							y height igual al de su contenedor padre mas la
-							propiedad object-fit: cover; para que esta se 
-							ajuste al contenedor 
+							box_proyect_img
 						*/
   /*
-							card-description: definimos pading para separar esta caja
-							de la caja que contiene a la tag-img
+							box_proyect_description: definimos un espaciado en el eje X
+							para separar los elementos de los bordes del contenedor
 						*/
 }
 
 @media (min-width: 900px) {
-  .section_name .container_name .flexbox_name .swiper .swiper-wrapper .swiper-slide {
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
 }
 
-.section_name .container_name .flexbox_name .swiper .swiper-wrapper .swiper-slide img {
-  vertical-align: top;
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_img {
+  /*
+								_responsive 900px ==> : modificamos el ancho de este
+								_elemento para esta medida
+							*/
+  /*
+								tag-img: definimos un width: 100% y height: auto junto con la
+								propiedad object-fit: cover para que la img se ajuste al ancho 
+								de contenedor padre 
+							*/
+}
+
+@media (min-width: 900px) {
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_img {
+    width: 65%;
+  }
+}
+
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_img img {
   width: 100%;
-  height: 400px;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.section_name .container_name .flexbox_name .swiper .swiper-wrapper .swiper-slide .card-description {
-  padding: 30px;
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description {
+  font-family: 'ubuntu-medium', sans-serif;
+  padding: 20px 0 30px;
   /*
-								responsive 900px --> : modificamos el padding en el eje Y 
-								ya que flebox genera espaciado cuando centramos el contenido 
-								verticalmente gracias a la altura que tiene la img
+								_responsive 900px ==> : definimos ancho de 35% y un espaciado en 
+								_el eje Y para este elemento en esta medida
+							*/
+  /*
+								tag-a
 							*/
   /*
 								tag-p
 							*/
   /*
-								tag-a: para destacar la propiedad
-								display: block para que la tag tome 
-								el ancho total del contenedor y 
-								text-align: center para centrar el
-								contenido del boton
+								tag-ul
 							*/
 }
 
 @media (min-width: 900px) {
-  .section_name .container_name .flexbox_name .swiper .swiper-wrapper .swiper-slide .card-description {
-    padding: 0 30px;
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description {
+    width: 35%;
+    padding: 20px 20px;
   }
 }
 
-.section_name .container_name .flexbox_name .swiper .swiper-wrapper .swiper-slide .card-description p {
-  margin: 30px 0;
-}
-
-.section_name .container_name .flexbox_name .swiper .swiper-wrapper .swiper-slide .card-description a {
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  font-size: 1.3rem;
-  letter-spacing: 2px;
-  background: tomato;
-  color: #fff;
-  padding: 12px 0;
-}
-
-.section_name .container_name .flexbox_name .swiper .swiper-pagination {
-  bottom: 0;
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description a {
+  text-decoration: underline;
+  font-size: 28px;
+  line-height: 1.1;
   /*
-						swiper-pagination-bullet: a travez de esta clase podemos 
-						modificar el width y height de los iconos de la paginacion 
-						y con margin separarlos entre si
+									_responsive 1200px ==> : modificamos el tamaño de fuente 
+									_de este elemento en esta medida
+								*/
+  /*
+									_responsive 899px <== : modificamos el tamaño de fuente 
+									_de este elemento en esta medida
+								*/
+  /*
+									_responsive 649px <== : modificamos el tamaño de fuente 
+									_de este elemento en esta medida
+								*/
+  /*
+									_responsive 549px <== : modificamos el tamaño de fuente 
+									_de este elemento en esta medida
+								*/
+}
+
+@media (min-width: 1200px) {
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description a {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 899px) {
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description a {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 649px) {
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description a {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 549px) {
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description a {
+    font-size: 26px;
+  }
+}
+
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description p {
+  font-family: 'ubuntu-medium', sans-serif;
+  margin: 16px 0;
+}
+
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description ul {
+  /*
+									tag-li
+								*/
+}
+
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description ul li {
+  list-style: none;
+  color: var(--textColor);
+  font-size: 18px;
+  /*
+										tag-svg: implementamos el mixin 'iconCheckStyle' definido en 
+										'src\sass\shared\_mixins.scss' que contiene los estilos principales 
+										de este elemento
+									*/
+}
+
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description ul li svg {
+  fill: #c593fe;
+  width: 34px;
+  height: 34px;
+}
+
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-next,
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-prev {
+  /*
+						_responsive 899px <== : definimos display: none para remover
+						_de la vista este elemento a partir de esta medida
 					*/
   /*
-						swiper-pagination-bullet-active: por medio de esta clase 
-						podemos modificar el color de los iconos de la paginacion 
-						cuando estos esten activos
+						_responsive 900px ==> : definimos estilos que solo seran aplicados
+						_a este elemento a partir de esta medida
 					*/
 }
 
-.section_name .container_name .flexbox_name .swiper .swiper-pagination .swiper-pagination-bullet {
-  width: 14px;
-  height: 14px;
+@media (max-width: 899px) {
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-next,
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-prev {
+    display: none;
+  }
 }
 
-.section_name .container_name .flexbox_name .swiper .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #d626c8;
+@media (min-width: 900px) {
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-next,
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-prev {
+    background-color: #c593fe;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+            box-shadow: 0 5px 10px 0 var(--shadowColor);
+    /*
+							.:after: para cambiar estas propiedades de los iconos de slider
+							.debemos hacerlo haciendo uso del pseudo elemento ::after
+						*/
+  }
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-next:after,
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-prev:after {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-next {
+  right: 40px;
+}
+
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-prev {
+  left: 40px;
+}
+
+.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-pagination {
+  /*
+						_responsive 900px ==> : definimos display: none para remover
+						_de la vista este elemento a partir de esta medida
+					*/
+}
+
+@media (min-width: 900px) {
+  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-pagination {
+    display: none;
+  }
 }
 
 /*
@@ -1719,8 +1898,8 @@
 
 @media (min-width: 370px) {
   .customers_component .customers_container .customers_grid {
-    -ms-grid-columns: (87%)[1];
-        grid-template-columns: repeat(1, 87%);
+    -ms-grid-columns: (90%)[1];
+        grid-template-columns: repeat(1, 90%);
   }
 }
 
@@ -1733,30 +1912,30 @@
 
 @media (min-width: 693px) {
   .customers_component .customers_container .customers_grid {
-    -ms-grid-columns: (50%)[2];
-        grid-template-columns: repeat(2, 50%);
+    -ms-grid-columns: (46%)[2];
+        grid-template-columns: repeat(2, 46%);
   }
 }
 
 @media (min-width: 1000px) {
   .customers_component .customers_container .customers_grid {
-    -ms-grid-columns: (40%)[2];
-        grid-template-columns: repeat(2, 40%);
+    -ms-grid-columns: (41%)[2];
+        grid-template-columns: repeat(2, 41%);
   }
 }
 
 @media (min-width: 1200px) {
   .customers_component .customers_container .customers_grid {
-    -ms-grid-columns: (35%)[2];
-        grid-template-columns: repeat(2, 35%);
+    -ms-grid-columns: (36%)[2];
+        grid-template-columns: repeat(2, 36%);
   }
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content {
   position: relative;
   padding: 20px;
-  -webkit-box-shadow: 0 5px 10px 0 #ccc;
-          box-shadow: 0 5px 10px 0 #ccc;
+  -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+          box-shadow: 0 5px 10px 0 var(--shadowColor);
   border-radius: 30px 0;
   /*
                     .nth-child(): hacemos uso de este pseudo elemento para selecionar 
@@ -1768,7 +1947,7 @@
                     _para este elemento en esta medida
                 */
   /*
-                    _@query 306px <== : modificamos el espaciado que ya teneia
+                    _@query 315px <== : modificamos el espaciado que ya tenia
                     _este elemento para esta medida
                 */
   /*
@@ -1807,7 +1986,7 @@
   }
 }
 
-@media (max-width: 306px) {
+@media (max-width: 315px) {
   .customers_component .customers_container .customers_grid .customers_card_content {
     padding: 20px 14px;
   }
@@ -1822,7 +2001,7 @@
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content .box_icon_quote svg {
-  fill: #f5f5f5;
+  fill: var(--iconColor);
   width: 70px;
   height: 70px;
 }
@@ -1854,7 +2033,10 @@
 .customers_component .customers_container .customers_grid .customers_card_content .box_customers_profile img {
   width: 70px;
   height: 70px;
+  border: 3px solid #c593fe;
   border-radius: 50%;
+  -webkit-box-shadow: 0 5px 10px -3px var(--shadowColor);
+          box-shadow: 0 5px 10px -3px var(--shadowColor);
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content .box_customers_profile .customers_name {
@@ -1869,9 +2051,10 @@
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content .box_customers_profile .customers_name h3 {
+  color: #c593fe;
   font-size: 30px;
   /*
-                                _@query 715px <== : modificamos el tamaño de fuente de este
+                                _@query 999px <== : modificamos el tamaño de fuente de este
                                 _elemento para esta medida
                             */
   /*
@@ -1880,7 +2063,7 @@
                             */
 }
 
-@media (max-width: 715px) {
+@media (max-width: 999px) {
   .customers_component .customers_container .customers_grid .customers_card_content .box_customers_profile .customers_name h3 {
     font-size: 24px;
   }
@@ -1893,14 +2076,26 @@
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content .box_customers_profile .customers_name span {
-  color: #7e7b7c;
   font-size: 16px;
+  letter-spacing: 1px;
+  color: #aaaaaa;
   font-family: 'poppins-regular', sans-serif;
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content p {
   font-family: 'ubuntu-medium', sans-serif;
-  margin: 18px 0;
+  margin: 18px 0 22px;
+  /*
+                        _@query 693px ==> : definimos un ancho minimo para este elemento 
+                        _en esta medidacon el fin de mantener alineados los elementos dentro 
+                        _de las tarjetas
+                    */
+}
+
+@media (min-width: 693px) {
+  .customers_component .customers_container .customers_grid .customers_card_content p {
+    min-height: calc(100% - 238px);
+  }
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content .ol_socials_customers {
@@ -1911,9 +2106,13 @@
 
 .customers_component .customers_container .customers_grid .customers_card_content .ol_socials_customers li {
   list-style: none;
-  color: #7e7b7c;
+  color: var(--textColor);
   font-family: 'ubuntu-medium', sans-serif;
   margin-bottom: 10px;
+  /*
+                            _@query 315px <== : definimos un tamaño de fuente para
+                            _este elemento para esta medida
+                        */
   /*
                             tag-svg
                         */
@@ -1923,15 +2122,22 @@
                         */
 }
 
+@media (max-width: 315px) {
+  .customers_component .customers_container .customers_grid .customers_card_content .ol_socials_customers li {
+    font-size: 15px;
+  }
+}
+
 .customers_component .customers_container .customers_grid .customers_card_content .ol_socials_customers li svg {
-  fill: #e9360f;
+  fill: #c593fe;
   width: 24px;
   height: 24px;
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content .ol_socials_customers li span {
-  color: #7e7b7c;
   font-size: 16px;
+  letter-spacing: 1px;
+  color: var(--textColor);
 }
 
 /*
@@ -1990,7 +2196,7 @@
                 _este elemento y definimos un ancho para esta medida
             */
   /*
-                tag-h3
+                tag-h2
             */
   /*
                 tag-p
@@ -2016,7 +2222,7 @@
   }
 }
 
-.contacts_component .form_flexbox .box_form_card h3 {
+.contacts_component .form_flexbox .box_form_card h2 {
   text-align: start;
 }
 
@@ -2054,8 +2260,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #e9360f;
+  background-color: #c593fe;
   border-radius: 50%;
+  -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+          box-shadow: 0 5px 10px 0 var(--shadowColor);
   width: 38px;
   height: 38px;
   margin-right: 8px;
@@ -2065,7 +2273,7 @@
                         .estoa elementos
                     */
   /*
-                        tag-svg: implementamos un mixin 'svgIconsStyle' que contiene los
+                        tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
                         estilos principales de este elemento
                     */
 }
@@ -2091,8 +2299,10 @@
 }
 
 .contacts_component .form_flexbox .box_form_card .box_socials_contacts .socials_media {
-  background-color: #e9360f;
+  background-color: #c593fe;
   border-radius: 100%;
+  -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+          box-shadow: 0 5px 10px 0 var(--shadowColor);
   padding: 5px 7px;
   margin: 0 -15px;
   opacity: 0;
@@ -2115,7 +2325,7 @@
 
 .contacts_component .form_flexbox .box_form_card .box_socials_contacts .socials_media a {
   /*
-                            tag-svg: implementamos un mixin 'svgIconsStyle' que contiene los
+                            tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
                             estilos principales de este elemento
                         */
 }
@@ -2146,8 +2356,8 @@
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    -webkit-box-shadow: 0 5px 10px 0 #ccc;
-            box-shadow: 0 5px 10px 0 #ccc;
+    -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+            box-shadow: 0 5px 10px 0 var(--shadowColor);
     border-radius: 5px;
     width: 380px;
     padding: 50px 40px;
@@ -2165,12 +2375,12 @@
                     para posicionar los iconos dentro de tag-input
                 */
   /*
-                    tag-input: implementamos un mixin 'inputsStyle' que contiene los
+                    tag-input: implementamos el mixin 'inputsStyle' que contiene los
                     estilos principales de este elemento, finalmente definimos un
                     ancho de 100% para que tome todo el ancho de su contenedor padre
                 */
   /*
-                    tag-textarea: implementamos un mixin 'inputsStyle' que contiene
+                    tag-textarea: implementamos el mixin 'inputsStyle' que contiene
                     los estilos principales de este elemento, finalmente definimos 
                     las propiedades min-width max-width, min-height y max-height para 
                     darle tamaño
@@ -2237,7 +2447,7 @@
 .contacts_component .form_flexbox form .box_inputs input:focus ~ .border_animated,
 .contacts_component .form_flexbox form .box_inputs textarea:focus ~ .border_animated {
   width: 100%;
-  background-color: #e9360f;
+  background-color: #c593fe;
 }
 
 .contacts_component .form_flexbox form .box_inputs .border_animated {
@@ -2254,7 +2464,7 @@
 .contacts_component .form_flexbox form .box_inputs .box_errors {
   display: none;
   color: #fff;
-  background-color: #e9360f;
+  background-color: #c593fe;
   font-size: 18px;
   letter-spacing: 1;
   width: inherit;
@@ -2308,8 +2518,10 @@
 
 .footer_component svg.js_show_gotop {
   fill: #fff;
-  background-color: #e9360f;
+  background-color: #c593fe;
   border-radius: 50%;
+  -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+          box-shadow: 0 5px 10px 0 var(--shadowColor);
   visibility: visible;
   -webkit-animation: animateGotop 1s ease 1s 3;
           animation: animateGotop 1s ease 1s 3;
@@ -2393,18 +2605,19 @@
 }
 
 /*
-    tag-html: definimos scroll-behavior: smooth para dar suavidad
-    a las animaciones donde implementamos scroll
-*/
-/*
-    tag-body
+    tag-body: definimos variables css para aplicar a los elementos 
+    hijos de tag-body para cuando este tiene el color de fondo light
 */
 body {
   background-color: #eee;
+  --textColor: #7e7b7c;
+  --backgroundColor: #fff;
+  --iconColor: #f5f5f5;
+  --shadowColor: #cccccc;
   /*
         js_body_dark_mode: clase añadida desde 'src/js/header.js',
-        definimos un color de fondo para cuando activamso el modo
-        oscuro
+        modificamos las variables css aplicadas a los elementos 
+        hijos de tag-body para cuando este tiene el color de fondo dark
     */
   /*
         js_body_dark_mode: clase añadida desde 'src/js/header.js',
@@ -2415,6 +2628,10 @@ body {
 
 body.js_body_dark_mode {
   background-color: #3c4042ea;
+  --textColor: #f1f1f1;
+  --backgroundColor: #46484A;
+  --iconColor: #4C4F51;
+  --shadowColor: #333333;
 }
 
 body.js_hidden_scroll {
@@ -2422,36 +2639,26 @@ body.js_hidden_scroll {
 }
 
 /*
-    tag-h1 y tag-h3 : estos estilos son tomados por todas las tag-h1 y tag-h2 
-    definidas en html
+    tag-h1 y tag-h2: definimos como color de fuente el color que tenga definido 
+    el sitio web
 */
-h1, h3 {
+h1, h2 {
+  color: #c593fe;
+}
+
+/*
+    tag-h1, tag-h2 y tag-h3 : definimos una fuente personalizada
+*/
+h1, h2, h3 {
   font-family: "ubuntu-bold", sans-serif;
 }
 
 /*
-    tag-h2, tag-h4, tag-h5 y tag-h6: estos estilos son tomados 
-    por todas las tag-h2, tag-h4, tag-h5 y tag-h6 definidas en html
-*/
-h2, h4, h5, h6 {
-  font-family: "ubuntu-light", sans-serif;
-}
-
-/*
-    tag-h2 y tag-h4: estos estilos son tomados por todas las tag-h2 
-    y tag-h4 definidas en html
-*/
-h2, h4 {
-  color: #7e7b7c;
-}
-
-/*
-    tag-h3: estos estilos son tomados por todas las tag-h3 definidas
+    tag-h2: estos estilos son tomados por todas las tag-h2 definidas
     en html
 */
-h3 {
+h2 {
   text-align: center;
-  color: #e9360f;
   /*
         _@query 499px <== : definimos un tamaño de fuente para este 
         _elemento en esta medida
@@ -2467,21 +2674,36 @@ h3 {
 }
 
 @media (max-width: 499px) {
-  h3 {
+  h2 {
     font-size: 43px;
   }
 }
 
 @media (min-width: 500px) {
-  h3 {
+  h2 {
     font-size: 50px;
   }
 }
 
 @media (min-width: 1000px) {
-  h3 {
+  h2 {
     font-size: 60px;
   }
+}
+
+/*
+    tag-h4, tag-h5 y tag-h6: definimos color y una fuente personalizada 
+    para estos elementos
+*/
+h4, h5, h6 {
+  font-family: "ubuntu-light", sans-serif;
+}
+
+/*
+    tag-h5 y tag-h6: definimos un tamaño de fuente
+*/
+h5, h6 {
+  font-size: 16px;
 }
 
 /*
@@ -2489,7 +2711,7 @@ h3 {
     en html
 */
 p {
-  color: #7e7b7c;
+  color: var(--textColor);
   font-family: 'poppin-regular', sans-serif;
   font-size: 20px;
   letter-spacing: .4px;
@@ -2501,7 +2723,8 @@ p {
     en html
 */
 a {
-  color: #e9360f;
+  text-decoration: none;
+  color: #c593fe;
   font-family: 'baloo2-medium', sans-serif;
   font-size: 1.1rem;
 }
@@ -2526,53 +2749,16 @@ button {
 }
 
 /*
-    componentes a los que les definimos un margen en la parte superior
-    y un espaciado
+    all_components: definimos color de fondo, un margen en la parte superior
+    y finalmente un espaciado para separar el contenido de los bordes de los
+    diferentes componentes
 */
-.skills_component, .certificates_component,
-.proyects_component, .customers_component,
-.contacts_component {
+.banner_component, .skills_component,
+.certificates_component, .proyects_component,
+.customers_component, .contacts_component {
+  background-color: var(--backgroundColor);
   margin-top: 80px;
   padding: 60px 20px;
-}
-
-/*
-    componentes a los que les añadimos color de fondo para cuando tiene
-    activo el modo light
-*/
-.banner_component, .skills_component, .certificates_component,
-.customers_component, .contacts_component {
-  background-color: #fff;
-}
-
-/*
-    dark_components: todos los componentes o elementos que tengan definda
-    esta clase son modificados cuando se activa el modo oscuro
-*/
-.dark_components {
-  /*
-        js_dark_mode_components: clase añadida desde 'src/js/header.js'
-        que añade color de fondo a estos elementos
-    */
-}
-
-.dark_components.js_dark_mode_components {
-  background-color: #46484A;
-}
-
-/*
-    light_text: todos los textos o elementos que tengan definda
-    esta clase son modificados cuando se activa el modo oscuro
-*/
-.light_text {
-  /*
-        js_dark_mode_components: clase añadida desde 'src/js/header.js'
-        que añade color a estos elementos
-    */
-}
-
-.light_text.js_light_text {
-  color: #fff;
 }
 
 /* 
@@ -2581,12 +2767,14 @@ button {
 */
 .box_btn {
   /* 
-        tag-button
+        tag-button: definimos vertical-align: top para remover un espaciado
+        que genera el navegador en los botones
     */
 }
 
 .box_btn button {
-  background-color: #e9360f;
+  vertical-align: top;
+  background-color: #c593fe;
   color: #fff;
   font-size: 20px;
   letter-spacing: 1px;
@@ -2603,8 +2791,8 @@ button {
 .box_btn button:hover {
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
-  -webkit-box-shadow: 0 8px 20px -10px #686767d8;
-          box-shadow: 0 8px 20px -10px #686767d8;
+  -webkit-box-shadow: 0 8px 20px -10px #696969d8;
+          box-shadow: 0 8px 20px -10px #696969d8;
 }
 
 /* 
@@ -2613,7 +2801,7 @@ button {
     parte inferior con un ancho de 200px
 */
 .box_title_border {
-  border-bottom: 2px solid #e9360f;
+  border-bottom: 2px solid #c593fe;
   width: 200px;
   /*
         _@query 999px <== : definimos un un margen auto para centrar

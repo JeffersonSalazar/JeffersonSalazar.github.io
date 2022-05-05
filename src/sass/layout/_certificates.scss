@@ -6,8 +6,7 @@
         certificates_section
     */
     .certificates_section {
-        // border: 1px solid $darkBorderOne;
-        box-shadow: 0 5px 10px 0 $lightShadowTwo;
+        box-shadow: 0 5px 10px 0 var(--shadowColor);
         border-radius: 10px;
         cursor: pointer;
 
@@ -66,9 +65,11 @@
             align-items: center;
 
             /*
-                tag-h2
+                tag-h3
             */
-            h2 {
+            h3 {
+                color: var(--textColor);
+                
                 /*
                     _@query 369px <== : definimos un tamaño de fuente para este elemento
                     _en esta medida
@@ -91,8 +92,8 @@
             */
             svg {
                 fill: $mainPageColor;
-                width: 48px;
-                height: 48px;
+                width: 40px;
+                height: 40px;
                 transition: transform .3s;
             }
         }
@@ -108,9 +109,10 @@
             transition: height .7s;
 
             /*
-                tag-h4
+                tag-h5
             */
-            h4 {
+            h5 {
+                color: var(--textColor);
                 letter-spacing: .6px;
                 margin: 10px 0;
             }

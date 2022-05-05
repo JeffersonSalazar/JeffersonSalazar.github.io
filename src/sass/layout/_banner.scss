@@ -1,9 +1,28 @@
 /*
-    banner_component: definimos un espaciado para separar de los
-    bordes los elementos que este contiene
+    banner_component: definimos margin-top: 0 !important para remover un
+    margen en la parte superior que se definido en todos los componentes
+    en 'src\sass\style.scss' 
 */
 .banner_component {
-    padding: 60px 20px;
+    margin-top: 0 !important;
+
+    /*
+        _@query 999px <== : definimos padding-top: 0 !important para 
+        _modificar un el espaciado en la parte superior que se definido 
+        _en todos los componentes en 'src\sass\style.scss' para esta medida
+    */
+    @media (max-width: 999px) {
+        padding-top: 35px !important;
+    }
+
+    /*
+        _@query 478px <== : definimos padding-top: 0 !important para 
+        _modificar un el espaciado en la parte superior que se definido 
+        _en todos los componentes en 'src\sass\style.scss' para esta medida
+    */
+    @media (max-width: 478px) {
+        padding-top: 25px !important;
+    }
 
     /*
         banner_flexbox
@@ -24,9 +43,6 @@
             box_banner_biografy
         */
         .box_banner_biografy {  
-            position: relative;
-            z-index: 7;
-
             /*
                 _@query 1000px ==> : definimos un ancho para este elemento
                 _en esta medida
@@ -39,38 +55,28 @@
                 tag-h1
             */
             h1 {
-                color: $mainPageColor;
-                
                 /*
                     _@query 300px ==> : definimos un tamaño de fuente para 
                     _este elemento en esta medida
                 */
                 @media (min-width: 300px) {
-                    font-size: 23px;
+                    font-size: 24px;
                 }
 
                 /*
-                    _@query 400px ==> : definimos un tamaño de fuente para 
+                    _@query 372px ==> : definimos un tamaño de fuente para 
                     _este elemento en esta medida
                 */
-                @media (min-width: 400px) {
+                @media (min-width: 372px) {
                     font-size: 32px;
                 }
 
                 /*
-                    _@query 600px ==> : definimos un tamaño de fuente para 
+                    _@query 479px ==> : definimos un tamaño de fuente para 
                     _este elemento en esta medida
                 */
-                @media (min-width: 600px) {
+                @media (min-width: 479px) {
                     font-size: 42px;
-                }
-
-                /*
-                    _@query 1000px ==> : definimos un tamaño de fuente para 
-                    _este elemento en esta medida
-                */
-                @media (min-width: 1000px) {
-                    font-size: 39px;
                 }
 
                 /*
@@ -83,9 +89,10 @@
             }
             
             /*
-                tag-h2
+                tag-h4
             */
-            h2 {
+            h4 {
+                color: $lightColorSubtitlesOne;
                 margin-top: 4px;
                 
                 /*
@@ -114,9 +121,13 @@
             }
     
             /*
-                tag-p
+                tag-p: definimos un max-width para que apartir de 600px en adelante
+                este elemento tenga un ancho de 700px en referencia al ancho de su 
+                contenedor padre, con esto evitamos que este elemento tome el 100%
+                de ancho
             */
             p {
+                max-width: 700px;
                 padding: 25px 0 40px;
             }
 
@@ -125,12 +136,9 @@
             */
             .box_btn {
                 /*
-                    tag-button: definimos vertical-align: top para remover un espaciado
-                    que genera el navegador en los botones
+                    tag-button
                 */
                 button {
-                    vertical-align: top;
-
                     /*
                         _@query 429px <== : definimos un espaciado para este elemento en 
                         _esta medida
@@ -141,22 +149,21 @@
                 }
 
                 /*
-                    tag-a: para convertir un enlace en un boton, es importante definirle un 
-                    display: inline-flex mas las propiedades width, justify-content, height, 
-                    align-items que dan tamaño al boton y centran su contenido
+                    tag-a: es importante definir un display: inline-flex junto con las propiedades 
+                    width, justify-content, height y align-items para dar tamaño al boton y 
+                    centrar de manera vertical y horizontal su contenido
                 */
                 a {
-                    text-decoration: none;
                     display: inline-flex;
                     width: 187px;
                     justify-content: space-around;
                     height: 52px;
                     align-items: center;
-                    border: 2px solid $mainPageBackgroundColor;
+                    border: 2px solid $mainPageBorderColor;
                     border-radius: 5px;
                     margin-left: 12px;
                     transition: .2s;
-                    
+
                     /*
                         .cuando hacemos :hover sobre tag-a agregamos color y color de fondo,
                         .finalmente definimos transform: translateY() para desplazar el boton 
@@ -164,7 +171,7 @@
                     */
                     &:hover {
                         transform: translateY(-8px);
-                        box-shadow: 0 8px 20px -10px $darkShadowTwo;
+                        box-shadow: 0 8px 20px -10px $darkShadowButtonsOne;
                     }
 
                     /*
@@ -210,6 +217,7 @@
                 border-radius: 5px;
                 width: 70%;
                 height: 89%;
+                box-shadow: 0 5px 10px 0 var(--shadowColor);
     
                 /*
                     _@query 999px <== : definimos display: none para remover este

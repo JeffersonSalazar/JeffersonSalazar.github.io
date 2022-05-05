@@ -6,11 +6,11 @@
     outline: none;
     border: none;
     background-color: transparent;
-    color: $darkColorTextOne;
+    color: #7e7b7c;
     font-family: 'poppins-regular', sans-serif;
     font-size: 21px;
     letter-spacing: 1px;
-    border-bottom: 1px solid $darkBorderOne;
+    border-bottom: 1px solid #00000026;
     padding: 6px 4px;
 }
 
@@ -19,7 +19,7 @@
     tag-svg pertenecientes solo a contacts_component
 */
 @mixin svgIconsStyle {
-    fill: $lightColorTextOne;
+    fill: $lightColorIconsOne;
     width: 26px;
     height: 26px;
 }
@@ -66,9 +66,9 @@
             }
 
             /*
-                tag-h3
+                tag-h2
             */
-            h3 {
+            h2 {
                 text-align: start;
             }
 
@@ -99,6 +99,7 @@
                     align-items: center;
                     background-color: $mainPageBackgroundColor;
                     border-radius: 50%;
+                    box-shadow: 0 5px 10px 0 var(--shadowColor);
                     width: 38px;
                     height: 38px;
                     margin-right: 8px;
@@ -123,7 +124,7 @@
                     }
 
                     /*
-                        tag-svg: implementamos un mixin 'svgIconsStyle' que contiene los
+                        tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
                         estilos principales de este elemento
                     */
                     svg {
@@ -139,6 +140,7 @@
                 .socials_media {
                     background-color: $mainPageBackgroundColor;
                     border-radius: 100%;
+                    box-shadow: 0 5px 10px 0 var(--shadowColor);
                     padding: 5px 7px;
                     margin: 0 -15px;
                     opacity: 0;
@@ -158,7 +160,7 @@
                     */
                     a {
                         /*
-                            tag-svg: implementamos un mixin 'svgIconsStyle' que contiene los
+                            tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
                             estilos principales de este elemento
                         */
                         svg {
@@ -180,8 +182,7 @@
             */
             @media (min-width: 1000px) {
                 order: 1;
-                // border: 1px solid $darkBorderOne;
-                box-shadow: 0 5px 10px 0 $lightShadowTwo;
+                box-shadow: 0 5px 10px 0 var(--shadowColor);
                 border-radius: 5px;
                 width: 380px;
                 padding: 50px 40px;
@@ -210,13 +211,13 @@
                     position: absolute;
                     top: 9px;
                     right: 0;
-                    fill: $darkColorTextOne;
+                    fill: #7e7b7c;
                     width: 26px;
                     height: 26px;
                 }
                 
                 /*
-                    tag-input: implementamos un mixin 'inputsStyle' que contiene los
+                    tag-input: implementamos el mixin 'inputsStyle' que contiene los
                     estilos principales de este elemento, finalmente definimos un
                     ancho de 100% para que tome todo el ancho de su contenedor padre
                 */
@@ -226,7 +227,7 @@
                 }
 
                 /*
-                    tag-textarea: implementamos un mixin 'inputsStyle' que contiene
+                    tag-textarea: implementamos el mixin 'inputsStyle' que contiene
                     los estilos principales de este elemento, finalmente definimos 
                     las propiedades min-width max-width, min-height y max-height para 
                     darle tamaño
@@ -272,7 +273,7 @@
                 */
                 .box_errors {
                     display: none;
-                    color: $lightColorTextOne;
+                    color: #fff;
                     background-color: $mainPageBackgroundColor;
                     font-size: 18px;
                     letter-spacing: 1;

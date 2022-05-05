@@ -38,12 +38,9 @@ $navbarLinks.forEach(link => link.addEventListener('click', activeLink));
 /* 
    .$navbarSkinBtn: almacena el elemento html con ID navbar-skin-btn
 
-   .$modalIcon: almacena el elemento html con ID box_modal_icon
-
    .$btnBannerHdv: almacena el elemento html con ID btn-banner-hdv
 */
-let $navbarSkinBtn = document.querySelector("#navbar-skin-btn"),
-    $modalIcon = document.querySelector("#box_modal_icon"),
+let $navbarSkinBtn = document.querySelector("#navbar-skin-btn")
     $btnBannerHdv = document.querySelector("#btn-banner-hdv");
 
 /* 
@@ -62,6 +59,9 @@ let $navbarSkinBtn = document.querySelector("#navbar-skin-btn"),
    .$iconColorChange: almacena todos los elementos html que tengan
    .la clase js_icon_color_change
 
+   .$iconBorder: almacena todos los elementos html que tengan
+   .la clase js_color_border
+
    .$strongs: almacena todos los elementos html definidos con la tag-strong
 */
 let $backgroundChange = document.querySelectorAll(".js_background_change"),
@@ -69,13 +69,13 @@ let $backgroundChange = document.querySelectorAll(".js_background_change"),
     $titleBorder = document.querySelectorAll(".box_title_border");
     $imgBorder = document.querySelectorAll(".box_img_border"),
     $iconColorChange = document.querySelectorAll(".js_icon_color_change");
-    // $iconBorder = document.querySelectorAll(".js_icon_border"),
+    $iconBorder = document.querySelectorAll(".js_color_border");
     $strongs = document.querySelectorAll("strong");
 
 /* 
-    generateRandomColor: almacena una arrow function
+    definimos un evento click en $navbarBtn y definimos una funcion
 */
-const generateRandomColor = () => {
+$navbarSkinBtn.addEventListener("click", function() {
     /*
         haciendo uso de la propiedad (Match.random() * 256),
         generamos numeros aleatorios que posteriormente con
@@ -83,43 +83,21 @@ const generateRandomColor = () => {
         decimal a su entero descendiente mas cercano. 
         finalmente almacenamos los numeros generados
     */
-    const r = Math.floor(Math.random() * 256),
-          g = Math.floor(Math.random() * 256),
-          b = Math.floor(Math.random() * 256);
+    const   r = Math.floor(Math.random() * 256),
+            g = Math.floor(Math.random() * 256),
+            b = Math.floor(Math.random() * 256);
 
     /* 
-        rgb_color: alamacena los diferentes valores convertidos
-        a rgb
+        newColor: alamacena los numeros generados para ser
+        utilizados como colores rgb
     */
-    let rgb_color = `rgb(${r},${g},${b})`;
-    
-    /* 
-        finalmente hacemos un return de rgb_color
-    */
-    return rgb_color;
-};
-
-/* 
-    definimos un evento click en $navbarBtn y definimos una funcion
-*/
-$navbarSkinBtn.addEventListener("click", function() {
-    /* 
-        newColor: alamacena la funcion generateRandomColor()
-        que es la encargada de generar los valores rgb
-    */
-    const newColor = generateRandomColor();
+    const newColor = `rgb(${r},${g},${b})`;
 
     /* 
-        $navComponent.style.backgroundColor recibe como valor
+        $navbarNav.style.backgroundColor recibe como valor
         la costante newColor
     */
     $navbarNav.style.backgroundColor = newColor;
-
-    /* 
-        $modalIcon.style.border recibe como valor
-        la costante newColor
-    */
-    $modalIcon.style.border = `3px solid ${newColor}`;
 
     /* 
         $btnBannerHdv.style.border recibe como valor
@@ -148,18 +126,17 @@ $navbarSkinBtn.addEventListener("click", function() {
         imgBorder.style.border = `5px solid ${newColor}`
     });
 
-    $strongs.forEach(colorText => {
-        colorText.style.color = newColor;
-    });
-
     $iconColorChange.forEach(icon => {
         icon.style.fill = newColor;
     });
 
-    // $iconBorder.forEach(iconBorder => {
-    //     iconBorder.style.border = `3px solid ${newColor}`
-    // });
+    $iconBorder.forEach(border => {
+        border.style.border = `3px solid ${newColor}`;
+    });
 
+    $strongs.forEach(colorText => {
+        colorText.style.color = newColor;
+    });
 });
 
 // __________ end code - background color generator __________ //
@@ -190,10 +167,10 @@ $menuIconNavbar.addEventListener('click', function() {
     $navbarNav.classList.remove('js_show_menu_nav');
 
     /*
-        removemos de $body la clase js_hidden_scroll
+        removemos de body la clase js_hidden_scroll
         definida en 'src/sass/style.scss'  
     */
-    $body.classList.remove('js_hidden_scroll');
+    document.body.classList.remove('js_hidden_scroll');
 });
 
 // __________ end code - close menu __________ //

@@ -19,26 +19,27 @@
 }
 
 /*
-    tag-html: definimos scroll-behavior: smooth para dar suavidad
-    a las animaciones donde implementamos scroll
-*/
-// html {
-//     scroll-behavior: smooth;
-// }
-
-/*
-    tag-body
+    tag-body: definimos variables css para aplicar a los elementos 
+    hijos de tag-body para cuando este tiene el color de fondo light
 */
 body {
-    background-color: $lightBackgroundBody;
+    background-color: $bodyBackgroundLightMode;
+    --textColor: #7e7b7c;
+    --backgroundColor: #fff;
+    --iconColor: #f5f5f5;
+    --shadowColor: #cccccc;
 
     /*
         js_body_dark_mode: clase añadida desde 'src/js/header.js',
-        definimos un color de fondo para cuando activamso el modo
-        oscuro
+        modificamos las variables css aplicadas a los elementos 
+        hijos de tag-body para cuando este tiene el color de fondo dark
     */
     &.js_body_dark_mode { 
-        background-color: $darkBackgroundBody; 
+        background-color: $bodyBackgroundDarkMode;
+        --textColor: #f1f1f1;
+        --backgroundColor: #46484A;
+        --iconColor: #4C4F51;
+        --shadowColor: #333333;
     };
 
     /*
@@ -52,36 +53,26 @@ body {
 }
 
 /*
-    tag-h1 y tag-h3 : estos estilos son tomados por todas las tag-h1 y tag-h2 
-    definidas en html
+    tag-h1 y tag-h2: definimos como color de fuente el color que tenga definido 
+    el sitio web
 */
-h1, h3 {
+h1, h2 {
+    color: $mainPageColor;
+}
+
+/*
+    tag-h1, tag-h2 y tag-h3 : definimos una fuente personalizada
+*/
+h1, h2, h3 {
     font-family: "ubuntu-bold", sans-serif;
 }
 
 /*
-    tag-h2, tag-h4, tag-h5 y tag-h6: estos estilos son tomados 
-    por todas las tag-h2, tag-h4, tag-h5 y tag-h6 definidas en html
-*/
-h2, h4, h5, h6 {
-    font-family: "ubuntu-light", sans-serif;
-}
-
-/*
-    tag-h2 y tag-h4: estos estilos son tomados por todas las tag-h2 
-    y tag-h4 definidas en html
-*/
-h2, h4 {
-    color: $darkColorTextOne;
-}
-
-/*
-    tag-h3: estos estilos son tomados por todas las tag-h3 definidas
+    tag-h2: estos estilos son tomados por todas las tag-h2 definidas
     en html
 */
-h3 {
+h2 {
     text-align: center;
-    color: $mainPageColor;
     
     /*
         _@query 499px <== : definimos un tamaño de fuente para este 
@@ -109,11 +100,26 @@ h3 {
 }
 
 /*
+    tag-h4, tag-h5 y tag-h6: definimos color y una fuente personalizada 
+    para estos elementos
+*/
+h4, h5, h6 {
+    font-family: "ubuntu-light", sans-serif;
+}
+
+/*
+    tag-h5 y tag-h6: definimos un tamaño de fuente
+*/
+h5, h6 {
+    font-size: 16px;
+}
+
+/*
     tag-p: estos estilos son tomados por todas las tag-p definidas
     en html
 */
 p {
-    color: $darkColorTextOne;
+    color: var(--textColor);
     font-family: 'poppin-regular', sans-serif;
     font-size: 20px;
     letter-spacing: .4px;
@@ -125,6 +131,7 @@ p {
     en html
 */
 a {
+    text-decoration: none;
     color: $mainPageColor;
     font-family: 'baloo2-medium', sans-serif;
     font-size: 1.1rem;
@@ -150,52 +157,17 @@ button {
 }
 
 /*
-    componentes a los que les definimos un margen en la parte superior
-    y un espaciado
+    all_components: definimos color de fondo, un margen en la parte superior
+    y finalmente un espaciado para separar el contenido de los bordes de los
+    diferentes componentes
 */
-.skills_component, .certificates_component,
-.proyects_component, .customers_component, 
-.contacts_component {
+.banner_component, .skills_component, 
+.certificates_component, .proyects_component, 
+.customers_component, .contacts_component {
+    background-color: var(--backgroundColor);
     margin-top: 80px;
     padding: 60px 20px;
-}
-
-/*
-    componentes a los que les añadimos color de fondo para cuando tiene
-    activo el modo light
-*/
-.banner_component, .skills_component, .certificates_component, 
-.customers_component, .contacts_component {
-    background-color: $lightBackgroundComponents;
 };
-
-/*
-    dark_components: todos los componentes o elementos que tengan definda
-    esta clase son modificados cuando se activa el modo oscuro
-*/
-.dark_components {
-    /*
-        js_dark_mode_components: clase añadida desde 'src/js/header.js'
-        que añade color de fondo a estos elementos
-    */
-    &.js_dark_mode_components {
-        background-color: $darkBackgroundComponents;
-    }
-}
-
-/*
-    light_text: todos los textos o elementos que tengan definda
-    esta clase son modificados cuando se activa el modo oscuro
-*/
-.light_text {
-    /*
-        js_dark_mode_components: clase añadida desde 'src/js/header.js'
-        que añade color a estos elementos
-    */
-    &.js_light_text {
-        color: $lightColorTextOne;
-    }
-}
 
 /* 
     box_btn: estos estilos son tomados por todas las clases box_btn 
@@ -203,11 +175,13 @@ button {
 */
 .box_btn {
     /* 
-        tag-button
+        tag-button: definimos vertical-align: top para remover un espaciado
+        que genera el navegador en los botones
     */
     button {  
+        vertical-align: top;
         background-color: $mainPageBackgroundColor;
-        color: $lightColorTextOne;
+        color: #fff;
         font-size: 20px;
         letter-spacing: 1px;
         border-radius: 5px;
@@ -220,7 +194,7 @@ button {
         */
         &:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 20px -10px $darkShadowTwo;
+            box-shadow: 0 8px 20px -10px $darkShadowButtonsOne;
         }
     }
 }
@@ -239,7 +213,7 @@ button {
         _de manera horizontal elborde y un margen en la parte inferior
         _para este elemento en esta medida
     */
-    @media (max-width: 999px) { // dispositivos 999px <= <= <=
+    @media (max-width: 999px) {
         margin: 0 auto 30px;
     }
     

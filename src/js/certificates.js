@@ -7,18 +7,18 @@
 let $certificatesSection = document.querySelectorAll('.certificates_section');
 
 /* 
-	realizamos un recorrido forEach a certificatesSection, pasamos un 
+	realizamos un recorrido forEach en $certificatesSection, pasamos un 
     parametro y definimos una funcion
 */
 $certificatesSection.forEach(certificateOne => {
     /* 
-		agregamos al parametro certificate un evento click y 
+		agregamos al parametro certificateOne un evento click y 
         definimos una funcion
 	*/
     certificateOne.addEventListener('click', () => {
         /* 
 			si el recorrido hecho a cada elemento tiene la clase
-			js_show_certificates que definimos en 'src\sass\layout\_certificates.scss',
+			js_show_certificates definida en 'src\sass\layout\_certificates.scss',
 			la removemos...
 		*/
         if(certificateOne.classList.contains('js_show_certificates')) {
@@ -26,8 +26,8 @@ $certificatesSection.forEach(certificateOne => {
         } else {
             /* 
 				de lo contrario hacemos un segundo recorrido forEach 
-				a certificatesSection, pasamos un parametro y definimos
-                una funcion cada elemento para remover de este la clase 
+				en $certificatesSection, pasamos un parametro y definimos
+                una funcion a cada elemento para remover de este la clase 
 				js_show_certificates 
 			*/
 			$certificatesSection.forEach((certificateTwo) => certificateTwo.classList.remove('js_show_certificates'));
