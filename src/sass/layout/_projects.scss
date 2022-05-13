@@ -1,20 +1,20 @@
 /*
 	proyects_component
 */
-.proyects_component {
+.projects_component {
 	/*
 		proyects_container: definimos un width: 90% para que sea en alncho
 		maximo de este contenedor en referencia al ancho de su contenedor 
 		padre, finalmente margin: 0 auto para centrarlo de manera horizontal
 	*/
-	.proyects_container {
+	.projects_container {
 		width: 90%;
 		margin: 0 auto;
 
 		/*
 			proyects_flexbox
 		*/
-		.proyects_flexbox {
+		.projects_flexbox {
 			/*
 				swiper: la libreria le define por defecto position: relative
 				esto evita que los iconos de la paginacion se desplazen hacia 
@@ -56,7 +56,7 @@
 						/*
 							box_proyect_img
 						*/
-						.box_proyect_img {
+						.box_project_img {
 							/*
 								_responsive 900px ==> : modificamos el ancho de este
 								_elemento para esta medida
@@ -81,7 +81,7 @@
 							box_proyect_description: definimos un espaciado en el eje X
 							para separar los elementos de los bordes del contenedor
 						*/
-						.box_proyect_description {
+						.box_project_description {
 							font-family: 'ubuntu-medium', sans-serif;
 							padding: 20px 0 30px;
 
@@ -227,8 +227,8 @@
 					position: absolute
 				*/
 				.swiper-pagination {
-					// color: #fff;
-					// background-color: rgba(0, 139, 139, 0.575);
+					background-color: $mainPageBackgroundColor;
+					padding: 3px 0;
 
 					/*
 						_responsive 900px ==> : definimos display: none para remover
@@ -236,6 +236,13 @@
 					*/
 					@media (min-width: 900px) {
 						display: none;
+					}
+
+					/*
+						tag-span
+					*/
+					span {
+						background-color: rgba(0, 0, 0, .3);
 					}
 				}
 			}

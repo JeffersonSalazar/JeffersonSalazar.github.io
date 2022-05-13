@@ -6,12 +6,12 @@
     outline: none;
     border: none;
     background-color: transparent;
-    color: #7e7b7c;
+    color: var(--textColor);
     font-family: 'poppins-regular', sans-serif;
     font-size: 21px;
     letter-spacing: 1px;
     border-bottom: 1px solid #00000026;
-    padding: 6px 4px;
+    padding: 4px;
 }
 
 /*
@@ -200,7 +200,7 @@
                     .el segundo input y generamos un margen
                 */
                 &:nth-child(2) {
-                    margin: 30px 0;
+                    margin: 40px 0;
                 }
 
                 /*
@@ -209,11 +209,29 @@
                 */
                 svg {
                     position: absolute;
-                    top: 9px;
+                    top: 6px;
                     right: 0;
                     fill: #7e7b7c;
                     width: 26px;
                     height: 26px;
+                }
+
+                /*
+                    tag-label: definimos position: absolute con sus propiedades top y left
+                    para posicionar este elemento, es importante definir la propiedad
+                    transform: translateY() ya que con este generamos el efecto label
+                */
+                label {
+                    position: absolute;
+                    top: 0;
+                    left: 5px;
+                    color: #7e7b7c;
+                    font-family: 'poppins-regular', sans-serif;
+                    font-size: 21px;
+                    letter-spacing: 1px;
+                    transform: translateY(5px);
+                    transition: transform .3s, transform-origin .2s;
+                    cursor: pointer;
                 }
                 
                 /*
@@ -224,6 +242,21 @@
                 input {
                     @include inputsStyle();
                     width: 100%;
+                    
+                    /*
+                        .cunado tag-input tiene los pseudo elementos ::focus y 
+                        .:not(:placeholder-shown) haciendo uso del selector adayacente
+                        .(+), seleccionamos a su elemento hermano que lo precede.
+                        .modificamos su transform: translateY() y añadimos un scale(),
+                        .para reposicionar este elemento a la vez que disminuimos su
+                        .tamaño, finalmente la propeidad transform-origin nos permite
+                        .aliniarlo de manera correcta
+                    */
+                    &:focus + label,
+                    &:not(:placeholder-shown) + label {
+                        transform: translateY(-18px) scale(.7);
+                        transform-origin: left top;
+                    }
                 }
 
                 /*
@@ -238,6 +271,21 @@
                     max-width: 100%;
                     min-height: 100px;
                     max-height: 100px;
+
+                    /*
+                        .cunado tag-textarea tiene los pseudo elementos ::focus y 
+                        .:not(:placeholder-shown) haciendo uso del selector adayacente
+                        .(+), seleccionamos a su elemento hermano que lo precede.
+                        .modificamos su transform: translateY() y añadimos un scale(),
+                        .para reposicionar este elemento a la vez que disminuimos su
+                        .tamaño, finalmente la propeidad transform-origin nos permite
+                        .aliniarlo de manera correcta
+                    */
+                    &:focus + label,
+                    &:not(:placeholder-shown) + label {
+                        transform: translateY(-18px) scale(.7);
+                        transform-origin: left top;
+                    }
                 }
 
                 /*
@@ -279,6 +327,7 @@
                     letter-spacing: 1;
                     width: inherit;
                     padding: 6px 4px;
+                    box-shadow: 0 3px 6px 0 var(--shadowColor);
                     
                     /*
                         .js_show_error: clase añadida desde 'src/js/contacts.js', 
@@ -296,7 +345,7 @@
             */
             .box_btn {
                 text-align: center;
-                margin-top: 50px;
+                margin-top: 60px;
             }
         }
     }

@@ -5,24 +5,7 @@
 */
 .banner_component {
     margin-top: 0 !important;
-
-    /*
-        _@query 999px <== : definimos padding-top: 0 !important para 
-        _modificar un el espaciado en la parte superior que se definido 
-        _en todos los componentes en 'src\sass\style.scss' para esta medida
-    */
-    @media (max-width: 999px) {
-        padding-top: 35px !important;
-    }
-
-    /*
-        _@query 478px <== : definimos padding-top: 0 !important para 
-        _modificar un el espaciado en la parte superior que se definido 
-        _en todos los componentes en 'src\sass\style.scss' para esta medida
-    */
-    @media (max-width: 478px) {
-        padding-top: 25px !important;
-    }
+    padding-top: 100px !important;
 
     /*
         banner_flexbox

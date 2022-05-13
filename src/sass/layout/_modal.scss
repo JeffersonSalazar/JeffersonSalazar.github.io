@@ -47,13 +47,13 @@
         }
       
         /*
-            _@query 1199px <== : modificamos el ancho y añadimos overflow: hidden
-            _para ocultar el contenido que supera el contenedor padre, finalmente
-            _overflow-y: auto para generar un scroll cuando la altura de la pantalla 
+            _@query 1199px <== : añadimos un alto maximo y modificamos el ancho maximo, 
+            _overflow: hidden oculta el contenido cuando este supere el alto del contenedor padre, 
+            _finalmente con overflow-y: auto generamos un scroll cuando la altura de la pantalla 
             _disminuya
         */
         @media (max-width: 1199px) {
-            height: 85%;
+            max-height: 85%;
             max-width: 500px;
             overflow: hidden;
             overflow-y: auto;
@@ -114,57 +114,48 @@
                 box-shadow: 0 5px 10px 0 #ccc;
 
                 /*
+                    _@query 399px <== : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+                @media (max-width: 369px) {
+                    top: 45px;
+                    left: 38px;
+                }
+
+                /*
+                    _@query 370px ==> <== @query 469px ==>: modificamos las propiedades 
+                    _top y left para posicionar este elemento en esta medida
+                */
+                @media (min-width: 370px) and (max-width: 469px) {
+                    top: 64px;
+                    left: 51px;
+                }
+
+                /*
+                    _@query 470px ==> <== @query 899px ==>: modificamos las propiedades 
+                    _top y left para posicionar este elemento en esta medida
+                */
+                @media (min-width: 470px) and (max-width: 899px) {
+                    top: 72px;
+                    left: 62px;
+                }
+
+                /*
+                    _@query 900px ==> : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+                @media (min-width: 900px) {
+                    top: 90px;
+                    left: 77px;
+                }
+
+                /*
                     _@query 1200px ==> : definimos las propiedades top y left para 
                     _posicionar este elemento en esta medida
                 */
                 @media (min-width: 1200px) {
-                    top: 100px;
-                    left: 70px;
-                }
-
-                /*
-                    _@query 1199px <== : definimos las propiedades top y left para 
-                    _posicionar este elemento en esta medida
-                */
-                @media (max-width: 1199px) {
-                    top: 110px;
-                    left: 77px;
-                }
-
-                /*
-                    _@query 599px <== : definimos las propiedades top y left para 
-                    _posicionar este elemento en esta medida
-                */
-                @media (max-width: 599px) {
-                    top: 100px;
-                    left: 77px;
-                }
-
-                /*
-                    _@query 520px <== : definimos las propiedades top y left para 
-                    _posicionar este elemento en esta medida
-                */
-                @media (max-width: 520px) {
-                    top: 65px;
-                    left: 52px;
-                }
-
-                /*
-                    _@query 399px <== : definimos las propiedades top y left para 
-                    _posicionar este elemento en esta medida
-                */
-                @media (max-width: 399px) {
-                    top: 60px;
-                    left: 46px;
-                }
-
-                /*
-                    _@query 359px <== : definimos las propiedades top y left para 
-                    _posicionar este elemento en esta medida
-                */
-                @media (max-width: 359px) {
-                    top: 50px;
-                    left: 38px;
+                    top: 84px;
+                    left: 69px;
                 }
             }
 

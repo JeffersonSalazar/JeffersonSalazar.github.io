@@ -27,5 +27,5 @@ let swiper = new Swiper('.mySwiper', {
 		loop: esta propiedad nos permite repetir el slider de 
 		manera infinita
 	*/
-	loop: false,
+	loop: true,
 });

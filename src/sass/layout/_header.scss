@@ -1,27 +1,27 @@
 /*
-    header_component: definimos flexbox y sus propiedades justify-content y 
-    align-items junto con un height para centrar de manera horizontal y 
-    vertical los elementos que este contiene
+    header_component: definimos position: fixed y sus propiedades top, right, 
+    left y z-index para fijar este elemento, finalmente flexbox y sus propiedades 
+    justify-content y align-items junto con una altura para centrar de manera 
+    horizontal y vertical los elementos que este contiene
 */
 .header_component {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 79;
     display: flex;
     justify-content: space-around;
     background-color: var(--backgroundColor);
-    height: 70px;
+    height: 80px;
     align-items: center;
     transition: height .3s;
 
     /*
-        .js_header_scroll: clases añadidas desde 'src/js/header.js',
-        .definimos position: fixed y sus propiedades top, right, left y z-index 
-        .para fijar este elemento y darle tamaño implementando una altura
+        .js_header_scroll: clase añadida desde 'src/js/header.js',
+        .modificamos la altura de este elemento 
     */
     &.js_header_scroll {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 79;
         height: 60px;
         box-shadow: 0 0 10px 0 var(--shadowColor);
     }

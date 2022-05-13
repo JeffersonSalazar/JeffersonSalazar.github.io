@@ -71,11 +71,11 @@ let $headerComponent = document.querySelector('#header-component');
 */
 window.addEventListener('scroll', function() {
     /*  
-        definimos un condicional, si window.scrollY es mayor a 0
+        definimos un condicional, si window.scrollY es mayor a 70
         añadimos a $headerComponent la clase js_header_scroll,
         definida en 'src\sass\layout\_header.scss'
     */
-    if(this.scrollY > 0) {
+    if(this.scrollY > 70) {
         $headerComponent.classList.add('js_header_scroll');
     }else {
         /* 

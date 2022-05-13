@@ -1,0 +1,89 @@
+{
+    "navbarComponent": {
+        "navbarTitle": "Menù",
+        "navbarListItemOne": "Conòceme",
+        "navbarListItemTwo": "Habilidades",
+        "navbarListItemThree": "Certificados",
+        "navbarListItemFour": "Proyectos",
+        "navbarListItemFive": "Clientes",
+        "navbarListItemSix": "Contactos"
+    },
+
+    "bannerComponent": {
+        "bannerTitle": "Soy Jefferson Salazar",
+        "bannerSubtitle": "Desarrollador Frontend",
+        "bannerParagraph": "Nacì el 10 de Febrero de 1989 en Palmira Valle. Me considero una persona sencilla, respetuosa, sociable, apasionado de la vida el emprendimiento y la tecnología. Me dedico al desarrollo Frontend hace 3 años en los cuales he participado en el desarrollo de sitios web y pequeñas aplicaciones...",
+        "bannerButtonText": "Leer Mas"
+    },
+
+    "modalComponent": {
+        "modalParagraphTop": "Tengo conocimientos bàsicos en Backend creando APIS y haciendo uso de ellas. Entre mis virtudes esta:",
+        "modalListItemOne": "El trabajo en equipo",
+        "modalListItemTwo": "La capacidad de solucionar problemas emergentes",
+        "modalListItemThree": "EL aprendizaje empírico y autodidacta",
+        "modalListItemFour": "La motivaciòn con que realizo mis proyectos",
+        "modalParagraphBottom": "Me encanta la fòrmula 1, ir a cine y compartir en familia. A mediano plazo anhelo iniciar una carrera afìn al desarrollo web."
+    },
+
+    "skillsComponent": {
+        "skillsTitle": "Habilidades"
+    },
+
+    "certificatesComponent": {
+        "certificatesTitle": "Certificados"
+    },
+
+    "certificatesAccordeonOne": {
+        "accordeonTitleOne": "Diseño web",
+        "accordeonSubtitle": "Instituto: Udemy",
+        "accordeonSubtitleOne": "Intensidad: 77 Horas",
+        "accordeonParagraphOne": "Creaciòn de sitios web responsive con html y css, maquetaciòn con flexbox y grid loyout implementaciòn de compiladores para css sass y less y su framework màs popular bootstrap interacciòn con el DOM a travès de javascript, manejo de eventos, uso de condicionales, bucles, arrays, objetos y màs... uso de jquery para animaciones que mejoran la experiencia de usuario.",
+        "accodeonLinkTextOne": "1. Descargar Certificados",
+        "accodeonLinkTextTwo": "2. Descargar Certificados",
+        "accodeonLinkTextThree": "3. Descargar Certificados"
+    },
+
+    "certificatesAccordeonTwo": {
+        "accordeonSubtitleTwo": "Intensidad: 55 Horas",
+        "accordeonParagraphTwo": "Creaciòn de proyectos spa ( single page application ) con angular implementando typescript y las ùltimas actualizaciones de ecmascript 6, todo sobre la creaciòn de componentes, mòdulos, directivas, inyecciòn de dependencias, formularios reactivos, enrutamiento lazy loading, creaciòn de servicios, definiciòn de clases e interfaces, uso de los guards, conexiòn y consumo de apis entre otros temas."
+    },
+
+    "certificatesAccordeonThree": {
+        "accordeonSubtitleThree": "Intensidad: 24 Horas",
+        "accordeonParagraphThree": "Creaciòn de un servidor local con nodejs  y su framework màs popular express uso de mòdulos morgan, cors, mysql, mongoose, creaciòn de variables de entorno, generaciòn de tokens, encriptamiento de contraseñas, validaciòn del lado del servidor, paginaciòn de los datos, estructura para proyectos escalables, conexiòn a bases de datos mysql y mongodb creaciòn de apis, interaciòn de datos con los metodos get, post, update, delete, comprobaciòn de apis con postman y màs."
+    },
+
+    "certificatesAccordeonFour": {
+        "accordeonTitleFour": "Màs",
+        "accordeonSubtitleFourOne": "Instituto: Internet",
+        "accordeonSubtitleFourTwo": "Intensidad: Infinito",
+        "accordeonParagraphFour": "Tengo cientos de horas consumidas en foros, documentaciones, comunidad, cursos sin certificaciòn, youtube, etc sobre todo lo referente al desarrollo web, estos metodos de aprendizaje me han ayudado a complementar y afianzar los conocimientos adquiridos en estos 3 años. Tambièn quiero compartirles que al dìa de hoy continuo mi aprendizaje a travès de esta y otras metodologìas con el objetivo de mantenerme a la vanguardia en cuanto a las nuevas tecnologìas."
+    },
+
+    "customersComponent": {
+        "customersTitle": "Clientes",
+        "customersCardParagraphOne": "Desde el comienzo note su potencial y sus ganas de seguir aprendiendo, por lo que decidì convertirme en su tutor, brindàndole las herramientas necesarias para que logre alcanzar su meta de ser un gran desarrollador.",
+        "customersCardRollOne": "Jefe de desarrollo",
+        "customersCardParagraphTwo": "Estoy sorprendido ya que para ser una persona autodidacta se ha ajustado muy bien a nuestro mètodo de trabajo siguiendo cada una de las recomendaciones que se le dan para llevar a cabo el desarrollo de los proyectos en los que ha participado.",
+        "customersCardRollTwo": "Fundador y SEO",
+        "customersCompany": "Compañìa:",
+        "customersRoll": "Cargo:",
+        "customersTelephone": "Telèfono:"
+    },
+
+    "contactsComponent": {
+        "contactsTitle": "Contactos",
+        "contactsParagraph": "envìame un email y tratarè de contactarme contigo lo antes posible, recuerda  que todos los campos del formulario son requeridos...",
+        "contactsInputText": "Nombre",
+        "contactsInputErrorText": "De 4 a 16 digitos no simbolos no numeros",
+        "contactsInputEmail": "Correo",
+        "contactsInputErrorEmail": "El email no es valido",
+        "contactsInputPost": "Comentarios",
+        "contactsInputErrorPost": "De 10 a 100 digitos no simbolos",
+        "contactsTextButton": "Enviar"
+    },
+
+    "footerComponent": {
+        "footerCopyright": "Derechos"
+    }
+}

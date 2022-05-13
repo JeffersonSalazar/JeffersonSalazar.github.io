@@ -154,27 +154,32 @@
     layout.scss es importado en 'assets/sass/style.scss'
 */
 /*
-    header_component: definimos flexbox y sus propiedades justify-content y 
-    align-items junto con un height para centrar de manera horizontal y 
-    vertical los elementos que este contiene
+    header_component: definimos position: fixed y sus propiedades top, right, 
+    left y z-index para fijar este elemento, finalmente flexbox y sus propiedades 
+    justify-content y align-items junto con una altura para centrar de manera 
+    horizontal y vertical los elementos que este contiene
 */
 .header_component {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 79;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-color: var(--backgroundColor);
-  height: 70px;
+  height: 80px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-transition: height .3s;
   transition: height .3s;
   /*
-        .js_header_scroll: clases añadidas desde 'src/js/header.js',
-        .definimos position: fixed y sus propiedades top, right, left y z-index 
-        .para fijar este elemento y darle tamaño implementando una altura
+        .js_header_scroll: clase añadida desde 'src/js/header.js',
+        .modificamos la altura de este elemento 
     */
   /*
         dark_mode_content: definimos flexbox y su propiedad align-items para
@@ -186,11 +191,6 @@
 }
 
 .header_component.js_header_scroll {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 79;
   height: 60px;
   -webkit-box-shadow: 0 0 10px 0 var(--shadowColor);
           box-shadow: 0 0 10px 0 var(--shadowColor);
@@ -213,7 +213,7 @@
 }
 
 .header_component .dark_mode_content svg {
-  fill: #c593fe;
+  fill: #479be3;
   width: 36px;
   height: 36px;
 }
@@ -274,7 +274,7 @@
 }
 
 .header_component .box_open_menu_icon svg {
-  fill: #c593fe;
+  fill: #479be3;
   width: 38px;
   height: 38px;
 }
@@ -321,7 +321,7 @@
 }
 
 .navbar_component nav {
-  background-color: #c593fe;
+  background-color: #479be3;
   width: 0;
   height: 100%;
   overflow: hidden;
@@ -417,7 +417,7 @@
 .navbar_component nav .ul_navbar li {
   list-style: none;
   /*
-                    .js_active_link: clase añadida desde 'src/js/navbar.js', 
+                    .js_active_item: clase añadida desde 'src/js/navbar.js', 
                     .cuando tag-li tiene esta clase añadimos color de fondo y
                     .con las propiedades border-top-left-radius y
                     .border-bottom-left-radius creamos los bordes redondeados
@@ -433,17 +433,17 @@
                 */
 }
 
-.navbar_component nav .ul_navbar li.js_active_link {
+.navbar_component nav .ul_navbar li.js_active_item {
   background-color: #fff;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   /*
-                        .cunado tag-li tiene la clase js_active_link,
+                        .cunado tag-li tiene la clase js_active_item,
                         .relaciona a tag-a y tag-button
                     */
 }
 
-.navbar_component nav .ul_navbar li.js_active_link a, .navbar_component nav .ul_navbar li.js_active_link button {
+.navbar_component nav .ul_navbar li.js_active_item a, .navbar_component nav .ul_navbar li.js_active_item button {
   /*
                             .buscamos dentro a tag-svg y cambiamos su color de fuente
                         */
@@ -452,11 +452,11 @@
                         */
 }
 
-.navbar_component nav .ul_navbar li.js_active_link a svg, .navbar_component nav .ul_navbar li.js_active_link button svg {
+.navbar_component nav .ul_navbar li.js_active_item a svg, .navbar_component nav .ul_navbar li.js_active_item button svg {
   fill: #333;
 }
 
-.navbar_component nav .ul_navbar li.js_active_link a span, .navbar_component nav .ul_navbar li.js_active_link button span {
+.navbar_component nav .ul_navbar li.js_active_item a span, .navbar_component nav .ul_navbar li.js_active_item button span {
   color: #333;
 }
 
@@ -500,31 +500,10 @@
 */
 .banner_component {
   margin-top: 0 !important;
-  /*
-        _@query 999px <== : definimos padding-top: 0 !important para 
-        _modificar un el espaciado en la parte superior que se definido 
-        _en todos los componentes en 'src\sass\style.scss' para esta medida
-    */
-  /*
-        _@query 478px <== : definimos padding-top: 0 !important para 
-        _modificar un el espaciado en la parte superior que se definido 
-        _en todos los componentes en 'src\sass\style.scss' para esta medida
-    */
+  padding-top: 100px !important;
   /*
         banner_flexbox
     */
-}
-
-@media (max-width: 999px) {
-  .banner_component {
-    padding-top: 35px !important;
-  }
-}
-
-@media (max-width: 478px) {
-  .banner_component {
-    padding-top: 25px !important;
-  }
 }
 
 .banner_component .banner_flexbox {
@@ -703,7 +682,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 2px solid #c593fe;
+  border: 2px solid #479be3;
   border-radius: 5px;
   margin-left: 12px;
   -webkit-transition: .2s;
@@ -737,7 +716,7 @@
 }
 
 .banner_component .banner_flexbox .box_banner_biografy .box_btn a svg {
-  fill: #c593fe;
+  fill: #479be3;
   width: 24px;
   height: 24px;
 }
@@ -760,7 +739,7 @@
   position: absolute;
   top: 53px;
   left: 58px;
-  border: 5px solid #c593fe;
+  border: 5px solid #479be3;
   border-radius: 5px;
   width: 70%;
   height: 89%;
@@ -854,9 +833,9 @@
             .posicion 0
         */
   /*
-            _@query 1199px <== : modificamos el ancho y añadimos overflow: hidden
-            _para ocultar el contenido que supera el contenedor padre, finalmente
-            _overflow-y: auto para generar un scroll cuando la altura de la pantalla 
+            _@query 1199px <== : añadimos un alto maximo y modificamos el ancho maximo, 
+            _overflow: hidden oculta el contenido cuando este supere el alto del contenedor padre, 
+            _finalmente con overflow-y: auto generamos un scroll cuando la altura de la pantalla 
             _disminuya
         */
   /*
@@ -883,7 +862,7 @@
 
 @media (max-width: 1199px) {
   .modal_component .modal_card {
-    height: 85%;
+    max-height: 85%;
     max-width: 500px;
     overflow: hidden;
     overflow-y: auto;
@@ -939,77 +918,66 @@
 
 .modal_component .modal_card .box_modal_img .box_img_border {
   position: absolute;
-  border: 5px solid #c593fe;
+  border: 5px solid #479be3;
   border-radius: 5px;
   width: 70%;
   height: 71%;
   -webkit-box-shadow: 0 5px 10px 0 #ccc;
           box-shadow: 0 5px 10px 0 #ccc;
   /*
-                    _@query 1200px ==> : definimos las propiedades top y left para 
-                    _posicionar este elemento en esta medida
-                */
-  /*
-                    _@query 1199px <== : definimos las propiedades top y left para 
-                    _posicionar este elemento en esta medida
-                */
-  /*
-                    _@query 599px <== : definimos las propiedades top y left para 
-                    _posicionar este elemento en esta medida
-                */
-  /*
-                    _@query 520px <== : definimos las propiedades top y left para 
-                    _posicionar este elemento en esta medida
-                */
-  /*
                     _@query 399px <== : definimos las propiedades top y left para 
                     _posicionar este elemento en esta medida
                 */
   /*
-                    _@query 359px <== : definimos las propiedades top y left para 
+                    _@query 370px ==> <== @query 469px ==>: modificamos las propiedades 
+                    _top y left para posicionar este elemento en esta medida
+                */
+  /*
+                    _@query 470px ==> <== @query 899px ==>: modificamos las propiedades 
+                    _top y left para posicionar este elemento en esta medida
+                */
+  /*
+                    _@query 900px ==> : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+  /*
+                    _@query 1200px ==> : definimos las propiedades top y left para 
                     _posicionar este elemento en esta medida
                 */
 }
 
+@media (max-width: 369px) {
+  .modal_component .modal_card .box_modal_img .box_img_border {
+    top: 45px;
+    left: 38px;
+  }
+}
+
+@media (min-width: 370px) and (max-width: 469px) {
+  .modal_component .modal_card .box_modal_img .box_img_border {
+    top: 64px;
+    left: 51px;
+  }
+}
+
+@media (min-width: 470px) and (max-width: 899px) {
+  .modal_component .modal_card .box_modal_img .box_img_border {
+    top: 72px;
+    left: 62px;
+  }
+}
+
+@media (min-width: 900px) {
+  .modal_component .modal_card .box_modal_img .box_img_border {
+    top: 90px;
+    left: 77px;
+  }
+}
+
 @media (min-width: 1200px) {
   .modal_component .modal_card .box_modal_img .box_img_border {
-    top: 100px;
-    left: 70px;
-  }
-}
-
-@media (max-width: 1199px) {
-  .modal_component .modal_card .box_modal_img .box_img_border {
-    top: 110px;
-    left: 77px;
-  }
-}
-
-@media (max-width: 599px) {
-  .modal_component .modal_card .box_modal_img .box_img_border {
-    top: 100px;
-    left: 77px;
-  }
-}
-
-@media (max-width: 520px) {
-  .modal_component .modal_card .box_modal_img .box_img_border {
-    top: 65px;
-    left: 52px;
-  }
-}
-
-@media (max-width: 399px) {
-  .modal_component .modal_card .box_modal_img .box_img_border {
-    top: 60px;
-    left: 46px;
-  }
-}
-
-@media (max-width: 359px) {
-  .modal_component .modal_card .box_modal_img .box_img_border {
-    top: 50px;
-    left: 38px;
+    top: 84px;
+    left: 69px;
   }
 }
 
@@ -1059,7 +1027,7 @@
   left: 45%;
   display: inline-block;
   margin-bottom: 10px;
-  border: 3px solid #c593fe;
+  border: 3px solid #479be3;
   border-radius: 50px;
   /*
                     tag-svg: implementamos el mixin 'iconCheckStyle' definido en 
@@ -1069,7 +1037,7 @@
 }
 
 .modal_component .modal_card .box_modal_content .box_modal_icon svg {
-  fill: #c593fe;
+  fill: #479be3;
   width: 34px;
   height: 34px;
 }
@@ -1097,7 +1065,7 @@
 }
 
 .modal_component .modal_card .box_modal_content ol li svg {
-  fill: #c593fe;
+  fill: #479be3;
   width: 24px;
   height: 24px;
 }
@@ -1431,6 +1399,7 @@
 .certificates_component .certificates_section.js_show_certificates .box_certificates_title svg {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
+  margin-top: 6px;
 }
 
 .certificates_component .certificates_section.js_show_certificates .box_certificates_content {
@@ -1496,7 +1465,7 @@
 }
 
 .certificates_component .certificates_section .box_certificates_title svg {
-  fill: #c593fe;
+  fill: #479be3;
   width: 40px;
   height: 40px;
   -webkit-transition: -webkit-transform .3s;
@@ -1535,7 +1504,7 @@
 }
 
 .certificates_component .certificates_section .box_certificates_content p strong {
-  color: #c593fe;
+  color: #479be3;
 }
 
 .certificates_component .certificates_section .box_certificates_content .box_certificates_files {
@@ -1547,6 +1516,7 @@
 }
 
 .certificates_component .certificates_section .box_certificates_content .box_certificates_files a {
+  text-decoration: underline;
   display: block;
   margin: 14px 0;
 }
@@ -1554,7 +1524,7 @@
 /*
 	proyects_component
 */
-.proyects_component {
+.projects_component {
   /*
 		proyects_container: definimos un width: 90% para que sea en alncho
 		maximo de este contenedor en referencia al ancho de su contenedor 
@@ -1562,7 +1532,7 @@
 	*/
 }
 
-.proyects_component .proyects_container {
+.projects_component .projects_container {
   width: 90%;
   margin: 0 auto;
   /*
@@ -1570,7 +1540,7 @@
 		*/
 }
 
-.proyects_component .proyects_container .proyects_flexbox {
+.projects_component .projects_container .projects_flexbox {
   /*
 				swiper: la libreria le define por defecto position: relative
 				esto evita que los iconos de la paginacion se desplazen hacia 
@@ -1581,7 +1551,7 @@
 			*/
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper {
+.projects_component .projects_container .projects_flexbox .swiper {
   /*
 					_responsive 900px ==> : definimos flexbox y su propiedad 
 					_align-items para centrar de manera vertical los elementos 
@@ -1609,19 +1579,19 @@
 }
 
 @media (min-width: 900px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper {
+  .projects_component .projects_container .projects_flexbox .swiper {
     -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
             box-shadow: 0 5px 10px 0 var(--shadowColor);
   }
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper {
   /*
 						swiper-slide
 					*/
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide {
   cursor: pointer;
   /*
 							_responsive 900px ==> : definimos flexbox para poner en linea los
@@ -1637,14 +1607,14 @@
 }
 
 @media (min-width: 900px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_img {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_img {
   /*
 								_responsive 900px ==> : modificamos el ancho de este
 								_elemento para esta medida
@@ -1657,19 +1627,19 @@
 }
 
 @media (min-width: 900px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_img {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_img {
     width: 65%;
   }
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_img img {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_img img {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description {
   font-family: 'ubuntu-medium', sans-serif;
   padding: 20px 0 30px;
   /*
@@ -1688,13 +1658,13 @@
 }
 
 @media (min-width: 900px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description {
     width: 35%;
     padding: 20px 20px;
   }
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description a {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description a {
   text-decoration: underline;
   font-size: 28px;
   line-height: 1.1;
@@ -1717,41 +1687,41 @@
 }
 
 @media (min-width: 1200px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description a {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description a {
     font-size: 38px;
   }
 }
 
 @media (max-width: 899px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description a {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description a {
     font-size: 34px;
   }
 }
 
 @media (max-width: 649px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description a {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description a {
     font-size: 30px;
   }
 }
 
 @media (max-width: 549px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description a {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description a {
     font-size: 26px;
   }
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description p {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description p {
   font-family: 'ubuntu-medium', sans-serif;
   margin: 16px 0;
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description ul {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description ul {
   /*
 									tag-li
 								*/
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description ul li {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description ul li {
   list-style: none;
   color: var(--textColor);
   font-size: 18px;
@@ -1762,14 +1732,14 @@
 									*/
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-wrapper .swiper-slide .box_proyect_description ul li svg {
-  fill: #c593fe;
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description ul li svg {
+  fill: #479be3;
   width: 34px;
   height: 34px;
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-next,
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-prev {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-next,
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev {
   /*
 						_responsive 899px <== : definimos display: none para remover
 						_de la vista este elemento a partir de esta medida
@@ -1781,16 +1751,16 @@
 }
 
 @media (max-width: 899px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-next,
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-prev {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-next,
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev {
     display: none;
   }
 }
 
 @media (min-width: 900px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-next,
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-prev {
-    background-color: #c593fe;
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-next,
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev {
+    background-color: #479be3;
     border-radius: 100%;
     width: 40px;
     height: 40px;
@@ -1801,33 +1771,42 @@
 							.debemos hacerlo haciendo uso del pseudo elemento ::after
 						*/
   }
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-next:after,
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-prev:after {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-next:after,
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev:after {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
   }
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-next {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-next {
   right: 40px;
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-button-prev {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev {
   left: 40px;
 }
 
-.proyects_component .proyects_container .proyects_flexbox .swiper .swiper-pagination {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-pagination {
+  background-color: #479be3;
+  padding: 3px 0;
   /*
 						_responsive 900px ==> : definimos display: none para remover
 						_de la vista este elemento a partir de esta medida
 					*/
+  /*
+						tag-span
+					*/
 }
 
 @media (min-width: 900px) {
-  .proyects_component .proyects_container .proyects_flexbox .swiper .swiper-pagination {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-pagination {
     display: none;
   }
+}
+
+.projects_component .projects_container .projects_flexbox .swiper .swiper-pagination span {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /*
@@ -2033,7 +2012,7 @@
 .customers_component .customers_container .customers_grid .customers_card_content .box_customers_profile img {
   width: 70px;
   height: 70px;
-  border: 3px solid #c593fe;
+  border: 3px solid #479be3;
   border-radius: 50%;
   -webkit-box-shadow: 0 5px 10px -3px var(--shadowColor);
           box-shadow: 0 5px 10px -3px var(--shadowColor);
@@ -2051,7 +2030,7 @@
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content .box_customers_profile .customers_name h3 {
-  color: #c593fe;
+  color: #479be3;
   font-size: 30px;
   /*
                                 _@query 999px <== : modificamos el tamaño de fuente de este
@@ -2129,7 +2108,7 @@
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content .ol_socials_customers li svg {
-  fill: #c593fe;
+  fill: #479be3;
   width: 24px;
   height: 24px;
 }
@@ -2260,7 +2239,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #c593fe;
+  background-color: #479be3;
   border-radius: 50%;
   -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
           box-shadow: 0 5px 10px 0 var(--shadowColor);
@@ -2299,7 +2278,7 @@
 }
 
 .contacts_component .form_flexbox .box_form_card .box_socials_contacts .socials_media {
-  background-color: #c593fe;
+  background-color: #479be3;
   border-radius: 100%;
   -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
           box-shadow: 0 5px 10px 0 var(--shadowColor);
@@ -2375,6 +2354,11 @@
                     para posicionar los iconos dentro de tag-input
                 */
   /*
+                    tag-label: definimos position: absolute con sus propiedades top y left
+                    para posicionar este elemento, es importante definir la propiedad
+                    transform: translateY() ya que con este generamos el efecto label
+                */
+  /*
                     tag-input: implementamos el mixin 'inputsStyle' que contiene los
                     estilos principales de este elemento, finalmente definimos un
                     ancho de 100% para que tome todo el ancho de su contenedor padre
@@ -2403,51 +2387,102 @@
 }
 
 .contacts_component .form_flexbox form .box_inputs:nth-child(2) {
-  margin: 30px 0;
+  margin: 40px 0;
 }
 
 .contacts_component .form_flexbox form .box_inputs svg {
   position: absolute;
-  top: 9px;
+  top: 6px;
   right: 0;
   fill: #7e7b7c;
   width: 26px;
   height: 26px;
 }
 
-.contacts_component .form_flexbox form .box_inputs input {
-  outline: none;
-  border: none;
-  background-color: transparent;
+.contacts_component .form_flexbox form .box_inputs label {
+  position: absolute;
+  top: 0;
+  left: 5px;
   color: #7e7b7c;
   font-family: 'poppins-regular', sans-serif;
   font-size: 21px;
   letter-spacing: 1px;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  -webkit-transition: -webkit-transform .3s, -webkit-transform-origin .2s;
+  transition: -webkit-transform .3s, -webkit-transform-origin .2s;
+  transition: transform .3s, transform-origin .2s;
+  transition: transform .3s, transform-origin .2s, -webkit-transform .3s, -webkit-transform-origin .2s;
+  cursor: pointer;
+}
+
+.contacts_component .form_flexbox form .box_inputs input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: var(--textColor);
+  font-family: 'poppins-regular', sans-serif;
+  font-size: 21px;
+  letter-spacing: 1px;
   border-bottom: 1px solid #00000026;
-  padding: 6px 4px;
+  padding: 4px;
   width: 100%;
+  /*
+                        .cunado tag-input tiene los pseudo elementos ::focus y 
+                        .:not(:placeholder-shown) haciendo uso del selector adayacente
+                        .(+), seleccionamos a su elemento hermano que lo precede.
+                        .modificamos su transform: translateY() y añadimos un scale(),
+                        .para reposicionar este elemento a la vez que disminuimos su
+                        .tamaño, finalmente la propeidad transform-origin nos permite
+                        .aliniarlo de manera correcta
+                    */
+}
+
+.contacts_component .form_flexbox form .box_inputs input:focus + label,
+.contacts_component .form_flexbox form .box_inputs input:not(:placeholder-shown) + label {
+  -webkit-transform: translateY(-18px) scale(0.7);
+          transform: translateY(-18px) scale(0.7);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
 }
 
 .contacts_component .form_flexbox form .box_inputs textarea {
   outline: none;
   border: none;
   background-color: transparent;
-  color: #7e7b7c;
+  color: var(--textColor);
   font-family: 'poppins-regular', sans-serif;
   font-size: 21px;
   letter-spacing: 1px;
   border-bottom: 1px solid #00000026;
-  padding: 6px 4px;
+  padding: 4px;
   min-width: 100%;
   max-width: 100%;
   min-height: 100px;
   max-height: 100px;
+  /*
+                        .cunado tag-textarea tiene los pseudo elementos ::focus y 
+                        .:not(:placeholder-shown) haciendo uso del selector adayacente
+                        .(+), seleccionamos a su elemento hermano que lo precede.
+                        .modificamos su transform: translateY() y añadimos un scale(),
+                        .para reposicionar este elemento a la vez que disminuimos su
+                        .tamaño, finalmente la propeidad transform-origin nos permite
+                        .aliniarlo de manera correcta
+                    */
+}
+
+.contacts_component .form_flexbox form .box_inputs textarea:focus + label,
+.contacts_component .form_flexbox form .box_inputs textarea:not(:placeholder-shown) + label {
+  -webkit-transform: translateY(-18px) scale(0.7);
+          transform: translateY(-18px) scale(0.7);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
 }
 
 .contacts_component .form_flexbox form .box_inputs input:focus ~ .border_animated,
 .contacts_component .form_flexbox form .box_inputs textarea:focus ~ .border_animated {
   width: 100%;
-  background-color: #c593fe;
+  background-color: #479be3;
 }
 
 .contacts_component .form_flexbox form .box_inputs .border_animated {
@@ -2464,11 +2499,13 @@
 .contacts_component .form_flexbox form .box_inputs .box_errors {
   display: none;
   color: #fff;
-  background-color: #c593fe;
+  background-color: #479be3;
   font-size: 18px;
   letter-spacing: 1;
   width: inherit;
   padding: 6px 4px;
+  -webkit-box-shadow: 0 3px 6px 0 var(--shadowColor);
+          box-shadow: 0 3px 6px 0 var(--shadowColor);
   /*
                         .js_show_error: clase añadida desde 'src/js/contacts.js', 
                         .cuando box_errors tiene esta clase le definimos display: block
@@ -2482,7 +2519,7 @@
 
 .contacts_component .form_flexbox form .box_btn {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 /*
@@ -2495,6 +2532,11 @@
     */
   /*
         tag-p
+    */
+  /*
+        footer_flags: definimos flexbox y sus propiedades
+        justify-content y align-items para centrar de manera
+        horizontal y vertical los elementos que este contiene
     */
 }
 
@@ -2518,7 +2560,7 @@
 
 .footer_component svg.js_show_gotop {
   fill: #fff;
-  background-color: #c593fe;
+  background-color: #479be3;
   border-radius: 50%;
   -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
           box-shadow: 0 5px 10px 0 var(--shadowColor);
@@ -2566,7 +2608,7 @@
 
 @media (max-width: 499px) {
   .footer_component svg {
-    margin: 40px 0 20px;
+    margin: 40px 0 30px;
   }
 }
 
@@ -2580,16 +2622,56 @@
 }
 
 .footer_component p {
-  padding-bottom: 40px;
+  padding: 20px 0 40px;
+}
+
+.footer_component .footer_flags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /*
-            @query 500px ==> : modificamos el espaciado de este elemento en esta medida
+            _@query 500px ==> : definimos un espaciado en la parte
+            _superior para este elemento en esta medida
+        */
+  /*
+            espanish_flag y english_flag: es importante definir
+            un width y height para ajustar el tamaño de estos
+            contenedores
         */
 }
 
 @media (min-width: 500px) {
-  .footer_component p {
-    padding: 40px 0;
+  .footer_component .footer_flags {
+    padding-top: 40px;
   }
+}
+
+.footer_component .footer_flags .espanish_flag, .footer_component .footer_flags .english_flag {
+  width: 35px;
+  height: 25px;
+  margin: 0 8px;
+  -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+          box-shadow: 0 5px 10px 0 var(--shadowColor);
+  cursor: pointer;
+  /*
+                tag-img: es importante que el width y height sea igaul
+                al de su contenedor padre, finalmente la propiedad
+                object-fit: cover que permite ajustar la imagen a
+                su contenedor padre
+            */
+}
+
+.footer_component .footer_flags .espanish_flag img, .footer_component .footer_flags .english_flag img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /*
@@ -2643,7 +2725,7 @@ body.js_hidden_scroll {
     el sitio web
 */
 h1, h2 {
-  color: #c593fe;
+  color: #479be3;
 }
 
 /*
@@ -2724,7 +2806,7 @@ p {
 */
 a {
   text-decoration: none;
-  color: #c593fe;
+  color: #479be3;
   font-family: 'baloo2-medium', sans-serif;
   font-size: 1.1rem;
 }
@@ -2754,7 +2836,7 @@ button {
     diferentes componentes
 */
 .banner_component, .skills_component,
-.certificates_component, .proyects_component,
+.certificates_component, .projects_component,
 .customers_component, .contacts_component {
   background-color: var(--backgroundColor);
   margin-top: 80px;
@@ -2774,10 +2856,10 @@ button {
 
 .box_btn button {
   vertical-align: top;
-  background-color: #c593fe;
+  background-color: #479be3;
   color: #fff;
   font-size: 20px;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
   border-radius: 5px;
   padding: 10px 50px;
   -webkit-transition: .2s;
@@ -2801,7 +2883,7 @@ button {
     parte inferior con un ancho de 200px
 */
 .box_title_border {
-  border-bottom: 2px solid #c593fe;
+  border-bottom: 2px solid #479be3;
   width: 200px;
   /*
         _@query 999px <== : definimos un un margen auto para centrar

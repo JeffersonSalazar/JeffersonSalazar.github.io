@@ -100,13 +100,13 @@
 						<!--  
 							.tag-h4: ene sta definimos el titulo menu
 						-->
-						<h4>Menu</h4>
+						<h4 data-section="navbarComponent" data-value="navbarTitle">Menù</h4>
 
 						<!--  
 							box_menu_close_icon: contenedor de 1 tag-svg, le definimos
 							un ID para implementar este elemento en 'src\js\navbar.js'
 						-->
-						<div class="box_menu_close_icon" title="Cerrar menu" id="menu-icon-navbar">
+						<div class="box_menu_close_icon" title="Cerrar menù" id="menu-icon-navbar">
 							<!--  
 								.tag-svg: en esta definimos el icono que cierra el menu
 							-->
@@ -139,7 +139,7 @@
 								<!--  
 									.tag-span: en esta definimos el titulo del enlace
 								-->
-								<span>Conoceme</span>
+								<span data-section="navbarComponent" data-value="navbarListItemOne">Conòceme</span>
 							</a>
 						</li>
 
@@ -150,7 +150,7 @@
 									<path d="M18 1h-8c-1.103 0-2 .897-2 2h8c1.103 0 2 .897 2 2v10.443l2 2.489V3c0-1.103-.897-2-2-2z"></path>
 								</svg>
 
-								<span>Habilidades</span>
+								<span data-section="navbarComponent" data-value="navbarListItemTwo">Habilidades</span>
 							</a>
 						</li>
 
@@ -160,37 +160,37 @@
 									<path d="M21 4h-3V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3a1 1 0 0 0-1 1v3c0 4.31 1.799 6.91 4.819 7.012A6.001 6.001 0 0 0 11 17.91V20H9v2h6v-2h-2v-2.09a6.01 6.01 0 0 0 4.181-2.898C20.201 14.91 22 12.31 22 8V5a1 1 0 0 0-1-1zM4 8V6h2v6.83C4.216 12.078 4 9.299 4 8zm8 8c-2.206 0-4-1.794-4-4V4h8v8c0 2.206-1.794 4-4 4zm6-3.17V6h2v2c0 1.299-.216 4.078-2 4.83z"></path>
 								</svg>
 
-								<span>Certificados</span>
+								<span data-section="navbarComponent" data-value="navbarListItemThree">Certificados</span>
 							</a>
 						</li>
 
 						<li>
-							<a href="#redirection_proyects_component">
+							<a href="#redirection_projects_component">
 								<svg viewBox="0 0 24 24">
 									<path d="M5 22h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2h-2a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2zM5 5h2v2h10V5h2v15H5V5z"></path><path d="m11 13.586-1.793-1.793-1.414 1.414L11 16.414l5.207-5.207-1.414-1.414z"></path>
 								</svg>
 
-								<span>Proyectos</span>
+								<span data-section="navbarComponent" data-value="navbarListItemFour">Proyectos</span>
 							</a>
 						</li>
 
 						<li>
-							<a href="redirection_customers_component">
+							<a href="#redirection_customers_component">
 								<svg viewBox="0 0 24 24">
 									<path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-5-2v2H9V4h6zM8 8h12v3H4V8h4zM4 19v-6h6v2h4v-2h6l.001 6H4z"></path>
 								</svg>
 
-								<span>Clientes</span>
+								<span data-section="navbarComponent" data-value="navbarListItemFive">Clientes</span>
 							</a>
 						</li>
 
 						<li>
-							<a href="redirection_contacts_component">
+							<a href="#redirection_contacts_component">
 								<svg viewBox="0 0 24 24">
 									<path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path>
 								</svg>
 
-								<span>Contactos</span>
+								<span data-section="navbarComponent" data-value="navbarListItemSix">Contactos</span>
 							</a>
 						</li>
 
@@ -243,18 +243,18 @@
 								.tag-h1: en esta definimos el titulo del banner, la clase 
 								.js_color_change es una clase trabajada desde 'src\js\navbar.js'
 							-->
-							<h1 class="js_color_change">Soy Jefferson Salazar</h1>
+							<h1 class="js_color_change" data-section="bannerComponent" data-value="bannerTitle">Soy Jefferson Salazar</h1>
 
 							<!--  
 								.tag-h4: en esta definimos el subtitulo del banner
 							-->
-							<h4>Desarrollador Frontend</h4>
+							<h4 data-section="bannerComponent" data-value="bannerSubtitle">Desarrollador Frontend</h4>
 
 							<!--  
 								.tag-p: en esta definimos el parrafo del banner
 							-->
-							<p>
-								Naci el 10 de Febrero de 1989 en Palmira Valle. Me considero una 
+							<p data-section="bannerComponent" data-value="bannerParagraph">
+								Nacì el 10 de Febrero de 1989 en Palmira Valle. Me considero una 
 								persona sencilla, respetuosa, sociable, apasionado de la vida el 
 								emprendimiento y la tecnología. Me dedico al desarrollo Frontend 
 								hace 3 años en los cuales he participado en el desarrollo de sitios
@@ -272,8 +272,10 @@
 									.la clase js_background_change es una clase trabajada desde 'src\js\navbar.js'
 									.le definimos un ID para implementar este elemento en 'src/js/banner.js', 
 								-->
-								<button type="button" class="js_background_change" id="btn-open-modal">
-									Leer Mas
+								<button type="button" class="js_background_change" 
+									data-section="bannerComponent" data-value="bannerTextButton" id="btn-open-modal"
+								>
+									Leer Màs
 								</button>
 
 								<!--  
@@ -365,8 +367,8 @@
 							<!--  
 								.tag-p: en esta definimos el parrafo del modal
 							-->
-							<p>
-								Tengo conocimientos basicos en Backend creando APIS y haciendo
+							<p data-section="modalComponent" data-value="modalParagraphTop">
+								Tengo conocimientos bàsicos en Backend creando APIS y haciendo
 								uso de ellas. Entre mis virtudes esta:
 							</p>
 
@@ -375,7 +377,7 @@
 							-->
 							<ol>
 								<!--  
-									tag-li: contiene 1 tag-svg
+									tag-li: contiene 1 tag-svg y 1 tag-span
 								-->
 								<li>
 									<!--  
@@ -385,35 +387,42 @@
 									<svg class="js_icon_color_change">
 										<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
 									</svg>
-									El trabajo en equipo.
+
+									<!--  
+										.tag-span: ene sta definimos el texto del item de la lista
+									-->
+									<span data-section="modalComponent" data-value="modalListItemOne">El trabajo en equipo</span>
 								</li>
 
 								<li>
 									<svg class="js_icon_color_change">
 										<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
 									</svg>
-									La capacidad de solucionar problemas emergentes.
+									
+									<span data-section="modalComponent" data-value="modalListItemTwo">La capacidad de solucionar problemas emergentes</span>
 								</li>
 
 								<li>
 									<svg class="js_icon_color_change">
 										<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
 									</svg>
-									EL aprendizaje empírico y autodidacta.
+									
+									<span data-section="modalComponent" data-value="modalListItemThree">EL aprendizaje empírico y autodidacta</span>
 								</li>
 								
 								<li>
 									<svg class="js_icon_color_change">
 										<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
 									</svg>
-									La motivacion con que realizo mis proyectos
+									
+									<span data-section="modalComponent" data-value="modalListItemFour">La motivaciòn con que realizo mis proyectos</span>
 								</li>
 							</ol>
 
-							<p>
-								Me encanta la formula 1, ir a cine y compartir 
+							<p data-section="modalComponent" data-value="modalParagraphBottom">
+								Me encanta la fòrmula 1, ir a cine y compartir 
 								en familia. A mediano plazo anhelo iniciar una 
-								carrerra afin al desarrollo web.
+								carrera afìn al desarrollo web.
 							</p>
 						</aside>
 					</div>
@@ -430,7 +439,7 @@
 						.tag-h2: en esta definimos el titulo de la seccion, la clase 
 						.js_change_color es una clase manejada desde src\js\navbar.js
 					-->
-					<h2 class="js_color_change">Habilidades</h2>
+					<h2 class="js_color_change" data-section="skillsComponent" data-value="skillsTitle">Habilidades</h2>
 
 					<!--  
 						box_title_border: es una clase global definida para todos los 
@@ -575,7 +584,7 @@
 						.tag-h2: en esta definimos el titulo de la seccion, la clase 
 						.js_change_color es una clase trabajada desde 'src/js/navbar.js'
 					-->
-					<h2 class="js_color_change">Certificados</h2>
+					<h2 class="js_color_change" data-section="certificatesComponent" data-value="certificatesTitle">Certificados</h2>
 
 					<!--  
 						box_title_border: es una clase global definida para todos los 
@@ -598,7 +607,7 @@
                             <!--  
                                 .tag-h3: en esta definimos el titulo del programa
                             -->
-							<h3>Diseño Web</h3>
+							<h3 data-section="certificatesAccordeonOne" data-value="accordeonTitleOne">Diseño web</h3>
 							
                             <!--  
                                 .tag-svg: en esta definimos el icono, la clase 'js_icon_color_change'
@@ -617,24 +626,27 @@
                             <!--  
                                 .tag-5: en esta definimos el titulo del certificado
                             -->
-							<h5>Instituto:<strong> Udemy</strong></h5>
+							<h5 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">
+								Instituto: Udemy
+							</h5>
 
                             <!--  
                                 .tag-5: en esta definimos el subtitulo del certificado
                             -->
-							<h5>Intensidad:<strong> 77 Horas </strong></h5>
+							<h5 data-section="certificatesAccordeonOne" data-value="accordeonSubtitleOne">
+								Intensidad: 77 Horas
+							</h5>
 
                             <!--  
                                 .tag-p: en esta definimos el parrafo del certificado
                             -->
-							<p>
-								Creacion de sitios web responsive con<strong> html y css</strong>,
-								maquetacion avanzada con<strong> flexbox y grid loyout </strong> 
-								implementacion de compiladores para css<strong> sass y less </strong>
-								y su framework mas popular<strong> bootstrap </strong> interaccion con el 
-								<strong>DOM</strong> a travez de<strong> javascript</strong>, manejo 
-								de eventos, uso de condicionales, bucles, arrays, objetos y mas... uso de
-								<strong> jquery </strong>para amimaciones que mejoran la experiencia de usuario.
+							<p data-section="certificatesAccordeonOne" data-value="accordeonParagraphOne">
+								Creaciòn de sitios web responsive con html y css, maquetaciòn con flexbox 
+								y grid loyout implementaciòn de compiladores para css sass y less 
+								y su framework màs popular bootstrap interacciòn con el 
+								DOM a travès de javascript, manejo de eventos, uso de condicionales, bucles, 
+								arrays, objetos y màs... uso de jquery para animaciones que mejoran la experiencia 
+								de usuario.
 							</p>
 
 							<!--  
@@ -645,15 +657,21 @@
                                     .tag-a: en esta definimos los certificados para descargar, la clase
 									.js_color_change es manejada desde 'src\js\navbar.js'
                                 -->
-								<a href="./assets/docs/html1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change">
+								<a href="./assets/docs/html1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change"
+									data-section="certificatesAccordeonOne" data-value="accodeonLinkTextOne"
+								>
                                     1. Descargar Certificados
                                 </a>
                                 
-								<a href="./assets/docs/html2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change">
+								<a href="./assets/docs/html2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change"
+									data-section="certificatesAccordeonOne" data-value="accodeonLinkTextTwo"
+								>
                                     2. Descargar Certificados
                                 </a>
 								
-                                <a href="./assets/docs/js1.pdf"  download="certificado tres" title="descargar certificado" class="links_donwload js_color_change">
+                                <a href="./assets/docs/js1.pdf"  download="certificado tres" title="descargar certificado" class="links_donwload js_color_change"
+									data-section="certificatesAccordeonOne" data-value="accodeonLinkTextThree"
+								>
                                     3. Descargar Certificados
                                 </a>
 							</div>
@@ -670,23 +688,32 @@
 						</section>
 
 						<section class="box_certificates_content">
-							<h5>Instituto:<strong> Udemy </strong></h5>
+							<h5 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h5>
 
-							<h5>Intensidad:<strong> 54 Horas </strong></h5>
+							<h5 data-section="certificatesAccordeonTwo" data-value="accordeonSubtitleTwo">Intensidad: 54 Horas</h5>
 
-							<p>
-								Creacion de proyectos<strong> spa </strong>( single page application ) 
-								con<strong> angular </strong>implementando<strong> typescript </strong>
-								y las ultimas actualizaciones de <strong>ecmascript 6</strong>, todo sobre
-								la creacion de componentes, modulos, directivas, inyeccion de dependencias,
-								formularios reactivos, enrutamiento lazy loading, creacion de servicios, 
-								definicion de clases e interfaces, uso de los guards, conexion y consumo de
-								<strong> apis </strong>entre otros temas.
+							<p data-section="certificatesAccordeonTwo" data-value="accordeonParagraphTwo">
+								Creaciòn de proyectos spa ( single page application ) 
+								con angular implementando typescript 
+								y las ùltimas actualizaciones de ecmascript 6, todo sobre
+								la creaciòn de componentes, mòdulos, directivas, inyecciòn de dependencias,
+								formularios reactivos, enrutamiento lazy loading, creaciòn de servicios, 
+								definiciòn de clases e interfaces, uso de los guards, conexiòn y consumo de
+								apis entre otros temas.
 							</p>
 
 							<div class="box_certificates_files">
-								<a href="./assets/docs/angular1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change">1. Descargar Certificados</a>
-								<a href="./assets/docs/angular2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change">2. Descargar Certificados</a>
+								<a href="./assets/docs/angular1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change"
+									data-section="certificatesAccordeonOne" data-value="accodeonLinkTextOne"
+								>
+									1. Descargar Certificados
+								</a>
+
+								<a href="./assets/docs/angular2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change"
+									data-section="certificatesAccordeonOne" data-value="accodeonLinkTextTwo"
+								>
+									2. Descargar Certificados
+								</a>
 							</div>
 						</section>
 					</div>
@@ -701,31 +728,43 @@
 						</section>
 
 						<section class="box_certificates_content">
-							<h5>Instituto:<strong> Udemy </strong></h5>
+							<h5 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h5>
 
-							<h5>Intensidad:<strong> 24 Horas </strong></h5>
+							<h5 data-section="certificatesAccordeonThree" data-value="accordeonSubtitleThree">Intensidad: 24 Horas</h5>
 
-							<p>
-								Creacion de un servidor local con<strong> nodejs </strong> y su framework mas
-								popular <strong>express</strong> uso de modulos morgan, cors, mysql, mongoose, 
-								creacion de variables de entorno, generacion de tokens, encriptamiento de contraseñas,
-								validacion del lado del servidor, paginacion de los datos, estructura para proyectos 
-								escalables, conexion a bases de datos<strong> mysql y mongodb </strong>creacion de
-								<strong> apis </strong>, interacion de datos con los metodos get, post, update, delete, 
-								comprobacion de apis con<strong> postman </strong>y mas.
+							<p data-section="certificatesAccordeonThree" data-value="accordeonParagraphThree">
+								Creaciòn de un servidor local con nodejs  y su framework màs
+								popular express uso de mòdulos morgan, cors, mysql, mongoose, 
+								creaciòn de variables de entorno, generaciòn de tokens, encriptamiento de contraseñas,
+								validaciòn del lado del servidor, paginaciòn de los datos, estructura para proyectos 
+								escalables, conexiòn a bases de datos mysql y mongodb creaciòn de
+								apis, interaciòn de datos con los metodos get, post, update, delete, 
+								comprobaciòn de apis con postman y màs.
 							</p>
 
 							<div class="box_certificates_files">
-								<a href="./assets/docs/node1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change">1. Descargar Certificados</a>
-								<a href="./assets/docs/sql2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change">2. Descargar Certificados</a>
-								<a href="./assets/docs/mongo1.pdf" download="certificado tres" title="descargar certificado" class="links_donwload js_color_change">3. Descargar Certificados</a>
+								<a href="./assets/docs/node1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change"
+									data-section="certificatesAccordeonOne" data-value="accodeonLinkTextOne"
+								>
+									1. Descargar Certificados
+								</a>
+								<a href="./assets/docs/sql2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change"
+									data-section="certificatesAccordeonOne" data-value="accodeonLinkTextTwo"
+								>
+									2. Descargar Certificados
+								</a>
+								<a href="./assets/docs/mongo1.pdf" download="certificado tres" title="descargar certificado" class="links_donwload js_color_change"
+									data-section="certificatesAccordeonOne" data-value="accodeonLinkTextThree"
+								>
+									3. Descargar Certificados
+								</a>
 							</div>
 						</section>
 					</div>
 
 					<div class="certificates_section">
 						<section class="box_certificates_title">
-							<h3>Mas</h3>
+							<h3 data-section="certificatesAccordeonFour" data-value="accordeonTitleFour">Màs</h3>
 						
 							<svg viewBox="0 0 24 24" class="js_icon_color_change">
                                 <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
@@ -733,17 +772,17 @@
 						</section>
 
 						<section class="box_certificates_content">
-							<h5>Instituto:<strong> Internet </strong></h5>
+							<h5 data-section="certificatesAccordeonFour" data-value="accordeonSubtitleFourOne">Instituto: Internet</h5>
 
-							<h5>Intensidad:<strong> Infinito </strong></h5>
+							<h5 data-section="certificatesAccordeonFour" data-value="accordeonSubtitleFourTwo">Intensidad: Infinito</h5>
 
-							<p>
-								Tengo cientos de horas consumidas en<strong> foros, documentaciones, comunidad, cursos
-								sin certificacion, youtube etc </strong>sobre todo lo referente al <strong>desarrollo web</strong>, 
+							<p data-section="certificatesAccordeonFour" data-value="accordeonParagraphFour">
+								Tengo cientos de horas consumidas en foros, documentaciones, comunidad, cursos
+								sin certificaciòn, youtube, etc sobre todo lo referente al desarrollo web, 
 								estos metodos de aprendizaje me han ayudado a complementar y afianzar los conocimientos adquiridos 
-								en estos <strong>3 años</strong>. Tambien quiero compartirles que al dia de hoy continuo mi 
-								aprendizaje a travez de esta y otras<strong> metodologias </strong>con el objetivo de mantenerme 
-								a la vanguardia en cuanto a las<strong> nuevas tecnologias </strong>.
+								en estos 3 años. Tambièn quiero compartirles que al dìa de hoy continuo mi 
+								aprendizaje a travès de esta y otras metodologìas con el objetivo de mantenerme 
+								a la vanguardia en cuanto a las nuevas tecnologìas.
 							</p>
 						</section>
 					</div>
@@ -755,7 +794,7 @@
 					_le definimos un ID requerido en las tags-a definidas
 					_en navbar_component 		
 				-->
-				<section class="proyects_component" id="redirection_proyects_component">
+				<section class="projects_component" id="redirection_projects_component">
 					<!--  
 						.tag-h2: en esta definimos el titulo de la seccion, la clase 
 						.js_change_color es una clase trabajada desde 'src/js/navbar.js'
@@ -774,12 +813,12 @@
 						proyects_container: contenedor definido para manejar el responsive
 						de la seccion
 					-->
-					<div class="proyects_container">
+					<div class="projects_container">
 						<!--  
 							proyects_flexbox: contenedor definido para implementar flexbox en la
 							seccion
 						-->
-						<div class="proyects_flexbox">
+						<div class="projects_flexbox">
 							<!--  
 								swiper: contenedor de swiper-wrapper la clase
 								mySwiper es manejada desde 'src\js\proyects.js'
@@ -797,27 +836,27 @@
 										<!--  
 											box_proyect_img: contenedor de 1 tag-img
 										-->
-										<div class="box_proyect_img">
+										<div class="box_project_img">
 											<!--  
 												.tag-img: en esta definomos la imagen del slider
 											-->
-											<img src="./assets/images/fundacion_bolivar_davivienda.png" alt="fundacion bolivar davivienda" />
+											<img src="./assets/images/fundacion_bolivar_davivienda.png" alt="fundaciòn bòlivar davivienda" />
 										</div>
 
 										<!--  
 											box_proyect_description: contenedor de 1 tag-a, 1 tag-p
 											y 1 tag-ul
 										-->
-										<section class="box_proyect_description">
+										<div class="box_project_description">
 											<!--  
 												.tag-a: en esta definimos el titulo del slider
 											-->
-											<a href="https://www.fundacionbolivardavivienda.org/" class="js_color_change" target="_blank" title="Visitar sitio web">Fundacion bolivar</a>
+											<a href="https://www.fundacionbolivardavivienda.org/" class="js_color_change" target="_blank" title="Visitar sitio web">Fundaciòn bolivar</a>
 
 											<!--  
 												.tag-p: en esta definimos el subtitulo del slider
 											-->
-											<p>Tecnologias utilizadas:</p>
+											<p>Tecnologìas utilizadas:</p>
 
 											<!--  
 												.tag-ul: contiene 6 tags-li
@@ -885,18 +924,18 @@
 													wow js
 												</li>
 											</ul>
-										</section>
+										</div>
 									</div>						
 
 									<div class="swiper-slide">
-										<div class="box_proyect_img">
+										<div class="box_project_img">
 											<img src="./assets/images/biofortificado.png" alt="biofortificados" />
 										</div>
 
-										<section class="box_proyect_description">
+										<div class="box_project_description">
 											<a href="https://biofortificados.com/" class="js_color_change"  target="_blank" title="Visitar sitio web">Biofortificados</a>
 
-											<p>Tecnologias utilizadas:</p>
+											<p>Tecnologìas utilizadas:</p>
 
 											<ul>
 												<li>
@@ -931,18 +970,18 @@
 													jquery
 												</li>
 											</ul>
-										</section>
+										</div>
 									</div>	
 
 									<div class="swiper-slide">
-										<div class="box_proyect_img">
+										<div class="box_project_img">
 											<img src="./assets/images/los_naranjos.png" alt="los naranjos" />
 										</div>
 
-										<section class="box_proyect_description">
+										<div class="box_project_description">
 											<a href="https://losnaranjos.com.co/" class="js_color_change" target="_blank" title="Visitar sitio web">Los naranjos</a>
 
-											<p>Tecnologias utilizadas:</p>
+											<p>Tecnologìas utilizadas:</p>
 
 											<ul>
 												<li>
@@ -1001,147 +1040,26 @@
 													wow js
 												</li>
 											</ul>
-										</section>
-									</div>	
-
-									<div class="swiper-slide">
-										<div class="box_proyect_img">
-											<img src="./assets/images/fundacion_bolivar_davivienda.png" alt="fundacion bolivar davivienda" />
 										</div>
-
-										<section class="box_proyect_description">
-											<a href="" class="js_color_change" title="Visitar sitio web">Fundacion bolivar davivienda</a>
-
-											<p>Tecnologias utilizadas:</p>
-
-											<ul>
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-
-													html
-												</li>
-
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-													
-													sass
-												</li>
-
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-													
-													bootstrap
-												</li>
-
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-													
-													javascript
-												</li>
-
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-													
-													swipper js
-												</li>
-
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-													
-													wow js
-												</li>
-											</ul>
-										</section>
-									</div>	
-
-									<div class="swiper-slide">
-										<div class="box_proyect_img">
-											<img src="./assets/images/fundacion_bolivar_davivienda.png" alt="fundacion bolivar davivienda" />
-										</div>
-
-										<section class="box_proyect_description">
-											<a href="" class="js_color_change" title="Visitar sitio web">Fundacion bolivar davivienda</a>
-
-											<p>Tecnologias utilizadas:</p>
-
-											<ul>
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-
-													html
-												</li>
-
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-													
-													sass
-												</li>
-
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-													
-													bootstrap
-												</li>
-
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-													
-													javascript
-												</li>
-
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-													
-													swipper js
-												</li>
-
-												<li>
-													<svg class="js_icon_color_change">
-														<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
-													</svg>
-													
-													wow js
-												</li>
-											</ul>
-										</section>
 									</div>	
 								</div>
 
 								<!--  
 									swiper-button-next y swiper-button-prev: este contenedor
 									tiene definido por defecto los botones de desplazamiento
-									del slider estas mismas clases son manejadas desde 'src\js\proyects.js'
+									del slider, estas mismas clases son manejadas desde 'src\js\proyects.js',
+									la clase 'js_background_change' es manejada desde 'src\js\navbar.js'
 								-->
 								<div class="swiper-button-next js_background_change"></div>
 								<div class="swiper-button-prev js_background_change"></div>
 
 								<!--  
-							swiper-pagination: esta clase es implementada
-							en javascript
-						-->
-						<div class="swiper-pagination"></div>
+									swiper-pagination: este contenedor tiene definido por defecto
+									el progress bar del slider, esta clase es manejada desde
+									'src\js\proyects.js', la clase 'js_background_change' es manejada 
+									desde 'src\js\navbar.js'
+								-->
+								<div class="swiper-pagination js_background_change"></div>
 							</div>
 						</div>
 					</div>
@@ -1158,7 +1076,7 @@
 						.tag-h2: en esta definimos el titulo de la seccion, la clase 
 						.js_change_color es una clase trabajada desde 'src/js/navbar.js'
 					-->
-					<h2 class="js_color_change">Clientes</h2>
+					<h2 class="js_color_change" data-section="customersComponent" data-value="customersTitle">Clientes</h2>
 
 					<!--  
 						box_title_border: es una clase global definida para todos los 
@@ -1206,7 +1124,6 @@
 										.js_color_border es manejada desde 'src\js\navbar.js'
 									-->
 									<img src="./assets/images/elberth_agreda.png" alt="Elberth Agreda" class="js_color_border">
-									<!-- <img src="./assets/images/carlos-removebg-preview.png" alt="" class="js_color_border"> -->
 
 									<!--  
 										customers_name: contenedor de 1 tag-h3 y 1 tag-span
@@ -1228,9 +1145,9 @@
 								<!--  
 									.tag-p: en esta definimos el parrafo del cliente
 								-->
-								<p>
-									Desde el comienzo note su potencial y sus ganas de seguir aprendiendo
-									por lo que decidi convertirme en su tutor, brindandole las herramientas
+								<p data-section="customersComponent" data-value="customersCardParagraphOne">
+									Desde el comienzo note su potencial y sus ganas de seguir aprendiendo,
+									por lo que decidì convertirme en su tutor, brindàndole las herramientas
 									necesarias para que logre alcanzar su meta de ser un gran desarrollador.
 								</p>
 
@@ -1254,7 +1171,7 @@
 										<!--  
 											.tag-span: en esta definimos la profesion del cliente
 										-->
-										<span>Compañia:</span> Seguros Bolivar
+										<span data-section="customersComponent" data-value="customersCompany">Compañìa:</span> Seguros Bòlivar
 									</li>
 
 									<li>
@@ -1263,7 +1180,7 @@
 											<path d="M20 22V4c0-1.103-.897-2-2-2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22zM6 10V4h12v14.553l-6-3.428-6 3.428V10z"></path>
 										</svg>
 
-										<span>Cargo:</span> Jefe de desarrollo
+										<span data-section="customersComponent" data-value="customersRoll">Cargo:</span> Jefe de desarrollo
 									</li>
 
 									<li>
@@ -1271,7 +1188,7 @@
 											<path d="m20.487 17.14-4.065-3.696a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a.997.997 0 0 0-.085-1.39z"></path>
 										</svg>	
 
-										<span>Telefono:</span> 310 726 1654
+										<span data-section="customersComponent" data-value="customersTelephone">Telèfono:</span> 310 726 1654
 									</li>
 								</ol>
 							</div>
@@ -1285,7 +1202,6 @@
 
 								<div class="box_customers_profile">
 									<img src="./assets/images/carlos_jimenez.png" alt="Carlos Jimenez" class="js_color_border">
-									<!-- <img src="./assets/images/elberth-removebg-preview.png" alt="" class="js_color_border"> -->
 
 									<section class="customers_name">
 										<h3 class="js_color_change">Carlos Jimenez</h3>
@@ -1294,9 +1210,9 @@
 									</section>
 								</div>
 
-								<p>
-									Estoy sorprendido ya que para ser alguien empirico se ha ajustado muy
-									bien a nuestro metodo de trabajo siguiendo cada una de las recomendaciones
+								<p data-section="customersComponent" data-value="customersCardParagraphTwo">
+									Estoy sorprendido ya que para ser una persona autodidacta se ha ajustado muy
+									bien a nuestro mètodo de trabajo siguiendo cada una de las recomendaciones
 									que se le dan para llevar a cabo el desarrollo de los proyectos en los
 									que ha participado.
 								</p>
@@ -1307,7 +1223,7 @@
 											<path d="M19 2H9c-1.103 0-2 .897-2 2v6H5c-1.103 0-2 .897-2 2v9a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4c0-1.103-.897-2-2-2zM5 12h6v8H5v-8zm14 8h-6v-8c0-1.103-.897-2-2-2H9V4h10v16z"></path><path d="M11 6h2v2h-2zm4 0h2v2h-2zm0 4.031h2V12h-2zM15 14h2v2h-2zm-8 .001h2v2H7z"></path>
 										</svg>
 										
-										<span>Compañia:</span> Uno Raya
+										<span data-section="customersComponent" data-value="customersCompany">Compañìa:</span> Uno Raya
 									</li>
 
 									<li>
@@ -1316,7 +1232,7 @@
 											<path d="M20 22V4c0-1.103-.897-2-2-2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22zM6 10V4h12v14.553l-6-3.428-6 3.428V10z"></path>
 										</svg>
 
-										<span>Cargo:</span> Fundador y CEO
+										<span data-section="customersComponent" data-value="customersRoll">Cargo:</span> Fundador y SEO
 									</li>
 
 									<li>
@@ -1324,7 +1240,7 @@
 											<path d="m20.487 17.14-4.065-3.696a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a.997.997 0 0 0-.085-1.39z"></path>
 										</svg>	
 
-										<span>Telefono:</span> 301 451 0210
+										<span data-section="customersComponent" data-value="customersTelephone">Telèfono:</span> 301 451 0210
 									</li>
 								</ol>
 							</div>
@@ -1353,13 +1269,13 @@
 								.tag-h2: en esta definimos el titulo de la seccion, la clase 
 								.js_change_color es una clase trabajada desde 'src/js/navbar.js'
 							-->
-							<h2 class="js_color_change">Contactos</h2>
+							<h2 class="js_color_change" data-section="contactsComponent" data-value="contactsTitle">Contactos</h2>
 							
 							<!--  
 								.tag-p: en esta definimos el titulo de la tarjeta
 							-->
-							<p>
-								enviame un email y tratare de contactarme contigo lo antes posible, 
+							<p data-section="contactsComponent" data-value="contactsParagraph">
+								envìame un email y tratarè de contactarme contigo lo antes posible, 
 								recuerda  que todos los campos del formulario son requeridos...
 							</p>
 
@@ -1432,9 +1348,15 @@
 								</svg>
 	
 								<!--  
-									.tag-input: en esta definimos el input del formulario
+									.tag-input: en esta definimos el input del formulario, le definimos un ID para
+									.asociar este elemento con la tag-label
 								-->
-								<input type="text" name="name" placeholder="Nombre"/>
+								<input type="text" name="name" placeholder=" " id="nameInput"/>
+
+								<!--  
+									.tag-label: esta la definimos para que trabaje en conjunto con ta-input
+								-->
+								<label for="nameInput" data-section="contactsComponent" data-value="contactsInputText">Nombre</label>
 
 								<!--  
 									.tag-span: esta la definimos para crear un borde animado
@@ -1449,7 +1371,7 @@
 									.'src/js/navbar.js', le definimos un ID para implementar
 									.este elemento en 'src/js/contacts.js'
 								-->
-								<p class="box_errors js_background_change" id="error-name">
+								<p class="box_errors js_background_change" data-section="contactsComponent" data-value="contactsInputErrorText" id="error-name">
 									De 4 a 16 digitos no simbolos no numeros	
 								</p>
 							</div>
@@ -1459,11 +1381,12 @@
 									<path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path>
 								</svg>
 
-								<input type="text" name="email" placeholder="Email"/>
+								<input type="text" name="email" placeholder=" " id="emailInput"/>
+								<label for="emailInput" data-section="contactsComponent" data-value="contactsInputEmail">Email</label>
 
 								<span class="border_animated js_background_change"></span>
 
-								<p class="box_errors js_background_change" id="error-email">
+								<p class="box_errors js_background_change" id="error-email" data-section="contactsComponent" data-value="contactsInputErrorEmail">
 									El email no es valido
 								</p>
 							</div>
@@ -1477,11 +1400,12 @@
 									tag-textarea: en esta definimos un campo del 
 									formulario
 								-->
-								<textarea name="post" placeholder="Comentarios"></textarea>
+								<textarea name="post" placeholder=" " id="postTextarea"></textarea>
+								<label for="postTextarea" data-section="contactsComponent" data-value="contactsInputPost">Comentarios</label>
 
 								<span class="border_animated js_background_change"></span>
 
-								<p class="box_errors js_background_change" id="error-post">
+								<p class="box_errors js_background_change" id="error-post" data-section="contactsComponent" data-value="contactsInputErrorPost">
 									De 10 a 100 digitos no simbolos
 								</p>
 							</div>
@@ -1496,7 +1420,11 @@
 									.la clase js_background_change es una clase trabajada 
 									.desde 'src\js\navbar.js'
 								-->
-								<button type="submit" class="js_background_change">Enviar</button>
+								<button type="submit" class="js_background_change" 
+									data-section="contactsComponent" data-value="contactsTextButton"
+								>
+									Enviar
+								</button>
 							</div>
 						</form>
 					</div>
@@ -1524,10 +1452,33 @@
 			</div>
 
 			<!--  
+				footer_flags: contenedor de espanish_flag y english_flag
+			-->
+			<div class="footer_flags">
+				<!--  
+					espanish_flag: contenedor de 1 tag-img, la clase 
+					'js_languages_flags' es manejada desde 'src\js\footer.js',
+					recordemos la importancia de definir el atributo data-language="" 
+					ya que con este vamos a identificar desde javascript el idioma 
+					que tendra nuestro sitio web
+				-->
+				<div class="espanish_flag js_languages_flags" data-language="es">
+					<!--  
+						.tag-img: en esta definimos la imagen de la bandera del idioma
+					-->
+					<img src="./assets/images/es.png" alt="espanish flag" title="es">
+				</div>
+
+				<div class="english_flag js_languages_flags" data-language="en">
+					<img src="./assets/images/en.png" alt="english flag" title="en">
+				</div>
+			</div>
+
+			<!--  
 				.tag-p: definida para añadir el año actual de la pagina,
 				.le definimos un un ID para implementar este elemento en 'src\js\footer.js'
 			-->
-			<p id="footer-year"></p>
+			<p id="footer-year" data-section="footerComponent" data-value="footerCopyright"></p>
 		</footer>
 
 		<!-- 
@@ -1553,7 +1504,7 @@
 		<script src="./src/js/banner.js"></script>
 		<script src="./src/js/modal.js"></script>
 		<script src="./src/js/certificates.js"></script>
-		<script src="./src/js/proyects.js"></script>
+		<script src="./src/js/projects.js"></script>
 		<script src="./src/js/contacts.js"></script>
 		<script src="./src/js/footer.js"></script>
     </body>

@@ -78,6 +78,88 @@ $iconGotop.addEventListener('click', scrollToTop);
 // __________ end code - scrollToTop __________ //
 
 
+// __________ start code change languages __________ //
+
+/* 
+	$textToChange: alamacena todos los elementos html con
+	atributo [data-section]
+*/
+let $textToChange = document.querySelectorAll("[data-section]");
+
+/* 
+	guardamos en una constante una funcion asincrona, y pasamos un parametro
+	(selectedLanguage)
+*/
+const changeLanguage = async (selectedLanguage) => {
+	/* 
+		hacemos uso de await y con fetch buscamos la carpeta donde tenemos
+		nuestros archivos JSON, a esto pasamos el parametro selectedLanguage
+		definido en la funcion, finalmente almacenamos en una variable 
+	*/
+	let requireLanguages = await fetch(`./assets/languages/${selectedLanguage}.json`);
+
+	/* 
+		hacemos uso de await y pasamos la variable requireLanguage para 
+		convertir el valor almacenado en esta haciendo uso de .json() 
+		finalmente almacenamos esto en una nueva variable
+	*/
+	let compilerLanguage = await requireLanguages.json();
+
+	/* 
+		hacemos un recorrido forEach en $textToChange, pasamos
+        un paraemtro y definimos una funcion
+	*/
+	$textToChange.forEach(text => {
+		/* 
+			ingresamos a cada elemento html y por medio de
+			dataset buscamos su atributo data-section, 
+			finalmente almacenamos en una variable
+		*/
+		let $section = text.dataset.section;
+
+		/* 
+			ingresamos a cada elemento html y por medio de
+			dataset buscamos su atributo data-value, 
+			finalmente almacenamos en una variable
+		*/
+		let $value = text.dataset.value;
+
+		/* 
+			haciendo uso de innerHTML pasamos a cada elemento html 
+			la variable compilerLanguage a la cual pasamos las
+			variables $section y $value esto realiza el cambio de
+			lenguage
+		*/
+		text.innerHTML = compilerLanguage[$section][$value];
+	})
+}
+
+/* 
+	$languagesFlags: alamacena todos los elementos html con clase
+	js_languages_flags
+*/
+let $languagesFlags = document.querySelectorAll('.js_languages_flags');
+
+/* 
+	hacemos un recorrido forEach en la variable $languagesFlags
+*/
+$languagesFlags.forEach(flag => {
+	/* 
+		añadimos a cada elemento html un evento click
+	*/
+	flag.addEventListener('click', (e) => {
+		/* 
+			finalmente pasamos la funcion changeLanguage anteriomente
+			definida esta nos solicita un parametro por lo que pasamos
+			e.target.parentElement.dataset.language
+		*/
+		changeLanguage(e.target.parentElement.dataset.language);
+	})
+});
+
+// __________ start code change languages __________ //
+
+
 // __________ start code - currentYear __________ //
 
 /* 

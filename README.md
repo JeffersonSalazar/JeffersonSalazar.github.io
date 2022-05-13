@@ -179,7 +179,10 @@ el proyecto
 
 
             //
-            
+                proyects_component: aqui definimos los proyectos que hemos realizado con un enlace de
+                redireccionamiento para visitiar la pagina oficial y una breve descripcion de las
+                tecnologias utilizadas con las que se realizaron estos proyectos. para esta parte del
+                portafolio implementamos la libreria swiper js para crear los sliders
             //
             <section class="proyects_component"></section>
 
@@ -240,6 +243,10 @@ en esa hoja de estilos
 4. el orden utilizado para aplicar los estilos en cascada es el mismo orden con
 el que se estructuro el componente en html
 
+5. IMPORTANTE: (js_background_change, js_color_change, js_icon_color_change y js_color_border)
+son clases definidas en algunas etiquetas html para ser implementadas unicamente en javascript
+mas exactamente en 'src\js\navbar.js' por lo que no funcionan como clases para stilos css
+
 
 // ____________________ funcionalidad de los archivos javascript ____________________ //
 
@@ -286,7 +293,11 @@ certificates.js {
 }
 
 proyects.js {
+    1. realizar el despalzamiento cuando se da click en los iconos
+    del slider permitiendo mostrar las demas tarjetas
 
+    2. crear un bucle infinito para repetir las tarjetas cada que 
+    estas terminen en su despalzamiento
 }
 
 contacts.js {

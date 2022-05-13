@@ -162,7 +162,7 @@ button {
     diferentes componentes
 */
 .banner_component, .skills_component, 
-.certificates_component, .proyects_component, 
+.certificates_component, .projects_component, 
 .customers_component, .contacts_component {
     background-color: var(--backgroundColor);
     margin-top: 80px;
@@ -183,7 +183,7 @@ button {
         background-color: $mainPageBackgroundColor;
         color: #fff;
         font-size: 20px;
-        letter-spacing: 1px;
+        letter-spacing: .5px;
         border-radius: 5px;
         padding: 10px 50px;
         transition: .2s;

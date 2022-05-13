@@ -1,26 +1,26 @@
-// __________ start code - active link __________ //
+// __________ start code - active item __________ //
 
 /* 
-   .$navbarLinks: almacena todos los elementos html tag-li que
+   .$navbarItems: almacena todos los elementos html tag-li que
    .estan dentro de ul_navbar 
 */
-let $navbarLinks = document.querySelectorAll('ul_navbar, li');
+let $navbarItems = document.querySelectorAll('ul_navbar, li');
 
 /* 
     declaracion de la funcion activeLink
 */
-function activeLink() {
+function activeItem() {
     /* 
         hacemos un recorrido forEach en $links para remover de cada elemento
-        la clase js_active_link definida en 'src/sass/layout/navbar.scss' 
+        la clase js_active_item definida en 'src/sass/layout/navbar.scss' 
     */
-    $navbarLinks.forEach(link => link.classList.remove('js_active_link'));
+    $navbarItems.forEach(items => items.classList.remove('js_active_item'));
 
     /* 
-        añadimos la clase js_active_link definida en 'src/sass/layout/navbar.scss' 
+        añadimos la clase js_active_item definida en 'src/sass/layout/navbar.scss' 
         al elemento seleccionado
     */
-    this.classList.add('js_active_link');
+    this.classList.add('js_active_item');
 };  
 
 /* 
@@ -28,9 +28,74 @@ function activeLink() {
     (link) y definimos una funcion. generamos un evento CLICK
     al parametro (link) y pasamos la funcion previamente definida
 */
-$navbarLinks.forEach(link => link.addEventListener('click', activeLink));
+$navbarItems.forEach(items => items.addEventListener('click', activeItem));
 
-// __________ end code - active link __________ //
+// __________ end code - active item __________ //
+
+
+
+// __________ start code - smoot link __________ //
+
+/* 
+   .$navLinks: almacena todos los elementos html tag-a que
+   .estan dentro de una tag-li que a su vez esta dentro de ul_navbar 
+*/
+let $navLinks = document.querySelectorAll("ul_navbar, li a");
+
+
+/* 
+    hacemos un recorrido forOf de $navLinks para almacenar en una
+    constante links cada uno de los enlaces
+*/
+for (const links of $navLinks) {
+    /*
+        pasamos a cada links un evento click que ejecuta una funcion
+        definida como redirectLink
+    */
+    links.addEventListener("click", redirectLink);
+}
+
+/*
+    definimos la funcion redirectLink
+*/
+function redirectLink(e) {
+    /*
+        con e.preventDefault() nos encargamos de prevenir el comportamiento
+        que tienen por defecto las tag-a
+    */
+    e.preventDefault();
+    
+    /*
+        hrefLinks: almacena el atributo href del enlace en el que hacemos click
+    */
+    const hrefLinks = this.getAttribute("href");
+
+    /* 
+        offsetTop: almacena el enlace seleccionado al cual finalmente pasamos
+        la propiedad offsetTop que se encarga de transformar en un valor numerico
+        la posicion en la que se encuentra la seccion a la que vamos a ser 
+        redirigidos
+    */
+    const offsetTop = document.querySelector(hrefLinks).offsetTop;
+    
+    /*
+        scroll: este metodo recibe 2 propiedades
+    */
+    scroll({
+        /*
+            top: recibe como parametro el valor numerico almacenado en offsetTop
+        */
+        top: offsetTop,
+
+        /*
+            behavior: este se encarga de la suavidad del redireccionamiento
+        */
+        behavior: "smooth"
+    });
+}
+
+// __________ end code - smoot link __________ //
+
 
 
 // __________ start code - background color generator __________ //
@@ -70,7 +135,7 @@ let $backgroundChange = document.querySelectorAll(".js_background_change"),
     $imgBorder = document.querySelectorAll(".box_img_border"),
     $iconColorChange = document.querySelectorAll(".js_icon_color_change");
     $iconBorder = document.querySelectorAll(".js_color_border");
-    $strongs = document.querySelectorAll("strong");
+    // $strongs = document.querySelectorAll("strong");
 
 /* 
     definimos un evento click en $navbarBtn y definimos una funcion
@@ -134,9 +199,9 @@ $navbarSkinBtn.addEventListener("click", function() {
         border.style.border = `3px solid ${newColor}`;
     });
 
-    $strongs.forEach(colorText => {
-        colorText.style.color = newColor;
-    });
+    // $strongs.forEach(colorText => {
+    //     colorText.style.color = newColor;
+    // });
 });
 
 // __________ end code - background color generator __________ //

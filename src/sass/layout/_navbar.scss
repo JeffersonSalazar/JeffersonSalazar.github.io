@@ -131,18 +131,18 @@ $mainNavbarColorTwo: #333;
                 list-style: none;
 
                 /*
-                    .js_active_link: clase añadida desde 'src/js/navbar.js', 
+                    .js_active_item: clase añadida desde 'src/js/navbar.js', 
                     .cuando tag-li tiene esta clase añadimos color de fondo y
                     .con las propiedades border-top-left-radius y
                     .border-bottom-left-radius creamos los bordes redondeados
                 */
-                &.js_active_link {
+                &.js_active_item {
                     background-color: $mainNavbarColorOne;
                     border-top-left-radius: 20px;
                     border-bottom-left-radius: 20px;
                 
                     /*
-                        .cunado tag-li tiene la clase js_active_link,
+                        .cunado tag-li tiene la clase js_active_item,
                         .relaciona a tag-a y tag-button
                     */
                     a, button {

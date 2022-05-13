@@ -49,7 +49,7 @@
             @query 499px <== : definimos un margen para este elemento en esta medida
         */
         @media (max-width: 499px) {
-            margin: 40px 0 20px;
+            margin: 40px 0 30px;
         }
 
         /*
@@ -67,14 +67,51 @@
     /*
         tag-p
     */
-    p {
-        padding-bottom: 40px;
+    p {   
+        padding: 20px 0 40px;
+    }
 
+    /*
+        footer_flags: definimos flexbox y sus propiedades
+        justify-content y align-items para centrar de manera
+        horizontal y vertical los elementos que este contiene
+    */
+    .footer_flags {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
         /*
-            @query 500px ==> : modificamos el espaciado de este elemento en esta medida
+            _@query 500px ==> : definimos un espaciado en la parte
+            _superior para este elemento en esta medida
         */
         @media (min-width: 500px) {
-            padding: 40px 0;
+            padding-top: 40px;
+        }
+
+        /*
+            espanish_flag y english_flag: es importante definir
+            un width y height para ajustar el tamaño de estos
+            contenedores
+        */
+        .espanish_flag, .english_flag {
+            width: 35px;
+            height: 25px;
+            margin: 0 8px;
+            box-shadow: 0 5px 10px 0 var(--shadowColor);
+            cursor: pointer;
+
+            /*
+                tag-img: es importante que el width y height sea igaul
+                al de su contenedor padre, finalmente la propiedad
+                object-fit: cover que permite ajustar la imagen a
+                su contenedor padre
+            */
+            img {
+                width: inherit;
+                height: inherit;
+                object-fit: cover;
+            }
         }
     }
 }

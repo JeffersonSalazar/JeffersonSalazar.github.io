@@ -1,0 +1,90 @@
+{
+    "navbarComponent": {
+        "navbarTitle": "Menu",
+        "navbarListItemOne": "About me",
+        "navbarListItemTwo": "Skills",
+        "navbarListItemThree": "Certificates",
+        "navbarListItemFour": "Projects",
+        "navbarListItemFive": "Customers",
+        "navbarListItemSix": "Contacts"
+    },
+
+    "bannerComponent": {
+        "bannerTitle": "I'm Jefferson Salazar",
+        "bannerSubtitle": "Frontend Developer",
+        "bannerParagraph": "I was born on February 10, 1989 in Palmira Valle. I consider myself a simple, respectful, sociable person, passionate about life, entrepreneurship and technology. I have been dedicated to Frontend development for 3 years in which I have participated in the development of websites and small applications...",
+        "bannerTextButton": "See More"
+    },
+
+    "modalComponent": {
+        "modalParagraphTop": "I have basic knowledge in Backend creating APIS and making use of them. Among my virtues is:",
+        "modalListItemOne": "Team Work",
+        "modalListItemTwo": "The ability to solve emerging problems",
+        "modalListItemThree": "Empirical and self-taught learning",
+        "modalListItemFour": "The motivation with which I carry out my projects",
+        "modalParagraphBottom": "I love formula 1, going to the movies and sharing in family. In the medium term I want to start a career related to web development."
+    },
+
+    "skillsComponent": {
+        "skillsTitle": "Skills"
+    },
+
+    "certificatesComponent": {
+        "certificatesTitle": "Certificates"
+    },
+
+    "certificatesAccordeonOne": {
+        "accordeonTitleOne": "Web design",
+        "accordeonSubtitle": "Institute: Udemy",
+        "accordeonSubtitleOne": "Intensity: 77 Hours",
+        "accordeonParagraphOne": "Creation of responsive websites with html and css, advanced layout with flexbox and grid loyout implementation of compilers for css sass and less and its most popular framework bootstrap interaction with the DOM through javascript, event handling, use of conditionals, loops, arrays, objects and more... use of jquery for animations that improve the user experience.",
+        "accodeonLinkTextOne": "1. Download Certificates",
+        "accodeonLinkTextTwo": "2. Download Certificates",
+        "accodeonLinkTextThree": "3. Download Certificates"
+    },
+
+    "certificatesAccordeonTwo": {
+        "accordeonSubtitleTwo": "Intensity: 55 Hours",
+        "accordeonParagraphTwo": "Creation of spa projects (single page application) with angular implementing typescript and the latest updates of ecmascript 6, all about the creation of components, modules, directives, dependency injection, reactive forms, lazy loading routing, service creation, class definition and interfaces, use of guards, connection and consumption of apis among other topics."
+    },
+
+    "certificatesAccordeonThree": {
+        "accordeonSubtitleThree": "Intensidad: 24 Hours",
+        "accordeonParagraphThree": "Creation of a local server with nodejs and its most popular express framework use of morgan, cors, mysql, mongoose modules, creation of environment variables, token generation, password encryption, server-side validation, data pagination, structure for scalable projects, connection to mysql and mongodb databases creation of apis, data interaction with get, post, update, delete methods, apis check with postman and more."
+    },
+
+    "certificatesAccordeonFour": {
+        "accordeonTitleFour": "More",
+        "accordeonSubtitleFourOne": "Institute: Internet",
+        "accordeonSubtitleFourTwo": "Intensity: Infinite",
+        "accordeonParagraphFour": "I have spent hundreds of hours in forums, documentation, community, courses without certification, YouTube, etc., especially regarding web development, these learning methods have helped me to complement and strengthen the knowledge acquired in these 3 years. I also want to share with you that today I continue my learning through this and other methodologies with the aim of staying at the forefront of new technologies."
+    },
+
+    "customersComponent": {
+        "customersTitle": "Customers",
+        "customersCardParagraphOne": "From the beginning I noticed his potential and his desire to continue learning, so I decided to become his tutor, giving him the necessary tools to achieve his goal of being a great developer.",
+        "customersCardRollOne": "Development boss",
+        "customersCardParagraphTwo": "I am surprised since, for someone empirical, he has adjusted very well to our work method, following each one of the recommendations given to him to carry out the development of the projects in which he has participated.",
+        "customersCardRollTwo": "Founder and SEO",
+        "customersCompany": "Company:",
+        "customersRoll": "Roll:",
+        "customersTelephone": "Telephone:"
+    },
+
+    "contactsComponent": {
+        "contactsTitle": "Contacts",
+        "contactsParagraph": "send me an email and I will try to contact you as soon as possible, remember that all the fields of the form are required...",
+        "contactsInputText": "Name",
+        "contactsInputErrorText": "From 4 to 16 digits no symbols no numbers",
+        "contactsInputEmail": "Email",
+        "contactsInputErrorEmail": "The email is not valid",
+        "contactsInputPost": "Comments",
+        "contactsInputErrorPost": "From 10 to 100 digits not symbols",
+        "contactsTextButton": "Send"
+    },
+
+    "footerComponent": {
+        "footerCopyright": "Copyright"
+    }
+}
+
