@@ -178,6 +178,6 @@ let currentYear = new Date().getFullYear();
 	haciendo uso de la propiedad innerHtml almacenamos en la variable
 	$footerYear el año actual que almacena currentYear
 */
-$footerYear.innerHTML = `© Copyright Jefferson Salazar ${currentYear}`;
+$footerYear.innerHTML = `© Todos los derechos Jefferson Salazar ${currentYear}`;
 
 // __________ end code - currentYear __________ //

@@ -210,3 +210,30 @@ $form.addEventListener('submit', function(e){
 });
 
 // __________ end code - submit form data __________ //
+
+
+// __________ start code - show socials media __________ //
+
+/*  
+    .$btnSocialMedia: almacena el elemento html con ID btn-socials-media
+*/
+let $btnSocialMedia = document.querySelector('#btn-socials-media');
+
+/* 
+    generamos un evento click en $btnSocialMedia y definimos 
+    una funcion a la que pasamos un event(e) como parametro
+*/
+$btnSocialMedia.addEventListener('click', function(e) {
+    /* 
+        prevenimos el comportamiento del button
+    */
+    e.preventDefault();
+
+    /* 
+        añadimos o removemos de $btnSocialMedia la clase js_show_socials_media 
+        definida en 'src/sass/layout/contactos.scss'
+    */
+    this.classList.toggle('js_show_socials_media');
+})
+
+// __________ end code - show socials media __________ //

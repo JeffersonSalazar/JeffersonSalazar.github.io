@@ -1561,21 +1561,24 @@
 					swiper-wrapper
 				*/
   /*
-					swiper-button-next, swiper-button-prev: tienen definido por 
-					defecto position absolute
+					box_icon_slider: definimos relative debido a que
+					a sus hijos les definimos absolute, finalmente 
+					margin: 0 auto para centrar el contenedor
 				*/
   /*
-					swiper-button-next: definiendo la propiedad right podemos
-					determinar la posicion de este icono
-				*/
+						swiper-button-prev, swiper-button-next: debido a que estas tags
+						tienen por defecto positon: absolute definimos top: auto y 
+						bottom para posicionar los iconos del slider, margin-top lo
+						usamos para remover un margen que tienen estas tags por defecto
+					*/
   /*
-					swiper-button-prev: definiendo la propiedad left podemos
-					determinar la posicion de este icono
-				*/
+						swiper-button-prev: definiendo la propiedad left 
+						podemos determinar la posicion de este icono
+					*/
   /*
-					swiper-pagination: tiene definido por defecto 
-					position: absolute
-				*/
+						swiper-button-next: definiendo la propiedad right 
+						podemos determinar la posicion de este icono
+					*/
 }
 
 @media (min-width: 900px) {
@@ -1592,221 +1595,100 @@
 }
 
 .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide {
-  cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 400px;
   /*
-							_responsive 900px ==> : definimos flexbox para poner en linea los
-							_elementos que este contiene para esta medida
-						*/
+                            box_slide_content: implementamos absolute y su propiedad
+                            bottom para posicionar este contenedor y que la
+                            tag-img quede por detras de este
+                        */
   /*
-							box_proyect_img
-						*/
-  /*
-							box_proyect_description: definimos un espaciado en el eje X
-							para separar los elementos de los bordes del contenedor
+							tag-img: definimos un width: 100% y height: auto junto con la
+							propiedad object-fit: cover para que la img se ajuste al ancho 
+							de contenedor padre 
 						*/
 }
 
-@media (min-width: 900px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content {
+  position: absolute;
+  bottom: 30px;
+  background: #479be3;
+  padding: 15px 25px;
+  -webkit-box-shadow: var(--shadowColor);
+          box-shadow: var(--shadowColor);
+  /*
+                                @query 991px <== : definimos un width para esta medida
+                            */
+  /*
+                                @query 992px ==> : definimos un width para esta medida
+                            */
+}
+
+@media (max-width: 991px) {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content {
+    width: 90%;
   }
 }
 
-.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_img {
-  /*
-								_responsive 900px ==> : modificamos el ancho de este
-								_elemento para esta medida
-							*/
-  /*
-								tag-img: definimos un width: 100% y height: auto junto con la
-								propiedad object-fit: cover para que la img se ajuste al ancho 
-								de contenedor padre 
-							*/
-}
-
-@media (min-width: 900px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_img {
-    width: 65%;
+@media (min-width: 992px) {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content {
+    width: 85%;
   }
 }
 
-.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_img img {
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content a {
+  color: #fff;
+}
+
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description {
-  font-family: 'ubuntu-medium', sans-serif;
-  padding: 20px 0 30px;
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev,
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-next {
+  width: 44px;
+  height: 44px;
+  background: #479be3;
+  -webkit-box-shadow: var(--shadowColor);
+          box-shadow: var(--shadowColor);
   /*
-								_responsive 900px ==> : definimos ancho de 35% y un espaciado en 
-								_el eje Y para este elemento en esta medida
-							*/
-  /*
-								tag-a
-							*/
-  /*
-								tag-p
-							*/
-  /*
-								tag-ul
-							*/
-}
-
-@media (min-width: 900px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description {
-    width: 35%;
-    padding: 20px 20px;
-  }
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description a {
-  text-decoration: underline;
-  font-size: 28px;
-  line-height: 1.1;
-  /*
-									_responsive 1200px ==> : modificamos el tamaño de fuente 
-									_de este elemento en esta medida
-								*/
-  /*
-									_responsive 899px <== : modificamos el tamaño de fuente 
-									_de este elemento en esta medida
-								*/
-  /*
-									_responsive 649px <== : modificamos el tamaño de fuente 
-									_de este elemento en esta medida
-								*/
-  /*
-									_responsive 549px <== : modificamos el tamaño de fuente 
-									_de este elemento en esta medida
-								*/
-}
-
-@media (min-width: 1200px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description a {
-    font-size: 38px;
-  }
-}
-
-@media (max-width: 899px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description a {
-    font-size: 34px;
-  }
-}
-
-@media (max-width: 649px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description a {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 549px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description a {
-    font-size: 26px;
-  }
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description p {
-  font-family: 'ubuntu-medium', sans-serif;
-  margin: 16px 0;
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description ul {
-  /*
-									tag-li
-								*/
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description ul li {
-  list-style: none;
-  color: var(--textColor);
-  font-size: 18px;
-  /*
-										tag-svg: implementamos el mixin 'iconCheckStyle' definido en 
-										'src\sass\shared\_mixins.scss' que contiene los estilos principales 
-										de este elemento
-									*/
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_project_description ul li svg {
-  fill: #479be3;
-  width: 34px;
-  height: 34px;
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-button-next,
-.projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev {
-  /*
-						_responsive 899px <== : definimos display: none para remover
-						_de la vista este elemento a partir de esta medida
-					*/
-  /*
-						_responsive 900px ==> : definimos estilos que solo seran aplicados
-						_a este elemento a partir de esta medida
-					*/
-}
-
-@media (max-width: 899px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-next,
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev {
-    display: none;
-  }
-}
-
-@media (min-width: 900px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-next,
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev {
-    background-color: #479be3;
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
-    -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
-            box-shadow: 0 5px 10px 0 var(--shadowColor);
-    /*
-							.:after: para cambiar estas propiedades de los iconos de slider
-							.debemos hacerlo haciendo uso del pseudo elemento ::after
+							swiper-button-next:after, swiper-button-prev:after: para 
+							cambiar estas propiedades debemos definirlas en estas clases
 						*/
-  }
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-next:after,
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev:after {
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-  }
+  /*
+							swiper-button-disabled: modificando esta propiedad
+							hacemos visible el icono del slider
+						*/
+}
+
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev:after,
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-next:after {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev.swiper-button-disabled,
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-next.swiper-button-disabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev {
+  left: 5%;
 }
 
 .projects_component .projects_container .projects_flexbox .swiper .swiper-button-next {
-  right: 40px;
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev {
-  left: 40px;
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-pagination {
-  background-color: #479be3;
-  padding: 3px 0;
-  /*
-						_responsive 900px ==> : definimos display: none para remover
-						_de la vista este elemento a partir de esta medida
-					*/
-  /*
-						tag-span
-					*/
-}
-
-@media (min-width: 900px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-pagination {
-    display: none;
-  }
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-pagination span {
-  background-color: rgba(0, 0, 0, 0.3);
+  right: 5%;
 }
 
 /*
@@ -2245,11 +2127,11 @@
           box-shadow: 0 5px 10px 0 var(--shadowColor);
   width: 38px;
   height: 38px;
-  margin-right: 8px;
+  margin-right: 4px;
   /*
-                        .cuando hacemos :focus sobre tag-button, relacionamos a socials_media,
-                        .modificamos el margin a 0 y definimos opacity: 1 para hacer visible
-                        .estoa elementos
+                        .js_show_socials_media: cuando el boton tiene esta clase realciona a 
+                        .socials_media y modifica el margin y el opacity: 1 para hacer visible
+                        .los iconos de las redes sociales
                     */
   /*
                         tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
@@ -2257,18 +2139,9 @@
                     */
 }
 
-.contacts_component .form_flexbox .box_form_card .box_socials_contacts button:focus ~ .socials_media {
-  margin: 0;
+.contacts_component .form_flexbox .box_form_card .box_socials_contacts button.js_show_socials_media ~ .socials_media {
+  margin: 0 4px;
   opacity: 1;
-  /*
-                            .haciendo uso del pseudo elemento :nth-child(), seleccionamos
-                            .el tercer elemento con clase socials_media y generamos un
-                            .margen
-                        */
-}
-
-.contacts_component .form_flexbox .box_form_card .box_socials_contacts button:focus ~ .socials_media:nth-child(3) {
-  margin: 0 8px;
 }
 
 .contacts_component .form_flexbox .box_form_card .box_socials_contacts button svg {
@@ -2283,7 +2156,7 @@
   -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
           box-shadow: 0 5px 10px 0 var(--shadowColor);
   padding: 5px 7px;
-  margin: 0 -15px;
+  margin: 0 -10px;
   opacity: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -2528,37 +2401,45 @@
 .footer_component {
   text-align: center;
   /*
-        tag-svg: definimos visibility: hidden para ocultar el icono
-    */
-  /*
-        tag-p
+        box_footer_icon
     */
   /*
         footer_flags: definimos flexbox y sus propiedades
         justify-content y align-items para centrar de manera
         horizontal y vertical los elementos que este contiene
     */
+  /*
+        tag-p
+    */
 }
 
-.footer_component svg {
-  width: 38px;
-  height: 38px;
+.footer_component .box_footer_icon {
+  /*
+            tag-svg: definimos un ancho y un alto que junto al espaciado reduce el icono y
+            aumenta su circulo (efecto boton), finalmente lo ocultamos con visibility: hidden
+        */
+}
+
+.footer_component .box_footer_icon svg {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
   visibility: hidden;
   /*
-            .js_show_gotop: clase añadida desde 'src\js\footer.js' que añade 
-            .color y color de fondo a este elemento que junto con visibility: visible 
-            .lo hacemos nuevamente visible
-        */
+                .js_show_gotop: clase añadida desde 'src\js\footer.js' que añade 
+                .color y color de fondo a este elemento que junto con visibility: visible 
+                .lo hacemos nuevamente visible
+            */
   /*
-            @query 499px <== : definimos un margen para este elemento en esta medida
-        */
+                @query 499px <== : definimos un margen para este elemento en esta medida
+            */
   /*
-            @query 500px ==> : definimos position: fixed y sus propiedades right, 
-            bottom y z-index para darle posicion a este elemento en esta medida
-        */
+                @query 500px ==> : definimos position: fixed y sus propiedades right, 
+                bottom y z-index para darle posicion a este elemento en esta medida
+            */
 }
 
-.footer_component svg.js_show_gotop {
+.footer_component .box_footer_icon svg.js_show_gotop {
   fill: #fff;
   background-color: #479be3;
   border-radius: 50%;
@@ -2569,11 +2450,11 @@
           animation: animateGotop 1s ease 1s 3;
   cursor: pointer;
   /*
-                animateGotop: en 0% implementamos un transform: translateY(0)
-                en 50% implementamos un transform: translateY(0) para trasladar 
-                elicono -30px hacia arriba finalemnte en 100% vuelve a su 
-                posicion original
-            */
+                    animateGotop: en 0% implementamos un transform: translateY(0)
+                    en 50% implementamos un transform: translateY(0) para trasladar 
+                    elicono -30px hacia arriba finalemnte en 100% vuelve a su 
+                    posicion original
+                */
 }
 
 @-webkit-keyframes animateGotop {
@@ -2607,22 +2488,18 @@
 }
 
 @media (max-width: 499px) {
-  .footer_component svg {
+  .footer_component .box_footer_icon svg {
     margin: 40px 0 30px;
   }
 }
 
 @media (min-width: 500px) {
-  .footer_component svg {
+  .footer_component .box_footer_icon svg {
     position: fixed;
     right: 5px;
     bottom: 40px;
     z-index: 69;
   }
-}
-
-.footer_component p {
-  padding: 20px 0 40px;
 }
 
 .footer_component .footer_flags {
@@ -2658,7 +2535,16 @@
   margin: 0 8px;
   -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
           box-shadow: 0 5px 10px 0 var(--shadowColor);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
   cursor: pointer;
+  /*
+                .cuando hacemos :hover sobre una bandera, definimos la
+                .propiedad transform: scale() para reducir el tamaño de
+                .las banderas
+            */
   /*
                 tag-img: es importante que el width y height sea igaul
                 al de su contenedor padre, finalmente la propiedad
@@ -2667,11 +2553,20 @@
             */
 }
 
+.footer_component .footer_flags .espanish_flag:hover, .footer_component .footer_flags .english_flag:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 .footer_component .footer_flags .espanish_flag img, .footer_component .footer_flags .english_flag img {
   width: inherit;
   height: inherit;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.footer_component p {
+  padding: 20px 0 40px;
 }
 
 /*

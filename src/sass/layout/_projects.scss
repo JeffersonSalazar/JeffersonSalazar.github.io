@@ -30,7 +30,6 @@
 					_que este contiene
 				*/
 				@media (min-width: 900px) {
-					// padding-bottom: 50px;
 					box-shadow: 0 5px 10px 0 var(--shadowColor);
 				}
 
@@ -42,209 +41,131 @@
 						swiper-slide
 					*/
 					.swiper-slide {
-						// width: 100% !important;
-						cursor: pointer;
+						position: relative;
+                        display: flex;
+                        justify-content: center;
+						height: 400px;
 						
 						/*
-							_responsive 900px ==> : definimos flexbox para poner en linea los
-							_elementos que este contiene para esta medida
-						*/
-						@media (min-width: 900px) {
-							display: flex;
-						}
-
-						/*
-							box_proyect_img
-						*/
-						.box_project_img {
+                            box_slide_content: implementamos absolute y su propiedad
+                            bottom para posicionar este contenedor y que la
+                            tag-img quede por detras de este
+                        */
+						.box_slide_content {
+							position: absolute;
+                            bottom: 30px;
+							background: $mainPageBackgroundColor;
+                            padding: 15px 25px;
+							box-shadow: var(--shadowColor);
+                        
 							/*
-								_responsive 900px ==> : modificamos el ancho de este
-								_elemento para esta medida
-							*/
-							@media (min-width: 900px) {
-								width: 65%;
-							}
+                                @query 991px <== : definimos un width para esta medida
+                            */
+                            @media (max-width: 991px) {
+                                width: 90%;
+                            }
+                
+                            /*
+                                @query 992px ==> : definimos un width para esta medida
+                            */
+                            @media (min-width: 992px) {
+                                width: 85%;
+                            }
 
-							/*
-								tag-img: definimos un width: 100% y height: auto junto con la
-								propiedad object-fit: cover para que la img se ajuste al ancho 
-								de contenedor padre 
-							*/
-							img {
-								width: 100%;						
-								height: auto;
-								object-fit: cover;
-							}
-						}
-
-						/*
-							box_proyect_description: definimos un espaciado en el eje X
-							para separar los elementos de los bordes del contenedor
-						*/
-						.box_project_description {
-							font-family: 'ubuntu-medium', sans-serif;
-							padding: 20px 0 30px;
-
-							/*
-								_responsive 900px ==> : definimos ancho de 35% y un espaciado en 
-								_el eje Y para este elemento en esta medida
-							*/
-							@media (min-width: 900px) {
-								width: 35%;
-								padding: 20px 20px;
-							}
-
-							/*
-								tag-a
-							*/
 							a {
-								text-decoration: underline;
-								font-size: 28px;
-								line-height: 1.1;
-
-								/*
-									_responsive 1200px ==> : modificamos el tamaño de fuente 
-									_de este elemento en esta medida
-								*/
-								@media (min-width: 1200px) {
-									font-size: 38px;
-								}
-
-								/*
-									_responsive 899px <== : modificamos el tamaño de fuente 
-									_de este elemento en esta medida
-								*/
-								@media (max-width: 899px) {
-									font-size: 34px;
-								}
-
-								/*
-									_responsive 649px <== : modificamos el tamaño de fuente 
-									_de este elemento en esta medida
-								*/
-								@media (max-width: 649px) {
-									font-size: 30px;
-								}
-
-								/*
-									_responsive 549px <== : modificamos el tamaño de fuente 
-									_de este elemento en esta medida
-								*/
-								@media (max-width: 549px) {
-									font-size: 26px;
-								}
+								color: #fff;
 							}
+						}
 
-							/*
-								tag-p
-							*/
-							p {
-								font-family: 'ubuntu-medium', sans-serif;
-								margin: 16px 0;
-							}
-
-							/*
-								tag-ul
-							*/
-							ul {
-								/*
-									tag-li
-								*/
-								li {
-									list-style: none;
-									color: var(--textColor);
-									font-size: 18px;
-
-									/*
-										tag-svg: implementamos el mixin 'iconCheckStyle' definido en 
-										'src\sass\shared\_mixins.scss' que contiene los estilos principales 
-										de este elemento
-									*/
-									svg {
-										@include iconCheckStyle;
-									}
-								}
-							}
+						/*
+							tag-img: definimos un width: 100% y height: auto junto con la
+							propiedad object-fit: cover para que la img se ajuste al ancho 
+							de contenedor padre 
+						*/
+						img {
+							width: 100%;						
+							height: 100%;
+							object-fit: cover;
 						}
 					}
 				}
 
 				/*
-					swiper-button-next, swiper-button-prev: tienen definido por 
-					defecto position absolute
+					box_icon_slider: definimos relative debido a que
+					a sus hijos les definimos absolute, finalmente 
+					margin: 0 auto para centrar el contenedor
 				*/
-				.swiper-button-next,
-				.swiper-button-prev {
-					/*
-						_responsive 899px <== : definimos display: none para remover
-						_de la vista este elemento a partir de esta medida
-					*/
-					@media (max-width: 899px) {
-						display: none;
-					}
+				// .box_icon_slider {
+				// 	position: relative;
+				// 	margin: 0 auto;
+
+				// 	/*
+				// 		@query 991px <== : definimos un width para esta medida
+				// 	*/
+				// 	@media (max-width: 991px) {
+				// 		width: 90%;
+				// 	}
+		
+				// 	/*
+				// 		@query 992px ==> : definimos un width para esta medida
+				// 	*/
+				// 	@media (min-width: 992px) {
+				// 		width: 85%;
+				// 	}
+			
 
 					/*
-						_responsive 900px ==> : definimos estilos que solo seran aplicados
-						_a este elemento a partir de esta medida
+						swiper-button-prev, swiper-button-next: debido a que estas tags
+						tienen por defecto positon: absolute definimos top: auto y 
+						bottom para posicionar los iconos del slider, margin-top lo
+						usamos para remover un margen que tienen estas tags por defecto
 					*/
-					@media (min-width: 900px) {
-						background-color: $mainPageBackgroundColor;
-						border-radius: 100%;
-						width: 40px;
-						height: 40px;
-						box-shadow: 0 5px 10px 0 var(--shadowColor);
+					.swiper-button-prev,
+					.swiper-button-next {
+						// top: auto;
+						// bottom: 30px;
+						width: 44px;
+						height: 44px;
+						// margin-top: 0;
+						background: $mainPageBackgroundColor;
+						box-shadow: var(--shadowColor);
 
 						/*
-							.:after: para cambiar estas propiedades de los iconos de slider
-							.debemos hacerlo haciendo uso del pseudo elemento ::after
+							swiper-button-next:after, swiper-button-prev:after: para 
+							cambiar estas propiedades debemos definirlas en estas clases
 						*/
 						&:after {
 							color: #fff;
-							font-size: 20px;
+							font-size: 22px;
 							font-weight: bold;
 						}
-					}
-				}
 
-				/*
-					swiper-button-next: definiendo la propiedad right podemos
-					determinar la posicion de este icono
-				*/
-				.swiper-button-next {
-					right: 40px;
-				}
-
-				/*
-					swiper-button-prev: definiendo la propiedad left podemos
-					determinar la posicion de este icono
-				*/
-				.swiper-button-prev {
-					left: 40px;
-				}
-
-				/*
-					swiper-pagination: tiene definido por defecto 
-					position: absolute
-				*/
-				.swiper-pagination {
-					background-color: $mainPageBackgroundColor;
-					padding: 3px 0;
-
-					/*
-						_responsive 900px ==> : definimos display: none para remover
-						_de la vista este elemento a partir de esta medida
-					*/
-					@media (min-width: 900px) {
-						display: none;
+						/*
+							swiper-button-disabled: modificando esta propiedad
+							hacemos visible el icono del slider
+						*/
+						&.swiper-button-disabled {
+							opacity: 1;
+							cursor: pointer;
+						}
 					}
 
 					/*
-						tag-span
+						swiper-button-prev: definiendo la propiedad left 
+						podemos determinar la posicion de este icono
 					*/
-					span {
-						background-color: rgba(0, 0, 0, .3);
+					.swiper-button-prev {
+						left: 5%;
 					}
-				}
+
+					/*
+						swiper-button-next: definiendo la propiedad right 
+						podemos determinar la posicion de este icono
+					*/
+					.swiper-button-next {
+						right: 5%;
+					}
+				// }
 			}
 		}
 	}

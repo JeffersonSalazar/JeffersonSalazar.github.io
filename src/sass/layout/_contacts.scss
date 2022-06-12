@@ -102,26 +102,18 @@
                     box-shadow: 0 5px 10px 0 var(--shadowColor);
                     width: 38px;
                     height: 38px;
-                    margin-right: 8px;
+                    margin-right: 4px;
 
                     /*
-                        .cuando hacemos :focus sobre tag-button, relacionamos a socials_media,
-                        .modificamos el margin a 0 y definimos opacity: 1 para hacer visible
-                        .estoa elementos
+                        .js_show_socials_media: cuando el boton tiene esta clase realciona a 
+                        .socials_media y modifica el margin y el opacity: 1 para hacer visible
+                        .los iconos de las redes sociales
                     */
-                    &:focus ~ .socials_media {
-                        margin: 0;
+                    &.js_show_socials_media ~ .socials_media {
+                        margin: 0 4px;
                         opacity: 1;
-
-                        /*
-                            .haciendo uso del pseudo elemento :nth-child(), seleccionamos
-                            .el tercer elemento con clase socials_media y generamos un
-                            .margen
-                        */
-                        &:nth-child(3) {
-                            margin: 0 8px;
-                        }
                     }
+                    
 
                     /*
                         tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
@@ -142,7 +134,7 @@
                     border-radius: 100%;
                     box-shadow: 0 5px 10px 0 var(--shadowColor);
                     padding: 5px 7px;
-                    margin: 0 -15px;
+                    margin: 0 -10px;
                     opacity: 0;
                     transition: all .3s;
 

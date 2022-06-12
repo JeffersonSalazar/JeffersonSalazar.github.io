@@ -4,13 +4,10 @@
 let swiper = new Swiper('.mySwiper', {
 	/* 
         paginacion: es donde se define las guias para el
-		desplazamiento del slider el parametro 
-		type: 'progressbar' muestra un slider con una 
-		barra de progreso
+		desplazamiento del slider
     */
 	pagination: {
-		el: '.swiper-pagination',
-		type: 'progressbar'
+		el: '.swiper-pagination'
 	},
 
 	/* 
