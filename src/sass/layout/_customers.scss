@@ -1,13 +1,4 @@
 /*
-    spanStyle: contiene los estilos principales aplicados a las
-    las tag-span pertenecientes solo a customers_component
-*/
-@mixin spanStyle {
-    font-size: 16px;
-    letter-spacing: 1px;
-}
-
-/*
     customers_component
 */
 .customers_component {
@@ -196,13 +187,13 @@
                         }
 
                         /*
-                            tag-span: implementamos un mixin 'spanStyle' que contiene los
-                            estilos principales de este elemento
+                            tag-h6
                         */
-                        span {
-                            @include spanStyle();
+                        h6 {
                             color: $lightColorSubtitlesOne;
-                            font-family: 'poppins-regular', sans-serif;
+                            font-family: 'ubuntu-regular', sans-serif;
+                            font-size: 16px;
+                            letter-spacing: 1px;
                         }
                     }
                 }
@@ -211,7 +202,6 @@
                     tag-p
                 */
                 p {
-                    font-family: 'ubuntu-medium', sans-serif;
                     margin: 18px 0 22px;
 
                     /*
@@ -234,7 +224,7 @@
                     li {
                         list-style: none;
                         color: var(--textColor);
-                        font-family: 'ubuntu-medium', sans-serif;
+                        font-size: 18px;
                         margin-bottom: 10px;
 
                         /*
@@ -255,11 +245,9 @@
                         }
 
                         /*
-                            tag-span: implementamos un mixin 'spanStyle' que contiene los
-                            estilos principales de este elemento
+                            tag-span
                         */
                         span {
-                            @include spanStyle();
                             color: var(--textColor);
                         }
                     }

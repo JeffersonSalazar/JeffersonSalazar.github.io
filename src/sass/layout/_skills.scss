@@ -15,7 +15,7 @@
         .skills_grid {
             display: grid;
             gap: 16px;
-            padding: 10px 30px;
+            padding: 20px 30px;
             overflow-x: scroll;
   
             /*
@@ -76,7 +76,6 @@
                 text-align: center;
                 box-shadow: 0 5px 10px 0 var(--shadowColor);
                 padding: 10px 12px;
-                cursor: pointer;
 
                 /*
                     .cuando hacemos :hover en box_skill_cards
@@ -174,10 +173,12 @@
                 }
 
                 /*
-                    tag-h6
+                    tag-h3
                 */
-                h6 {
+                h3 {
                     color: var(--textColor);
+                    position: relative;
+                    z-index: 1;
                 }
             }
   
@@ -185,56 +186,126 @@
                 hacemos uso de las clases distintivas de cada tarjeta y hacemos uso de los
                 pseudo elementos ::before y ::after para definirles un color de fondo
             */
-            .html::before, .html::after {
-                background-color: #FF6D00;
+            .html {
+                animation: skillMoveTop 2.5s 10;
+
+                &::before, &::after {
+                    background-color: #FF6D00;
+                }
+            }
+
+            .css {
+                animation: skillMoveTop 2.5s 10 .2s;
+
+                &::before, &::after {
+                    background-color: #039BE5;
+                }
+            }
+
+            .sass {
+                animation: skillMoveTop 2.5s 10 .4s;
+                
+                &::before, &::after {
+                    background-color: #F06292;
+                }
             }
     
-            .css::before, .css::after {
-                background-color: #039BE5;
+            .bootstrap { 
+                animation: skillMoveTop 2.5s 10 .6s;
+
+                &::before, &::after {
+                    background-color: #673AB7;
+                }
+            }
+
+            .jquery { 
+                animation: skillMoveTop 2.5s 10 .8s;
+
+                &::before, &::after {
+                    background-color: #0268AE;
+                }
             }
     
-            .sass::before, .sass::after {
-                background-color: #F06292;
+            .javascript {
+                animation: skillMoveTop 2.5s 10 1s;
+                
+                &::before, &::after {
+                    background-color: #FFD600;
+                }
             }
-    
-            .bootstrap::before, .bootstrap::after {
-                background-color: #673AB7;
+
+            .angular {
+                animation: skillMoveBottom 2.5s 10;
+                
+                &::before, &::after {
+                    background-color: #DD2C00;
+                }
             }
-    
-            .javascript::before, .javascript::after {
-                background-color: #FFD600;
+
+            .node {
+                animation: skillMoveBottom 2.5s 10 .2s;
+                
+                &::before, &::after {
+                    background-color: #4CAF50;
+                }
             }
-    
-            .angular::before, .angular::after {
-                background-color: #DD2C00;
+
+            .mysql {
+                animation: skillMoveBottom 2.5s 10 .4s;
+                
+                &::before, &::after {
+                    background-color: #00796B;
+                }
             }
-    
-            .angular::before, .angular::after {
-                background-color: #DD2C00;
+
+            .mongodb {
+                animation: skillMoveBottom 2.5s 10 .6s;
+                
+                &::before, &::after {
+                    background-color: #4CAF50;
+                }
             }
-    
-            .node::before, .node::after {
-                background-color: #4CAF50;
+
+            .git {
+                animation: skillMoveBottom 2.5s 10 .8s;
+                
+                &::before, &::after {
+                    background-color: #F4511E;
+                }
             }
-    
-            .mysql::before, .mysql::after {
-                background-color: #00796B;
+
+            .ui_ux {
+                animation: skillMoveBottom 2.5s 10 1s;
+                
+                &::before, &::after {
+                    background-color: #83D8F4;
+                }
             }
+
+            @media (min-width: 1200px) {
+                @keyframes skillMoveTop {
+                    0% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                    }
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
     
-            .mongodb::before, .mongodb::after {
-                background-color: #4CAF50;
-            }
-    
-            .git::before, .git::after {
-                background-color: #F4511E;
-            }
-    
-            .illustrator::before, .illustrator::after {
-                background-color: #1C0802;
-            }
-    
-            .ui_ux::before, .ui_ux::after {
-                background-color: #83D8F4;
+                @keyframes skillMoveBottom {
+                    0% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(10px);
+                    }
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
             }
         }
     }

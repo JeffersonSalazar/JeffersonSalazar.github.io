@@ -4,92 +4,24 @@
     ruta de los archivos src\sass\shared
 */
 /*
-	Poppins Font
+	ubuntu-bold Font for titles
 */
-@font-face {
-  font-family: 'poppins-light';
-  src: url("../../../assets/fonts/poppins/Poppins-Light.ttf");
-}
-
-@font-face {
-  font-family: 'poppins-regular';
-  src: url("../../../assets/fonts/poppins/Poppins-Regular.ttf");
-}
-
-@font-face {
-  font-family: 'poppins-semibold';
-  src: url("../../../assets/fonts/poppins/Poppins-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: 'poppins-bold';
-  src: url("../../../assets/fonts/poppins/Poppins-Bold.ttf");
-}
-
-/*
-	Montserrat Font
-*/
-@font-face {
-  font-family: 'montserrat-light';
-  src: url("../../../assets/fonts/montserrat/Montserrat-Light.ttf");
-}
-
-@font-face {
-  font-family: 'montserrat-regular';
-  src: url("../../../assets/fonts/montserrat/Montserrat-Regular.ttf");
-}
-
-@font-face {
-  font-family: 'montserrat-semibold';
-  src: url("../../../assets/fonts/montserrat/Montserrat-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: 'montserrat-bold';
-  src: url("../../../assets/fonts/montserrat/Montserrat-Bold.ttf");
-}
-
-/*
-	Ubuntu Font
-*/
-@font-face {
-  font-family: 'ubuntu-light';
-  src: url("../../../assets/fonts/ubuntu/Ubuntu-Light.ttf");
-}
-
-@font-face {
-  font-family: 'ubuntu-regular';
-  src: url("../../../assets/fonts/ubuntu/Ubuntu-Regular.ttf");
-}
-
-@font-face {
-  font-family: 'ubuntu-medium';
-  src: url("../../../assets/fonts/ubuntu/Ubuntu-Medium.ttf");
-}
-
 @font-face {
   font-family: 'ubuntu-bold';
   src: url("../../../assets/fonts/ubuntu/Ubuntu-Bold.ttf");
 }
 
 /*
-	Baloo 2 Font
+	ubuntu-regular Font for subtitles
 */
 @font-face {
-  font-family: 'baloo2-regular';
-  src: url("../../../assets/fonts/baloo_2/Baloo2-Regular.ttf");
+  font-family: 'ubuntu-regular';
+  src: url("../../../assets/fonts/ubuntu/Ubuntu-Regular.ttf");
 }
 
-@font-face {
-  font-family: 'baloo2-medium';
-  src: url("../../../assets/fonts/baloo_2/Baloo2-Medium.ttf");
-}
-
-@font-face {
-  font-family: 'baloo2-semibold';
-  src: url("../../../assets/fonts/baloo_2/Baloo2-SemiBold.ttf");
-}
-
+/*
+	baloo2-bold Font fot buttons and links
+*/
 @font-face {
   font-family: 'baloo2-bold';
   src: url("../../../assets/fonts/baloo_2/Baloo2-Bold.ttf");
@@ -380,14 +312,14 @@
   border-bottom: 2px solid #fff;
   padding: 0 20px;
   /*
-                tag-h4
+                tag-h2
             */
   /*
                 box_menu_close_icon
             */
 }
 
-.navbar_component nav .box_navbar_menu h4 {
+.navbar_component nav .box_navbar_menu h2 {
   color: #fff;
   font-size: 20px;
 }
@@ -545,7 +477,7 @@
                 tag-h1
             */
   /*
-                tag-h4
+                tag-h5
             */
   /*
                 tag-p: definimos un max-width para que apartir de 600px en adelante
@@ -607,9 +539,8 @@
   }
 }
 
-.banner_component .banner_flexbox .box_banner_biografy h4 {
+.banner_component .banner_flexbox .box_banner_biografy h5 {
   color: #aaaaaa;
-  margin-top: 4px;
   /*
                     _@query 300px ==> : definimos un tamaño de fuente para 
                     _este elemento en esta medida
@@ -625,19 +556,19 @@
 }
 
 @media (min-width: 300px) {
-  .banner_component .banner_flexbox .box_banner_biografy h4 {
+  .banner_component .banner_flexbox .box_banner_biografy h5 {
     font-size: 18px;
   }
 }
 
 @media (min-width: 400px) {
-  .banner_component .banner_flexbox .box_banner_biografy h4 {
+  .banner_component .banner_flexbox .box_banner_biografy h5 {
     font-size: 22px;
   }
 }
 
 @media (min-width: 600px) {
-  .banner_component .banner_flexbox .box_banner_biografy h4 {
+  .banner_component .banner_flexbox .box_banner_biografy h5 {
     font-size: 25px;
   }
 }
@@ -1002,9 +933,6 @@
                 ajustar el borde redondeado dentro del icono
             */
   /*
-                tag-p
-            */
-  /*
                 tag-ol
             */
 }
@@ -1042,11 +970,6 @@
   height: 34px;
 }
 
-.modal_component .modal_card .box_modal_content p {
-  font-family: 'ubuntu-medium', sans-serif;
-  line-height: 1.3;
-}
-
 .modal_component .modal_card .box_modal_content ol {
   /*
                     tag-li
@@ -1056,7 +979,6 @@
 .modal_component .modal_card .box_modal_content ol li {
   list-style: none;
   color: var(--textColor);
-  font-family: 'ubuntu-medium', sans-serif;
   font-size: 20px;
   margin: 14px 0;
   /*
@@ -1092,7 +1014,7 @@
   display: -ms-grid;
   display: grid;
   gap: 16px;
-  padding: 10px 30px;
+  padding: 20px 30px;
   overflow-x: scroll;
   /*
                 _@query 499px <== : definimos una grilla de 12 columnas 
@@ -1173,7 +1095,6 @@
   -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
           box-shadow: 0 5px 10px 0 var(--shadowColor);
   padding: 10px 12px;
-  cursor: pointer;
   /*
                     .cuando hacemos :hover en box_skill_cards
                 */
@@ -1196,7 +1117,7 @@
                     tamaño de las imagenes
                 */
   /*
-                    tag-h6
+                    tag-h3
                 */
 }
 
@@ -1290,60 +1211,177 @@
   }
 }
 
-.skills_component .skills_container .skills_grid .box_skill_cards h6 {
+.skills_component .skills_container .skills_grid .box_skill_cards h3 {
   color: var(--textColor);
+  position: relative;
+  z-index: 1;
+}
+
+.skills_component .skills_container .skills_grid .html {
+  -webkit-animation: skillMoveTop 2.5s 10;
+          animation: skillMoveTop 2.5s 10;
 }
 
 .skills_component .skills_container .skills_grid .html::before, .skills_component .skills_container .skills_grid .html::after {
   background-color: #FF6D00;
 }
 
+.skills_component .skills_container .skills_grid .css {
+  -webkit-animation: skillMoveTop 2.5s 10 .2s;
+          animation: skillMoveTop 2.5s 10 .2s;
+}
+
 .skills_component .skills_container .skills_grid .css::before, .skills_component .skills_container .skills_grid .css::after {
   background-color: #039BE5;
+}
+
+.skills_component .skills_container .skills_grid .sass {
+  -webkit-animation: skillMoveTop 2.5s 10 .4s;
+          animation: skillMoveTop 2.5s 10 .4s;
 }
 
 .skills_component .skills_container .skills_grid .sass::before, .skills_component .skills_container .skills_grid .sass::after {
   background-color: #F06292;
 }
 
+.skills_component .skills_container .skills_grid .bootstrap {
+  -webkit-animation: skillMoveTop 2.5s 10 .6s;
+          animation: skillMoveTop 2.5s 10 .6s;
+}
+
 .skills_component .skills_container .skills_grid .bootstrap::before, .skills_component .skills_container .skills_grid .bootstrap::after {
   background-color: #673AB7;
+}
+
+.skills_component .skills_container .skills_grid .jquery {
+  -webkit-animation: skillMoveTop 2.5s 10 .8s;
+          animation: skillMoveTop 2.5s 10 .8s;
+}
+
+.skills_component .skills_container .skills_grid .jquery::before, .skills_component .skills_container .skills_grid .jquery::after {
+  background-color: #0268AE;
+}
+
+.skills_component .skills_container .skills_grid .javascript {
+  -webkit-animation: skillMoveTop 2.5s 10 1s;
+          animation: skillMoveTop 2.5s 10 1s;
 }
 
 .skills_component .skills_container .skills_grid .javascript::before, .skills_component .skills_container .skills_grid .javascript::after {
   background-color: #FFD600;
 }
 
-.skills_component .skills_container .skills_grid .angular::before, .skills_component .skills_container .skills_grid .angular::after {
-  background-color: #DD2C00;
+.skills_component .skills_container .skills_grid .angular {
+  -webkit-animation: skillMoveBottom 2.5s 10;
+          animation: skillMoveBottom 2.5s 10;
 }
 
 .skills_component .skills_container .skills_grid .angular::before, .skills_component .skills_container .skills_grid .angular::after {
   background-color: #DD2C00;
+}
+
+.skills_component .skills_container .skills_grid .node {
+  -webkit-animation: skillMoveBottom 2.5s 10 .2s;
+          animation: skillMoveBottom 2.5s 10 .2s;
 }
 
 .skills_component .skills_container .skills_grid .node::before, .skills_component .skills_container .skills_grid .node::after {
   background-color: #4CAF50;
 }
 
+.skills_component .skills_container .skills_grid .mysql {
+  -webkit-animation: skillMoveBottom 2.5s 10 .4s;
+          animation: skillMoveBottom 2.5s 10 .4s;
+}
+
 .skills_component .skills_container .skills_grid .mysql::before, .skills_component .skills_container .skills_grid .mysql::after {
   background-color: #00796B;
+}
+
+.skills_component .skills_container .skills_grid .mongodb {
+  -webkit-animation: skillMoveBottom 2.5s 10 .6s;
+          animation: skillMoveBottom 2.5s 10 .6s;
 }
 
 .skills_component .skills_container .skills_grid .mongodb::before, .skills_component .skills_container .skills_grid .mongodb::after {
   background-color: #4CAF50;
 }
 
+.skills_component .skills_container .skills_grid .git {
+  -webkit-animation: skillMoveBottom 2.5s 10 .8s;
+          animation: skillMoveBottom 2.5s 10 .8s;
+}
+
 .skills_component .skills_container .skills_grid .git::before, .skills_component .skills_container .skills_grid .git::after {
   background-color: #F4511E;
 }
 
-.skills_component .skills_container .skills_grid .illustrator::before, .skills_component .skills_container .skills_grid .illustrator::after {
-  background-color: #1C0802;
+.skills_component .skills_container .skills_grid .ui_ux {
+  -webkit-animation: skillMoveBottom 2.5s 10 1s;
+          animation: skillMoveBottom 2.5s 10 1s;
 }
 
 .skills_component .skills_container .skills_grid .ui_ux::before, .skills_component .skills_container .skills_grid .ui_ux::after {
   background-color: #83D8F4;
+}
+
+@media (min-width: 1200px) {
+  @-webkit-keyframes skillMoveTop {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(-10px);
+              transform: translateY(-10px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  @keyframes skillMoveTop {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(-10px);
+              transform: translateY(-10px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes skillMoveBottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(10px);
+              transform: translateY(10px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  @keyframes skillMoveBottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(10px);
+              transform: translateY(10px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
 }
 
 /*
@@ -1480,7 +1518,7 @@
   -webkit-transition: height .7s;
   transition: height .7s;
   /*
-                tag-h5
+                tag-h4
             */
   /*
                 tag-p
@@ -1490,8 +1528,9 @@
             */
 }
 
-.certificates_component .certificates_section .box_certificates_content h5 {
+.certificates_component .certificates_section .box_certificates_content h4 {
   color: var(--textColor);
+  font-family: "poppin-regular", sans-serif;
   letter-spacing: .6px;
   margin: 10px 0;
 }
@@ -1542,49 +1581,35 @@
 
 .projects_component .projects_container .projects_flexbox {
   /*
-				swiper: la libreria le define por defecto position: relative
-				esto evita que los iconos de la paginacion se desplazen hacia 
-				arriba cuando reducimos el alto de la pantalla, finalmente 
-				padding nos ayuda a ampliar la altura de este contenedor 
-				evitando que los iconos de la navegacion se monten encima 
-				de las targetas
+				swiper
 			*/
 }
 
 .projects_component .projects_container .projects_flexbox .swiper {
   /*
-					_responsive 900px ==> : definimos flexbox y su propiedad 
-					_align-items para centrar de manera vertical los elementos 
-					_que este contiene
+					_@query 1000px ==> : definimos una grilla de 4 columnas 
+					_para esta medida
 				*/
   /*
 					swiper-wrapper
 				*/
   /*
-					box_icon_slider: definimos relative debido a que
-					a sus hijos les definimos absolute, finalmente 
-					margin: 0 auto para centrar el contenedor
+					swiper-button-prev, swiper-button-next: definimos width y height
+					para darle tamaño al icono
 				*/
   /*
-						swiper-button-prev, swiper-button-next: debido a que estas tags
-						tienen por defecto positon: absolute definimos top: auto y 
-						bottom para posicionar los iconos del slider, margin-top lo
-						usamos para remover un margen que tienen estas tags por defecto
-					*/
+					swiper-button-prev: definiendo la propiedad left 
+					podemos determinar la posicion de este icono
+				*/
   /*
-						swiper-button-prev: definiendo la propiedad left 
-						podemos determinar la posicion de este icono
-					*/
-  /*
-						swiper-button-next: definiendo la propiedad right 
-						podemos determinar la posicion de este icono
-					*/
+					swiper-button-next: definiendo la propiedad right 
+					podemos determinar la posicion de este icono
+				*/
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .projects_component .projects_container .projects_flexbox .swiper {
-    -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
-            box-shadow: 0 5px 10px 0 var(--shadowColor);
+    height: 400px;
   }
 }
 
@@ -1595,79 +1620,47 @@
 }
 
 .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 400px;
   /*
-                            box_slide_content: implementamos absolute y su propiedad
-                            bottom para posicionar este contenedor y que la
-                            tag-img quede por detras de este
-                        */
-  /*
-							tag-img: definimos un width: 100% y height: auto junto con la
-							propiedad object-fit: cover para que la img se ajuste al ancho 
-							de contenedor padre 
+							tag-img: definimos un width: 100% y height: 100% para que la img 
+							se ajuste al ancho del contenedor padre
 						*/
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content {
-  position: absolute;
-  bottom: 30px;
-  background: #479be3;
-  padding: 15px 25px;
-  -webkit-box-shadow: var(--shadowColor);
-          box-shadow: var(--shadowColor);
   /*
-                                @query 991px <== : definimos un width para esta medida
-                            */
-  /*
-                                @query 992px ==> : definimos un width para esta medida
-                            */
-}
-
-@media (max-width: 991px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content {
-    width: 90%;
-  }
-}
-
-@media (min-width: 992px) {
-  .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content {
-    width: 85%;
-  }
-}
-
-.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content a {
-  color: #fff;
+                            box_slide_content
+                        */
 }
 
 .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 83%;
+  border: 1px solid transparent;
+}
+
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content {
+  text-align: center;
+  padding-top: 12px;
+}
+
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content a {
+  text-decoration: underline;
+  color: var(--textColor);
+  font-size: 26px;
 }
 
 .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev,
 .projects_component .projects_container .projects_flexbox .swiper .swiper-button-next {
   width: 44px;
   height: 44px;
-  background: #479be3;
-  -webkit-box-shadow: var(--shadowColor);
-          box-shadow: var(--shadowColor);
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
   /*
-							swiper-button-next:after, swiper-button-prev:after: para 
-							cambiar estas propiedades debemos definirlas en estas clases
-						*/
+						swiper-button-next:after, swiper-button-prev:after: para 
+						cambiar estas propiedades debemos definirlas en estas clases
+					*/
   /*
-							swiper-button-disabled: modificando esta propiedad
-							hacemos visible el icono del slider
-						*/
+						swiper-button-disabled: modificando esta propiedad
+						hacemos visible el icono del slider
+					*/
 }
 
 .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev:after,
@@ -1683,6 +1676,14 @@
   cursor: pointer;
 }
 
+@media (max-width: 519px) {
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev,
+  .projects_component .projects_container .projects_flexbox .swiper .swiper-button-next {
+    width: 34px;
+    height: 34px;
+  }
+}
+
 .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev {
   left: 5%;
 }
@@ -1691,10 +1692,6 @@
   right: 5%;
 }
 
-/*
-    spanStyle: contiene los estilos principales aplicados a las
-    las tag-span pertenecientes solo a customers_component
-*/
 /*
     customers_component
 */
@@ -1906,8 +1903,7 @@
                             tag-h3
                         */
   /*
-                            tag-span: implementamos un mixin 'spanStyle' que contiene los
-                            estilos principales de este elemento
+                            tag-h6
                         */
 }
 
@@ -1936,15 +1932,14 @@
   }
 }
 
-.customers_component .customers_container .customers_grid .customers_card_content .box_customers_profile .customers_name span {
+.customers_component .customers_container .customers_grid .customers_card_content .box_customers_profile .customers_name h6 {
+  color: #aaaaaa;
+  font-family: 'ubuntu-regular', sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
-  color: #aaaaaa;
-  font-family: 'poppins-regular', sans-serif;
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content p {
-  font-family: 'ubuntu-medium', sans-serif;
   margin: 18px 0 22px;
   /*
                         _@query 693px ==> : definimos un ancho minimo para este elemento 
@@ -1968,7 +1963,7 @@
 .customers_component .customers_container .customers_grid .customers_card_content .ol_socials_customers li {
   list-style: none;
   color: var(--textColor);
-  font-family: 'ubuntu-medium', sans-serif;
+  font-size: 18px;
   margin-bottom: 10px;
   /*
                             _@query 315px <== : definimos un tamaño de fuente para
@@ -1978,8 +1973,7 @@
                             tag-svg
                         */
   /*
-                            tag-span: implementamos un mixin 'spanStyle' que contiene los
-                            estilos principales de este elemento
+                            tag-span
                         */
 }
 
@@ -1996,8 +1990,6 @@
 }
 
 .customers_component .customers_container .customers_grid .customers_card_content .ol_socials_customers li span {
-  font-size: 16px;
-  letter-spacing: 1px;
   color: var(--textColor);
 }
 
@@ -2277,7 +2269,6 @@
   top: 0;
   left: 5px;
   color: #7e7b7c;
-  font-family: 'poppins-regular', sans-serif;
   font-size: 21px;
   letter-spacing: 1px;
   -webkit-transform: translateY(5px);
@@ -2294,7 +2285,6 @@
   border: none;
   background-color: transparent;
   color: var(--textColor);
-  font-family: 'poppins-regular', sans-serif;
   font-size: 21px;
   letter-spacing: 1px;
   border-bottom: 1px solid #00000026;
@@ -2324,7 +2314,6 @@
   border: none;
   background-color: transparent;
   color: var(--textColor);
-  font-family: 'poppins-regular', sans-serif;
   font-size: 21px;
   letter-spacing: 1px;
   border-bottom: 1px solid #00000026;
@@ -2669,18 +2658,11 @@ h2 {
 }
 
 /*
-    tag-h4, tag-h5 y tag-h6: definimos color y una fuente personalizada 
+    tag-h5 y tag-h6: definimos una fuente personalizada 
     para estos elementos
 */
-h4, h5, h6 {
-  font-family: "ubuntu-light", sans-serif;
-}
-
-/*
-    tag-h5 y tag-h6: definimos un tamaño de fuente
-*/
 h5, h6 {
-  font-size: 16px;
+  font-family: "ubuntu-regular", sans-serif;
 }
 
 /*
@@ -2689,29 +2671,12 @@ h5, h6 {
 */
 p {
   color: var(--textColor);
-  font-family: 'poppin-regular', sans-serif;
   font-size: 20px;
-  letter-spacing: .4px;
   line-height: 1.5;
 }
 
-/*
-    tag-a: estos estilos son tomados por todas las tag-a definidas
-    en html
-*/
-a {
-  text-decoration: none;
-  color: #479be3;
-  font-family: 'baloo2-medium', sans-serif;
-  font-size: 1.1rem;
-}
-
-/*
-    tag-svg, tag-img y tag-textarea: implementamos vertical-align para 
-    remover un espaciado que genera el navegador en estas etiquetas
-*/
-svg, img, textarea {
-  vertical-align: top;
+p, li, input, textarea, label {
+  font-family: 'poppin-regular', sans-serif;
 }
 
 /* 
@@ -2721,8 +2686,29 @@ svg, img, textarea {
 button {
   outline: none;
   border: none;
-  font-family: 'baloo2-medium', sans-serif;
   cursor: pointer;
+}
+
+/*
+    tag-a: estos estilos son tomados por todas las tag-a definidas
+    en html
+*/
+a {
+  text-decoration: none;
+  color: #479be3;
+  font-size: 1.1rem;
+}
+
+button, a {
+  font-family: 'baloo2-bold', sans-serif;
+}
+
+/*
+    tag-svg, tag-img y tag-textarea: implementamos vertical-align para 
+    remover un espaciado que genera el navegador en estas etiquetas
+*/
+svg, img, textarea {
+  vertical-align: top;
 }
 
 /*

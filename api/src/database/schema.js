@@ -4,6 +4,12 @@
 let connect = require('./connect');
 
 /*
+    dotenv: permite crear variables de entorno
+    para guardar de manera segura nuestras credenciales
+*/
+require('dotenv').config();
+
+/*
     requerimos model y Schema del modulo mongoose
     que nos permiten crear el esquema de la colleccion
 */
@@ -25,4 +31,4 @@ const COLLECTION = new Schema ({
 /* 
     exportacion del archivo model
 */
-module.exports = model('contactos', COLLECTION);
+module.exports = model("contactos", COLLECTION);

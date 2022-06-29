@@ -16,21 +16,15 @@
 		*/
 		.projects_flexbox {
 			/*
-				swiper: la libreria le define por defecto position: relative
-				esto evita que los iconos de la paginacion se desplazen hacia 
-				arriba cuando reducimos el alto de la pantalla, finalmente 
-				padding nos ayuda a ampliar la altura de este contenedor 
-				evitando que los iconos de la navegacion se monten encima 
-				de las targetas
+				swiper
 			*/
 			.swiper {
 				/*
-					_responsive 900px ==> : definimos flexbox y su propiedad 
-					_align-items para centrar de manera vertical los elementos 
-					_que este contiene
+					_@query 1000px ==> : definimos una grilla de 4 columnas 
+					_para esta medida
 				*/
-				@media (min-width: 900px) {
-					box-shadow: 0 5px 10px 0 var(--shadowColor);
+				@media (min-width: 768px) {
+					height: 400px;
 				}
 
 				/*
@@ -40,132 +34,85 @@
 					/*
 						swiper-slide
 					*/
-					.swiper-slide {
-						position: relative;
-                        display: flex;
-                        justify-content: center;
-						height: 400px;
-						
+					.swiper-slide {		
 						/*
-                            box_slide_content: implementamos absolute y su propiedad
-                            bottom para posicionar este contenedor y que la
-                            tag-img quede por detras de este
-                        */
-						.box_slide_content {
-							position: absolute;
-                            bottom: 30px;
-							background: $mainPageBackgroundColor;
-                            padding: 15px 25px;
-							box-shadow: var(--shadowColor);
-                        
-							/*
-                                @query 991px <== : definimos un width para esta medida
-                            */
-                            @media (max-width: 991px) {
-                                width: 90%;
-                            }
-                
-                            /*
-                                @query 992px ==> : definimos un width para esta medida
-                            */
-                            @media (min-width: 992px) {
-                                width: 85%;
-                            }
-
-							a {
-								color: #fff;
-							}
+							tag-img: definimos un width: 100% y height: 100% para que la img 
+							se ajuste al ancho del contenedor padre
+						*/ 
+						img {
+							width: 100%;						
+							height: 83%;
+							border: 1px solid transparent;
 						}
 
 						/*
-							tag-img: definimos un width: 100% y height: auto junto con la
-							propiedad object-fit: cover para que la img se ajuste al ancho 
-							de contenedor padre 
-						*/
-						img {
-							width: 100%;						
-							height: 100%;
-							object-fit: cover;
+                            box_slide_content
+                        */
+						.box_slide_content {
+							text-align: center;
+							padding-top: 12px;
+
+							a {
+								text-decoration: underline;
+								color: var(--textColor);
+								font-size: 26px;
+							}
 						}
 					}
 				}
 
+				
 				/*
-					box_icon_slider: definimos relative debido a que
-					a sus hijos les definimos absolute, finalmente 
-					margin: 0 auto para centrar el contenedor
+					swiper-button-prev, swiper-button-next: definimos width y height
+					para darle tamaño al icono
+				*/ 
+				.swiper-button-prev,
+				.swiper-button-next {	
+					width: 44px;
+					height: 44px;
+					background-color: rgba(0,0,0, .8);
+					box-shadow: 0 5px 10px 0 rgba(0,0,0, .3);
+
+					/*
+						swiper-button-next:after, swiper-button-prev:after: para 
+						cambiar estas propiedades debemos definirlas en estas clases
+					*/
+					&:after {
+						color: #fff;
+						font-size: 22px;
+						font-weight: bold;
+					}
+
+					/*
+						swiper-button-disabled: modificando esta propiedad
+						hacemos visible el icono del slider
+					*/
+					&.swiper-button-disabled {
+						opacity: 1;
+						cursor: pointer;
+					}
+
+					@media (max-width: 519px) {
+						width: 34px;
+						height: 34px;
+					}
+				}
+
+				/*
+					swiper-button-prev: definiendo la propiedad left 
+					podemos determinar la posicion de este icono
 				*/
-				// .box_icon_slider {
-				// 	position: relative;
-				// 	margin: 0 auto;
+				.swiper-button-prev {
+					left: 5%;
+				}
 
-				// 	/*
-				// 		@query 991px <== : definimos un width para esta medida
-				// 	*/
-				// 	@media (max-width: 991px) {
-				// 		width: 90%;
-				// 	}
-		
-				// 	/*
-				// 		@query 992px ==> : definimos un width para esta medida
-				// 	*/
-				// 	@media (min-width: 992px) {
-				// 		width: 85%;
-				// 	}
-			
-
-					/*
-						swiper-button-prev, swiper-button-next: debido a que estas tags
-						tienen por defecto positon: absolute definimos top: auto y 
-						bottom para posicionar los iconos del slider, margin-top lo
-						usamos para remover un margen que tienen estas tags por defecto
-					*/
-					.swiper-button-prev,
-					.swiper-button-next {
-						// top: auto;
-						// bottom: 30px;
-						width: 44px;
-						height: 44px;
-						// margin-top: 0;
-						background: $mainPageBackgroundColor;
-						box-shadow: var(--shadowColor);
-
-						/*
-							swiper-button-next:after, swiper-button-prev:after: para 
-							cambiar estas propiedades debemos definirlas en estas clases
-						*/
-						&:after {
-							color: #fff;
-							font-size: 22px;
-							font-weight: bold;
-						}
-
-						/*
-							swiper-button-disabled: modificando esta propiedad
-							hacemos visible el icono del slider
-						*/
-						&.swiper-button-disabled {
-							opacity: 1;
-							cursor: pointer;
-						}
-					}
-
-					/*
-						swiper-button-prev: definiendo la propiedad left 
-						podemos determinar la posicion de este icono
-					*/
-					.swiper-button-prev {
-						left: 5%;
-					}
-
-					/*
-						swiper-button-next: definiendo la propiedad right 
-						podemos determinar la posicion de este icono
-					*/
-					.swiper-button-next {
-						right: 5%;
-					}
-				// }
+				/*
+					swiper-button-next: definiendo la propiedad right 
+					podemos determinar la posicion de este icono
+				*/
+				.swiper-button-next {
+					right: 5%;
+				}
 			}
 		}
 	}

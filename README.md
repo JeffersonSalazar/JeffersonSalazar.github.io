@@ -314,5 +314,7 @@ footer.js {
     1. redirigir al usuario al inicio de la pagina por medio declaracion
     icono gotop
 
-    2. definir el año actual del proyecto
+    3. cambiar el idioma del sitio web
+
+    3. definir el año actual del proyecto
 }

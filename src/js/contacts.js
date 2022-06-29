@@ -134,11 +134,11 @@ $form.addEventListener('submit', function(e){
         .declarados en form y en la api node js, estas almacenaran la 
         .informacion ingresada por el usuario en cada input
     */
-    let formFields = {
-        name: e.target.name.value,
-        email: e.target.email.value,
-        post: e.target.post.value
-    };
+    // let formFields = {
+    //     name: e.target.name.value,
+    //     email: e.target.email.value,
+    //     post: e.target.post.value
+    // };
 
     /* 
         FETCH: recibe como parametro la variable api, luego definimos un OBJETO
@@ -147,66 +147,66 @@ $form.addEventListener('submit', function(e){
 
         JSON.stringify nos ayuda a pasar los datos de tipo OBJETO a tipo STRING
     */
-    fetch(api, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formFields)
-    })
+    // fetch(api, {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(formFields)
+    // })
     /*  
         FETCH retorna una promesa por ende hacemos uso de .THEN y .CATCH
         para mostrar alertas al usuario dependiedo del estado del formulario
     */
-    .then (res => {
+    // .then (res => {
         /* 
             definimos un condicional el cual si el status de la respuesta
             es 400 muestra una alerta de error
         */
-        if(res.status === 400) {
-            Swal.fire({
-                icon: 'error',
-                title: 'verifica que los campos sean correctos',
-                position: 'center',
-                showConfirmButton: false,
-                padding: '0 0 3em',
-                timer: 5000 
-            });
-        };
+        // if(res.status === 400) {
+        //     Swal.fire({
+        //         icon: 'error',
+        //         title: 'verifica que los campos sean correctos',
+        //         position: 'center',
+        //         showConfirmButton: false,
+        //         padding: '0 0 3em',
+        //         timer: 5000 
+        //     });
+        // };
 
         /* 
             definimos un condicional el cual si el status de la respuesta
             es 200 muestra una alerta de exito
         */
-        if(res.status === 200) {
-            Swal.fire({ 
-                icon: 'success',
-                title: 'el mensaje fue enviado correctamente',
-                position: 'center',
-                showConfirmButton: false,
-                padding: '0 0 3em',
-                timer: 5000      
-            });
+        // if(res.status === 200) {
+        //     Swal.fire({ 
+        //         icon: 'success',
+        //         title: 'el mensaje fue enviado correctamente',
+        //         position: 'center',
+        //         showConfirmButton: false,
+        //         padding: '0 0 3em',
+        //         timer: 5000      
+        //     });
 
             /* 
                 finalmente borramos los valores de los campos del
                 formulario
             */
-            $form.reset();
-        };
-    })
-    .catch(err => {
-        Swal.fire({
-            icon: 'error',
-            title: 'parece que no hay conexion con la api',
-            position: 'center',
-            showConfirmButton: false,
-            padding: '0 0 3em',
-            timer: 5000 
-        });
+//             $form.reset();
+//         };
+//     })
+//     .catch(err => {
+//         Swal.fire({
+//             icon: 'error',
+//             title: 'parece que no hay conexion con la api',
+//             position: 'center',
+//             showConfirmButton: false,
+//             padding: '0 0 3em',
+//             timer: 5000 
+//         });
 
-        console.log(err);
-    })
+//         console.log(err);
+//     })
 });
 
 // __________ end code - submit form data __________ //

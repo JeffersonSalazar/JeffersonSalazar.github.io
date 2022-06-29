@@ -100,18 +100,11 @@ h2 {
 }
 
 /*
-    tag-h4, tag-h5 y tag-h6: definimos color y una fuente personalizada 
+    tag-h5 y tag-h6: definimos una fuente personalizada 
     para estos elementos
 */
-h4, h5, h6 {
-    font-family: "ubuntu-light", sans-serif;
-}
-
-/*
-    tag-h5 y tag-h6: definimos un tamaño de fuente
-*/
 h5, h6 {
-    font-size: 16px;
+    font-family: "ubuntu-regular", sans-serif;  
 }
 
 /*
@@ -120,29 +113,12 @@ h5, h6 {
 */
 p {
     color: var(--textColor);
-    font-family: 'poppin-regular', sans-serif;
     font-size: 20px;
-    letter-spacing: .4px;
     line-height: 1.5;
 }
 
-/*
-    tag-a: estos estilos son tomados por todas las tag-a definidas
-    en html
-*/
-a {
-    text-decoration: none;
-    color: $mainPageColor;
-    font-family: 'baloo2-medium', sans-serif;
-    font-size: 1.1rem;
-}
-
-/*
-    tag-svg, tag-img y tag-textarea: implementamos vertical-align para 
-    remover un espaciado que genera el navegador en estas etiquetas
-*/
-svg, img, textarea {
-    vertical-align: top;
+p, li, input, textarea, label {
+    font-family: 'poppin-regular', sans-serif;
 }
 
 /* 
@@ -152,8 +128,30 @@ svg, img, textarea {
 button {
     outline: none;
     border: none;
-    font-family: 'baloo2-medium', sans-serif;
     cursor: pointer;
+}
+
+/*
+    tag-a: estos estilos son tomados por todas las tag-a definidas
+    en html
+*/
+a {
+    text-decoration: none;
+    color: $mainPageColor;
+    font-size: 1.1rem;
+}
+
+button, a {
+    font-family: 'baloo2-bold', sans-serif;
+}
+
+
+/*
+    tag-svg, tag-img y tag-textarea: implementamos vertical-align para 
+    remover un espaciado que genera el navegador en estas etiquetas
+*/
+svg, img, textarea {
+    vertical-align: top;
 }
 
 /*

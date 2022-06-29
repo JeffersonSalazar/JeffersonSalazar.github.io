@@ -94,13 +94,13 @@
 				-->
 				<nav id="navbar-nav">
 					<!--  
-						box_navbar_menu: contenedor de 1 tah-h4 y de box_close_icon
+						box_navbar_menu: contenedor de 1 tah-h2 y de box_menu_close_icon
 					-->
 					<section class="box_navbar_menu">
 						<!--  
 							.tag-h4: ene sta definimos el titulo menu
 						-->
-						<h4 data-section="navbarComponent" data-value="navbarTitle">Menù</h4>
+						<h2 data-section="navbarComponent" data-value="navbarTitle">Menú</h2>
 
 						<!--  
 							box_menu_close_icon: contenedor de 1 tag-svg, le definimos
@@ -139,7 +139,7 @@
 								<!--  
 									.tag-span: en esta definimos el titulo del enlace
 								-->
-								<span data-section="navbarComponent" data-value="navbarListItemOne">Conòceme</span>
+								<span data-section="navbarComponent" data-value="navbarListItemOne">Conóceme</span>
 							</a>
 						</li>
 
@@ -200,7 +200,7 @@
 								.pagina, js_background_change, le definimos un ID para implementar
 								.este elemento en 'src\js\navbar.js'
 							-->
-							<button type="button" class="btn_animated" id="navbar-skin-btn">
+							<button type="button" id="navbar-skin-btn">
 								<svg viewBox="0 0 24 24">
 									<path d="M13.4 2.096a10.08 10.08 0 0 0-8.937 3.331A10.054 10.054 0 0 0 2.096 13.4c.53 3.894 3.458 7.207 7.285 8.246a9.982 9.982 0 0 0 2.618.354l.142-.001a3.001 3.001 0 0 0 2.516-1.426 2.989 2.989 0 0 0 .153-2.879l-.199-.416a1.919 1.919 0 0 1 .094-1.912 2.004 2.004 0 0 1 2.576-.755l.412.197c.412.198.85.299 1.301.299A3.022 3.022 0 0 0 22 12.14a9.935 9.935 0 0 0-.353-2.76c-1.04-3.826-4.353-6.754-8.247-7.284zm5.158 10.909-.412-.197c-1.828-.878-4.07-.198-5.135 1.494-.738 1.176-.813 2.576-.204 3.842l.199.416a.983.983 0 0 1-.051.961.992.992 0 0 1-.844.479h-.112a8.061 8.061 0 0 1-2.095-.283c-3.063-.831-5.403-3.479-5.826-6.586-.321-2.355.352-4.623 1.893-6.389a8.002 8.002 0 0 1 7.16-2.664c3.107.423 5.755 2.764 6.586 5.826.198.73.293 1.474.282 2.207-.012.807-.845 1.183-1.441.894z"></path>
 									<circle cx="7.5" cy="14.5" r="1.5"></circle>
@@ -235,7 +235,7 @@
 					-->
 					<div class="banner_flexbox">
 						<!--  
-							box_banner_biografy: contenedor de 1 tag-h1, 1 tag-h4, 1 tag-p 
+							box_banner_biografy: contenedor de 1 tag-h1, 1 tag-h5, 1 tag-p 
 							y de box_btn
 						-->
 						<section class="box_banner_biografy">
@@ -246,9 +246,9 @@
 							<h1 class="js_color_change" data-section="bannerComponent" data-value="bannerTitle">Soy Jefferson Salazar</h1>
 
 							<!--  
-								.tag-h4: en esta definimos el subtitulo del banner
+								.tag-h5: en esta definimos el subtitulo del banner
 							-->
-							<h4 data-section="bannerComponent" data-value="bannerSubtitle">Desarrollador Frontend</h4>
+							<h5 data-section="bannerComponent" data-value="bannerSubtitle">Desarrollador Frontend</h5>
 
 							<!--  
 								.tag-p: en esta definimos el parrafo del banner
@@ -282,8 +282,10 @@
 									.js_color_change es una clase trabajada desde 'src\js\navbar.js', le 
 									.le definimos un ID para implementar este elemento en 'src\js\navbar.js'
 								-->
-								<a href="./assets/docs/HojadeVida.pdf" download="HDV Jefferson Salazar" title="Descargar hoja de vida" class="js_color_change" id="btn-banner-hdv">
-									HDV
+								<a href="./assets/docs/HojadeVida.pdf" download="HDV Jefferson Salazar" class="js_color_change" 
+									 id="btn-banner-hdv"
+								>
+									<span data-section="bannerComponent" data-value="bannerLinkButton">HDV</span> 
 
 									<!--  
 										.tag-svg: en esta definimos el icono del boton de descarga hdv
@@ -310,7 +312,7 @@
 							<!--  
 								.tag-img: en esta definimos la imagen del banner
 							-->
-							<img src="./assets/images/model1.png" alt="model">
+							<img src="./assets/images/model1.png" alt="model" loading="lazy">
 						</div>
 					</div>
 				</div>
@@ -341,7 +343,7 @@
 							<!--  
 								.tag-img: en esta definimos la imagen del banner
 							-->
-							<img src="./assets/images/modal4.png" alt="person">
+							<img src="./assets/images/modal4.png" alt="person" loading="lazy">
 						</aside>
 
 						<!--  
@@ -459,15 +461,15 @@
 						-->
 						<div class="skills_grid">
 							<!--  
-								box_skill_cards: contenedor de 1 tag-img y 1 tag-h6
+								box_skill_cards: contenedor de 1 tag-img y 1 tag-h3
 							-->
 							<div class="box_skill_cards html">
 								<!--  
 									.tag-img: en esta definimos la imagen de la habilidad
 								-->
-								<img src="./assets/images/html5.png" alt="html">
+								<img src="./assets/images/html5.png" alt="html" loading="lazy">
 
-								<h6>html</h6>
+								<h3>html</h3>
 							</div>
 
 							<!--  
@@ -476,16 +478,16 @@
 							<div class="box_skill_cards css">
 								<img src="./assets/images/css.png" alt="css">
 
-								<h6>css</h6>
+								<h3>css</h3>
 							</div>
 
 							<!--  
 								03 sass
 							-->
 							<div class="box_skill_cards sass">
-								<img src="./assets/images/sass.png" alt="sass">
+								<img src="./assets/images/sass.png" alt="sass" loading="lazy">
 
-								<h6>sass</h6>
+								<h3>sass</h3>
 							</div>
 
 							<!--  
@@ -494,79 +496,79 @@
 							<div class="box_skill_cards bootstrap">
 								<img src="./assets/images/bootstrap.png" alt="bootstrap">
 
-								<h6>bootstrap</h6>
+								<h3>bootstrap</h3>
 							</div>
 
 							<!--  
-								05 javascript
+								05 jquery
+							-->
+							<div class="box_skill_cards jquery">
+								<img src="./assets/images/jquery.png" alt="jquery" loading="lazy">
+								
+								<h3>jquery</h3>
+							</div>
+
+							<!--  
+								06 javascript
 							-->
 							<div class="box_skill_cards javascript">
-								<img src="./assets/images/javascript.png" alt="javascript">
+								<img src="./assets/images/javascript.png" alt="javascript" loading="lazy">
 
-								<h6>javascript</h6>
+								<h3>javascript</h3>
 							</div>
 
 							<!--  
-								06 angular
+								07 angular
 							-->
 							<div class="box_skill_cards angular">
-								<img src="./assets/images/angular.png" alt="angular">
+								<img src="./assets/images/angular.png" alt="angular" loading="lazy">
 
-								<h6>angular</h6>
+								<h3>angular</h3>
 							</div>
 
 							<!--  
-								07 node
+								08 node
 							-->
 							<div class="box_skill_cards node">
-								<img src="./assets/images/node.png" alt="node js">
+								<img src="./assets/images/node.png" alt="node js" loading="lazy">
 
-								<h6>node js</h6>
+								<h3>node js</h3>
 							</div>
 
 							<!--  
-								08 mysql
+								09 mysql
 							-->
 							<div class="box_skill_cards mysql">
-								<img src="./assets/images/mysql.png" alt="mysql">
+								<img src="./assets/images/mysql.png" alt="mysql" loading="lazy">
 
-								<h6>mysql</h6>
+								<h3>mysql</h3>
 							</div>
 
 							<!--  
-								09 mongodb
+								10 mongodb
 							-->
 							<div class="box_skill_cards mongodb">
-								<img src="./assets/images/mongo.png" alt="mongo db">
+								<img src="./assets/images/mongo.png" alt="mongo db" loading="lazy">
 
-								<h6>mongo db</h6>
+								<h3>mongo db</h3>
 							</div>
 
 							<!--  
-								10 git
+								11 git
 							-->
 							<div class="box_skill_cards git">
-								<img src="./assets/images/git.png" alt="git">
+								<img src="./assets/images/git.png" alt="git" loading="lazy">
 
-								<h6>git</h6>
-							</div>
-
-							<!--  
-								11 illustrator
-							-->
-							<div class="box_skill_cards illustrator">
-								<img src="./assets/images/ilustrator.png" alt="ilustrator">
-								
-								<h6>illustrator</h6>
+								<h3>git</h3>
 							</div>
 
 							<!--  
 								12 iu-ux
 							-->
 							<div class="box_skill_cards ui_ux">
-								<img src="./assets/images/ui-ux.png" alt="ui-ux">
+								<img src="./assets/images/ui-ux.png" alt="ui-ux" loading="lazy">
 
-								<h6>ui and ux</h6>
+								<h3>ui - ux</h3>
 							</div>
 						</div>
 					</div>
@@ -606,7 +608,7 @@
 							<!--  
                                 .tag-h3: en esta definimos el titulo del programa
                             -->
-							<h3 data-section="certificatesAccordeonFour" data-value="accordeonTitleFour">Acadèmico</h3>
+							<h3 data-section="certificatesAccordeonFour" data-value="accordeonTitleFour">Académico</h3>
 						
 							<!--  
                                 .tag-svg: en esta definimos el icono, la clase 'js_icon_color_change'
@@ -618,28 +620,28 @@
 						</section>
 
 						<!--  
-							box_certificates_content: contenedor de 2 tags-h5, 1 tag-p y de
+							box_certificates_content: contenedor de 2 tags-h4, 1 tag-p y de
                             box_certificates_file
 						-->
 						<section class="box_certificates_content">
 							<!--  
                                 .tag-5: en esta definimos el titulo del certificado
                             -->
-							<h5 data-section="certificatesAccordeonFour" data-value="accordeonSubtitleFourOne">Instituto: Sena</h5>
+							<h4 data-section="certificatesAccordeonFour" data-value="accordeonSubtitleFourOne">Instituto: Sena</h4>
 
 							<!--  
                                 .tag-5: en esta definimos el subtitulo del certificado
                             -->
-							<h5 data-section="certificatesAccordeonFour" data-value="accordeonSubtitleFourTwo">Intensidad: 15 meses</h5>
+							<h4 data-section="certificatesAccordeonFour" data-value="accordeonSubtitleFourTwo">Intensidad: 15 meses</h4>
 
 							<!--  
                                 .tag-p: en esta definimos el parrafo del certificado
                             -->
 							<p data-section="certificatesAccordeonFour" data-value="accordeonParagraphFour">
 								Actualmente, me encuentro realizando la carrera TÉCNICO EN DESARROLLO DE 
-								SOFTWARE en modalidad virtual los días Lunes, Martes, Miércoles y Viernes, 
-								y presencial el día Jueves. Esta dio inicio el 16 de Mayo de 2022 y finalizará 
-								el 15 de Septiembre de 2023.
+								SOFTWARE en modalidad virtual los días lunes, martes, miércoles y viernes 
+								y presencial los días jueves, la cual dio inicio el 16/05/2022 y finaliza 
+								el 15/09/2023.
 							</p>
 
 							<!--  
@@ -669,13 +671,9 @@
 						</section>
 						
 						<section class="box_certificates_content">
-							<h5 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">
-								Instituto: Udemy
-							</h5>
+							<h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h4>
 
-							<h5 data-section="certificatesAccordeonOne" data-value="accordeonSubtitleOne">
-								Intensidad: 77 Horas
-							</h5>
+							<h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitleOne">Intensidad: 77 Horas</h4>
 
 							<p data-section="certificatesAccordeonOne" data-value="accordeonParagraphOne">
 								Construcción de sitios web accesibles y adaptables a dispositivos móviles implementando html, 
@@ -715,9 +713,9 @@
 						</section>
 
 						<section class="box_certificates_content">
-							<h5 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h5>
+							<h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h4>
 
-							<h5 data-section="certificatesAccordeonTwo" data-value="accordeonSubtitleTwo">Intensidad: 54 Horas</h5>
+							<h4 data-section="certificatesAccordeonTwo" data-value="accordeonSubtitleTwo">Intensidad: 54 Horas</h4>
 
 							<p data-section="certificatesAccordeonTwo" data-value="accordeonParagraphTwo">
 								Creación de proyectos SPA (single page application) con angular 
@@ -753,9 +751,9 @@
 						</section>
 
 						<section class="box_certificates_content">
-							<h5 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h5>
+							<h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h4>
 
-							<h5 data-section="certificatesAccordeonThree" data-value="accordeonSubtitleThree">Intensidad: 24 Horas</h5>
+							<h4 data-section="certificatesAccordeonThree" data-value="accordeonSubtitleThree">Intensidad: 24 Horas</h4>
 
 							<p data-section="certificatesAccordeonThree" data-value="accordeonParagraphThree">
 								Creación de servidores con node.js haciendo uso del framework express e implementando módulos
@@ -830,49 +828,58 @@
 										box_proyect_description
 									-->
 									<div class="swiper-slide">
-										<!-- 
-											box_name: contiene 1 tag-h2 y 1 tag-p
-										-->
-										<div class="box_slide_content js_background_change">	
-											<!--  
-												.tag-a: en esta definimos el titulo del slider
-											-->
-											<a href="https://www.fundacionbolivardavivienda.org/" target="_blank" title="Visitar sitio web">Ver fundacionbolivardavivienda.org</a>
-										</div>
-
 										<!--  
 											.tag-img: en esta definomos la imagen del slider
 										-->
-										<!-- <img src="./assets/images/fundacion_bolivar_davivienda.png" alt="fundaciòn bòlivar davivienda" /> -->
+										<img src="./assets/images/fundacion_bolivar.png" alt="fundación bolívar davivienda" />
+
+										<!-- 
+											box_name: contiene 1 tag-h2 y 1 tag-p
+										-->
+										<div class="box_slide_content">	
+											<!--  
+												.tag-a: en esta definimos el titulo del slider
+											-->
+											<a href="https://www.fundacionbolivardavivienda.org/" target="_blank" title="Ir Al Sitio Web"
+												data-section="projectsComponent" data-value="pageLinkTitle"
+											>
+												Ver Página Web
+											</a>
+										</div>
 									</div>					
 
 									<div class="swiper-slide">
-										<div class="box_slide_content js_background_change">	
-											<a href="https://biofortificados.com/" target="_blank" title="Visitar sitio web">Ver biofortificados.com</a>
-										</div>
+										<img src="./assets/images/biofortificados.png" alt="biofortificados" />
 
-										<!-- <img src="./assets/images/biofortificado_destok.png" alt="biofortificados" /> -->
+										<div class="box_slide_content">	
+											<a href="https://biofortificados.com/" target="_blank" title="Ir Al Sitio Web"
+												data-section="projectsComponent" data-value="pageLinkTitle"
+											>
+												Ver Página Web
+											</a>
+										</div>
 									</div>
-
+									
 									<div class="swiper-slide">
-										<div class="box_slide_content js_background_change">	
-											<a href="https://losnaranjos.com.co/" target="_blank" title="Visitar sitio web">Ver losnaranjos.com.co</a>
-										</div>
+										<img src="./assets/images/los_naranjos.png" alt="Los naranjos" />
 
-										<!-- <img src="./assets/images/los_naranjos_destok.png" alt="Los naranjos" /> -->
+										<div class="box_slide_content">	
+											<a href="https://losnaranjos.com.co/" target="_blank" title="Ir Al Sitio Web"
+												data-section="projectsComponent" data-value="pageLinkTitle"
+											>
+												Ver Página Web
+											</a>
+										</div>
 									</div>
 								</div>
 
 								<!--  
-									swiper-button-next y swiper-button-prev: este contenedor
-									tiene definido por defecto los botones de desplazamiento
-									del slider, estas mismas clases son manejadas desde 'src\js\proyects.js',
-									la clase 'js_background_change' es manejada desde 'src\js\navbar.js'
+									swiper-button-next y swiper-button-prev: estos contenedores
+									tienen definido por defecto los botones de desplazamiento
+									del slider, estas mismas clases son manejadas desde 'src\js\proyects.js'
 								-->
-								<!-- <div class="box_icon_slider"> -->
-									<div class="swiper-button-next js_background_change"></div>
-									<div class="swiper-button-prev js_background_change"></div>
-								<!-- </div> -->
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
 							</div>
 						</div>
 					</div>
@@ -936,10 +943,10 @@
 										.tag-img: en esta definimos la imagen del cliente, la clase
 										.js_color_border es manejada desde 'src\js\navbar.js'
 									-->
-									<img src="./assets/images/elberth_agreda.png" alt="Elberth Agreda" class="js_color_border">
+									<img src="./assets/images/customer.png" alt="Elberth Agreda" loading="lazy" class="js_color_border">
 
 									<!--  
-										customers_name: contenedor de 1 tag-h3 y 1 tag-span
+										customers_name: contenedor de 1 tag-h3 y 1 tag-h6
 									-->
 									<section class="customers_name">
 										<!--  
@@ -951,7 +958,7 @@
 										<!--  
 											.tag-span: en esta definimos @las redes sociales
 										-->
-										<span>@elberthagreda</span>
+										<h6>@elberthagreda</h6>
 									</section>
 								</div>
 
@@ -1014,12 +1021,12 @@
 								</div>
 
 								<div class="box_customers_profile">
-									<img src="./assets/images/carlos_jimenez.png" alt="Carlos Jimenez" class="js_color_border">
+									<img src="./assets/images/customer.png" alt="Carlos Jimenez" loading="lazy" class="js_color_border">
 
 									<section class="customers_name">
 										<h3 class="js_color_change">Carlos Jiménez</h3>
 
-										<span>@carlosjimenez</span>
+										<h6>@carlosjimenez</h6>
 									</section>
 								</div>
 
@@ -1074,7 +1081,7 @@
 					-->
 					<div class="form_flexbox">
 						<!--  
-							box_form_card: contenedor de 1 tah-h3, 1 tag-p y de 
+							box_form_card: contenedor de 1 tah-h2, 1 tag-p y de 
 							box_socials_contacts
 						-->
 						<section class="box_form_card">			
@@ -1233,7 +1240,7 @@
 									.la clase js_background_change es una clase trabajada 
 									.desde 'src\js\navbar.js'
 								-->
-								<button type="submit" class="js_background_change" 
+								<button type="submit" class="js_background_change"
 									data-section="contactsComponent" data-value="contactsTextButton"
 								>
 									Enviar
@@ -1279,11 +1286,11 @@
 					<!--  
 						.tag-img: en esta definimos la imagen de la bandera del idioma
 					-->
-					<img src="./assets/images/es.png" alt="espanish flag" title="es">
+					<img src="./assets/images/es.png" alt="espanish flag" title="es" loading="lazy">
 				</div>
 
 				<div class="english_flag js_languages_flags" data-language="en">
-					<img src="./assets/images/en.png" alt="english flag" title="en">
+					<img src="./assets/images/en.png" alt="english flag" title="en" loading="lazy">
 				</div>
 			</div>
 

@@ -1,7 +1,7 @@
 {
     "navbarComponent": {
-        "navbarTitle": "Menù",
-        "navbarListItemOne": "Conòceme",
+        "navbarTitle": "Menú",
+        "navbarListItemOne": "Conóceme",
         "navbarListItemTwo": "Habilidades",
         "navbarListItemThree": "Certificados",
         "navbarListItemFour": "Proyectos",
@@ -13,7 +13,8 @@
         "bannerTitle": "Soy Jefferson Salazar",
         "bannerSubtitle": "Desarrollador Frontend",
         "bannerParagraph": "Nací el 10 de Febrero de 1989 en Palmira Valle. Me dedico al desarrollo Frontend hace 3 años en los cuales he participado en el desarrollo de sitios web y pequeñas aplicaciones. Tengo conocimientos básicos en Backend y en el manejo de bases de datos relacionales y no relacionales...",
-        "bannerTextButton": "Leer Más"
+        "bannerTextButton": "Leer Más",
+        "bannerLinkButton": "HDV"
     },
 
     "modalComponent": {
@@ -54,10 +55,14 @@
     },
 
     "certificatesAccordeonFour": {
-        "accordeonTitleFour": "Acadèmico",
+        "accordeonTitleFour": "Académico",
         "accordeonSubtitleFourOne": "Instituto: Sena",
         "accordeonSubtitleFourTwo": "Intensidad: 15 meses",
-        "accordeonParagraphFour": "Actualmente, me encuentro realizando la carrera TÉCNICO EN DESARROLLO DE SOFTWARE en modalidad virtual los días Lunes, Martes, Miércoles y Viernes, y presencial el día Jueves. Esta dio inicio el 16 de Mayo de 2022 y finalizará el 15 de Septiembre de 2023."
+        "accordeonParagraphFour": "Actualmente, me encuentro realizando la carrera TÉCNICO EN DESARROLLO DE SOFTWARE en modalidad virtual los días lunes, martes, miércoles y viernes y presencial los días jueves, la cual dio inicio el 16/05/2022 y finaliza el 15/09/2023."
+    },
+
+    "projectsComponent": {
+        "pageLinkTitle": "Ver Página Web"
     },
 
     "customersComponent": {

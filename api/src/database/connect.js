@@ -24,12 +24,8 @@ let apiUrl = `mongodb+srv://${process.env.USER}:${process.env.PASS}@cluster0.ggi
     uso de 'then()' y 'catch()' para conocer el estado de la conexion
 */
 mongoose.connect(apiUrl, {
-
     useNewUrlParser: true, 
-    useUnifiedTopology: true,
-    useFindAndModify: true,
-    useCreateIndex: true
-
+    useUnifiedTopology: true
 }).then(res => console.log('db connect')).catch(err => console.log(err));
 
 /* 

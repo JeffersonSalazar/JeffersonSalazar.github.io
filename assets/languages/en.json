@@ -13,7 +13,8 @@
         "bannerTitle": "I'm Jefferson Salazar",
         "bannerSubtitle": "Frontend Developer",
         "bannerParagraph": "I was born on February 10, 1989 in Palmira Valle. I am dedicated to development frontend 3 years ago in which I have participated in the development of sites web and small applications. I have basic knowledge in Backend and in the management of relational and non-relational databases...",
-        "bannerTextButton": "See More"
+        "bannerTextButton": "See More",
+        "bannerLinkButton": "CV"
     },
 
     "modalComponent": {
@@ -57,7 +58,11 @@
         "accordeonTitleFour": "Academic",
         "accordeonSubtitleFourOne": "Institute: Sena",
         "accordeonSubtitleFourTwo": "Intensity: 15 months",
-        "accordeonParagraphFour": "I am currently studying the SOFTWARE DEVELOPMENT TECHNICIAN career in virtual mode on Monday, Tuesday, Wednesday and Friday, and face-to-face on Thursday. This began on May 16-2022 and will finish on September 15-2023."
+        "accordeonParagraphFour": "I am currently studying the SOFTWARE DEVELOPMENT TECHNICIAN career in virtual mode on monday, tuesday, wednesday and friday and face-to-face on thursday, which began on 16/05/2022 and finish on 15/09/2023."
+    },
+
+    "projectsComponent": {
+        "pageLinkTitle": "See Web Site"
     },
 
     "customersComponent": {
@@ -68,7 +73,7 @@
         "customersCardRollTwo": "Founder and SEO",
         "customersCompany": "Company:",
         "customersRoll": "Roll:",
-        "customersTelephone": "Telephone:"
+        "customersTelephone": "Phone:"
     },
 
     "contactsComponent": {

@@ -110,10 +110,11 @@
             transition: height .7s;
 
             /*
-                tag-h5
+                tag-h4
             */
-            h5 {
+            h4 {
                 color: var(--textColor);
+                font-family: "poppin-regular", sans-serif;
                 letter-spacing: .6px;
                 margin: 10px 0;
             }
