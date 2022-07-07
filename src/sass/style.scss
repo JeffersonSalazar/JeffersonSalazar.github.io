@@ -1,5 +1,5 @@
 /*
-    @imports: importacion de fuentes variables, mixins y el layout css
+    @imports: importacion de los archivos fonts, variables, mixins y layout  
     ruta de los archivos src\sass\shared
 */
 @import './shared/fonts';
@@ -23,11 +23,11 @@
     hijos de tag-body para cuando este tiene el color de fondo light
 */
 body {
-    background-color: $bodyBackgroundLightMode;
     --textColor: #7e7b7c;
     --backgroundColor: #fff;
     --iconColor: #f5f5f5;
     --shadowColor: #cccccc;
+    background-color: #f9f9f9;
 
     /*
         js_body_dark_mode: clase añadida desde 'src/js/header.js',
@@ -35,17 +35,17 @@ body {
         hijos de tag-body para cuando este tiene el color de fondo dark
     */
     &.js_body_dark_mode { 
-        background-color: $bodyBackgroundDarkMode;
         --textColor: #f1f1f1;
         --backgroundColor: #46484A;
         --iconColor: #4C4F51;
         --shadowColor: #333333;
+        background-color: #3c4042ea;
     };
 
     /*
-        js_body_dark_mode: clase añadida desde 'src/js/header.js',
+        js_hidden_scroll: clase añadida desde 'src/js/header.js',
         definimos overflow-y: clip para remover el scroll cuando 
-        desplegamos el menu d enavegacion
+        desplegamos el menu de navegacion
     */
     &.js_hidden_scroll {
         overflow-y: clip;
@@ -117,55 +117,13 @@ p {
     line-height: 1.5;
 }
 
+/*
+    tag-p, tag-li, tag-input, tag-textarea y tag-label: definimos una fuente 
+    personalizada para estos elementos
+*/
 p, li, input, textarea, label {
     font-family: 'poppin-regular', sans-serif;
 }
-
-/* 
-    tag-button: definimos outline y border none para remover los bordes
-    que añade el navegador en los botones
-*/
-button {
-    outline: none;
-    border: none;
-    cursor: pointer;
-}
-
-/*
-    tag-a: estos estilos son tomados por todas las tag-a definidas
-    en html
-*/
-a {
-    text-decoration: none;
-    color: $mainPageColor;
-    font-size: 1.1rem;
-}
-
-button, a {
-    font-family: 'baloo2-bold', sans-serif;
-}
-
-
-/*
-    tag-svg, tag-img y tag-textarea: implementamos vertical-align para 
-    remover un espaciado que genera el navegador en estas etiquetas
-*/
-svg, img, textarea {
-    vertical-align: top;
-}
-
-/*
-    all_components: definimos color de fondo, un margen en la parte superior
-    y finalmente un espaciado para separar el contenido de los bordes de los
-    diferentes componentes
-*/
-.banner_component, .skills_component, 
-.certificates_component, .projects_component, 
-.customers_component, .contacts_component {
-    background-color: var(--backgroundColor);
-    margin-top: 80px;
-    padding: 60px 20px;
-};
 
 /* 
     box_btn: estos estilos son tomados por todas las clases box_btn 
@@ -192,23 +150,88 @@ svg, img, textarea {
         */
         &:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 20px -10px $darkShadowButtonsOne;
+            box-shadow: 0 4px 20px 0 var(--shadowColor);
         }
     }
 }
 
 /* 
+    tag-button: definimos outline y border none para remover los bordes
+    que añade el navegador en los botones
+*/
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*
+    tag-a: estos estilos son tomados por todas las tag-a definidas
+    en html
+*/
+a {
+    text-decoration: none;
+    color: $mainPageColor;
+    font-size: 1.1rem;
+}
+
+/*
+    tag-button y tag-a: definimos una fuente personalizada para estos elementos
+*/
+button, a {
+    font-family: 'baloo2-bold', sans-serif;
+}
+
+/*
+    tag-svg, tag-img y tag-textarea: implementamos vertical-align para 
+    remover un espaciado que genera el navegador en estas etiquetas
+*/
+svg, img, textarea {
+    vertical-align: top;
+}
+
+/*
+    all_components: definimos color de fondo, un margen en la parte superior
+    y finalmente un espaciado para separar el contenido de los bordes de los
+    diferentes componentes
+*/
+.banner_component, .skills_component, 
+.certificates_component, .projects_component, 
+.customers_component, .contacts_component {
+    background-color: var(--backgroundColor);
+    margin-top: 100px;
+    padding: 60px 20px;
+};
+
+/*
+    modal_component, loader_component: definimos position: fixed y sus propiedades 
+    top, bottom, left, right y z-index para fijar este elemento y darle tamaño. tambien 
+    implementamos flexbox y sus propiedades justify-content y align-items para 
+    centrar de manera horizontal y vertical los elementos que este contiene,
+*/
+.modal_component, .loader_component {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: #00000080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
     box_title_border: estos estilos son tomados por todas las clases
-    box_title_border definidas en html, definimos un borde en la
-    parte inferior con un ancho de 200px
+    box_title_border definidas en html, definimos un ancho de 200px
 */
 .box_title_border {
-    border-bottom: 2px solid $mainPageColor;
     width: 200px;
     
     /*
         _@query 999px <== : definimos un un margen auto para centrar
-        _de manera horizontal elborde y un margen en la parte inferior
+        _de manera horizontal e lborde y un margen en la parte inferior
         _para este elemento en esta medida
     */
     @media (max-width: 999px) {
@@ -217,10 +240,19 @@ svg, img, textarea {
     
     /*
         _@query 1000px ==> : definimos un un margen auto para centrar
-        _de manera horizontal elborde y un margen en la parte inferior
+        _de manera horizontal el borde y un margen en la parte inferior
         _para este elemento en esta medida
     */
     @media (min-width: 1000px) {
         margin: 0 auto 50px;
     }
+}
+
+/*
+    box_img_border: definimos position: absolute e implementamos width 
+    y height para darle tamaño a este elemento
+*/
+.box_img_border {
+    border: 5px solid $mainPageBackgroundColor;
+    border-radius: 5px;
 }

@@ -101,7 +101,7 @@ let $menuIconHeader = document.querySelector('#menu-icon-header');
     $navbarNav = document.querySelector('#navbar-nav'),
 
 /* 
-    generamos un evento click en menuIconHeader y definimos una funcion
+    generamos un evento click en $menuIconHeader y definimos una funcion
 */
 $menuIconHeader.addEventListener('click', function() {    
     /*

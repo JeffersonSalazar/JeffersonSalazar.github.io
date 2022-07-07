@@ -1,26 +1,12 @@
 /*
-    modal_component: definimos position: fixed y sus propiedades top, bottom, 
-    left, right y z-index para fijar este elemento y darle tamaño. tambien 
-    implementamos flexbox y sus propiedades justify-content y align-items para 
-    centrar de manera horizontal y vertical los elementos que este contiene,
-    finalmente la propiedad visibility: hidden para ocultar el modal
+    modal_component: definimos visibility: hidden para ocultar el modal
 */
 .modal_component {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    background-color: $darkBackgroundOverlayOne;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     visibility: hidden;
     cursor: pointer;
     
     /*
-        .js_show_modal: clase añadida con javascript en 'src/js/banner_modal.js',
+        .js_show_modal: clase añadida con javascript en 'src/js/banner.js',
         .definimos visibility: visible para hacer visible el modal
     */
     &.js_show_modal { 
@@ -63,7 +49,7 @@
                 .para darle color de fondo al scroll
             */
             &::-webkit-scrollbar-thumb {
-                background-color: $lightBackgroundScrollOne;
+                background-color: #bcc0c4;
                 border-radius: 5px;
             }
 
@@ -107,8 +93,6 @@
             */
             .box_img_border {
                 position: absolute;
-                border: 5px solid $mainPageBackgroundColor;
-                border-radius: 5px;
                 width: 70%;
                 height: 71%;
                 box-shadow: 0 5px 10px 0 #ccc;
@@ -205,12 +189,12 @@
                 border-radius: 50px;
 
                 /*
-                    tag-svg: implementamos el mixin 'iconCheckStyle' definido en 
-                    'src\sass\shared\_mixins.scss' que contiene los estilos principales 
-                    de este elemento
+                    tag-svg
                 */
                 svg {
-                    @include iconCheckStyle;
+                    fill: $mainPageColor;
+                    width: 34px;
+                    height: 34px;
                 }
             }
 

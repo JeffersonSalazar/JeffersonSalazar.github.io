@@ -13,7 +13,12 @@ let $btnOpenModal = document.querySelector('#btn-open-modal'),
 /* 
     generamos un evento click en $btnOpenModal y declaramos una funcion
 */
-$btnOpenModal.addEventListener('click', function() { 
+$btnOpenModal.addEventListener('click', function(e) {
+    /* 
+        prevenimos el comportamiento que tiene por defecto los botones
+    */
+    e.preventDefault(); 
+    
     /* 
         añadimos a $modalComponent la clase js_show_modal definida
         en 'src/sass/layout/modal.scss' 

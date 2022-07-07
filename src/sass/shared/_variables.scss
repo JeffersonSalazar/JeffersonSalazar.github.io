@@ -1,4 +1,6 @@
-/* ____________________ start main colors ____________________ /*
+/*
+    _este archivo es importado en 'assets/sass/style.scss'
+*/
 
 /*
     .$mainPageColor: almacena el color principal de la pagina
@@ -17,61 +19,6 @@ $mainPageBackgroundColor: rgb(71, 155, 227);
     .de la pagina el cual es impelmentado en varios elementos html
 */
 $mainPageBorderColor: rgb(71, 155, 227);
-
-
-
-/* ____________________ start colors ____________________ /*
-
-/*
-    .$lightColorIconsOne: variable implementada en los iconos de 
-    .contacts_component y footer_component
-*/
-$lightColorIconsOne: #fff;
-
-/*
-    .$lightColorSubtitlesOne: variable implementada en los subtitulos de 
-    .banner_component y customers_component
-*/
-$lightColorSubtitlesOne: #aaaaaa;
-
-
-
-/* ____________________ start backgrounds ____________________ /*
-
-/*
-    .bodyBackgroundLightMode: varibale implementada en tag-body para manejar
-    .el light mode del sitio web
-*/
-$bodyBackgroundLightMode: #eee;
-
-/*
-    .bodyBackgroundDarkMode: varibale implementada en tag-body para manejar
-    .el dark mode del sitio web
-*/
-$bodyBackgroundDarkMode: #3c4042ea;
-
-/*
-    .$darkBackgroundOverlayOne: variable implementada al overlay de
-    .navbar_component y modal_component
-*/
-$darkBackgroundOverlayOne: #00000080;
-
-/*
-    .$lightBackgroundScrollOne: variable implementada al de scrollY de
-    .navbar_component y modal_component
-*/
-$lightBackgroundScrollOne: #bcc0c4;
-
-
-
-/* ____________________ start shadows ____________________ /*
-
-/*
-    .$darkShadowButtonsOne: variable implementada en los botones de 
-    .banner_component y contacts_component
-*/
-$darkShadowButtonsOne: #696969d8;
-
 
 
 

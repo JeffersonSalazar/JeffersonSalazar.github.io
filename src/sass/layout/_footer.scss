@@ -24,7 +24,7 @@
                 .lo hacemos nuevamente visible
             */
             &.js_show_gotop {
-                fill: $lightColorIconsOne;
+                fill: #fff;
                 background-color: $mainPageBackgroundColor;
                 border-radius: 50%;
                 box-shadow: 0 5px 10px 0 var(--shadowColor);
@@ -35,7 +35,7 @@
                 /*
                     animateGotop: en 0% implementamos un transform: translateY(0)
                     en 50% implementamos un transform: translateY(0) para trasladar 
-                    elicono -30px hacia arriba finalemnte en 100% vuelve a su 
+                    elicono -30px hacia arriba finalmente en 100% vuelve a su 
                     posicion original
                 */
                 @keyframes animateGotop {

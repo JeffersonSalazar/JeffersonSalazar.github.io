@@ -1,0 +1,7 @@
+banner_component: añadir la hoja de vida definitiva
+
+projects_component: añadir mi proyecto personal
+
+contacts_component: correcgir el click de las redes sociales
+
+agregar un nuevo componente de videos

@@ -1,10 +1,10 @@
 // __________ start code - active item __________ //
 
 /* 
-   .$navbarItems: almacena todos los elementos html tag-li que
-   .estan dentro de ul_navbar 
+   .$navbarActiveLinks: almacena todos los elementos html tag-li con clase
+   .js_active_link que estan dentro de ul_navbar 
 */
-let $navbarItems = document.querySelectorAll('ul_navbar, li');
+let $navbarActiveLinks = document.querySelectorAll('ul_navbar, li, .js_active_link');
 
 /* 
     declaracion de la funcion activeLink
@@ -14,7 +14,7 @@ function activeItem() {
         hacemos un recorrido forEach en $links para remover de cada elemento
         la clase js_active_item definida en 'src/sass/layout/navbar.scss' 
     */
-    $navbarItems.forEach(items => items.classList.remove('js_active_item'));
+    $navbarActiveLinks.forEach(items => items.classList.remove('js_active_item'));
 
     /* 
         añadimos la clase js_active_item definida en 'src/sass/layout/navbar.scss' 
@@ -28,10 +28,9 @@ function activeItem() {
     (link) y definimos una funcion. generamos un evento CLICK
     al parametro (link) y pasamos la funcion previamente definida
 */
-$navbarItems.forEach(items => items.addEventListener('click', activeItem));
+$navbarActiveLinks.forEach(items => items.addEventListener('click', activeItem));
 
 // __________ end code - active item __________ //
-
 
 
 // __________ start code - smoot link __________ //
@@ -41,7 +40,6 @@ $navbarItems.forEach(items => items.addEventListener('click', activeItem));
    .estan dentro de una tag-li que a su vez esta dentro de ul_navbar 
 */
 let $navLinks = document.querySelectorAll("ul_navbar, li a");
-
 
 /* 
     hacemos un recorrido forOf de $navLinks para almacenar en una
@@ -97,12 +95,10 @@ function redirectLink(e) {
 // __________ end code - smoot link __________ //
 
 
-
 // __________ start code - background color generator __________ //
 
 /* 
    .$navbarSkinBtn: almacena el elemento html con ID navbar-skin-btn
-
    .$btnBannerHdv: almacena el elemento html con ID btn-banner-hdv
 */
 let $navbarSkinBtn = document.querySelector("#navbar-skin-btn")
@@ -115,32 +111,30 @@ let $navbarSkinBtn = document.querySelector("#navbar-skin-btn")
    .$colorChange: almacena todos los elementos html que tengan
    .la clase js_color_change
 
-   .$titleBorder: almacena todos los elementos html que tengan
-   .la clase box_title_border
-
-   .$imgBorder: almacena todos los elementos html que tengan
-   .la clase box_img_border
+   .$imgBorderChange: almacena todos los elementos html que tengan
+   .la clase js_img_border_color_change
 
    .$iconColorChange: almacena todos los elementos html que tengan
    .la clase js_icon_color_change
 
-   .$iconBorder: almacena todos los elementos html que tengan
-   .la clase js_color_border
-
-   .$strongs: almacena todos los elementos html definidos con la tag-strong
+   .$borderChange: almacena todos los elementos html que tengan
+   .la clase js_color_border_change
 */
 let $backgroundChange = document.querySelectorAll(".js_background_change"),
     $colorChange = document.querySelectorAll(".js_color_change"),
-    $titleBorder = document.querySelectorAll(".box_title_border");
-    $imgBorder = document.querySelectorAll(".box_img_border"),
-    $iconColorChange = document.querySelectorAll(".js_icon_color_change");
-    $iconBorder = document.querySelectorAll(".js_color_border");
-    // $strongs = document.querySelectorAll("strong");
+    $imgBorderChange = document.querySelectorAll(".js_img_border_color_change"),
+    $iconColorChange = document.querySelectorAll(".js_icon_color_change"),
+    $borderChange = document.querySelectorAll(".js_color_border_change");
 
 /* 
     definimos un evento click en $navbarBtn y definimos una funcion
 */
-$navbarSkinBtn.addEventListener("click", function() {
+$navbarSkinBtn.addEventListener("click", function(e) {
+    /* 
+        prevenimos el comportamiento que tiene por defecto los botones
+    */
+    e.preventDefault(); 
+
     /*
         haciendo uso de la propiedad (Match.random() * 256),
         generamos numeros aleatorios que posteriormente con
@@ -183,11 +177,7 @@ $navbarSkinBtn.addEventListener("click", function() {
         color.style.color = newColor
     });
 
-    $titleBorder.forEach(titleBorder => {
-        titleBorder.style.borderBottom = `2px solid ${newColor}`
-    });
-
-    $imgBorder.forEach(imgBorder => {
+    $imgBorderChange.forEach(imgBorder => {
         imgBorder.style.border = `5px solid ${newColor}`
     });
 
@@ -195,17 +185,12 @@ $navbarSkinBtn.addEventListener("click", function() {
         icon.style.fill = newColor;
     });
 
-    $iconBorder.forEach(border => {
+    $borderChange.forEach(border => {
         border.style.border = `3px solid ${newColor}`;
     });
-
-    // $strongs.forEach(colorText => {
-    //     colorText.style.color = newColor;
-    // });
 });
 
 // __________ end code - background color generator __________ //
-
 
 
 // __________ start code - close menu __________ //

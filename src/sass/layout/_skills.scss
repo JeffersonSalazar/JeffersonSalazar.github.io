@@ -282,7 +282,17 @@
                 }
             }
 
+            /*
+                _@query 1200px ==> : definimos una animacion para
+                _este elemento en esta medida
+            */
             @media (min-width: 1200px) {
+                /*
+                    skillMoveTop: en 0% implementamos un transform: translateY(0)
+                    en 50% implementamos un transform: translateY(0) para trasladar 
+                    elicono -10px hacia arriba finalmente en 100% vuelve a su 
+                    posicion original
+                */
                 @keyframes skillMoveTop {
                     0% {
                         transform: translateY(0);
@@ -295,6 +305,12 @@
                     }
                 }
     
+                /*
+                    skillMoveBottom: en 0% implementamos un transform: translateY(0)
+                    en 50% implementamos un transform: translateY(0) para trasladar 
+                    elicono 10px hacia abajo finalmente en 100% vuelve a su 
+                    posicion original
+                */
                 @keyframes skillMoveBottom {
                     0% {
                         transform: translateY(0);

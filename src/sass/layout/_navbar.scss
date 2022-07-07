@@ -23,7 +23,7 @@ $mainNavbarColorTwo: #333;
     right: 0;
     z-index: 89;
     height: 100vh; 
-    background-color: $darkBackgroundOverlayOne;
+    background-color: #00000080;
     visibility: hidden;
     
     /*
@@ -55,7 +55,7 @@ $mainNavbarColorTwo: #333;
             .para darle color de fondo al scroll
         */
         &::-webkit-scrollbar-thumb {
-            background-color: $lightBackgroundScrollOne;
+            background-color: #bcc0c4;
             border-radius: 5px;
         }
 
@@ -91,9 +91,9 @@ $mainNavbarColorTwo: #333;
             padding: 0 20px;
 
             /*
-                tag-h2
+                tag-h3
             */
-            h2 {
+            h3 {
                 color: $mainNavbarColorOne;
                 font-size: 20px;
             }

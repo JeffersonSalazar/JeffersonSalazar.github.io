@@ -1,19 +1,4 @@
 # GUIA DEL PROYECTO
-// ____________________ archivos principales ____________________ //
-
-index.html: en este definimos toda la estructura de etiquetas con las que se construyo
-este proyecto
-
-style.sccs: en esta definimos las importaciones de los archivos scss externos
-ademas aqui definimos estilos globales que comparten varios elementos dentro 
-del proyecto
-
-_layout.scss: contiene las importaciones de las diferentes hojas de estilos de cada
-componente definido en html
-
-main.js: en esta implementamos las libreias javascript que son utilizadas por varios
-componentes
-
 
 // ____________________ estuctura del proyecto ____________________ //
 
@@ -43,63 +28,70 @@ componentes
 
 
 <carpeta assets>
-    <carpeta docs>
+    <docs>
         contiene todo lo relacionado a los archivos que pueden ser
-        descragados desde el portafolio
-    </carpeta docs> 
+        descragados desde el proyecto
+    </docs> 
 
-    <carpeta fonts>
-        contiene todo lo relacionado a las fuentes utiilizadas para
-        el desarrollo del portafolio
-    </carpeta fonts> 
+    <fonts>
+        contiene todo lo relacionado a las fuentes externas utilizadas
+        para el desarrollo del proyecto
+    </fonts> 
 
-    <carpeta images>
-        contiene todo lo relacionado a las imagenes utiilizadas para
-        el desarrollo del portafolio
-    </carpeta images> 
+    <images>
+        contiene todo lo relacionado a las imagenes utilizadas para
+        el desarrollo del proyecto
+    </images> 
+
+    <languages>
+        contiene los archivos JSON .es y .en encargados de realizar el 
+        cambio de lenguaje del proyecto
+    </languages> 
 </carpeta assets> 
 
 
 <carpeta src>
-    <carpeta js>
+    <js>
         contiene todos los archivos javascript utilizados para
         el desarrollo del portafolio, estos se nombraron de la
         misma manera que se nombraron los componentes en html 
-    </carpeta js> 
+
+        main.js: archivo javascript principal, en este definimos 
+        las librerias externas cuyas funcionalidades son compartidas 
+        por diferentes elementos html
+    </js> 
 
     <carpeta sass>
-        <carpeta layout>
-            contiene todos los archivos sass utilizados para
-            el desarrollo del portafolio, estos se nombraron 
+        <layout>
+            contiene todos los archivos sass utilizados para dar
+            estilos a cada uno de los componentes, estos se nombraron 
             de la manera que se nombraron los componentes en html
-        </carpeta layout>
+        </layout>
 
-        <carpeta shared>
+        <shared>
             _fonts.scss: contiene la definicion de las diferentes fuentes utilizadas
-            para el desarrolo del portafolio
+            para el desarrollo del proyecto
 
             _layout.scss: contiene las importaciones de las diferentes hojas de estilos 
             de cada componente definido en html
 
             _mixins.scss: contiene la definicion de estilos globales reutilizables por
-            cada componente
+            los componentes
 
             _variables.scss: contiene la definicion de variables globales reutilizables
-            por cada componente
-        </carpeta shared> 
+            por los componentes
+        </shared> 
 
-        style.scss: archivo principal del proyecto
+        style.scss: archivo de estilos principal, en este definimos clases generales que son compartidas por diferentes elementos html
     </carpeta sass> 
 </carpeta src> 
 
 
-index.html: archivo principal del proyecto
-
-
 readme.md: en este definimos la guia de como esta construido o estructurado 
-el proyecto
+este proyecto
 
 
+index.html: en este archivo definimos toda la estructura de este proyecto
 
 
 // ____________________ estuctura html ____________________ //
@@ -117,7 +109,7 @@ el proyecto
 <body>  
 
     //
-        header_component: en este definimos el activador del modo oscuro
+        header_component: dentro de este definimos el activador del modo oscuro
         y el icono encargado de abrir el menu de navegacion, cuando hacemos
         scroll en la pagina este se fija en la parte superior de la misma
     //
@@ -130,7 +122,7 @@ el proyecto
     //  
     <div class="body_page">
         //
-            navbar_component: en este definimos el icono que cierra el menu de navegacion
+            navbar_component: dentro de este definimos el icono que cierra el menu de navegacion
             y los enlaces encargados de la redireccion a las diferentes secciones de la
             pagina, finalmente cuenta con un boton skins el cual define el color y 
             background que tendran algunos elementos dentro de la misma
@@ -144,26 +136,26 @@ el proyecto
         //
         <main class="main_components_container">
             //
-                banner_component: en este definimos la descripcion personal acompañada de una
-                imagen, el boton encargado de abril el modal y un enlace para descargar la
-                hoja de vida del aspirante, destaquemos que la imagen desaparece cuando entra 
+                banner_component: dentro de este definimos la descripcion personal acompañada 
+                de una imagen, el boton encargado de abrir el modal y un enlace para descargar
+                la hoja de vida del aspirante, destaquemos que la imagen desaparece cuando entra 
                 en vista de dispositovo movil
             //
             <div class="banner_component"></div>
 
 
             //
-                modal_component: en este definimos una imagen y la continuacion de la descripcion 
-                personal, finalmente un icono para cerrar el modal pero cabe resaltar que este
-                cierre se puede ralizar desde toda la vista del modal
+                modal_component: dentro de este definimos una imagen y la continuacion de la 
+                descripcion personal, finalmente un icono para cerrar el modal pero cabe resaltar 
+                que este cierre se puede ralizar desde toda la vista del modal
             //
             <div class="modal_component"></div>
 
 
             //
-                skills_component: en este definimos unas tarjetas que hacen referencia a las 
-                tecnologias aprendidas, al pasar el mouse sobre las mismas aumentan su tamaño
-                generando un efecto demovimiento. para la creacion de estas se implemento 
+                skills_component: dentro de este definimos unas tarjetas que hacen referencia a
+                las tecnologias aprendidas, al pasar el mouse sobre las mismas aumentan su tamaño
+                generando un efecto de movimiento. para la creacion de estas se implemento 
                 display: grid, finalmente destacamos que para dispositivos moviles estas se
                 transforma en un slider.
             //
@@ -171,7 +163,7 @@ el proyecto
 
 
             //
-                certificates_component: en estas definimos una breve reseña de los cursos realizados
+                certificates_component: dentro de este definimos una breve reseña de los cursos realizados
                 y la opcion de descarga de los mismos, este conponente funciona a travez de un acordeon
                 el cual rota 360 grados el icono mientras abre la informacion
             //
@@ -179,38 +171,45 @@ el proyecto
 
 
             //
-                proyects_component: aqui definimos los proyectos que hemos realizado con un enlace de
-                redireccionamiento para visitiar la pagina oficial y una breve descripcion de las
-                tecnologias utilizadas con las que se realizaron estos proyectos. para esta parte del
-                portafolio implementamos la libreria swiper js para crear los sliders
+                proyects_component: dentro de este definimos los proyectos que hemos realizado con 
+                un enlace de redireccionamiento para visitiar la pagina oficial, para esta parte 
+                del portafolio implementamos la libreria swiper js para crear los sliders
             //
             <section class="proyects_component"></section>
 
 
             //
-                contacts_component: en este definimos las opiniones de nuestros clientes
+                contacts_component: dentro de este definimos las opiniones de nuestros clientes
                 representados en dos tarjetas que cuentan con la informacion de los mismos.
                 para la creacion de estas se implemento display: grid que se encarga de ir 
-                ajuntando su distribucion en las diferentes medidas responsive
+                ajustando su distribucion en las diferentes medidas responsive
             //
             <section class="customers_component"></section>
 
 
             //
-                contacts_component: en este definimos el formulario de contacto el cual
+                contacts_component: dentro de este definimos el formulario de contacto el cual
                 cuenta con campos de validacion que se activan dependiendo de los datos 
-                ingresados por el usuario, este envia los datos a una base de datos mongo db 
+                ingresados por el usuario, este envia los datos a una base de datos mongoDB
                 haciendo uso de una api creada con node js que muestra una tarjeta alert 
                 dependiendo de la respuesta del servidor
             //
             <div class="contacts_component"></div>
+
+            //
+                loader_component: dentro de este definimos el loader que se hace visible una vez
+                el usuario realize el envio del formulario 
+            //
+            <div class="loader_component"></div>
         </main>
     </div>
 
 
     //
-        footer_component: en este definimos el pie de pagina y icon gotop que se
-        encarga de redirigir al usuario al inicio del portafolio
+        footer_component: en este definimos el pie de pagina y EL icon gotop que se
+        encarga de redirigir al usuario al inicio del portafolio. Tambien cuenta con
+        la posibilidad de ambiar el lenguaje entre el idioma español e ingles,
+        finalmente muestra el año actual en el que se creo el proyecto
     //
     <footer class="footer_component"></footer>  
 
@@ -221,7 +220,8 @@ el proyecto
 
     sweetalert js: esta libreria nos permite mostrar tarjetas de alerta
 
-    main js: archivo js principal del proyecto
+    main js: archivo js principal del proyecto donde definimos el javascript
+    que es utilizado por varios componentes
 
     custom js: estos son son archivos javascript personalizados para cada
     componente, cabe dastacar que estos estan nombrados de la misma manera
@@ -243,7 +243,8 @@ en esa hoja de estilos
 4. el orden utilizado para aplicar los estilos en cascada es el mismo orden con
 el que se estructuro el componente en html
 
-5. IMPORTANTE: (js_background_change, js_color_change, js_icon_color_change y js_color_border)
+5. IMPORTANTE: 
+(js_background_change, js_color_change, js_img_border_color_change, js_icon_color_change y js_color_border_change)
 son clases definidas en algunas etiquetas html para ser implementadas unicamente en javascript
 mas exactamente en 'src\js\navbar.js' por lo que no funcionan como clases para stilos css
 
@@ -318,3 +319,4 @@ footer.js {
 
     3. definir el año actual del proyecto
 }
+

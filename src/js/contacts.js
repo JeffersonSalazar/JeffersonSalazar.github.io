@@ -113,11 +113,12 @@ $textArea.addEventListener('keyup', function(e) {
 
 /*  
     .api: almacena la url de la api creada con node js
-
     .$form: almacena el elemento html con ID formulario
+    .$loaderComponent: almacena el elemento html con ID laoder-component
 */
 let api = "http://localhost:3000/api/message",
-    $form = document.querySelector('#formulario');
+    $form = document.querySelector('#formulario'),
+    $loaderComponent = document.querySelector('#loader-component');
 
 /* 
     generamos un evento submit en $form y definimos una funcion
@@ -129,16 +130,22 @@ $form.addEventListener('submit', function(e){
     */
     e.preventDefault();
 
+    /* 
+        añadimos a $loaderComponent la clase js_show_loader definida
+        en 'src/sass/layout/laoder.scss' 
+    */
+    $loaderComponent.classList.add('js_show_loader');
+
     /*
         .definimos un OBJETO y pasamos como clave el nombre de los campos 
         .declarados en form y en la api node js, estas almacenaran la 
         .informacion ingresada por el usuario en cada input
     */
-    // let formFields = {
-    //     name: e.target.name.value,
-    //     email: e.target.email.value,
-    //     post: e.target.post.value
-    // };
+    let formFields = {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        post: e.target.post.value
+    };
 
     /* 
         FETCH: recibe como parametro la variable api, luego definimos un OBJETO
@@ -147,66 +154,72 @@ $form.addEventListener('submit', function(e){
 
         JSON.stringify nos ayuda a pasar los datos de tipo OBJETO a tipo STRING
     */
-    // fetch(api, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(formFields)
-    // })
+    fetch(api, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formFields)
+    })
     /*  
         FETCH retorna una promesa por ende hacemos uso de .THEN y .CATCH
         para mostrar alertas al usuario dependiedo del estado del formulario
     */
-    // .then (res => {
+    .then (res => {
         /* 
             definimos un condicional el cual si el status de la respuesta
             es 400 muestra una alerta de error
         */
-        // if(res.status === 400) {
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'verifica que los campos sean correctos',
-        //         position: 'center',
-        //         showConfirmButton: false,
-        //         padding: '0 0 3em',
-        //         timer: 5000 
-        //     });
-        // };
+        if(res.status === 400) {
+            Swal.fire({
+                icon: 'error',
+                title: 'verifica que los campos sean correctos',
+                position: 'center',
+                showConfirmButton: false,
+                padding: '0 0 3em',
+                timer: 5000 
+            });
+        };
 
         /* 
             definimos un condicional el cual si el status de la respuesta
             es 200 muestra una alerta de exito
         */
-        // if(res.status === 200) {
-        //     Swal.fire({ 
-        //         icon: 'success',
-        //         title: 'el mensaje fue enviado correctamente',
-        //         position: 'center',
-        //         showConfirmButton: false,
-        //         padding: '0 0 3em',
-        //         timer: 5000      
-        //     });
+        if(res.status === 200) {
+            Swal.fire({ 
+                icon: 'success',
+                title: 'el mensaje fue enviado correctamente',
+                position: 'center',
+                showConfirmButton: false,
+                padding: '0 0 3em',
+                timer: 5000      
+            });
 
             /* 
                 finalmente borramos los valores de los campos del
                 formulario
             */
-//             $form.reset();
-//         };
-//     })
-//     .catch(err => {
-//         Swal.fire({
-//             icon: 'error',
-//             title: 'parece que no hay conexion con la api',
-//             position: 'center',
-//             showConfirmButton: false,
-//             padding: '0 0 3em',
-//             timer: 5000 
-//         });
+            $form.reset();
+        };
+    })
+    .catch(err => {
+       setTimeout(() => {
+            /* 
+                añadimos a $loaderComponent la clase js_show_loader definida
+                en 'src/sass/layout/laoder.scss' 
+            */
+            $loaderComponent.classList.remove('js_show_loader');
 
-//         console.log(err);
-//     })
+            Swal.fire({
+                icon: 'error',
+                title: 'parece que no hay conexion con la api',
+                position: 'center',
+                showConfirmButton: false,
+                padding: '0 0 3em',
+                timer: 4000 
+            });
+        },3000);
+    })
 });
 
 // __________ end code - submit form data __________ //

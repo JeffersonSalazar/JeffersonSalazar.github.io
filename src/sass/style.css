@@ -1,7 +1,10 @@
 @charset "UTF-8";
 /*
-    @imports: importacion de fuentes variables, mixins y el layout css
+    @imports: importacion de los archivos fonts, variables, mixins y layout  
     ruta de los archivos src\sass\shared
+*/
+/*
+    _este archivo es importado en 'assets/sass/style.scss'
 */
 /*
 	ubuntu-bold Font for titles
@@ -27,8 +30,9 @@
   src: url("../../../assets/fonts/baloo_2/Baloo2-Bold.ttf");
 }
 
-/* ____________________ start main colors ____________________ /*
-
+/*
+    _este archivo es importado en 'assets/sass/style.scss'
+*/
 /*
     .$mainPageColor: almacena el color principal de la pagina
     .el cual es impelmentado en varios elementos html
@@ -41,49 +45,10 @@
     .$mainPageBorderColor: almacena el color de bordes principal 
     .de la pagina el cual es impelmentado en varios elementos html
 */
-/* ____________________ start colors ____________________ /*
-
 /*
-    .$lightColorIconsOne: variable implementada en los iconos de 
-    .contacts_component y footer_component
-*/
-/*
-    .$lightColorSubtitlesOne: variable implementada en los subtitulos de 
-    .banner_component y customers_component
-*/
-/* ____________________ start backgrounds ____________________ /*
-
-/*
-    .bodyBackgroundLightMode: varibale implementada en tag-body para manejar
-    .el light mode del sitio web
-*/
-/*
-    .bodyBackgroundDarkMode: varibale implementada en tag-body para manejar
-    .el dark mode del sitio web
-*/
-/*
-    .$darkBackgroundOverlayOne: variable implementada al overlay de
-    .navbar_component y modal_component
-*/
-/*
-    .$lightBackgroundScrollOne: variable implementada al de scrollY de
-    .navbar_component y modal_component
-*/
-/* ____________________ start shadows ____________________ /*
-
-/*
-    .$darkShadowButtonsOne: variable implementada en los botones de 
-    .banner_component y contacts_component
-*/
-/* ____________________ start icon check style ____________________ */
-/*
-    _iconCheckStyle: mixin aplicado a las tag-svg que sean iconos de check
-*/
-/* ____________________ end icon check style ____________________ */
-/*
-    @imports: de las hojas de estilo de cada una de las secciones 
-    de este proyecto definidas dentro de 'src\sass\layout', este 
-    layout.scss es importado en 'assets/sass/style.scss'
+    _@imports: de las hojas de estilo de cada una de los 
+    _componentes definidas dentro de 'src\sass\layout', este 
+    _layout.scss es importado en 'assets/sass/style.scss'
 */
 /*
     header_component: definimos position: fixed y sus propiedades top, right, 
@@ -312,14 +277,14 @@
   border-bottom: 2px solid #fff;
   padding: 0 20px;
   /*
-                tag-h2
+                tag-h3
             */
   /*
                 box_menu_close_icon
             */
 }
 
-.navbar_component nav .box_navbar_menu h2 {
+.navbar_component nav .box_navbar_menu h3 {
   color: #fff;
   font-size: 20px;
 }
@@ -541,6 +506,7 @@
 
 .banner_component .banner_flexbox .box_banner_biografy h5 {
   color: #aaaaaa;
+  letter-spacing: .6px;
   /*
                     _@query 300px ==> : definimos un tamaño de fuente para 
                     _este elemento en esta medida
@@ -635,8 +601,8 @@
 .banner_component .banner_flexbox .box_banner_biografy .box_btn a:hover {
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
-  -webkit-box-shadow: 0 8px 20px -10px #696969d8;
-          box-shadow: 0 8px 20px -10px #696969d8;
+  -webkit-box-shadow: 0 4px 20px 0 var(--shadowColor);
+          box-shadow: 0 4px 20px 0 var(--shadowColor);
 }
 
 @media (max-width: 429px) {
@@ -670,8 +636,6 @@
   position: absolute;
   top: 53px;
   left: 58px;
-  border: 5px solid #479be3;
-  border-radius: 5px;
   width: 70%;
   height: 89%;
   -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
@@ -695,8 +659,8 @@
                     _elemento de la vista en esta medida
                 */
   /*
-                    _@query 1000px ==> : definimos  width y height para darle tamaño
-                    _a este elemento para en esta medida
+                    _@query 1000px ==> : definimos width y height para darle tamaño
+                    _a este elemento en esta medida
                 */
 }
 
@@ -714,33 +678,13 @@
 }
 
 /*
-    modal_component: definimos position: fixed y sus propiedades top, bottom, 
-    left, right y z-index para fijar este elemento y darle tamaño. tambien 
-    implementamos flexbox y sus propiedades justify-content y align-items para 
-    centrar de manera horizontal y vertical los elementos que este contiene,
-    finalmente la propiedad visibility: hidden para ocultar el modal
+    modal_component: definimos visibility: hidden para ocultar el modal
 */
 .modal_component {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  background-color: #00000080;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   visibility: hidden;
   cursor: pointer;
   /*
-        .js_show_modal: clase añadida con javascript en 'src/js/banner_modal.js',
+        .js_show_modal: clase añadida con javascript en 'src/js/banner.js',
         .definimos visibility: visible para hacer visible el modal
     */
   /*
@@ -849,8 +793,6 @@
 
 .modal_component .modal_card .box_modal_img .box_img_border {
   position: absolute;
-  border: 5px solid #479be3;
-  border-radius: 5px;
   width: 70%;
   height: 71%;
   -webkit-box-shadow: 0 5px 10px 0 #ccc;
@@ -958,9 +900,7 @@
   border: 3px solid #479be3;
   border-radius: 50px;
   /*
-                    tag-svg: implementamos el mixin 'iconCheckStyle' definido en 
-                    'src\sass\shared\_mixins.scss' que contiene los estilos principales 
-                    de este elemento
+                    tag-svg
                 */
 }
 
@@ -1044,6 +984,10 @@
   /*
                 hacemos uso de las clases distintivas de cada tarjeta y hacemos uso de los
                 pseudo elementos ::before y ::after para definirles un color de fondo
+            */
+  /*
+                _@query 1200px ==> : definimos una animacion para
+                _este elemento en esta medida
             */
 }
 
@@ -1326,6 +1270,20 @@
 }
 
 @media (min-width: 1200px) {
+  .skills_component .skills_container .skills_grid {
+    /*
+                    skillMoveTop: en 0% implementamos un transform: translateY(0)
+                    en 50% implementamos un transform: translateY(0) para trasladar 
+                    elicono -10px hacia arriba finalmente en 100% vuelve a su 
+                    posicion original
+                */
+    /*
+                    skillMoveBottom: en 0% implementamos un transform: translateY(0)
+                    en 50% implementamos un transform: translateY(0) para trasladar 
+                    elicono 10px hacia abajo finalmente en 100% vuelve a su 
+                    posicion original
+                */
+  }
   @-webkit-keyframes skillMoveTop {
     0% {
       -webkit-transform: translateY(0);
@@ -1586,6 +1544,8 @@
 }
 
 .projects_component .projects_container .projects_flexbox .swiper {
+  -webkit-box-shadow: 0 5px 10px 0 var(--shadowColor);
+          box-shadow: 0 5px 10px 0 var(--shadowColor);
   /*
 					_@query 1000px ==> : definimos una grilla de 4 columnas 
 					_para esta medida
@@ -1609,7 +1569,7 @@
 
 @media (min-width: 768px) {
   .projects_component .projects_container .projects_flexbox .swiper {
-    height: 400px;
+    height: 450px;
   }
 }
 
@@ -1632,7 +1592,8 @@
 .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 83%;
-  border: 1px solid transparent;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
 }
 
 .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content {
@@ -2385,6 +2346,100 @@
 }
 
 /*
+    modal_component: definimos visibility: hidden para ocultar el modal
+*/
+.loader_component {
+  visibility: hidden;
+  /*
+        .js_show_laoder: clase añadida con javascript en 'src/js/contacts.js',
+        .definimos visibility: visible para hacer visible el modal
+    */
+  /*
+        box_loader_content: definimos position: relative debido a que en el
+        pseudo elemento :before definimos position: absolute.
+        este box_loader_content viene siendo la barra del loader
+    */
+}
+
+.loader_component.js_show_loader {
+  visibility: visible;
+}
+
+.loader_component .box_loader_content {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #479be3;
+  -webkit-animation: loaderMove 2s linear infinite;
+          animation: loaderMove 2s linear infinite;
+  /*
+            loaderMove: en 0% implementamos un transform: rotate(0deg)
+            finalmente en 100% un rotate(360deg) para que el loader
+            gire completamente 
+        */
+  /*
+            .:before: definimos position: absolute y sus propiedades top y
+            .left para posicionar este elemento. tambien definimos un widht y
+            .height en porcentage relacionado a tamaño de su contenedor padre,
+            .finalmente con las propiedades background le damos forma.
+            .este pseudo elemento viene siendo el spacio del laoder
+        */
+  /*
+            span: definimos position: absolute y sus propiedades top,
+            left, right y bottom para posicionar este elemento. Este
+            span viene siendo la tapa frontal del loader
+        */
+}
+
+@-webkit-keyframes loaderMove {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderMove {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.loader_component .box_loader_content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#00000080));
+  background: linear-gradient(to top, transparent, #00000080);
+  background-size: 50px 60px;
+  background-repeat: no-repeat;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.loader_component .box_loader_content span {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background-color: #5d5c5c;
+  border-radius: 50%;
+}
+
+/*
     footer_component
 */
 .footer_component {
@@ -2441,7 +2496,7 @@
   /*
                     animateGotop: en 0% implementamos un transform: translateY(0)
                     en 50% implementamos un transform: translateY(0) para trasladar 
-                    elicono -30px hacia arriba finalemnte en 100% vuelve a su 
+                    elicono -30px hacia arriba finalmente en 100% vuelve a su 
                     posicion original
                 */
 }
@@ -2575,29 +2630,29 @@
     hijos de tag-body para cuando este tiene el color de fondo light
 */
 body {
-  background-color: #eee;
   --textColor: #7e7b7c;
   --backgroundColor: #fff;
   --iconColor: #f5f5f5;
   --shadowColor: #cccccc;
+  background-color: #f9f9f9;
   /*
         js_body_dark_mode: clase añadida desde 'src/js/header.js',
         modificamos las variables css aplicadas a los elementos 
         hijos de tag-body para cuando este tiene el color de fondo dark
     */
   /*
-        js_body_dark_mode: clase añadida desde 'src/js/header.js',
+        js_hidden_scroll: clase añadida desde 'src/js/header.js',
         definimos overflow-y: clip para remover el scroll cuando 
-        desplegamos el menu d enavegacion
+        desplegamos el menu de navegacion
     */
 }
 
 body.js_body_dark_mode {
-  background-color: #3c4042ea;
   --textColor: #f1f1f1;
   --backgroundColor: #46484A;
   --iconColor: #4C4F51;
   --shadowColor: #333333;
+  background-color: #3c4042ea;
 }
 
 body.js_hidden_scroll {
@@ -2675,53 +2730,12 @@ p {
   line-height: 1.5;
 }
 
+/*
+    tag-p, tag-li, tag-input, tag-textarea y tag-label: definimos una fuente 
+    personalizada para estos elementos
+*/
 p, li, input, textarea, label {
   font-family: 'poppin-regular', sans-serif;
-}
-
-/* 
-    tag-button: definimos outline y border none para remover los bordes
-    que añade el navegador en los botones
-*/
-button {
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
-
-/*
-    tag-a: estos estilos son tomados por todas las tag-a definidas
-    en html
-*/
-a {
-  text-decoration: none;
-  color: #479be3;
-  font-size: 1.1rem;
-}
-
-button, a {
-  font-family: 'baloo2-bold', sans-serif;
-}
-
-/*
-    tag-svg, tag-img y tag-textarea: implementamos vertical-align para 
-    remover un espaciado que genera el navegador en estas etiquetas
-*/
-svg, img, textarea {
-  vertical-align: top;
-}
-
-/*
-    all_components: definimos color de fondo, un margen en la parte superior
-    y finalmente un espaciado para separar el contenido de los bordes de los
-    diferentes componentes
-*/
-.banner_component, .skills_component,
-.certificates_component, .projects_component,
-.customers_component, .contacts_component {
-  background-color: var(--backgroundColor);
-  margin-top: 80px;
-  padding: 60px 20px;
 }
 
 /* 
@@ -2754,26 +2768,97 @@ svg, img, textarea {
 .box_btn button:hover {
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
-  -webkit-box-shadow: 0 8px 20px -10px #696969d8;
-          box-shadow: 0 8px 20px -10px #696969d8;
+  -webkit-box-shadow: 0 4px 20px 0 var(--shadowColor);
+          box-shadow: 0 4px 20px 0 var(--shadowColor);
+}
+
+/* 
+    tag-button: definimos outline y border none para remover los bordes
+    que añade el navegador en los botones
+*/
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*
+    tag-a: estos estilos son tomados por todas las tag-a definidas
+    en html
+*/
+a {
+  text-decoration: none;
+  color: #479be3;
+  font-size: 1.1rem;
+}
+
+/*
+    tag-button y tag-a: definimos una fuente personalizada para estos elementos
+*/
+button, a {
+  font-family: 'baloo2-bold', sans-serif;
+}
+
+/*
+    tag-svg, tag-img y tag-textarea: implementamos vertical-align para 
+    remover un espaciado que genera el navegador en estas etiquetas
+*/
+svg, img, textarea {
+  vertical-align: top;
+}
+
+/*
+    all_components: definimos color de fondo, un margen en la parte superior
+    y finalmente un espaciado para separar el contenido de los bordes de los
+    diferentes componentes
+*/
+.banner_component, .skills_component,
+.certificates_component, .projects_component,
+.customers_component, .contacts_component {
+  background-color: var(--backgroundColor);
+  margin-top: 100px;
+  padding: 60px 20px;
+}
+
+/*
+    modal_component, loader_component: definimos position: fixed y sus propiedades 
+    top, bottom, left, right y z-index para fijar este elemento y darle tamaño. tambien 
+    implementamos flexbox y sus propiedades justify-content y align-items para 
+    centrar de manera horizontal y vertical los elementos que este contiene,
+*/
+.modal_component, .loader_component {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: #00000080;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* 
     box_title_border: estos estilos son tomados por todas las clases
-    box_title_border definidas en html, definimos un borde en la
-    parte inferior con un ancho de 200px
+    box_title_border definidas en html, definimos un ancho de 200px
 */
 .box_title_border {
-  border-bottom: 2px solid #479be3;
   width: 200px;
   /*
         _@query 999px <== : definimos un un margen auto para centrar
-        _de manera horizontal elborde y un margen en la parte inferior
+        _de manera horizontal e lborde y un margen en la parte inferior
         _para este elemento en esta medida
     */
   /*
         _@query 1000px ==> : definimos un un margen auto para centrar
-        _de manera horizontal elborde y un margen en la parte inferior
+        _de manera horizontal el borde y un margen en la parte inferior
         _para este elemento en esta medida
     */
 }
@@ -2788,5 +2873,14 @@ svg, img, textarea {
   .box_title_border {
     margin: 0 auto 50px;
   }
+}
+
+/*
+    box_img_border: definimos position: absolute e implementamos width 
+    y height para darle tamaño a este elemento
+*/
+.box_img_border {
+  border: 5px solid #479be3;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=style.css.map */

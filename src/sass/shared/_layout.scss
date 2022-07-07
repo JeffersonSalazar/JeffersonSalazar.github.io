@@ -1,7 +1,7 @@
 /*
-    @imports: de las hojas de estilo de cada una de las secciones 
-    de este proyecto definidas dentro de 'src\sass\layout', este 
-    layout.scss es importado en 'assets/sass/style.scss'
+    _@imports: de las hojas de estilo de cada una de los 
+    _componentes definidas dentro de 'src\sass\layout', este 
+    _layout.scss es importado en 'assets/sass/style.scss'
 */
 @import '../layout/header';
 @import '../layout/navbar';
@@ -12,4 +12,5 @@
 @import '../layout/projects';
 @import '../layout/customers';
 @import '../layout/contacts';
+@import '../layout/loader';
 @import '../layout/footer';

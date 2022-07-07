@@ -2,12 +2,18 @@
 	swiper: alamacena el elemento html con la clase mySwiper
 */
 let swiper = new Swiper('.mySwiper', {
+	/*
+		simulateTouch: con esta propiedad en false evitamos
+		que el cambio de slider se haga con el tactil
+	*/
+	simulateTouch: false,
+
 	/* 
         paginacion: es donde se define las guias para el
 		desplazamiento del slider
     */
 	pagination: {
-		el: '.swiper-pagination'
+		el: '.swiper-pagination',
 	},
 
 	/* 

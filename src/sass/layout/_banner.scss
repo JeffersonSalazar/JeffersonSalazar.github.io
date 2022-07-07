@@ -75,7 +75,8 @@
                 tag-h5
             */
             h5 {
-                color: $lightColorSubtitlesOne;
+                color: #aaaaaa;
+                letter-spacing: .6px;
                 
                 /*
                     _@query 300px ==> : definimos un tamaño de fuente para 
@@ -153,7 +154,7 @@
                     */
                     &:hover {
                         transform: translateY(-8px);
-                        box-shadow: 0 8px 20px -10px $darkShadowButtonsOne;
+                        box-shadow: 0 4px 20px 0 var(--shadowColor);
                     }
 
                     /*
@@ -195,8 +196,6 @@
                 position: absolute;
                 top: 53px;
                 left: 58px;
-                border: 5px solid $mainPageBackgroundColor;
-                border-radius: 5px;
                 width: 70%;
                 height: 89%;
                 box-shadow: 0 5px 10px 0 var(--shadowColor);
@@ -226,8 +225,8 @@
                 }
                 
                 /*
-                    _@query 1000px ==> : definimos  width y height para darle tamaño
-                    _a este elemento para en esta medida
+                    _@query 1000px ==> : definimos width y height para darle tamaño
+                    _a este elemento en esta medida
                 */
                 @media (min-width: 1000px) { 
                     width: 90%;
