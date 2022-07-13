@@ -52,28 +52,44 @@
 
 <carpeta src>
     <js>
-        contiene todos los archivos javascript utilizados para
-        el desarrollo del portafolio, estos se nombraron de la
-        misma manera que se nombraron los componentes en html 
+        <index>
+            contiene todos los archivos javascript utilizados para
+            el desarrollo de index.html, estos se nombraron de la
+            misma manera que se nombraron los componentes en html 
+        </index>
+
+        <portfolio>
+            contiene todos los archivos javascript utilizados para
+            el desarrollo de portafolio.html, estos se nombraron de la
+            misma manera que se nombraron los componentes en html 
+        </portfolio>
 
         main.js: archivo javascript principal, en este definimos 
         las librerias externas cuyas funcionalidades son compartidas 
-        por diferentes elementos html
+        por los elementos de index.html y portfolio.html
     </js> 
 
     <carpeta sass>
         <layout>
-            contiene todos los archivos sass utilizados para dar
-            estilos a cada uno de los componentes, estos se nombraron 
-            de la manera que se nombraron los componentes en html
+            <index>
+                contiene todos los archivos sass utilizados para dar
+                estilos a los elementos de index.html, estos se nombraron
+                de la misma manera que se nombraron los componentes en html 
+            </index>
+
+            <portfolio>
+                ccontiene todos los archivos sass utilizados para dar
+                estilos a los elementos de portfolio.html, estos se nombraron
+                de la misma manera que se nombraron los componentes en html
+            </portfolio>
+            
+            main.scss: contiene las importaciones de las hojas de estilos
+            pertenecientes a index.html y portfolio.html
         </layout>
 
         <shared>
             _fonts.scss: contiene la definicion de las diferentes fuentes utilizadas
             para el desarrollo del proyecto
-
-            _layout.scss: contiene las importaciones de las diferentes hojas de estilos 
-            de cada componente definido en html
 
             _mixins.scss: contiene la definicion de estilos globales reutilizables por
             los componentes
@@ -91,10 +107,76 @@ readme.md: en este definimos la guia de como esta construido o estructurado
 este proyecto
 
 
-index.html: en este archivo definimos toda la estructura de este proyecto
+index.html: en este archivo definimos toda la estructura de la landing page
 
 
-// ____________________ estuctura html ____________________ //
+portfolio.html: en este archivo definimos toda la estructura del portafolio
+
+
+// ____________________ estuctura index.html ____________________ //
+
+<head>
+    style.css: hoja de estilos principal donde se recopila los diferentes estilos 
+    pertenecientes a cada componente
+
+    scrollreveal: esta libreria nos permite mostrar un elemento de la pagina 
+    en el momento en que el escroll pasa por el mismo
+</head>
+
+<body>  
+
+    //
+        header_component: dentro de este definimos el activador del modo oscuro
+        y el icono encargado de abrir el menu de navegacion, cuando hacemos
+        scroll en la pagina este se fija en la parte superior de la misma
+    //
+    <header class="header_component"></header>        
+
+    //
+        main_components_container: definido para contener los diferentes componentes que
+        conforman el cuerpo de la landig
+    //
+    <main class="main_components_container">
+        //
+            jumbotron_component: dentro de este definimos la descripcion personal acompañada 
+            de una imagen, el boton encargado de abrir el modal y un enlace para descargar
+            la hoja de vida del aspirante, destaquemos que la imagen desaparece cuando entra 
+            en vista de dispositovo movil
+        //
+        <section class="jumbotron_component"></section>
+
+
+        //
+            cards_component: dentro de este definimos una imagen y la continuacion de la 
+            descripcion personal, finalmente un icono para cerrar el modal pero cabe resaltar 
+            que este cierre se puede ralizar desde toda la vista del modal
+        //
+        <div class="cards_component"></div>
+    </main>
+    
+
+    //
+        footer_component: en este definimos el pie de pagina y EL icon gotop que se
+        encarga de redirigir al usuario al inicio del portafolio. Tambien cuenta con
+        la posibilidad de ambiar el lenguaje entre el idioma español e ingles,
+        finalmente muestra el año actual en el que se creo el proyecto
+    //
+    <footer class="footer_component"></footer>  
+
+
+    // ____________________ archivos javascript ____________________ //
+
+    main js: archivo js principal del proyecto donde definimos el javascript
+    que es utilizado por varios componentes
+
+    custom js: estos son son archivos javascript personalizados para cada
+    componente, cabe dastacar que estos estan nombrados de la misma manera
+    que se nombraron los componentes en portfolio.html y estan definidos 
+    en el mismo orden
+</body>
+
+
+// ____________________ estuctura portfolio.html ____________________ //
 
 <head>
     style.css: hoja de estilos principal donde se recopila los diferentes estilos 
@@ -171,11 +253,11 @@ index.html: en este archivo definimos toda la estructura de este proyecto
 
 
             //
-                proyects_component: dentro de este definimos los proyectos que hemos realizado con 
+                projects_component: dentro de este definimos los proyectos que hemos realizado con 
                 un enlace de redireccionamiento para visitiar la pagina oficial, para esta parte 
                 del portafolio implementamos la libreria swiper js para crear los sliders
             //
-            <section class="proyects_component"></section>
+            <section class="projects_component"></section>
 
 
             //
@@ -225,7 +307,8 @@ index.html: en este archivo definimos toda la estructura de este proyecto
 
     custom js: estos son son archivos javascript personalizados para cada
     componente, cabe dastacar que estos estan nombrados de la misma manera
-    que se nombraron los componentes en html y estan definidos en el mismo orden
+    que se nombraron los componentes en portfolio.html y estan definidos 
+    en el mismo orden
 </body>
 
 
@@ -293,7 +376,7 @@ certificates.js {
     oculta la informacion del acordeon que dejo de ser seleccionado
 }
 
-proyects.js {
+projects.js {
     1. realizar el despalzamiento cuando se da click en los iconos
     del slider permitiendo mostrar las demas tarjetas
 
@@ -308,7 +391,9 @@ contacts.js {
     en la api y mostrar una tarjeta alert segun sea la respuesta del
     servidor
 
-    3. guardar los datos en la base de datos mongo db
+    3. Mostrar el loader mientras llega la respuesta del servidor
+    
+    4. guardar los datos en la base de datos mongo db
 }
 
 footer.js {

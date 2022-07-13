@@ -1,4 +1,34 @@
 {
+    "jumbotronComponent": {
+        "jumbotronTopTitle": "Bienvenido a mi",
+        "jumbotronBottomTitle": "Portafolio Web",
+        "jumbotronSubTitle": "En primer lugar, quiero compartir contigo una guía que consta de 10 simples pasos que te ayudarán a comprender cómo está estructurado mi portafolio y cuáles son las principales funcionalidades que se implementaron en cada sección. Si desea omitir estos pasos, dirígete al final de esta guía y has clic en el botón VER PORTAFOLIO."
+    },
+
+    "cardsComponent": {
+        "headerTitle": "01. Cabecera",
+        "headerParagraph": "En esta sección hay un icono que indica el color actual del portafolio, también tienes la opción de elegir entre el modo claro y el modo oscuro. Finalmente, tenemos un icono que abre el menú.",
+        "navbarTitle": "02. Menú",
+        "navbarParagraph": "En esta sección hay un icono (X) que cierra el menú, también tienes la opción de navegar entre las diferentes secciones. Por último, con SKINS puedes cambiar el color principal del portafolio.",
+        "bannerTitle": "03. Portada",
+        "bannerParagraph": "En esta sección, el botón LEER MÁS despliega un apartado que permite conocer más sobre mí, seguido del botón HDV el cual inicia una descarga de mi currículo.",
+        "modalTitle": "04. Apartado",
+        "modalParagraph": "Una vez visible, esta sección se puede cerrar desde cualquier lugar de la pantalla o haciendo clic directamente en el icono (X) si se desea.",
+        "skillsTitle": "05. Habilidades",
+        "skillsParagraph": "En esta sección encontrarás las diferentes tecnologías en las que me desempeño inclinandome más por el FRONTEND.",
+        "certificatesTitle": "06. Certificados",
+        "certificatesParagraph": "En esta sección encontrarás información detallada sobre los diferentes estudios o cursos que he realizado sobre las tecnologías descritas en la sección de habilidades. Por último dejo un link de descarga para cada certificado.",
+        "projectsTitle": "07. Proyectos",
+        "projectsParagraph": "En esta sección encontrarás algunos de los proyectos personales y/o profesionales en los que he trabajado.",
+        "customersTitle": "08. Clientes",
+        "customersParagraph": "En esta sección conocerás la opinión de dos personas con las que he tenido la oportunidad de trabajar como desarrollador freelance.",
+        "contactsTitle": "09. Contactos",
+        "contactsParagraph": "Esta sección cuenta con un formulario para el envío de mensajes. Finalmente, el ícono (+) muestra las redes sociales por las cuales también me pueden contactar.",
+        "footerTitle": "10. Pie de página",
+        "footerParagraph": "Esta sección tiene la opción de cambiar el idioma seleccionando entre ES o EN. Por último, cuenta con un icono (↑) para redirigir al usuario a la cabecera del portafolio.",
+        "botonCards": "Ver Portafolio"
+    },
+
     "navbarComponent": {
         "navbarTitle": "Menú",
         "navbarListItemOne": "Conóceme",
@@ -89,6 +119,6 @@
     },
 
     "footerComponent": {
-        "footerCopyright": "© Todos los derechos Jefferson Salazar 2022"
+        "footerCopyright": "© Creado y Diseñado por Jefferson Salazar 2022"
     }
 }

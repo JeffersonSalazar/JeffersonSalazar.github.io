@@ -34,9 +34,9 @@
 
                 /*
                     animateGotop: en 0% implementamos un transform: translateY(0)
-                    en 50% implementamos un transform: translateY(0) para trasladar 
-                    elicono -30px hacia arriba finalmente en 100% vuelve a su 
-                    posicion original
+                    en 50% implementamos un transform: translateY(-30px) para 
+                    transladar el icono -30px hacia arriba finalmente en 100% vuelve 
+                    a su posicion original
                 */
                 @keyframes animateGotop {
                     0% {
@@ -52,19 +52,19 @@
             }
 
             /*
-                @query 499px <== : definimos un margen para este elemento en esta medida
+                @query 799px <== : definimos un margen para este elemento en esta medida
             */
-            @media (max-width: 499px) {
+            @media (max-width: 799px) {
                 margin: 40px 0 30px;
             }
 
             /*
-                @query 500px ==> : definimos position: fixed y sus propiedades right, 
+                @query 800px ==> : definimos position: fixed y sus propiedades right, 
                 bottom y z-index para darle posicion a este elemento en esta medida
             */
-            @media (min-width: 500px) {
+            @media (min-width: 800px) {
                 position: fixed;
-                right: 5px;
+                right: 20px;
                 bottom: 40px;
                 z-index: 69;
             }
@@ -85,8 +85,8 @@
             _@query 500px ==> : definimos un espaciado en la parte
             _superior para este elemento en esta medida
         */
-        @media (min-width: 500px) {
-            padding-top: 40px;
+        @media (min-width: 800px) {
+            padding-top: 80px;
         }
 
         /*

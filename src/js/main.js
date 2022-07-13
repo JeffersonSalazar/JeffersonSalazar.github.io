@@ -14,7 +14,7 @@ let revealElements = ScrollReveal({
     como parametro el elemento html al cual vamos a aplicar
     scrollReveal 
 */
-revealElements.reveal('.box_banner_biografy', {
+revealElements.reveal('.jumbotron_component', {
     /* 
         origin: con esta propiedad definimos el modo de 
         revelado del elemento
@@ -26,6 +26,11 @@ revealElements.reveal('.box_banner_biografy', {
         desplazamiento que tiene tendra el elemento antes
         de ser revelado
     */
+    distance: "10px"
+})
+
+revealElements.reveal('.box_banner_biografy', {
+    origin: "bottom",
     distance: "10px"
 });
 
@@ -49,3 +54,5 @@ revealElements.reveal('.js_customer_right', {
     distance: "70px",
     duration: 3500
 });
+
+

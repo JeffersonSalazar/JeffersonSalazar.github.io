@@ -1,4 +1,34 @@
 {
+    "jumbotronComponent": {
+        "jumbotronTopTitle": "Welcome to my",
+        "jumbotronBottomTitle": "Web Portfolio",
+        "jumbotronSubTitle": "First of all, I want to share with you a guide consisting of 10 simple steps that will help you understand how my portfolio is structured and what are the main functionalities that were implemented in each section. If you want to skip these steps, go to the end of this guide and click the SEE PORTFOLIO button."
+    },
+
+    "cardsComponent": {
+        "headerTitle": "01. Header",
+        "headerParagraph": "In this section there is an icon that indicates the current color of the portfolio, you also have the option to choose between light mode and dark mode. Finally, we have an icon that opens the menu.",
+        "navbarTitle": "02. Navbar",
+        "navbarParagraph": "In this section there is an icon (X) that closes the menu, you also have the option to navigate between the different sections. Finally, with SKINS you can change the main color of the portfolio.",
+        "bannerTitle": "03. Banner",
+        "bannerParagraph": "In this section, the READ MORE button displays a modal that allows you to learn more about me, followed by the CV button which starts a download of my curriculum.",
+        "modalTitle": "04. Modal",
+        "modalParagraph": "Once visible, this section can be closed from anywhere on the screen or by clicking directly on the (X) icon if desired.",
+        "skillsTitle": "05. Skills",
+        "skillsParagraph": "In this section you will find the different technologies in which I work, leaning more towards the FRONTEND.",
+        "certificatesTitle": "06. Certificates",
+        "certificatesParagraph": "In this section you will find detailed information on the different studies or courses I have taken. Finally, I leave a download link for each certificate.",
+        "projectsTitle": "07. Projects",
+        "projectsParagraph": "In this section I share some of the personal and professional projects I have worked",
+        "customersTitle": "08. Customers",
+        "customersParagraph": "In this section you will learn the opinion of two people with whom I have had the opportunity to work as a freelance developer.",
+        "contactsTitle": "09. Contacts",
+        "contactsParagraph": "This section has a form for sending messages. Finally, the (+) icon shows the social networks through which you can contact me.",
+        "footerTitle": "10. Footer",
+        "footerParagraph": "This section has the option to change the language by selecting between ES or EN. Finally, it has an icon (↑) to redirect the user to the portfolio header.",
+        "botonCards": "See Portfolio"
+    },
+
     "navbarComponent": {
         "navbarTitle": "Menu",
         "navbarListItemOne": "About me",
@@ -89,7 +119,6 @@
     },
 
     "footerComponent": {
-        "footerCopyright": "© Copyright Jefferson Salazar 2022"
+        "footerCopyright": "© Created and Designed by Jefferson Salazar 2022"
     }
 }
-

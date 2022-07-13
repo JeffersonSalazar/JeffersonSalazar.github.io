@@ -105,14 +105,14 @@
 
                     /*
                         .js_show_socials_media: cuando el boton tiene esta clase realciona a 
-                        .socials_media y modifica el margin y el opacity: 1 para hacer visible
-                        .los iconos de las redes sociales
+                        .socials_media y modifica el margin y con opacity: 1 y visibility: visible
+                        .hacemos visibles los iconos de las redes sociales
                     */
                     &.js_show_socials_media ~ .socials_media {
                         margin: 0 4px;
                         opacity: 1;
+                        visibility: visible;
                     }
-                    
 
                     /*
                         tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
@@ -124,9 +124,11 @@
                 }
 
                 /*
-                    socials_media: definimos margin: 0 -15px para apeñuzcar estos elementos 
-                    entre si, finalmente con opacity: 0 para los removemos de la vista para
-                    posteriormente hacerlos visible haciendo :hover sobre tag-button 
+                    socials_media: definimos margin: 0 -15px para juntar estos elementos 
+                    entre si, finalmente con opacity: 0 removemos de la vista los iconos
+                    para posteriormente hacerlos visible haciendo :hover sobre tag-button.
+                    Importante definir visibility: hidden para evitar que se pueda hacer
+                    click sobre los elementos cuando aun estan ocultos
                 */
                 .socials_media {
                     background-color: $mainPageBackgroundColor;
@@ -135,6 +137,7 @@
                     padding: 5px 7px;
                     margin: 0 -10px;
                     opacity: 0;
+                    visibility: hidden;
                     transition: all .3s;
 
                     /*

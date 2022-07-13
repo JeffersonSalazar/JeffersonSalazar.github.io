@@ -109,6 +109,33 @@ $textArea.addEventListener('keyup', function(e) {
 // __________ end code - show box form error __________ //
 
 
+// __________ start code - show socials media __________ //
+
+/*  
+    .$btnSocialMedia: almacena el elemento html con ID btn-socials-media
+*/
+let $btnSocialMedia = document.querySelector('#btn-socials-media');
+
+/* 
+    generamos un evento click en $btnSocialMedia y definimos 
+    una funcion a la que pasamos un event(e) como parametro
+*/
+$btnSocialMedia.addEventListener('click', function(e) {
+    /* 
+        prevenimos el comportamiento del button
+    */
+    e.preventDefault();
+
+    /* 
+        añadimos o removemos de $btnSocialMedia la clase js_show_socials_media 
+        definida en 'src/sass/layout/contactos.scss'
+    */
+    this.classList.toggle('js_show_socials_media');
+})
+
+// __________ end code - show socials media __________ //
+
+
 // __________ start code - submit form data __________ //
 
 /*  
@@ -116,7 +143,7 @@ $textArea.addEventListener('keyup', function(e) {
     .$form: almacena el elemento html con ID formulario
     .$loaderComponent: almacena el elemento html con ID laoder-component
 */
-let api = "http://localhost:3000/api/message",
+let api = "http://localhost:3000/contacts/message",
     $form = document.querySelector('#formulario'),
     $loaderComponent = document.querySelector('#loader-component');
 
@@ -167,86 +194,69 @@ $form.addEventListener('submit', function(e){
     */
     .then (res => {
         /* 
-            definimos un condicional el cual si el status de la respuesta
-            es 400 muestra una alerta de error
+            añadimos la funcion setTimeout() para retrazar la respuesta del
+            servidor y con esto darle espacio al loader
         */
-        if(res.status === 400) {
-            Swal.fire({
-                icon: 'error',
-                title: 'verifica que los campos sean correctos',
-                position: 'center',
-                showConfirmButton: false,
-                padding: '0 0 3em',
-                timer: 5000 
-            });
-        };
-
-        /* 
-            definimos un condicional el cual si el status de la respuesta
-            es 200 muestra una alerta de exito
-        */
-        if(res.status === 200) {
-            Swal.fire({ 
-                icon: 'success',
-                title: 'el mensaje fue enviado correctamente',
-                position: 'center',
-                showConfirmButton: false,
-                padding: '0 0 3em',
-                timer: 5000      
-            });
-
-            /* 
-                finalmente borramos los valores de los campos del
-                formulario
-            */
-            $form.reset();
-        };
-    })
-    .catch(err => {
-       setTimeout(() => {
+        setTimeout(() => {
             /* 
                 añadimos a $loaderComponent la clase js_show_loader definida
                 en 'src/sass/layout/laoder.scss' 
             */
             $loaderComponent.classList.remove('js_show_loader');
 
-            Swal.fire({
-                icon: 'error',
-                title: 'parece que no hay conexion con la api',
-                position: 'center',
-                showConfirmButton: false,
-                padding: '0 0 3em',
-                timer: 4000 
-            });
-        },3000);
+            /* 
+                definimos un condicional el cual si el status de la respuesta
+                es 400 muestra una alerta de error
+            */
+            if(res.status === 400) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'verifica que los campos sean correctos',
+                    position: 'center',
+                    showConfirmButton: false,
+                    padding: '0 0 3em',
+                    timer: 4000 
+                });
+            };
+
+            /* 
+                definimos un condicional el cual si el status de la respuesta
+                es 200 muestra una alerta de exito
+            */
+            if(res.status === 200) {
+                Swal.fire({ 
+                    icon: 'success',
+                    title: 'el mensaje fue enviado correctamente',
+                    position: 'center',
+                    showConfirmButton: false,
+                    padding: '0 0 3em',
+                    timer: 4000      
+                });
+
+                /* 
+                    finalmente borramos los valores de los campos del
+                    formulario
+                */
+                $form.reset();
+            };
+        }, 3000);
+    })
+    .catch(err => {
+        /* 
+            añadimos a $loaderComponent la clase js_show_loader definida
+            en 'src/sass/layout/laoder.scss' 
+        */
+        $loaderComponent.classList.remove('js_show_loader');
+
+        Swal.fire({
+            icon: 'error',
+            title: 'parece que no hay conexion con la api',
+            position: 'center',
+            showConfirmButton: false,
+            padding: '0 0 3em',
+            timer: 4000 
+        });
     })
 });
 
 // __________ end code - submit form data __________ //
-
-
-// __________ start code - show socials media __________ //
-
-/*  
-    .$btnSocialMedia: almacena el elemento html con ID btn-socials-media
-*/
-let $btnSocialMedia = document.querySelector('#btn-socials-media');
-
-/* 
-    generamos un evento click en $btnSocialMedia y definimos 
-    una funcion a la que pasamos un event(e) como parametro
-*/
-$btnSocialMedia.addEventListener('click', function(e) {
-    /* 
-        prevenimos el comportamiento del button
-    */
-    e.preventDefault();
-
-    /* 
-        añadimos o removemos de $btnSocialMedia la clase js_show_socials_media 
-        definida en 'src/sass/layout/contactos.scss'
-    */
-    this.classList.toggle('js_show_socials_media');
-})
-
-// __________ end code - show socials media __________ //
